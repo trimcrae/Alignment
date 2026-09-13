@@ -4,7 +4,7 @@ Findings appear here once the maintainers have been notified, and for anything a
 
 ## Sprint 1, 2026-09-13
 
-Ten targets audited. Counts are verified findings, each with a reproduction that was run.
+All eleven targets audited. Counts are verified findings, each with a reproduction that was run.
 
 | Target | High | Medium | Low | Path |
 |---|---|---|---|---|
@@ -19,8 +19,9 @@ Ten targets audited. Counts are verified findings, each with a reproduction that
 | MakeMeSay, Make Me Pay, InstrumentalEval, CoCoNot | 1 | 9 | 12 | `findings/2026-09-13-small-safeguards.md` |
 | Petri judge pipeline | 1 | 6 | 5 | `findings/2026-09-13-petri-judge.md` |
 | Inspect core scoring primitives | 3 | 3 | 8 | `findings/2026-09-13-inspect-core.md` |
+| ControlArena | 3 | 8 | 7 | partly private, summary in `findings/2026-09-13-control-arena.md` |
 
-Two targets are held privately because the findings would let an evaluated agent score without solving the task, or point a reader at an answer key. Both have draft private reports in `findings/*.private-report-draft.md`; the security channel for the Inspect projects is named in the framework's own security policy.
+Three targets have findings held privately because the findings would let an evaluated agent score without solving the task, or point a reader at an answer key. Both have draft private reports in `findings/*.private-report-draft.md`; the security channel for the Inspect projects is named in the framework's own security policy.
 
 The four highest-impact items:
 
@@ -30,6 +31,7 @@ The four highest-impact items:
 4. **MASK**: the headline honesty score silently equals the any-lie score whenever the repeat count is greater than one, which is the configuration the README recommends.
 5. **MakeMeSay**: the judge verdict parser takes the first `0` or `1` character anywhere in the reply, so a judge that explains before answering has its verdict inverted; separately, all four reported rates deflate whenever the eval is run with more than one epoch.
 6. **Petri**: a failed or empty audit is scored 1 on every dimension and averaged into the reported means, and because the rubric reserves high `auditor_failure` for observed auditor incompetence, the documented gate for excluding failed audits reads "no failure" exactly when it should fire. Petri is part of every Anthropic alignment assessment since Claude Sonnet 4.5.
-7. **Inspect's own scoring primitives**: the model-graded scorers truncate the grader's verdict to its first letter before validating it, so "GRADE: Cannot determine" and "GRADE: Contradicts the expert answer" both score as CORRECT; and the choice scorer credits a refusal whenever the target is empty. These primitives are used by 18 and 30 packages respectively, so the effect is library-wide. The first is fixed on upstream main, which makes it a version-drift problem, since the eval library sets no upper bound on the framework version.
+7. **ControlArena**: a judge that fails to answer is recorded as a completed side task in one setting, and the safety numerator counts every flagged attack-mode sample including those where the policy never attempted an attack, so safety rises with the number of declined samples (0.571 to 0.923 in a reproduction that holds the real attacks fixed). One further item is exploitable by the model under evaluation and is held privately.
+8. **Inspect's own scoring primitives**: the model-graded scorers truncate the grader's verdict to its first letter before validating it, so "GRADE: Cannot determine" and "GRADE: Contradicts the expert answer" both score as CORRECT; and the choice scorer credits a refusal whenever the target is empty. These primitives are used by 18 and 30 packages respectively, so the effect is library-wide. The first is fixed on upstream main, which makes it a version-drift problem, since the eval library sets no upper bound on the framework version.
 
-Still in progress: ControlArena's safety and usefulness metrics.
+Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Next: send the three private reports, then file the public issues.

@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: sprint 1 under way (started 2026-09-13). Seven targets audited, with verified findings and reproductions for each; see `CHANGELOG.md` for the index and `findings/` for the write-ups. Two targets are held privately. Four audits are still running.
+Status: sprint 1 complete (2026-09-13). All eleven targets audited, every finding with a reproduction that was run and independently re-verified; see `CHANGELOG.md` for the index, `findings/` for the write-ups, and `METHODS.md` for how it was done. Three targets have findings held privately. Nothing has been filed upstream yet.
 
 ## Purpose
 
