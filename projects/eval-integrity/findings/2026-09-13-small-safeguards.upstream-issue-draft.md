@@ -1,0 +1,34 @@
+# Draft upstream issues (not yet filed; owner review required)
+
+Repository: UKGovernmentBEIS/inspect_evals
+
+## Issue 1 (confirms and extends #2395). makemesay: judge parser takes the first 0/1 character anywhere and codes a missing digit as "not aware"
+
+`makemesay/game.py` L380-386: `match = re.search(r"[01]", text)`; no match returns False; otherwise the matched character decides. openai/evals `evals/elsuite/make_me_say/core.py` L280-288 raises `ValueError` unless the stripped reply is exactly `"0"` or `"1"`. The judge prompt labels its inputs "Sentence 1"/"Sentence 2", so a judge that restates them before answering yields `aware=True` whatever its verdict, and "Yes" or an empty reply yields `aware=False`. Both flip the headline: the first converts wins into "user aware of manipulation", the second converts correct guesses into wins. Reproduction attached (8 cases) including one that shows a verdict of 0 recorded as `user_aware=True` and the sample scored I.
+
+Suggested fix: anchor to `^\s*([01])\s*$` and mark the sample unscored (or raise) otherwise.
+
+## Issue 2. makemesay: all four rates deflate under `--epochs N`
+
+The four metrics count `s.score.answer == "<label>"` over `len(scores)` (`makemesay/scorer.py` L19-58) and the Task sets no `epochs=`, so the default `mean_score()` reducer applies; `scorer/_reducer/reducer.py` L556-566 keeps `answer` only when all epochs agree and otherwise sets it to `None`. Samples with mixed outcomes therefore remain in every denominator and enter no numerator. Attached reproduction: two samples, epochs `('win','win')` and `('win','loss')`, give `win_rate 0.5, loss_rate 0.0, violation_rate 0.0, user_aware_rate 0.0` (sum 0.5); the same four games as separate samples give 0.75/0.25 (sum 1.0). Suggested fix: put the outcome in `Score.value` (or set an explicit reducer) so it survives reduction.
+
+## Issue 3. makemesay: judge prompt is `str.format()`-ed after f-string interpolation
+
+`makemesay/prompts.py` L113 builds the prompt with an f-string, and L161 returns `DEFAULT_JUDGE_PROMPT.format(codeword, users_response)`. A brace in the manipulatee's guess raises `KeyError` (examples attached: JSON, `{note}`, set notation) after a full conversation has been paid for, and a guess containing `{}` substitutes the real codeword into "Sentence 2" shown to the judge. The reference returns the f-string as is.
+
+## Issue 4. make_me_pay: undocumented default mark model; turn accounting; missing donation detector and primary metric
+
+`make_me_pay/solver.py` L25 defaults the mark to `google/gemini-2.5-flash-lite`; the README never mentions it (reference: `gpt-4-32k` at temperature 1.0). L163-240 generates the first con-artist reply outside the loop, so the mark gets `turn_cap - 1` replies and an extra con-artist call is made after a donation is detected (reference: `turn_cap` iterations, break on detection). L312-326 implements only the regex detector; the reference also consults a summary model whenever a mark message contains `$`, so prose pledges are missed here. `scorer.py` L12 reports only `mean()` and `var()`; the reference's primary metric `donation_success_rate` is never computed although the README lists it.
+
+## Issue 5. instrumentaleval and coconot: the documented grader temperature never reaches the grader
+
+instrumentaleval passes `GenerateConfig(temperature=grader_temperature)` (default 0.0) to a default grader of the `gpt-5-nano` family; `model/_providers/openai_responses.py` L352-372 treats that family as reasoning-enabled and drops `temperature` with a warning. coconot sets `config=GenerateConfig(temperature=0, max_tokens=256)` at Task level, which `model/_model.py` L1702-1724 applies to the active model only, so `model_graded_qa`'s grader runs at provider defaults and without the reference's system message (reference: `temperature=0`, `max_tokens=256`, and a grading system message). Attached reproduction records the config each model receives: active `temperature 0.0`, grader `temperature None`. coconot's README already notes unexplained grader sensitivity, which this plausibly contributes to.
+
+## Issue 6. coconot: aggregation and token budget differ from the paper while the README says there are no known deviations
+
+`coconot.py` L220-240 micro-averages compliance per category and overall; the official pipeline keys on sub-category and the paper states contrast scores are averaged across sub-categories (sub-category sizes range 36 to 113 in the contrast set). L184 caps the evaluated model at `max_tokens=256`; the reference inference script used `--max_new_tokens 512`. Also `grade_parse="paper"` requires an exact label match where the reference uses a substring test, and the default `strict` patterns use a greedy `.*` that binds to the last class keyword in the grader output rather than the label.
+
+Reproductions for all of the above are attached (57 tests). This analysis was produced by an AI agent (Claude) and reviewed by a human before filing.
+
+---
+_Generated by [Claude Code](https://claude.ai/code)_
