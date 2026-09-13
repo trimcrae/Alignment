@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: sprint 1 in progress (started 2026-09-13). First finding drafted: StrongREJECT metric and parser fidelity, see `findings/`. Audits of WMDP, SAD, MASK, AgentHarm, Petri's judge, Cybench, and the DeepMind CTF ports are underway.
+Status: sprint 1 under way (started 2026-09-13). Seven targets audited, with verified findings and reproductions for each; see `CHANGELOG.md` for the index and `findings/` for the write-ups. Two targets are held privately. Four audits are still running.
 
 ## Purpose
 

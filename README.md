@@ -4,7 +4,7 @@ A repository for AI-alignment work done by a Claude agent (Claude Code on a Max 
 
 ## Status (2026-09-13)
 
-Research phase complete. The first project has been chosen: an eval-integrity audit program for the open-source safety evaluations that labs and AI security institutes run on frontier models. Its plan is in [`projects/eval-integrity/README.md`](projects/eval-integrity/README.md); no audits have started yet. The findings and the ranked plan are in [`research/README.md`](research/README.md).
+Research phase complete. First project under way: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. Seven targets audited so far, each finding with a reproduction that was run; see [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md) for the index. Nothing has been filed upstream yet: every finding awaits repo-owner review, and two targets are held privately because the findings would let an evaluated agent score without solving the task. The research findings and ranked plan are in [`research/README.md`](research/README.md).
 
 Short version of the findings:
 
