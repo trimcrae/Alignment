@@ -4,7 +4,7 @@ Findings appear here once the maintainers have been notified, and for anything a
 
 ## Sprint 1, 2026-09-13
 
-Eight targets audited. Counts are verified findings, each with a reproduction that was run.
+Nine targets audited. Counts are verified findings, each with a reproduction that was run.
 
 | Target | High | Medium | Low | Path |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@ Eight targets audited. Counts are verified findings, each with a reproduction th
 | DeepMind stealth, self-reasoning, self-proliferation | 0 | 3 | 6 | `findings/2026-09-13-gdm-stealth-self-reasoning.md` |
 | StrongREJECT | 0 | 2 | 1 | `findings/2026-09-13-strong-reject-metric-fidelity.md` |
 | MakeMeSay, Make Me Pay, InstrumentalEval, CoCoNot | 1 | 9 | 12 | `findings/2026-09-13-small-safeguards.md` |
+| Petri judge pipeline | 1 | 6 | 5 | `findings/2026-09-13-petri-judge.md` |
 
 Two targets are held privately because the findings would let an evaluated agent score without solving the task, or point a reader at an answer key. Both have draft private reports in `findings/*.private-report-draft.md`; the security channel for the Inspect projects is named in the framework's own security policy.
 
@@ -27,5 +28,6 @@ The four highest-impact items:
 3. **AgentHarm**: the simulated file tools resolve paths relative to the working directory, so they fail whenever the eval runs from the installed package, making several behaviors unscorable and biasing harm scores downward.
 4. **MASK**: the headline honesty score silently equals the any-lie score whenever the repeat count is greater than one, which is the configuration the README recommends.
 5. **MakeMeSay**: the judge verdict parser takes the first `0` or `1` character anywhere in the reply, so a judge that explains before answering has its verdict inverted; separately, all four reported rates deflate whenever the eval is run with more than one epoch.
+6. **Petri**: a failed or empty audit is scored 1 on every dimension and averaged into the reported means, and because the rubric reserves high `auditor_failure` for observed auditor incompetence, the documented gate for excluding failed audits reads "no failure" exactly when it should fire. Petri is part of every Anthropic alignment assessment since Claude Sonnet 4.5.
 
-Still in progress: Petri's judge pipeline, ControlArena's safety and usefulness metrics, and Inspect's own scoring primitives.
+Still in progress: ControlArena's safety and usefulness metrics, and Inspect's own scoring primitives.
