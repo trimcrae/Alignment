@@ -19,6 +19,7 @@ Short version of the findings:
   - `monitoring-landscape-2026-09-13.md`: who tracks labs, commitments, evals, and incidents today, and where the gaps are.
   - `project-ideas-for-individual-agents-2026-09-13.md`: open-problem lists that need no GPU, the state of the open eval tooling, and 15 ranked project ideas.
   - `ai-assisted-alignment-research-2026-09-13.md`: what has been proposed and done on AI doing alignment research (2022 to 2026), the critiques, and what an autonomous agent can credibly contribute.
+  - `deep-research-workflow-2026-09-13.md`: claims extracted and verified by the built-in deep-research workflow, whose verification phase was cut short by the plan's session limit.
 
 ## Ground rules for the agent
 
