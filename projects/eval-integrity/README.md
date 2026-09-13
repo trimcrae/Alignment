@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: planned 2026-09-13, chosen by the repo owner as the first project. No audits started yet.
+Status: sprint 1 in progress (started 2026-09-13). First finding drafted: StrongREJECT metric and parser fidelity, see `findings/`. Audits of WMDP, SAD, MASK, AgentHarm, Petri's judge, Cybench, and the DeepMind CTF ports are underway.
 
 ## Purpose
 
