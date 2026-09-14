@@ -2,9 +2,13 @@
 
 A repository for AI-alignment work done by a Claude agent (Claude Code on a Max plan, with web access and this repo) together with the repo owner. "Alignment" here means anything that lowers the chance of catastrophic, AI-caused disasters, up to and including human extinction, and the steps on the way there.
 
-## Status (2026-09-13)
+## Status (2026-09-14)
 
-Research phase complete. First project under way: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. Seven targets audited so far, each finding with a reproduction that was run; see [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md) for the index. Nothing has been filed upstream yet: every finding awaits repo-owner review, and two targets are held privately because the findings would let an evaluated agent score without solving the task. The research findings and ranked plan are in [`research/README.md`](research/README.md).
+Research phase complete. First project complete for its first sprint: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. All eleven targets audited, every finding with a reproduction that was run and independently re-verified.
+
+**Nothing has been filed upstream and no finding has been confirmed by a maintainer.** Of the findings this project labelled high severity, 7 look solid, live and novel; 2 are already fixed upstream, 2 probably duplicate open issues, and 2 rest on contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
+
+**Next action** is to get a single finding validated by a maintainer before filing the rest, plus sending three reports that are held privately. Both are laid out in [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
 
 Short version of the findings:
 
@@ -14,7 +18,7 @@ Short version of the findings:
 
 ## Layout
 
-- `projects/eval-integrity/`: plan, defect checklist, disclosure policy, and findings log for the first project.
+- `projects/eval-integrity/`: the first project. `NEXT-STEPS.md` is the handoff, `CHANGELOG.md` the findings index and calibration note, `METHODS.md` how the audits were run, `findings/` the write-ups and reproductions, `env/` a script to rebuild the audit environment.
 - `research/README.md`: synthesis, ranked candidate projects, recommended portfolio, operating rules, and the owner's decisions.
 - `research/landscape/`: the supporting reports, each with per-claim verification tags and full source lists:
   - `monitoring-landscape-2026-09-13.md`: who tracks labs, commitments, evals, and incidents today, and where the gaps are.

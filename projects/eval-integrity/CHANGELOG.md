@@ -2,9 +2,23 @@
 
 Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. Nothing below has been filed upstream yet: every item is awaiting repo-owner review.
 
+### Calibration note (added 2026-09-14)
+
+The severity labels below are this project's own, from the rubric in `README.md`, where "high" means "changes a safety-relevant score". That is a generous bar and it does not mean a published evaluation number is materially wrong. An honest breakdown of the 13 items labelled high:
+
+| Category | Count |
+|---|---|
+| Solid, live, and novel | 7 |
+| Already fixed upstream, so version drift rather than a live bug | 2 |
+| Probable duplicates of open upstream issues | 2 |
+| Real mechanism, contested framing | 2 |
+| Confirmed by a maintainer | 0 |
+
+Every finding establishes a mechanism, not a magnitude: with no model API access, nobody measured how often a real grader emits a malformed verdict or a judge refuses, and that rate is what decides whether a defect is a footnote or a distortion. Verification also discarded three claims during the sprint, so the process has a demonstrated error rate and the surviving set probably still contains mistakes. Treat every finding as a candidate until a maintainer responds. `NEXT-STEPS.md` starts by getting one finding validated for exactly this reason.
+
 ## Sprint 1, 2026-09-13
 
-All eleven targets audited. Counts are verified findings, each with a reproduction that was run.
+All eleven targets audited. Counts are findings that passed verification, each with a reproduction that was run. **Read the calibration note below before quoting any of these numbers.**
 
 | Target | High | Medium | Low | Path |
 |---|---|---|---|---|
@@ -23,7 +37,7 @@ All eleven targets audited. Counts are verified findings, each with a reproducti
 
 Three targets have findings held privately because the findings would let an evaluated agent score without solving the task, or point a reader at an answer key. Both have draft private reports in `findings/*.private-report-draft.md`; the security channel for the Inspect projects is named in the framework's own security policy.
 
-The four highest-impact items:
+The items most worth a maintainer's attention, subject to the calibration note above:
 
 1. **Cybench**: the sandbox network policy permits the hosts that publish every challenge's answer key, and one challenge hands the agent a file containing its own answer.
 2. **METR public tasks**: one family's answer key is recoverable from the public repository without running the task.

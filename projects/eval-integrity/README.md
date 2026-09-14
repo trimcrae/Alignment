@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: sprint 1 complete (2026-09-13). All eleven targets audited, every finding with a reproduction that was run and independently re-verified; see `CHANGELOG.md` for the index, `findings/` for the write-ups, and `METHODS.md` for how it was done. Three targets have findings held privately. Nothing has been filed upstream yet.
+Status: sprint 1 complete (2026-09-13). All eleven targets audited; see `CHANGELOG.md` for the index and its calibration note, `findings/` for the write-ups, `METHODS.md` for how it was done, and `NEXT-STEPS.md` for what to do next. Of the findings labelled high severity, 7 look solid, live and novel; none has been confirmed by a maintainer, and nothing has been filed upstream. Three targets have findings held privately.
 
 ## Purpose
 
