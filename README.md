@@ -8,7 +8,9 @@ Research phase complete. First project complete for its first sprint: an eval-in
 
 **Nothing has been filed upstream and no finding has been confirmed by a maintainer.** Of the findings this project labelled high severity, 7 look solid, live and novel; 2 are already fixed upstream, 2 probably duplicate open issues, and 2 rest on contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
 
-**Next action** is to get a single finding validated by a maintainer before filing the rest, plus sending three reports that are held privately. Both are laid out in [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
+**Follow-up triage (2026-09-14):** the proposed Inspect empty-target issue is no longer the first filing candidate: upstream tests explicitly preserve that behavior. Petri #113 and MakeMeSay #2395 confirm the two suspected overlaps. The original counts above are historical, not a fresh novelty assessment. See the [follow-up evidence](projects/eval-integrity/findings/2026-09-14-upstream-triage.md).
+
+**Next action** is to get one narrowly scoped finding validated by a maintainer before filing the rest. AgentHarm's working-directory-dependent benign file tools are the replacement candidate. The private reports remain private. See [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
 
 Short version of the findings:
 

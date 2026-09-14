@@ -4,6 +4,8 @@ Findings appear here once the maintainers have been notified, and for anything a
 
 ### Calibration note (added 2026-09-14)
 
+**Follow-up:** [upstream triage](findings/2026-09-14-upstream-triage.md) found explicit upstream tests preserving Inspect's empty-target behavior and confirmed the Petri/MakeMeSay overlaps. The counts in this section are the initial sprint assessment, not a current verified tally. No external confirmation of our findings or new issue submission is claimed.
+
 The severity labels below are this project's own, from the rubric in `README.md`, where "high" means "changes a safety-relevant score". That is a generous bar and it does not mean a published evaluation number is materially wrong. An honest breakdown of the 13 items labelled high:
 
 | Category | Count |
@@ -48,4 +50,4 @@ The items most worth a maintainer's attention, subject to the calibration note a
 7. **ControlArena**: a judge that fails to answer is recorded as a completed side task in one setting, and the safety numerator counts every flagged attack-mode sample including those where the policy never attempted an attack, so safety rises with the number of declined samples (0.571 to 0.923 in a reproduction that holds the real attacks fixed). One further item is exploitable by the model under evaluation and is held privately.
 8. **Inspect's own scoring primitives**: the model-graded scorers truncate the grader's verdict to its first letter before validating it, so "GRADE: Cannot determine" and "GRADE: Contradicts the expert answer" both score as CORRECT; and the choice scorer credits a refusal whenever the target is empty. These primitives are used by 18 and 30 packages respectively, so the effect is library-wide. The first is fixed on upstream main, which makes it a version-drift problem, since the eval library sets no upper bound on the framework version.
 
-Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Next: send the three private reports, then file the public issues.
+Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Follow the updated single-issue calibration gate in `NEXT-STEPS.md`; keep private reports out of public issues.
