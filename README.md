@@ -6,11 +6,11 @@ A repository for AI-alignment work done by a Claude agent (Claude Code on a Max 
 
 Research phase complete. First project complete for its first sprint: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. All eleven targets audited, every finding with a reproduction that was run and independently re-verified.
 
-**Nothing has been filed upstream and no finding has been confirmed by a maintainer.** Of the findings this project labelled high severity, 7 look solid, live and novel; 2 are already fixed upstream, 2 probably duplicate open issues, and 2 rest on contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
+**The focused AgentHarm file-path report is filed as [inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439); maintainer confirmation is pending.** The initial sprint classified 7 high-severity candidates as solid, live and novel; 2 as already fixed upstream, 2 as probable duplicates, and 2 as contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
 
 **Follow-up triage (2026-09-14):** the proposed Inspect empty-target issue is no longer the first filing candidate: upstream tests explicitly preserve that behavior. Petri #113 and MakeMeSay #2395 confirm the two suspected overlaps. The original counts above are historical, not a fresh novelty assessment. See the [follow-up evidence](projects/eval-integrity/findings/2026-09-14-upstream-triage.md).
 
-**Next action** is to get one narrowly scoped finding validated by a maintainer before filing the rest. AgentHarm's working-directory-dependent benign file tools are the replacement candidate. The private reports remain private. See [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
+**Next action** is to wait for maintainer feedback on #2439 before filing the rest. The private reports remain private. See [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
 
 Short version of the findings:
 

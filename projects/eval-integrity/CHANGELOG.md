@@ -1,10 +1,14 @@
 # Public defects log
 
-Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. Nothing below has been filed upstream yet: every item is awaiting repo-owner review.
+Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. The sprint inventory below is historical; only the focused AgentHarm benign file-path report has been submitted by this project.
+
+### Upstream submission, 2026-09-14
+
+[inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439) was opened as `trimcrae` at 16:35:43 UTC with the verified benign CWD reproduction. Readback confirmed the submitted body matches the prepared report. Maintainer response is pending. No private report or other public finding was submitted.
 
 ### Calibration note (added 2026-09-14)
 
-**Follow-up:** [upstream triage](findings/2026-09-14-upstream-triage.md) found explicit upstream tests preserving Inspect's empty-target behavior and confirmed the Petri/MakeMeSay overlaps. The counts in this section are the initial sprint assessment, not a current verified tally. No external confirmation of our findings or new issue submission is claimed.
+**Follow-up:** [upstream triage](findings/2026-09-14-upstream-triage.md) found explicit upstream tests preserving Inspect's empty-target behavior and confirmed the Petri/MakeMeSay overlaps. The counts in this section are the initial sprint assessment, not a current verified tally. Submission of #2439 is not maintainer confirmation of the finding.
 
 The severity labels below are this project's own, from the rubric in `README.md`, where "high" means "changes a safety-relevant score". That is a generous bar and it does not mean a published evaluation number is materially wrong. An honest breakdown of the 13 items labelled high:
 

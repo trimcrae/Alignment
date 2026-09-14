@@ -1,6 +1,6 @@
 # Next steps
 
-Written 2026-09-14 at the end of the first working session, for whoever picks this up next. Sprint 1 (the audit) is done. Nothing has been sent to any maintainer, and no finding has been confirmed by anyone outside this repo.
+Written 2026-09-14 at the end of the first working session and updated after upstream submission. Sprint 1 (the audit) is done. One focused AgentHarm issue is now filed; maintainer confirmation is pending.
 
 ## Read this first: the claim was overstated, and has been corrected
 
@@ -22,7 +22,7 @@ This is the highest-value next action and it is cheap. Do not file thirteen issu
 
 **Updated after checking upstream on 2026-09-14:** do not file the originally selected Inspect empty-target issue as an unambiguous defect. Current upstream tests explicitly require empty-target/no-selection credit, and recent PRs explicitly preserve it. The reproduction establishes behavior, not that the behavior violates the intended contract. See [follow-up evidence](findings/2026-09-14-upstream-triage.md). The 7/2/2/2 table above records the original assessment; do not present it as freshly verified.
 
-The replacement first candidate is **AgentHarm's benign file tools failing outside the package working directory**. Use only the focused [issue draft](findings/2026-09-14-agentharm-benign-cwd.upstream-issue-draft.md) and [benign reproduction](findings/repro/agentharm/benign_cwd_probe.py), not the original multi-topic AgentHarm draft. Refresh issue/PR searches immediately before submission. No issue has been filed by this follow-up yet.
+**Submitted:** [inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439), AgentHarm's benign file tools failing outside the package working directory, opened by `trimcrae` at 2026-09-14 16:35:43 UTC. The focused [submitted issue text](findings/2026-09-14-agentharm-benign-cwd.upstream-issue-draft.md) and [benign reproduction](findings/repro/agentharm/benign_cwd_probe.py) are the scope of this report; the original multi-topic draft was not submitted. Duplicate searches were refreshed and the posted body was read back and verified against the draft. Do not create another issue for this finding.
 
 Then wait for the response, and use it to calibrate:
 

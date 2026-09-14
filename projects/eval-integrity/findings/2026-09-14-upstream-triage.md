@@ -1,6 +1,6 @@
 # Upstream triage follow-up, 2026-09-14
 
-Produced by Codex from the repository handoff, current upstream source, and GitHub issues/PRs. This is an AI-authored assessment; human review is not claimed. No issue or comment was submitted in this follow-up. Read-only GitHub connector access was available without browser login. Browser actions were deferred under the owner's daily 06:00–10:00 America/New_York restriction.
+Produced by Codex from the repository handoff, current upstream source, and GitHub issues/PRs. This is an AI-authored assessment; independent human review is not claimed. Morning browser actions were deferred under the owner's daily 06:00–10:00 America/New_York restriction. After the owner requested submission, the focused AgentHarm report was filed as [inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439) at 16:35:43 UTC under `trimcrae`. The browser session was unavailable and the connector returned a permission error; existing Git authentication successfully submitted the report through GitHub's API. Readback verified the body against the prepared text.
 
 ## Decisions
 
@@ -34,4 +34,4 @@ This supports reclassification without requiring a new runtime test: the factual
 
 AgentHarm source is pinned to `360484a06383f9260279938262d78ed646ddbca1`, which is still upstream main at inspection time. The new probe loads three unmodified benign tool modules by path using real Inspect tool decorators. It compares package CWD with a temporary unrelated CWD, suppresses file contents, and calls no model or dataset loader. See the adjacent focused issue draft and reproduction receipt for results. It does not re-establish installed-task dispatch, sample counts, or aggregate harm/benign score changes.
 
-Submit at most one focused issue after the computer-use restriction permits browser access, using the user's authorization to create needed issues. Identify the AI author truthfully and do not claim a human reviewed/tested the code unless that happens. Wait for maintainer feedback before wider filing. Private reports remain private; this turn does not authorize email outreach or reconstruct their withheld exploit content.
+The one focused issue is submitted. Wait for maintainer feedback on #2439 before wider filing, and do not open a duplicate. The issue identifies the AI author truthfully and makes no claim of human testing. Private reports remain private; no email outreach or reconstruction of withheld exploit content was performed. The source revision and duplicate searches were refreshed before submission; upstream main was unchanged.

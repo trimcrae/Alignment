@@ -1,6 +1,6 @@
-# Focused upstream issue draft
+# Focused upstream issue: submitted text
 
-Destination: `UKGovernmentBEIS/inspect_evals`. Status: prepared, not submitted. AI-authored by Codex; human review has not been established. Refresh duplicate searches before filing. Use the title and body below in the bug-report form.
+Destination: `UKGovernmentBEIS/inspect_evals`. Submitted as [issue #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439) by `trimcrae` at 2026-09-14 16:35:43 UTC, using existing Git authentication after the browser and connector routes were unavailable. The posted body was read back and matched this text. AI-authored by Codex and submitted with the owner's authorization; independent human testing/review is not claimed. The filename is retained to preserve earlier links.
 
 Title: [Bug] AgentHarm benign file tools fail outside the package working directory
 
