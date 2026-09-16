@@ -1,8 +1,21 @@
 # Public defects log
 
-Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. Nothing below has been filed upstream yet: every item is awaiting repo-owner review.
+Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. The sprint inventory below is historical; three focused public reports have now been submitted.
+
+### Additional upstream submissions, 2026-09-15 (America/New_York)
+
+- [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878): SAE side-task scoring maps exhausted judge parsing (`NOANSWER`) to success. Verified real parser/scorer with fixed model replies and accept/reject controls; live frequency remains unknown.
+- [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159): documented rescoring CLI cannot resolve a judge registered as a scanner. Reproduced using a synthetic valid Inspect log, with successful `match` rescoring as a control.
+
+Both were owner-authorized, posted as `trimcrae`, and matched their prepared bodies. They remain unconfirmed by maintainers. [Evidence and receipts](findings/2026-09-15-additional-upstream-triage.md).
+
+### Upstream submission, 2026-09-14
+
+[inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439) was opened as `trimcrae` at 16:35:43 UTC with the verified benign CWD reproduction. Readback confirmed the submitted body matches the prepared report. Maintainer response is pending. No private report or other public finding was submitted.
 
 ### Calibration note (added 2026-09-14)
+
+**Follow-up:** [upstream triage](findings/2026-09-14-upstream-triage.md) found explicit upstream tests preserving Inspect's empty-target behavior and confirmed the Petri/MakeMeSay overlaps. The counts in this section are the initial sprint assessment, not a current verified tally. Submission of #2439 is not maintainer confirmation of the finding.
 
 The severity labels below are this project's own, from the rubric in `README.md`, where "high" means "changes a safety-relevant score". That is a generous bar and it does not mean a published evaluation number is materially wrong. An honest breakdown of the 13 items labelled high:
 
@@ -48,4 +61,4 @@ The items most worth a maintainer's attention, subject to the calibration note a
 7. **ControlArena**: a judge that fails to answer is recorded as a completed side task in one setting, and the safety numerator counts every flagged attack-mode sample including those where the policy never attempted an attack, so safety rises with the number of declined samples (0.571 to 0.923 in a reproduction that holds the real attacks fixed). One further item is exploitable by the model under evaluation and is held privately.
 8. **Inspect's own scoring primitives**: the model-graded scorers truncate the grader's verdict to its first letter before validating it, so "GRADE: Cannot determine" and "GRADE: Contradicts the expert answer" both score as CORRECT; and the choice scorer credits a refusal whenever the target is empty. These primitives are used by 18 and 30 packages respectively, so the effect is library-wide. The first is fixed on upstream main, which makes it a version-drift problem, since the eval library sets no upper bound on the framework version.
 
-Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Next: send the three private reports, then file the public issues.
+Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Follow the updated single-issue calibration gate in `NEXT-STEPS.md`; keep private reports out of public issues.
