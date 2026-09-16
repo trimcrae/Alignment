@@ -1,6 +1,12 @@
 # Next steps
 
-Written 2026-09-14 at the end of the first working session and updated after upstream submission. Sprint 1 (the audit) is done. One focused AgentHarm issue is now filed; maintainer confirmation is pending.
+Updated 2026-09-15. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending.
+
+## Current instructions and submissions
+
+On September 15 the owner explicitly asked to file suitable issues in other repositories while waiting. This supersedes the historical single-issue waiting gate below for these two additional reports. After fresh duplicate searches and focused executable checks, submitted [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878) and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159), alongside [AgentHarm #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439). See [evidence, receipts, and limitations](findings/2026-09-15-additional-upstream-triage.md).
+
+Monitor all three daily and respond to substantive feedback. Do not duplicate the already-filed reports. Do not claim maintainer confirmation or human testing. The issues disclose Codex authorship and owner authorization; authorization is not independent human reproduction. Private exploit reports remain withheld. Older filing order and status statements below are historical planning, not instructions to refile these reports.
 
 ## Read this first: the claim was overstated, and has been corrected
 

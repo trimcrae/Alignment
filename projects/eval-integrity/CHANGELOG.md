@@ -1,6 +1,13 @@
 # Public defects log
 
-Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. The sprint inventory below is historical; only the focused AgentHarm benign file-path report has been submitted by this project.
+Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. The sprint inventory below is historical; three focused public reports have now been submitted.
+
+### Additional upstream submissions, 2026-09-15 (America/New_York)
+
+- [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878): SAE side-task scoring maps exhausted judge parsing (`NOANSWER`) to success. Verified real parser/scorer with fixed model replies and accept/reject controls; live frequency remains unknown.
+- [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159): documented rescoring CLI cannot resolve a judge registered as a scanner. Reproduced using a synthetic valid Inspect log, with successful `match` rescoring as a control.
+
+Both were owner-authorized, posted as `trimcrae`, and matched their prepared bodies. They remain unconfirmed by maintainers. [Evidence and receipts](findings/2026-09-15-additional-upstream-triage.md).
 
 ### Upstream submission, 2026-09-14
 

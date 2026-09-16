@@ -1,0 +1,9 @@
+{
+  "number": 878,
+  "url": "https://github.com/UKGovernmentBEIS/control-arena/issues/878",
+  "state": "open",
+  "author": "trimcrae",
+  "created_at": "2026-09-16T00:04:43Z",
+  "title": "[Bug]: SAE side-task scorer turns an unparseable judge result into success",
+  "body_matches_draft": true
+}
