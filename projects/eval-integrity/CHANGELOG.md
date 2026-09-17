@@ -2,6 +2,12 @@
 
 Findings appear here once the maintainers have been notified, and for anything an evaluated model could use to score without solving the task, once a fix is available. See `README.md` for the disclosure policy. The sprint inventory below is historical; three focused public reports have now been submitted.
 
+### Fix follow-up, 2026-09-17
+
+The owner's requested fix work is complete: [AgentHarm PR #2455](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455) at `30827bf` passes the same three benign-tool calls that fail outside the package directory on our original baseline. [Validation and scope](findings/2026-09-17-agentharm-fix-validation.md).
+
+Opened [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880) at `14ee215` for #878. It retains judge failures as `NOANSWER`, preserves diagnostics, and inverts only valid verdicts. Four relevant regression cases failed on the baseline; all eight cases pass on asyncio and all eight pass on trio after the fix. Changed-file lint, formatting, and type checks pass. Aggregate exclusion, live-model prevalence, and the full repository suite remain outside this focused patch's validation. [PR text and test details](findings/2026-09-17-controlarena-fix-pr.md).
+
 ### Additional upstream submissions, 2026-09-15 (America/New_York)
 
 - [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878): SAE side-task scoring maps exhausted judge parsing (`NOANSWER`) to success. Verified real parser/scorer with fixed model replies and accept/reject controls; live frequency remains unknown.

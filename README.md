@@ -2,7 +2,7 @@
 
 A repository for AI-alignment work done by a Claude agent (Claude Code on a Max plan, with web access and this repo) together with the repo owner. "Alignment" here means anything that lowers the chance of catastrophic, AI-caused disasters, up to and including human extinction, and the steps on the way there.
 
-## Status (2026-09-15)
+## Status (2026-09-17)
 
 Research phase complete. First project complete for its first sprint: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. All eleven targets audited, every finding with a reproduction that was run and independently re-verified.
 
@@ -11,6 +11,8 @@ Research phase complete. First project complete for its first sprint: an eval-in
 **Follow-up triage (2026-09-14):** the proposed Inspect empty-target issue is no longer the first filing candidate: upstream tests explicitly preserve that behavior. Petri #113 and MakeMeSay #2395 confirm the two suspected overlaps. The original counts above are historical, not a fresh novelty assessment. See the [follow-up evidence](projects/eval-integrity/findings/2026-09-14-upstream-triage.md).
 
 **Additional submissions (2026-09-15):** at the owner's request to proceed in other repositories, revalidated and filed [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878) (failed judging becomes side-task success) and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159) (documented rescoring command cannot resolve the judge). See the [evidence and scope](projects/eval-integrity/findings/2026-09-15-additional-upstream-triage.md). Three focused reports now await maintainer feedback. Private exploit reports remain withheld.
+
+**Fix follow-up (2026-09-17):** [AgentHarm PR #2455](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455) passes our three-tool benign reproduction on its current head ([validation](projects/eval-integrity/findings/2026-09-17-agentharm-fix-validation.md)). Prepared [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880), preserving failed judge verdicts with eight regression cases passing on both async backends. Neither result constitutes maintainer acceptance or full benchmark validation.
 
 Short version of the findings:
 

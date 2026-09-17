@@ -1,8 +1,10 @@
 # Next steps
 
-Updated 2026-09-15. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending.
+Updated 2026-09-17. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending. AgentHarm has a contributor-proposed fix; ControlArena now has our tested draft PR.
 
 ## Current instructions and submissions
+
+**September 17 fix work:** the owner authorized validating AgentHarm's proposed fix and preparing ControlArena's patch. [AgentHarm validation](findings/2026-09-17-agentharm-fix-validation.md) confirms the three original benign-tool failures are resolved at PR #2455 head `30827bf`; the wider PR was not fully validated. [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880) preserves `NOANSWER` rather than converting it to success; eight regression cases pass separately on asyncio and trio. [Exact PR body and checks](findings/2026-09-17-controlarena-fix-pr.md), [submission receipt](findings/2026-09-17-controlarena-pr-submission.json). The existing metric still maps `NOANSWER` to zero; this is not a new exclusion policy. Keep both PRs in the daily check and distinguish our test evidence from maintainer acceptance. No upstream AgentHarm comment was posted.
 
 On September 15 the owner explicitly asked to file suitable issues in other repositories while waiting. This supersedes the historical single-issue waiting gate below for these two additional reports. After fresh duplicate searches and focused executable checks, submitted [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878) and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159), alongside [AgentHarm #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439). See [evidence, receipts, and limitations](findings/2026-09-15-additional-upstream-triage.md).
 

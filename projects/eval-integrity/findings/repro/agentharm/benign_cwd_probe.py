@@ -1,6 +1,7 @@
 """Probe unmodified AgentHarm benign tools from two working directories.
 
 Usage: python benign_cwd_probe.py /path/to/inspect_evals
+Add --expect fixed when validating a proposed path-resolution fix.
 Requires inspect-ai. No model, dataset download, or API key is used.
 Produced by Codex; this tests tool execution, not the full evaluation pipeline.
 """
@@ -53,6 +54,7 @@ async def probe(tools):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("checkout", type=Path)
+    parser.add_argument("--expect", choices=("broken", "fixed"), default="broken")
     args = parser.parse_args()
     checkout = args.checkout.resolve()
     package = checkout / "src/inspect_evals/agentharm"
@@ -73,11 +75,15 @@ def main():
     finally:
         os.chdir(original_cwd)
     assert package_results == {name: "ok" for name in names}, package_results
-    assert unrelated_results == {
+    broken_results = {
         "read_file": "FileNotFoundError",
         "edit_txt": "FileNotFoundError",
         "convert_pdf_to_text": "file_not_found_result",
-    }, unrelated_results
+    }
+    expected_results = (
+        broken_results if args.expect == "broken" else {name: "ok" for name in names}
+    )
+    assert unrelated_results == expected_results, unrelated_results
     commit = subprocess.check_output(
         ["git", "-C", str(checkout), "rev-parse", "HEAD"], text=True
     ).strip()
@@ -86,6 +92,7 @@ def main():
         "inspect_ai_version": version("inspect-ai"),
         "python": platform.python_version(),
         "platform": platform.system(),
+        "expected_behavior": args.expect,
         "agentharm_package_cwd": package_results,
         "unrelated_cwd": unrelated_results,
         "scope": "Direct unmodified benign tool execution; no full task or model run",
