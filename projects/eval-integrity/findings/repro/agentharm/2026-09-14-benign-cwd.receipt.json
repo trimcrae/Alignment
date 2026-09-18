@@ -1,0 +1,17 @@
+{
+  "inspect_evals_commit": "360484a06383f9260279938262d78ed646ddbca1",
+  "inspect_ai_version": "0.3.263",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "agentharm_package_cwd": {
+    "read_file": "ok",
+    "edit_txt": "ok",
+    "convert_pdf_to_text": "ok"
+  },
+  "unrelated_cwd": {
+    "read_file": "FileNotFoundError",
+    "edit_txt": "FileNotFoundError",
+    "convert_pdf_to_text": "file_not_found_result"
+  },
+  "scope": "Direct unmodified benign tool execution; no full task or model run"
+}

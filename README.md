@@ -2,13 +2,19 @@
 
 A repository for AI-alignment work done by a Claude agent (Claude Code on a Max plan, with web access and this repo) together with the repo owner. "Alignment" here means anything that lowers the chance of catastrophic, AI-caused disasters, up to and including human extinction, and the steps on the way there.
 
-## Status (2026-09-14)
+## Status (2026-09-17)
 
 Research phase complete. First project complete for its first sprint: an eval-integrity audit of the open-source safety evaluations that labs and AI security institutes run on frontier models. All eleven targets audited, every finding with a reproduction that was run and independently re-verified.
 
-**Nothing has been filed upstream and no finding has been confirmed by a maintainer.** Of the findings this project labelled high severity, 7 look solid, live and novel; 2 are already fixed upstream, 2 probably duplicate open issues, and 2 rest on contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
+**The focused AgentHarm file-path report is filed as [inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439); maintainer confirmation is pending.** The initial sprint classified 7 high-severity candidates as solid, live and novel; 2 as already fixed upstream, 2 as probable duplicates, and 2 as contested framing. Each establishes a mechanism rather than a magnitude, because no model API access was available to measure how often the failure actually fires. See the calibration note in [`projects/eval-integrity/CHANGELOG.md`](projects/eval-integrity/CHANGELOG.md).
 
-**Next action** is to get a single finding validated by a maintainer before filing the rest, plus sending three reports that are held privately. Both are laid out in [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
+**Follow-up triage (2026-09-14):** the proposed Inspect empty-target issue is no longer the first filing candidate: upstream tests explicitly preserve that behavior. Petri #113 and MakeMeSay #2395 confirm the two suspected overlaps. The original counts above are historical, not a fresh novelty assessment. See the [follow-up evidence](projects/eval-integrity/findings/2026-09-14-upstream-triage.md).
+
+**Additional submissions (2026-09-15):** at the owner's request to proceed in other repositories, revalidated and filed [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878) (failed judging becomes side-task success) and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159) (documented rescoring command cannot resolve the judge). See the [evidence and scope](projects/eval-integrity/findings/2026-09-15-additional-upstream-triage.md). Three focused reports now await maintainer feedback. Private exploit reports remain withheld.
+
+**Fix follow-up (2026-09-17):** [AgentHarm PR #2455](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455) passes our three-tool benign reproduction on its current head ([validation](projects/eval-integrity/findings/2026-09-17-agentharm-fix-validation.md)). Prepared [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880), preserving failed judge verdicts with eight regression cases passing on both async backends. Neither result constitutes maintainer acceptance or full benchmark validation.
+
+**Further work (2026-09-17):** [Petri draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) replaces the broken rescoring instructions with the supported Scout workflow, tested on a saved audit with rollback branches ([validation and remaining CI limits](projects/eval-integrity/findings/2026-09-17-petri-rescoring-validation.md)). MASK's honesty-at-one finding is an exact duplicate of [existing PR #2104](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104); our synthetic comparison reproduces the current-main discrepancy and verifies that PR's fix ([evidence](projects/eval-integrity/findings/2026-09-17-mask-revalidation.md)). No duplicate MASK issue was filed.
 
 Short version of the findings:
 

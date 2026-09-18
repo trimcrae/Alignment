@@ -1,6 +1,18 @@
 # Next steps
 
-Written 2026-09-14 at the end of the first working session, for whoever picks this up next. Sprint 1 (the audit) is done. Nothing has been sent to any maintainer, and no finding has been confirmed by anyone outside this repo.
+Updated 2026-09-17. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending. AgentHarm has a contributor-proposed fix; ControlArena and Petri have our tested draft PRs. MASK's honesty-at-one candidate is already covered by an existing PR.
+
+## Current instructions and submissions
+
+**Petri fix, September 17:** [draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) corrects the rescoring documentation to use Scout. Its e2e test creates and reloads an audit with a rollback, verifies both branches reach the new judge, and checks separate scores and unchanged source-log bytes. Local checks reached 759 passing tests across the full run and a UTF-8 recheck; one symlink test needs unavailable Windows privileges. Full typechecking has one error in untouched realism code against the newer local Inspect version. Upstream CI requires maintainer approval; no hosted green build is claimed. [Full evidence](findings/2026-09-17-petri-rescoring-validation.md). Include #160 in the existing daily Petri check.
+
+**MASK revalidation, September 17:** the honesty-at-one finding remains reproducible, but existing [PR #2104](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104) already fixes it and passes our binary synthetic reference comparison. Do not open another issue or PR for this item. [Results and scope](findings/2026-09-17-mask-revalidation.md). The original novelty claim is superseded.
+
+**September 17 fix work:** the owner authorized validating AgentHarm's proposed fix and preparing ControlArena's patch. [AgentHarm validation](findings/2026-09-17-agentharm-fix-validation.md) confirms the three original benign-tool failures are resolved at PR #2455 head `30827bf`; the wider PR was not fully validated. [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880) preserves `NOANSWER` rather than converting it to success; eight regression cases pass separately on asyncio and trio. [Exact PR body and checks](findings/2026-09-17-controlarena-fix-pr.md), [submission receipt](findings/2026-09-17-controlarena-pr-submission.json). The existing metric still maps `NOANSWER` to zero; this is not a new exclusion policy. Keep both PRs in the daily check and distinguish our test evidence from maintainer acceptance. No upstream AgentHarm comment was posted.
+
+On September 15 the owner explicitly asked to file suitable issues in other repositories while waiting. This supersedes the historical single-issue waiting gate below for these two additional reports. After fresh duplicate searches and focused executable checks, submitted [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878) and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159), alongside [AgentHarm #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439). See [evidence, receipts, and limitations](findings/2026-09-15-additional-upstream-triage.md).
+
+Monitor all three daily and respond to substantive feedback. Do not duplicate the already-filed reports. Do not claim maintainer confirmation or human testing. The issues disclose Codex authorship and owner authorization; authorization is not independent human reproduction. Private exploit reports remain withheld. Older filing order and status statements below are historical planning, not instructions to refile these reports.
 
 ## Read this first: the claim was overstated, and has been corrected
 
@@ -20,7 +32,9 @@ Two further caveats that matter more than the count. First, every finding establ
 
 This is the highest-value next action and it is cheap. Do not file thirteen issues.
 
-File exactly one, chosen to be unambiguous, still live upstream, and checkable by a maintainer in under a minute: **Inspect's `choice()` scorer credits a refusal when the target is empty**. It is two lines of cause, it is present on upstream main as well as the audited build, it contains no exploit content, and the reproduction is three assertions. The draft is in `findings/2026-09-13-inspect-core.upstream-issue-draft.md`, issue A, first paragraph; split that paragraph out and file it alone.
+**Updated after checking upstream on 2026-09-14:** do not file the originally selected Inspect empty-target issue as an unambiguous defect. Current upstream tests explicitly require empty-target/no-selection credit, and recent PRs explicitly preserve it. The reproduction establishes behavior, not that the behavior violates the intended contract. See [follow-up evidence](findings/2026-09-14-upstream-triage.md). The 7/2/2/2 table above records the original assessment; do not present it as freshly verified.
+
+**Submitted:** [inspect_evals #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439), AgentHarm's benign file tools failing outside the package working directory, opened by `trimcrae` at 2026-09-14 16:35:43 UTC. The focused [submitted issue text](findings/2026-09-14-agentharm-benign-cwd.upstream-issue-draft.md) and [benign reproduction](findings/repro/agentharm/benign_cwd_probe.py) are the scope of this report; the original multi-topic draft was not submitted. Duplicate searches were refreshed and the posted body was read back and verified against the draft. Do not create another issue for this finding.
 
 Then wait for the response, and use it to calibrate:
 
@@ -58,7 +72,7 @@ Every artifact must keep the line saying it was produced by an AI agent and revi
 
 Roughly in order of value.
 
-- **Read the two upstream issues the sandbox could not reach.** This decides whether the Petri and MakeMeSay findings are novel or duplicates, which changes both the count above and the filing plan.
+- **Done 2026-09-14: read the two upstream issues the sandbox could not reach.** Petri #113 already covers failed/empty audits and aggregate effects; MakeMeSay #2395 already covers first-digit verdict inversion. Do not open duplicate issues. Any comment needs specific new evidence beyond the existing report and discussion. See the follow-up triage report.
 - **Verify the paper-fidelity findings against the papers themselves.** Several rest on reference code standing in for a paper that was unreachable. The StrongREJECT, MASK, WMDP, CoCoNot and InstrumentalEval findings all have a "could not read the paper" caveat.
 - **Run the dataset-dependent checks.** With Hugging Face reachable, the MASK, AgentHarm and CoCoNot loaders run, which tests sample counts, label quality and duplicate detection that are currently unverified.
 - **Try to measure a magnitude, not just a mechanism.** Even a hundred samples through one open eval with a real grader would turn "a malformed verdict inverts the score" into a rate. This is the single biggest gap in the whole sprint. It needs model access, which the owner has said is not available as an API key, so consider whether a small number of manual runs can substitute.
