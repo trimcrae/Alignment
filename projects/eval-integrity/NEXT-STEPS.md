@@ -1,8 +1,12 @@
 # Next steps
 
-Updated 2026-09-17. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending. AgentHarm has a contributor-proposed fix; ControlArena and Petri have our tested draft PRs. MASK's honesty-at-one candidate is already covered by an existing PR.
+Updated 2026-09-18. Sprint 1 is done. Four focused issues are filed. The original Petri rescoring report now has a merged Inspect core fix; the other reports remain pending. AgentHarm has a contributor-proposed fix; ControlArena and Petri have our tested draft PRs. MASK's honesty-at-one candidate is already covered by an existing PR.
 
 ## Current instructions and submissions
+
+**September 18 Petri follow-up:** the owner explicitly authorized finding and filing another distinct Petri defect. Submitted [Petri #161](https://github.com/meridianlabs-ai/inspect_petri/issues/161): a custom dimension named `value` is accepted but changes the score dictionary into a scalar, causing a late aggregation error. A real mock-model audit fails; an otherwise identical audit with a renamed dimension passes. Built-in dimensions are unaffected; no production prevalence is claimed. [Evidence](findings/2026-09-18-petri-custom-value-dimension.md), [receipt](findings/2026-09-18-petri-custom-value-submission.json). Monitor this alongside the previous reports; do not duplicate it.
+
+**September 18 upstream fix:** [Inspect core #5466](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5466), explicitly citing Petri #159, merged at 06:58 UTC. It fixes scanner registry resolution through `inspect score`. This is stronger evidence than the earlier pending status. Our documentation workaround #160 remains draft/open and needs reassessment before advancing. Release availability and independent local validation of #5466 remain unchecked.
 
 **Petri fix, September 17:** [draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) corrects the rescoring documentation to use Scout. Its e2e test creates and reloads an audit with a rollback, verifies both branches reach the new judge, and checks separate scores and unchanged source-log bytes. Local checks reached 759 passing tests across the full run and a UTF-8 recheck; one symlink test needs unavailable Windows privileges. Full typechecking has one error in untouched realism code against the newer local Inspect version. Upstream CI requires maintainer approval; no hosted green build is claimed. [Full evidence](findings/2026-09-17-petri-rescoring-validation.md). Include #160 in the existing daily Petri check.
 
