@@ -14,6 +14,8 @@ Research phase complete. First project complete for its first sprint: an eval-in
 
 **Fix follow-up (2026-09-17):** [AgentHarm PR #2455](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455) passes our three-tool benign reproduction on its current head ([validation](projects/eval-integrity/findings/2026-09-17-agentharm-fix-validation.md)). Prepared [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880), preserving failed judge verdicts with eight regression cases passing on both async backends. Neither result constitutes maintainer acceptance or full benchmark validation.
 
+**Further work (2026-09-17):** [Petri draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) replaces the broken rescoring instructions with the supported Scout workflow, tested on a saved audit with rollback branches ([validation and remaining CI limits](projects/eval-integrity/findings/2026-09-17-petri-rescoring-validation.md)). MASK's honesty-at-one finding is an exact duplicate of [existing PR #2104](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104); our synthetic comparison reproduces the current-main discrepancy and verifies that PR's fix ([evidence](projects/eval-integrity/findings/2026-09-17-mask-revalidation.md)). No duplicate MASK issue was filed.
+
 Short version of the findings:
 
 - The field's stated bottleneck is measurement and verification, not idea generation. AI judgment of safety research is still near chance relative to experts, and automated researchers reward-hack routinely, so this repo should produce artifacts that a test or a human can check.

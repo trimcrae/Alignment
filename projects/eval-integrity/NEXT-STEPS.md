@@ -1,8 +1,12 @@
 # Next steps
 
-Updated 2026-09-17. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending. AgentHarm has a contributor-proposed fix; ControlArena now has our tested draft PR.
+Updated 2026-09-17. Sprint 1 is done. Three focused issues are filed; maintainer confirmation is pending. AgentHarm has a contributor-proposed fix; ControlArena and Petri have our tested draft PRs. MASK's honesty-at-one candidate is already covered by an existing PR.
 
 ## Current instructions and submissions
+
+**Petri fix, September 17:** [draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) corrects the rescoring documentation to use Scout. Its e2e test creates and reloads an audit with a rollback, verifies both branches reach the new judge, and checks separate scores and unchanged source-log bytes. Local checks reached 759 passing tests across the full run and a UTF-8 recheck; one symlink test needs unavailable Windows privileges. Full typechecking has one error in untouched realism code against the newer local Inspect version. Upstream CI requires maintainer approval; no hosted green build is claimed. [Full evidence](findings/2026-09-17-petri-rescoring-validation.md). Include #160 in the existing daily Petri check.
+
+**MASK revalidation, September 17:** the honesty-at-one finding remains reproducible, but existing [PR #2104](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104) already fixes it and passes our binary synthetic reference comparison. Do not open another issue or PR for this item. [Results and scope](findings/2026-09-17-mask-revalidation.md). The original novelty claim is superseded.
 
 **September 17 fix work:** the owner authorized validating AgentHarm's proposed fix and preparing ControlArena's patch. [AgentHarm validation](findings/2026-09-17-agentharm-fix-validation.md) confirms the three original benign-tool failures are resolved at PR #2455 head `30827bf`; the wider PR was not fully validated. [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880) preserves `NOANSWER` rather than converting it to success; eight regression cases pass separately on asyncio and trio. [Exact PR body and checks](findings/2026-09-17-controlarena-fix-pr.md), [submission receipt](findings/2026-09-17-controlarena-pr-submission.json). The existing metric still maps `NOANSWER` to zero; this is not a new exclusion policy. Keep both PRs in the daily check and distinguish our test evidence from maintainer acceptance. No upstream AgentHarm comment was posted.
 

@@ -4,6 +4,10 @@ Findings appear here once the maintainers have been notified, and for anything a
 
 ### Fix follow-up, 2026-09-17
 
+[Petri draft PR #160](https://github.com/meridianlabs-ai/inspect_petri/pull/160) supplies the supported Scout rescoring instructions and an e2e regression test using a persisted Petri audit with rollback branches. New scores are stored separately; the source log remains unchanged. The new test, lint, formatting, and targeted typing checks pass. [Broader test results and CI limitations](findings/2026-09-17-petri-rescoring-validation.md).
+
+MASK's honesty-at-one candidate is now classified as an exact duplicate of existing [PR #2104](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104). Our comparison against the original reference reproduces the current-main divergence and verifies the existing PR's correction on all four two-response binary cases. [Evidence and synthetic quantification](findings/2026-09-17-mask-revalidation.md). No duplicate issue or comment was submitted.
+
 The owner's requested fix work is complete: [AgentHarm PR #2455](https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455) at `30827bf` passes the same three benign-tool calls that fail outside the package directory on our original baseline. [Validation and scope](findings/2026-09-17-agentharm-fix-validation.md).
 
 Opened [ControlArena draft PR #880](https://github.com/UKGovernmentBEIS/control-arena/pull/880) at `14ee215` for #878. It retains judge failures as `NOANSWER`, preserves diagnostics, and inverts only valid verdicts. Four relevant regression cases failed on the baseline; all eight cases pass on asyncio and all eight pass on trio after the fix. Changed-file lint, formatting, and type checks pass. Aggregate exclusion, live-model prevalence, and the full repository suite remain outside this focused patch's validation. [PR text and test details](findings/2026-09-17-controlarena-fix-pr.md).
