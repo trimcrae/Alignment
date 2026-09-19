@@ -1,0 +1,69 @@
+diff --git a/src/inspect_robots/eval.py b/src/inspect_robots/eval.py
+index 0eb7937..1fce68c 100644
+--- a/src/inspect_robots/eval.py
++++ b/src/inspect_robots/eval.py
+@@ -605,7 +605,22 @@ def _run_eval(
+                         before_scoring(record, scene)
+                     epoch_values: dict[str, float] = {}
+                     for scorer in scorers:
+-                        score = scorer(record, scene.target)
++                        try:
++                            score = scorer(record, scene.target)
++                        except Exception as exc:
++                            # A scorer failure degrades to an error log like a
++                            # reducer failure below: it must never crash the eval
++                            # and lose the log (the 0.4.0 "never lose the log"
++                            # guarantee).
++                            detail = f"scorer {scorer.name!r} failed: {exc}"
++                            scene_status = "error"
++                            scene_error = (
++                                detail if scene_error is None else f"{scene_error}; {detail}"
++                            )
++                            if status == "success":
++                                status = "error"
++                                error = detail
++                            continue
+                         per_scorer_scores[scorer.name].append(score)
+                         epoch_values[scorer.name] = value_to_float(score.value)
+                     epoch_dicts.append(epoch_values)
+diff --git a/tests/test_eval_orchestration.py b/tests/test_eval_orchestration.py
+index f10a510..d05cc85 100644
+--- a/tests/test_eval_orchestration.py
++++ b/tests/test_eval_orchestration.py
+@@ -423,6 +423,36 @@ def test_categorical_scorer_with_mean_reducer_degrades_to_error_log(tmp_path: Pa
+     assert log.results.metrics == {}  # the failed reducer contributes no metric
+ 
+ 
++def test_raising_scorer_degrades_to_error_log(tmp_path: Path) -> None:
++    class _FlakyScorer:
++        name = "flaky"
++        calls = 0
++
++        def __call__(self, record: TrialRecord, target: object) -> object:
++            from inspect_robots.scorer import Score
++
++            self.calls += 1
++            if self.calls in (2, 3):
++                raise RuntimeError(f"scorer bug {self.calls}")
++            return Score(value=True)
++
++    task = _task(epochs=4, scorer=_FlakyScorer())
++    (log,) = eval(task, ScriptedPolicy(), CubePickEmbodiment(), log_dir=str(tmp_path))
++    assert log.status == "error"
++    # The run-level error names the first failure; the scene accumulates both.
++    assert log.error == "scorer 'flaky' failed: scorer bug 2"
++    scene = log.samples[0]
++    assert scene.status == "error"
++    assert scene.error == "scorer 'flaky' failed: scorer bug 2; scorer 'flaky' failed: scorer bug 3"
++    # Every trial that ran is still recorded: the failed epochs carry no value
++    # for the failed scorer and the surviving epochs keep theirs.
++    assert log.results.total_trials == 4
++    assert log.results.errored_trials == 0
++    assert scene.epochs == ({"flaky": 1.0}, {}, {}, {"flaky": 1.0})
++    assert log.results.metrics == {"flaky": 1.0}
++    assert list(tmp_path.glob("*.json"))  # the log reached disk
++
++
+ # --------------------------------------------------------------------------- #
+ # 2. Errored trials are never scored and cannot poison metrics.
+ # --------------------------------------------------------------------------- #
