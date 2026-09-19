@@ -22,6 +22,8 @@ This is the highest-value next action and it is cheap. Do not file thirteen issu
 
 File exactly one, chosen to be unambiguous, still live upstream, and checkable by a maintainer in under a minute: **Inspect's `choice()` scorer credits a refusal when the target is empty**. It is two lines of cause, it is present on upstream main as well as the audited build, it contains no exploit content, and the reproduction is three assertions. The draft is in `findings/2026-09-13-inspect-core.upstream-issue-draft.md`, issue A, first paragraph; split that paragraph out and file it alone.
 
+An alternative for the same slot, added 2026-09-19: **Inspect Robots' `eval()` loses the whole run's log when a scorer raises**, draft in `findings/2026-09-19-inspect-robots.upstream-issue-draft.md`. It is equally unambiguous (the project's own changelog states the guarantee it breaks), it comes with a fix that passes the maintainers' suite, and that tracker has a demonstrably fast response time (issues #413, #414 and #432 were closed as completed within days in September 2026), so it may calibrate the bar sooner. Filing both is fine; they go to different maintainers.
+
 Then wait for the response, and use it to calibrate:
 
 - **Confirmed and fixed** → the severity bar is roughly right. File the rest in the order given in step 3.
@@ -51,6 +53,7 @@ Highest signal first, and one issue per repository per topic rather than one gia
 5. ControlArena's public items. Draft inside the private report; split the non-exploit items out.
 6. The small-safeguards set. The MakeMeSay parser item belongs as a comment on the existing open issue, not a new one. Draft in `findings/2026-09-13-small-safeguards.upstream-issue-draft.md`.
 7. StrongREJECT, SAD and WMDP, agentic misalignment, the DeepMind stealth suites. Lower severity, file last or fold into a PR.
+8. Inspect Robots (added 2026-09-19). Finding 1 as the issue drafted above, with an offer of a PR carrying the fix and a test. Finding 2 (the `-dirty` provenance marker) as a separate small issue afterwards. Finding 3 as a comment on the open upstream issue #436, not a new issue. Write-up in `findings/2026-09-19-inspect-robots.md`.
 
 Every artifact must keep the line saying it was produced by an AI agent and reviewed by a human. The eval library's contributor guide requires human review of agent-written code before submission, so the owner reviews each issue and PR before it goes out.
 

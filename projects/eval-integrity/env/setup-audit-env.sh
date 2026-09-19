@@ -22,6 +22,7 @@ clone UKGovernmentBEIS/inspect_evals   360484a inspect_evals
 clone meridianlabs-ai/inspect_petri    e199ec1 inspect_petri
 clone UKGovernmentBEIS/control-arena   b9d19de control_arena
 clone METR/public-tasks                5418666 metr_public_tasks
+clone robocurve/inspect-robots         7e4d1b7 inspect_robots       # added 2026-09-19
 
 # Reference implementations the findings diff against
 clone LRudL/sad                        dfc5c98 sad_official
@@ -46,6 +47,9 @@ fi
     --extra gdm_stealth --extra makemesay --extra cybench )
 ( cd inspect_petri && UV_HTTP_TIMEOUT=180 uv sync --python 3.11 2>/dev/null || true )
 ( cd control_arena && UV_HTTP_TIMEOUT=180 uv sync --python 3.11 2>/dev/null || true )
+# inspect-robots is numpy-only; its dev extra brings pytest. Run its repro with:
+#   cd inspect_robots && .venv/bin/python -m pytest ../findings/repro/inspect_robots -q
+( cd inspect_robots && uv venv -q .venv && UV_HTTP_TIMEOUT=180 uv pip install -q -e ".[dev]" 2>/dev/null || true )
 
 cat <<'MSG'
 

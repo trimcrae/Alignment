@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: sprint 1 complete (2026-09-13). All eleven targets audited; see `CHANGELOG.md` for the index and its calibration note, `findings/` for the write-ups, `METHODS.md` for how it was done, and `NEXT-STEPS.md` for what to do next. Of the findings labelled high severity, 7 look solid, live and novel; none has been confirmed by a maintainer, and nothing has been filed upstream. Three targets have findings held privately.
+Status: sprint 1 complete (2026-09-13). All eleven targets audited; see `CHANGELOG.md` for the index and its calibration note, `findings/` for the write-ups, `METHODS.md` for how it was done, and `NEXT-STEPS.md` for what to do next. Of the findings labelled high severity, 7 look solid, live and novel; none has been confirmed by a maintainer, and nothing has been filed upstream. Three targets have findings held privately. A twelfth target, Inspect Robots, was added at the owner's request on 2026-09-19 and audited the same day: one reportable defect with a verified fix, drafted for filing.
 
 ## Purpose
 
@@ -25,6 +25,12 @@ Tier 1: open evals that demonstrably appear in system cards or institute pre-dep
 | Scheming catalog | `inspect_evals`: `agentic_misalignment`, `sad_*`, `instrumentaleval`, `gdm_stealth` family | Propensity evals that feed alignment assessments; several already have open integrity issues |
 | METR public tasks | `METR/public-tasks` (31 tasks in 10 families) and `METR/inspect-tasks-public` (RE-Bench port) | Autonomy and AI R&D capability measurement; scorer exploits already found in some families |
 | ControlArena settings | `UKGovernmentBEIS/control-arena` | Side-task scorers and safety calculations behind control evaluations |
+
+Added 2026-09-19 at the owner's request:
+
+| Target | Where | Why it matters |
+|---|---|---|
+| Inspect Robots | `robocurve/inspect-robots` (the framework behind [inspectrobots.org](https://inspectrobots.org)) | Open evaluation framework for physical AI, "the Inspect AI for robotics": runs VLA and LLM-agent policies on real arms, humanoids and simulators and writes schema-versioned eval logs. Its scorer, grader, reducer and logging code is the substrate every benchmark built on it inherits, including Robocurve's independent real-world benchmarks. Maintainers respond to issues within days and accept fixes with tests; contributor guide requires 100 percent coverage and the `CubePick` mock world for reproductions. |
 
 Tier 2: Bloom behavior configs, Inspect Scout scanners, MonitorBench, VLAF, SLEIGHT-Bench scoring, EvalDetectBench, HCAST public tasks.
 

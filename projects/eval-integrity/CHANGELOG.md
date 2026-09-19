@@ -49,3 +49,18 @@ The items most worth a maintainer's attention, subject to the calibration note a
 8. **Inspect's own scoring primitives**: the model-graded scorers truncate the grader's verdict to its first letter before validating it, so "GRADE: Cannot determine" and "GRADE: Contradicts the expert answer" both score as CORRECT; and the choice scorer credits a refusal whenever the target is empty. These primitives are used by 18 and 30 packages respectively, so the effect is library-wide. The first is fixed on upstream main, which makes it a version-drift problem, since the eval library sets no upper bound on the framework version.
 
 Sprint 1 is complete. `METHODS.md` records how the audits were done and what limited them. Next: send the three private reports, then file the public issues.
+
+## Addendum, 2026-09-19: Inspect Robots
+
+Target added at the owner's request (inspectrobots.org, source at `robocurve/inspect-robots`). Audited at commit 7e4d1b7 (2026-09-02, identical to PyPI 0.58.0 for the files cited); nothing filed yet.
+
+| Target | High | Medium | Low | Path |
+|---|---|---|---|---|
+| Inspect Robots core (eval orchestration, scorer, grader, provenance) | 0 | 2 | 1 | `findings/2026-09-19-inspect-robots.md` |
+
+1. **A raising scorer loses the whole log** (medium, confidence high, novel). `eval()` guards the epoch reducer against exceptions but calls each scorer bare, so one scorer exception on trial N escapes `eval()`, `on_eval_end` never fires, and the JSON sink writes nothing; under `eval_set` the run becomes an error log with zero trials. This contradicts the project's 0.4.0 "Never lose the log" guarantee. A one-block fix mirroring the reducer guard passes the upstream suite. Reproduction: `findings/repro/inspect_robots/test_scorer_exception_loses_log.py`. Issue draft ready.
+2. **Provenance drops `-dirty` when `git status` times out or fails** (low to medium, confidence high). The docstring promises the log never silently claims a clean commit; the implementation does exactly that on a 2 second timeout. Reproduction: `test_git_commit_dirty_suffix.py`.
+3. **Ungraded trials are scored as failures inside a "success" run** (medium by rubric, framing contested). A VLM-grader outage on a trial is scored 0.0 by the `operator` scorer and averaged in, with `status == "success"` and `errored_trials == 0`. Follows from the documented contract and overlaps open upstream issue #436, so it belongs as a comment there. Reproduction: `test_ungraded_trials_scored_as_failure.py`.
+
+Ten reproduction tests: four assert the documented contract and fail at 7e4d1b7, six pass as controls and tripwires. The write-up also lists what was checked and found fine.
+

@@ -56,7 +56,7 @@ Full report: [`landscape/monitoring-landscape-2026-09-13.md`](landscape/monitori
 
 ### 3c. Open-source safety tooling with real contribution surfaces
 
-Inspect and inspect_evals (UK AISI; well over 100 open issues; new evals go through a registration process), Petri and Bloom (Meridian Labs; new seeds and judge dimensions are accepted as single Markdown files), Inspect Scout (transcript scanners), ControlArena (UK AISI and Redwood; open feature requests for monitor builders and reward-hacking settings), Docent (Transluce), METR's public tasks and eval-analysis repositories, and EleutherAI's Delphi.
+Inspect and inspect_evals (UK AISI; well over 100 open issues; new evals go through a registration process), Petri and Bloom (Meridian Labs; new seeds and judge dimensions are accepted as single Markdown files), Inspect Scout (transcript scanners), ControlArena (UK AISI and Redwood; open feature requests for monitor builders and reward-hacking settings), Docent (Transluce), METR's public tasks and eval-analysis repositories, EleutherAI's Delphi, and, added 2026-09-19 at the owner's request, Robocurve's Inspect Robots (the open evaluation framework for physical-AI policies on real robots; bug reports with the mock-world reproduction and 100 percent coverage are welcomed by its contributor guide).
 
 ### 3d. Are open-source evals actually used on frontier models?
 

@@ -10,6 +10,8 @@ Research phase complete. First project complete for its first sprint: an eval-in
 
 **Next action** is to get a single finding validated by a maintainer before filing the rest, plus sending three reports that are held privately. Both are laid out in [`projects/eval-integrity/NEXT-STEPS.md`](projects/eval-integrity/NEXT-STEPS.md).
 
+**Update 2026-09-19.** [Inspect Robots](https://inspectrobots.org) (Robocurve's open evaluation framework for physical AI, source at `robocurve/inspect-robots`) was added to the contribution targets at the owner's request and audited the same day. One defect is drafted for filing: a scorer exception makes `eval()` lose the entire run's log, against the project's own "never lose the log" guarantee; a one-block fix passes their suite. Write-up in [`projects/eval-integrity/findings/2026-09-19-inspect-robots.md`](projects/eval-integrity/findings/2026-09-19-inspect-robots.md).
+
 Short version of the findings:
 
 - The field's stated bottleneck is measurement and verification, not idea generation. AI judgment of safety research is still near chance relative to experts, and automated researchers reward-hack routinely, so this repo should produce artifacts that a test or a human can check.
