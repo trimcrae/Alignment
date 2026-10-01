@@ -107,7 +107,7 @@ export function validateLedger(ledger) {
         (d.status === "ahead" && d.ahead_by > 0 && d.behind_by === 0 && d.merge_base_sha === d.base_sha && d.base_sha !== d.head_sha) ||
         (d.status === "behind" && d.ahead_by === 0 && d.behind_by > 0 && d.merge_base_sha === d.head_sha && d.base_sha !== d.head_sha) ||
         (d.status === "identical" && d.ahead_by === 0 && d.behind_by === 0 && d.base_sha === d.head_sha && d.merge_base_sha === d.base_sha) ||
-        (d.status === "diverged" && d.ahead_by > 0 && d.behind_by > 0 && d.merge_base_sha !== d.base_sha && d.merge_base_sha !== d.head_sha);
+        (d.status === "diverged" && d.ahead_by > 0 && d.behind_by > 0 && d.base_sha !== d.head_sha && d.merge_base_sha !== d.base_sha && d.merge_base_sha !== d.head_sha);
       require(consistent, label + ": ancestry status, counts and merge base disagree");
     }
     if (r.kind === "file") {

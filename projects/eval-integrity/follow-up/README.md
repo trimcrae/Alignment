@@ -39,6 +39,6 @@ A linked approval alone is insufficient for bug confirmation: the selected quote
 
 A closed issue alone is insufficient for a fix. A merge names its target branch. A claim of default-branch inclusion additionally needs repository metadata, the PR targeting that exact branch, a dated branches endpoint receipt pinning its head, an ancestry result binding its merge commit to the inspected head, and an independently pinned source excerpt. Release inclusion stays `not-checked` in schema 1; implementing release verification needs a separate evidence contract.
 
-No original Python reproduction was executed in this sprint. The core validator, status logic, injected-fetch refresh logic, and regression cases were executed in the available V8 tool isolate. Node 22 CI also ran the filesystem/CLI wrapper and original 36 cases successfully at the first implementation commit; the handoff records exact commit/run anchors and subsequent validation.
+No original Python reproduction was executed in this sprint. The core validator, status logic, injected-fetch refresh logic, and regression cases were executed in the available V8 tool isolate. Node 22 CI also ran the filesystem/CLI wrapper, validation, and the first 40 cases successfully after independent review fixes; a final ancestry guard adds case 41; the handoff records exact commit/run anchors.
 
 Each new receipt should preserve its dated API URL and pinned source anchors, and each new assertion should state its limits. Private reports and exploit details remain outside this status ledger.

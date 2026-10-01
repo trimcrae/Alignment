@@ -80,6 +80,13 @@ export async function runLedgerTests(fixture) {
   await test("default branch metadata must match merge target", () => invalid(l => resource(l, "controlarena-repository").data.default_branch = "master", "exact name"));
   await test("diverged history does not establish default inclusion", () => invalid(l => resource(l, "controlarena-main-ancestry").data.status = "diverged", "matching ancestry"));
   await test("comparison identical requires equal SHAs and zero counts", () => invalid(l => resource(l, "controlarena-main-ancestry").data.status = "identical", "status, counts and merge base disagree"));
+  await test("diverged comparison requires different base and head", () => invalid(l => {
+    const r = resource(l, "controlarena-main-ancestry");
+    r.data.status = "diverged"; r.data.ahead_by = 1; r.data.behind_by = 1;
+    r.data.head_sha = r.data.base_sha; r.data.merge_base_sha = "a".repeat(40);
+    r.api_url = r.api_url.replace(/\.\.\.[0-9a-f]{40}$/, "..." + r.data.head_sha);
+    r.html_url = r.html_url.replace(/\.\.\.[0-9a-f]{40}$/, "..." + r.data.head_sha);
+  }, "status, counts and merge base disagree"));
   await test("comparison ahead requires positive ahead count", () => invalid(l => resource(l, "controlarena-main-ancestry").data.ahead_by = 0, "status, counts and merge base disagree"));
   await test("source and comparison cannot invent an observed branch head", () => invalid(l => {
     const source = resource(l, "controlarena-main-source");
