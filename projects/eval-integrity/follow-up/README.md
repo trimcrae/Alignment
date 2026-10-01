@@ -6,6 +6,8 @@ The maintainer-calibration gate has been met for one defect. A ControlArena coll
 
 That confirmation concerns this specific verdict-inversion defect. It does not endorse the original severity counts, establish novelty for other findings, estimate live judge-failure frequency, or verify a released package. The scorer's mean still counts NOANSWER as zero rather than excluding the sample.
 
+A subsequent [source release check](2026-10-01-controlarena-release-check.md), completed October 1 at 22:48:44 UTC, found that none of 86 observed tags descend from the accepted fix; the latest published source release v19.0.0 still has the old inversion. Distributed-package inclusion remains unknown. The reviewed schema/ledger is unchanged.
+
 | Existing work | GitHub receipt at collection | Next action |
 | --- | --- | --- |
 | AgentHarm paths, inspect_evals #2439 / #2455 | Issue and fix PR open | Owner review and upstream response |

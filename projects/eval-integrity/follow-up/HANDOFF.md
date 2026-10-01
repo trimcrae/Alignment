@@ -18,11 +18,17 @@ A separate AI reviewer independently checked the collaborator quote, the interme
 
 The review found two schema gaps: inconsistent comparison counts/status could pass, and inspected source/ancestry head lacked a separate branch-head receipt. Both were fixed: status/count/merge-base consistency is enforced, and a dated branches/main receipt binds source and comparison to the actual observed default-branch head. Five regression cases were added (41 total), including merged-date/closure and merged-draft consistency. The reviewer independently reran all 40 cases at the first review-fix commit and verified both required gaps were closed. A final optional guard also rejects a diverged comparison with identical base/head SHAs; its regression passed with all 41 cases in V8. No human review or new Python execution is claimed.
 
-## First next bounded implementation
+## Source release check completed
+
+The next bounded session executed the release/tag check described below. [Dated evidence](2026-10-01-controlarena-release-check.md) and [86-tag receipts](2026-10-01-controlarena-release-check.json) show no observed source tag descends from the confirmed fix. Latest published source release v19.0.0 is 13 commits behind and still has the original inversion; distribution package content/publication remains unknown. The independent reviewer spot-checked latest release metadata and ancestry only. Code and the six-record ledger remain at the reviewed 41-test implementation. Latest implementation CI: [run 36936638185](https://github.com/trimcrae/Alignment/actions/runs/36936638185) succeeded at `a09974d9fd9283473127b3b20f4a77c54afb0579`, Node v22.23.3, validation true, 41 cases passed.
+
+## Original release-check plan (completed for GitHub source tags)
 
 Verify ControlArena package-release inclusion for this one accepted fix. Read the releases/tags list, pin candidate release commits, prove whether `5792fe40f7ee7fbf4537b79588872e28fd5dbce3` is an ancestor of each candidate, and record the earliest verifiable containing tag with dated receipts. Distinguish a release tag containing the commit from verification of a built/distributed wheel. Add a narrowly scoped release-evidence contract and regression cases for non-containing tags, unknown ancestry, and prereleases; keep unknown outcomes explicit. Do not expand to another audit until these receipts and existing validation gaps are resolved.
 
-After that, the ranked wider project is a per-model dangerous-capability determination/release-artifact ledger (research/README.md section 5). Begin with a schema, one source-verifiable artifact, and offline provenance checks; no API-key-dependent evaluation runs or paid workloads are authorized by this handoff.
+## Next bounded implementation
+
+The ranked wider project is a per-model dangerous-capability determination/release-artifact ledger (research/README.md section 5). Begin with a schema, one source-verifiable artifact, and offline provenance checks; no API-key-dependent evaluation runs or paid workloads are authorized by this handoff.
 
 ## Commands for the next session
 
