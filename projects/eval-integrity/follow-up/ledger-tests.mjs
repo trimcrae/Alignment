@@ -79,6 +79,21 @@ export async function runLedgerTests(fixture) {
   await test("approval must bind the actual head", () => invalid(l => resource(l, "controlarena-confirmation").data.commit_id = "a".repeat(40), "exact head"));
   await test("default branch metadata must match merge target", () => invalid(l => resource(l, "controlarena-repository").data.default_branch = "master", "exact name"));
   await test("diverged history does not establish default inclusion", () => invalid(l => resource(l, "controlarena-main-ancestry").data.status = "diverged", "matching ancestry"));
+  await test("comparison identical requires equal SHAs and zero counts", () => invalid(l => resource(l, "controlarena-main-ancestry").data.status = "identical", "status, counts and merge base disagree"));
+  await test("comparison ahead requires positive ahead count", () => invalid(l => resource(l, "controlarena-main-ancestry").data.ahead_by = 0, "status, counts and merge base disagree"));
+  await test("source and comparison cannot invent an observed branch head", () => invalid(l => {
+    const source = resource(l, "controlarena-main-source");
+    const comparison = resource(l, "controlarena-main-ancestry");
+    source.data.commit_sha = "a".repeat(40); comparison.data.head_sha = "a".repeat(40);
+    source.api_url = source.api_url.replace(/ref=[0-9a-f]{40}$/, "ref=" + "a".repeat(40));
+    source.html_url = source.html_url.replace(/blob\/[0-9a-f]{40}\//, "blob/" + "a".repeat(40) + "/");
+    comparison.api_url = comparison.api_url.replace(/\.\.\.[0-9a-f]{40}$/, "..." + "a".repeat(40));
+    comparison.html_url = comparison.html_url.replace(/\.\.\.[0-9a-f]{40}$/, "..." + "a".repeat(40));
+  }, "matching ancestry"));
+  await test("merged pull cannot predate closure or remain draft", () => {
+    invalid(l => resource(l, "controlarena-pr").data.closed_at = "2026-09-27T00:00:00Z", "inconsistent merge");
+    invalid(l => resource(l, "controlarena-pr").data.draft = true, "inconsistent merge");
+  });
   await test("ancestry must bind integration PR merge commit", () => invalid(l => resource(l, "controlarena-main-ancestry").data.base_sha = "b".repeat(40), "matching ancestry"));
   await test("release inclusion cannot be inferred", () => invalid(l => record(l).release_status = "released", "does not establish release"));
   await test("duplicate finding cannot silently acquire a new issue", () => invalid(l => l.records.find(r => r.scope === "duplicate").issue = "agentharm-issue", "without a new issue"));

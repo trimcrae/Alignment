@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-10-01T22:35:54Z",
+  "observed_at": "2026-10-01T22:38:58Z",
   "provenance": {
     "author": "OpenAI Codex (AI agent)",
     "session": "usage-sprint-2026-10-01",
@@ -258,6 +258,18 @@
       "data": {
         "default_branch": "main"
       }
+    },
+    {
+      "key": "controlarena-main-head",
+      "kind": "branch",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/branches/main",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/tree/main",
+      "observed_at": "2026-10-01T22:38:58Z",
+      "data": {
+        "name": "main",
+        "head_sha": "173c872f04ee661c7e1cf37f4fc610e0791ef0da"
+      }
     }
   ],
   "records": [
@@ -289,7 +301,8 @@
         "pull_request": "controlarena-main-pr",
         "ancestry": "controlarena-main-ancestry",
         "source": "controlarena-main-source",
-        "repository": "controlarena-repository"
+        "repository": "controlarena-repository",
+        "head": "controlarena-main-head"
       },
       "release_status": "not-checked",
       "next_action": "The one-finding maintainer calibration gate is met for this defect. Retain the NOANSWER aggregation caveat; check release inclusion separately before claiming a released fix."

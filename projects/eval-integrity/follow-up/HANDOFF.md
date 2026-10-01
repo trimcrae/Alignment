@@ -4,16 +4,19 @@ Produced by OpenAI Codex (AI agent), session `usage-sprint-2026-10-01`. Collecti
 
 ## Completed and verified
 
-- Collected 14 dated GitHub receipts for six actual follow-ups; no upstream outreach.
+- Collected 15 dated GitHub receipts for six actual follow-ups; no upstream outreach.
 - Independently read ControlArena collaborator review 5337096299: explicit bug-and-fix confirmation.
 - Verified #880 merged into an intermediate branch and #883 merged to main; comparison from #883 merge `5792fe40f7ee7fbf4537b79588872e28fd5dbce3` to inspected main `173c872f04ee661c7e1cf37f4fc610e0791ef0da` is ahead with zero commits behind and merge-base equal to the merge SHA.
 - Read the pinned scorer: only CORRECT/INCORRECT invert; unparseable judge verdict is preserved.
-- Executed 36 pure-JavaScript regression cases in the available V8 functions.exec isolate. The committed module bodies ran with their ESM import/export declarations removed solely for that execution; no production logic was substituted. Cases cover contradictory states, main/release inflation, timestamps, URLs, missing evidence, stale approval after head changes, HTTP failures, token redaction, and snapshot immutability.
-- Node CLI/file access, the GitHub Actions workflow, original Python reproductions, Quarto rendering, and package release inclusion were not executed/verified locally.
+- Executed 40 pure-JavaScript regression cases in the available V8 functions.exec isolate. The committed module bodies ran with their ESM import/export declarations removed solely for that execution; no production logic was substituted. Cases cover contradictory states, main/release inflation, timestamps, URLs, missing evidence, stale approval after head changes, HTTP failures, token redaction, and snapshot immutability.
+- GitHub Actions run [36936107881](https://github.com/trimcrae/Alignment/actions/runs/36936107881), job 110616639788, completed successfully at first implementation commit `17a676edadde1c93d6441fd7dec19c07ad4800c2`. Logs show Node v22.23.3, CLI validation `valid: true`, and all original 36 cases passed. Subsequent review fixes add four cases (40 total); latest CI is checked separately.
+- Original Python reproductions, Quarto rendering, live Node fetch transport, and package release inclusion were not executed/verified in this sprint.
 
 ## Independent review
 
-A separate AI reviewer independently checked the collaborator quote, the intermediate merge target, and the exact main source and existing regression test. The reviewer stressed keeping confirmation, approval, merge target, source observation, and release inclusion separate; the data and validator implement that separation. Detailed code review and CI status will be recorded here before handoff completion.
+A separate AI reviewer independently checked the collaborator quote, the intermediate merge target, and the exact main source and existing regression test. The reviewer stressed keeping confirmation, approval, merge target, source observation, and release inclusion separate; the data and validator implement that separation. The reviewer also independently fetched the 13 then-current non-file receipts and pinned source; all fields matched, and injecting actual API payloads into the checker returned ten unchanged observations without errors. All original 36 committed regression cases passed independently.
+
+The review found two schema gaps: inconsistent comparison counts/status could pass, and inspected source/ancestry head lacked a separate branch-head receipt. Both were fixed: status/count/merge-base consistency is enforced, and a dated branches/main receipt binds source and comparison to the actual observed default-branch head. Four regression cases were added (40 total), including merged-date/closure and merged-draft consistency. No human review or new Python execution is claimed.
 
 ## First next bounded implementation
 

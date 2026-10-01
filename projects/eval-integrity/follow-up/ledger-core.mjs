@@ -21,6 +21,12 @@ export function resourceUrls(resource) {
   const html = "https://github.com/" + repository;
   switch (kind) {
     case "repository": return { api, html };
+    case "branch": {
+      if (!nonempty(d.name) || !/^[A-Za-z0-9_./-]+$/.test(d.name) || d.name.split("/").some(part => ["", ".", ".."].includes(part))) {
+        throw new Error("Invalid branch name");
+      }
+      return { api: api + "/branches/" + encodeURIComponent(d.name), html: html + "/tree/" + encodeURIComponent(d.name) };
+    }
     case "issue": return { api: api + "/issues/" + d.number, html: html + "/issues/" + d.number };
     case "pull-request": return { api: api + "/pulls/" + d.number, html: html + "/pull/" + d.number };
     case "review": return {
@@ -72,6 +78,7 @@ export function validateLedger(ledger) {
       const urls = resourceUrls(r);
       require(r.api_url === urls.api && r.html_url === urls.html, label + ": canonical URLs required");
     } catch (error) { errors.push(label + ": " + error.message); }
+    if (r.kind === "branch") require(nonempty(d.name) && SHA.test(d.head_sha), label + ": named branch and exact head required");
     if (r.kind === "repository") require(nonempty(d.default_branch), label + ": default branch required");
     if (r.kind === "issue" || r.kind === "pull-request") {
       require(integer(d.number) && nonempty(d.title), label + ": number and title required");
@@ -84,7 +91,7 @@ export function validateLedger(ledger) {
       require(typeof d.draft === "boolean" && typeof d.merged === "boolean", label + ": draft/merged must be boolean");
       require(nonempty(d.base_ref) && SHA.test(d.base_sha) && SHA.test(d.head_sha), label + ": exact target ref and SHAs required");
       require(d.merged ? d.state === "closed" && timestamp(d.merged_at) && d.merged_at <= d.updated_at &&
-        SHA.test(d.merge_commit_sha) : d.merged_at === null && d.merge_commit_sha === null, label + ": inconsistent merge evidence");
+        SHA.test(d.merge_commit_sha) && d.merged_at <= d.closed_at && d.draft === false : d.merged_at === null && d.merge_commit_sha === null, label + ": inconsistent merge evidence");
     }
     if (r.kind === "review") {
       require(integer(d.id) && integer(d.pull_number) && nonempty(d.author) && nonempty(d.quote) &&
@@ -96,6 +103,12 @@ export function validateLedger(ledger) {
       require(["ahead", "behind", "identical", "diverged"].includes(d.status) &&
         Number.isSafeInteger(d.ahead_by) && d.ahead_by >= 0 &&
         Number.isSafeInteger(d.behind_by) && d.behind_by >= 0, label + ": invalid ancestry result");
+      const consistent =
+        (d.status === "ahead" && d.ahead_by > 0 && d.behind_by === 0 && d.merge_base_sha === d.base_sha && d.base_sha !== d.head_sha) ||
+        (d.status === "behind" && d.ahead_by === 0 && d.behind_by > 0 && d.merge_base_sha === d.head_sha && d.base_sha !== d.head_sha) ||
+        (d.status === "identical" && d.ahead_by === 0 && d.behind_by === 0 && d.base_sha === d.head_sha && d.merge_base_sha === d.base_sha) ||
+        (d.status === "diverged" && d.ahead_by > 0 && d.behind_by > 0 && d.merge_base_sha !== d.base_sha && d.merge_base_sha !== d.head_sha);
+      require(consistent, label + ": ancestry status, counts and merge base disagree");
     }
     if (r.kind === "file") {
       require(SHA.test(d.commit_sha) && SHA.test(d.blob_sha) && nonempty(d.excerpt), label + ": pinned source and excerpt required");
@@ -139,6 +152,7 @@ export function validateLedger(ledger) {
       const branch = record.default_branch;
       if (!object(branch)) { errors.push(label + ": default_branch must be an object"); continue; }
       const repository = lookup(branch.repository, ["repository"], label);
+      const head = lookup(branch.head, ["branch"], label);
       const pull = lookup(branch.pull_request, ["pull-request"], label);
       const comparison = lookup(branch.ancestry, ["comparison"], label);
       const source = lookup(branch.source, ["file"], label);
@@ -147,7 +161,8 @@ export function validateLedger(ledger) {
         label + ": default branch needs a merged PR targeting its exact name");
       require(comparison && source && pull && comparison.repository === repo && source.repository === repo &&
         comparison.data.base_sha === pull.data.merge_commit_sha &&
-        comparison.data.head_sha === source.data.commit_sha &&
+        head && head.repository === repo && head.data.name === branch.name &&
+        comparison.data.head_sha === head.data.head_sha && source.data.commit_sha === head.data.head_sha &&
         comparison.data.merge_base_sha === comparison.data.base_sha &&
         ["ahead", "identical"].includes(comparison.data.status) && comparison.data.behind_by === 0,
       label + ": default inclusion needs matching ancestry and independently pinned source");
