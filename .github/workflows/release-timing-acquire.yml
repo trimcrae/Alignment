@@ -1,0 +1,27 @@
+name: Bounded release timing acquisition
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-release-timing]
+    paths:
+      - .github/workflows/release-timing-acquire.yml
+      - projects/model-safety-ledger/release-timing/collect.py
+      - projects/model-safety-ledger/release-timing/acquisition-plan.json
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check collector syntax
+        run: python3 -m py_compile projects/model-safety-ledger/release-timing/collect.py
+      - name: Acquire one bounded metadata cycle
+        run: python3 projects/model-safety-ledger/release-timing/collect.py
+      - name: Confirm tracked inputs unchanged
+        run: git diff --exit-code
