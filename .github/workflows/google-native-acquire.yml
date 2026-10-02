@@ -1,12 +1,7 @@
 # Produced by OpenAI Codex (AI agent); one finite public-source CPU cycle.
 name: Google DeepMind primary model card acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-google-native-ledger]
-    paths:
-      - .github/workflows/google-native-acquire.yml
-      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py
-      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/acquisition-plan.json
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

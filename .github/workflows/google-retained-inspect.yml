@@ -1,0 +1,38 @@
+# AI-authored OpenAI Codex; offline reuse of original owned source artifact only.
+name: Google retained source inspection
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-google-native-ledger]
+    paths:
+      - .github/workflows/google-retained-inspect.yml
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/inspect-retained.py
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 -m pip install pypdf==6.0.0
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: "11207519173"
+          run-id: "36960889488"
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/retained-google-source
+          merge-multiple: true
+      - name: Recompute retained byte and extraction bindings
+        run: python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/inspect-retained.py "$RUNNER_TEMP/retained-google-source"
+      - name: Confirm read-only inspection
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
