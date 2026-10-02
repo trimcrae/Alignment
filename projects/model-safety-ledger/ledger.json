@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe"
+  },
+  "snapshot_at": "2026-10-01T23:35:53Z",
+  "evidence_receipt": {
+    "path": "evidence/primary-acquisition.json",
+    "sha256": "6440a6d9b10341da558071ea87052df600a26568fc8d319c0b77604e4eb94657",
+    "source_commit": "5c4b06403ca34b565f10e4e8fd7737e84c9d4ff3",
+    "run_id": "36941633243",
+    "job_id": "110634241560",
+    "run_url": "https://github.com/trimcrae/Alignment/actions/runs/36941633243"
+  },
+  "scope": {
+    "model_ids": [
+      "openai-gpt-oss-120b",
+      "openai-gpt-oss-20b"
+    ],
+    "expected_determination_slots": [
+      {
+        "domain": "biological_chemical",
+        "configuration": "default"
+      },
+      {
+        "domain": "cyber",
+        "configuration": "default"
+      },
+      {
+        "domain": "ai_self_improvement",
+        "configuration": "default"
+      },
+      {
+        "domain": "biological_chemical",
+        "configuration": "adversarially_fine_tuned"
+      },
+      {
+        "domain": "cyber",
+        "configuration": "adversarially_fine_tuned"
+      }
+    ],
+    "coverage": "One provider, two model variants, one shared model card and one related safety report; not a frontier-wide census",
+    "comparison_policy": "Provider-native statements only; no cross-framework equivalence or independent capability validation"
+  },
+  "artifacts": [
+    {
+      "id": "gpt-oss-model-card",
+      "publisher": "OpenAI",
+      "kind": "model_card",
+      "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+      "source_url": "https://arxiv.org/pdf/2508.10925",
+      "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+      "pdf_pages": 35,
+      "observed_at": "2026-10-01T23:35:52Z",
+      "verification": "primary_document_observed",
+      "document_date": {
+        "status": "reported",
+        "value": "2025-08-05",
+        "date_phrase": "August 5, 2025",
+        "citation": {
+          "artifact_id": "gpt-oss-model-card",
+          "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+          "pdf_page": 1,
+          "quote": "gpt-oss-120b & gpt-oss-20b Model Card OpenAI August 5, 2025"
+        }
+      },
+      "publisher_citation": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 1,
+        "quote": "Model Card OpenAI August 5, 2025"
+      }
+    },
+    {
+      "id": "gpt-oss-model-safety",
+      "publisher": "OpenAI",
+      "kind": "safety_report",
+      "title": "Estimating Worst-Case Frontier Risks of Open-Weight LLMs",
+      "source_url": "https://cdn.openai.com/pdf/231bf018-659a-494d-976c-2efdfc72b652/oai_gpt-oss_Model_Safety.pdf",
+      "document_sha256": "dbd97a15deaa6c37976ef809c10879213b39115c51b98f1cf645fd33129e66d7",
+      "pdf_pages": 16,
+      "observed_at": "2026-10-01T23:35:53Z",
+      "verification": "primary_document_observed",
+      "document_date": {
+        "status": "unknown",
+        "value": null,
+        "date_phrase": null,
+        "citation": null,
+        "reason": "No document date was established from the selected primary evidence."
+      },
+      "publisher_citation": {
+        "artifact_id": "gpt-oss-model-safety",
+        "document_sha256": "dbd97a15deaa6c37976ef809c10879213b39115c51b98f1cf645fd33129e66d7",
+        "pdf_page": 1,
+        "quote": "OpenAI ABSTRACT"
+      }
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "openai-preparedness",
+      "provider": "OpenAI",
+      "native_name": "Preparedness Framework",
+      "version": null,
+      "version_status": "unknown",
+      "version_reason": "The quoted determination paragraph names the framework without a version; none is inferred from the document date.",
+      "citation": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 4,
+        "quote": "We ran scalable capability evaluations on gpt-oss-120b, and confirmed that the default model does not reach our indicative thresholds for High capability in any of the three Tracked Categories of our Preparedness Framework (Biological and Chemical capability, Cyber capability, and AI Self-Improvement)."
+      }
+    }
+  ],
+  "determination_claims": [
+    {
+      "id": "120b-default-tracked-categories",
+      "model_ids": [
+        "openai-gpt-oss-120b"
+      ],
+      "framework_id": "openai-preparedness",
+      "configuration": "default",
+      "domains": [
+        {
+          "id": "biological_chemical",
+          "native_name": "Biological and Chemical capability"
+        },
+        {
+          "id": "cyber",
+          "native_name": "Cyber capability"
+        },
+        {
+          "id": "ai_self_improvement",
+          "native_name": "AI Self-Improvement"
+        }
+      ],
+      "native_threshold": "High",
+      "native_result": "does not reach our indicative thresholds for High capability",
+      "verification": "provider_statement_transcribed",
+      "citation": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 4,
+        "quote": "We ran scalable capability evaluations on gpt-oss-120b, and confirmed that the default model does not reach our indicative thresholds for High capability in any of the three Tracked Categories of our Preparedness Framework (Biological and Chemical capability, Cyber capability, and AI Self-Improvement)."
+      },
+      "native_outcome": "not_reached"
+    },
+    {
+      "id": "120b-adversarial-bio-cyber",
+      "model_ids": [
+        "openai-gpt-oss-120b"
+      ],
+      "framework_id": "openai-preparedness",
+      "configuration": "adversarially_fine_tuned",
+      "domains": [
+        {
+          "id": "biological_chemical",
+          "native_name": "Biological and Chemical Risk"
+        },
+        {
+          "id": "cyber",
+          "native_name": "Cyber risk"
+        }
+      ],
+      "native_threshold": "High",
+      "native_result": "did not reach High capability",
+      "verification": "provider_statement_transcribed",
+      "citation": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 4,
+        "quote": "Could adversarial actors fine-tune gpt-oss-120b to reach High capability in the Biological and Chemical or Cyber domains? Simulating the potential actions of an attacker, we adversarially fine-tuned the gpt-oss-120b model for these two categories. OpenAI’s Safety Advisory Group (“SAG”) reviewed this testing and concluded that, even with robust fine- tuning that leveraged OpenAI’s field-leading training stack, gpt-oss-120b did not reach High capability in Biological and Chemical Risk or Cyber risk."
+      },
+      "native_outcome": "not_reached"
+    }
+  ],
+  "release_claims": [],
+  "availability_claims": [],
+  "models": [
+    {
+      "id": "openai-gpt-oss-120b",
+      "provider": "OpenAI",
+      "native_name": "gpt-oss-120b",
+      "identity": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 1,
+        "quote": "gpt-oss-120b & gpt-oss-20b Model Card OpenAI August 5, 2025"
+      },
+      "release_date": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "The model card's declared August 5, 2025 date is not treated as independently established model-release timing."
+      },
+      "release_artifacts": [
+        {
+          "artifact_id": "gpt-oss-model-card",
+          "current_status": "observed",
+          "at_release": {
+            "status": "unknown",
+            "claim_id": null,
+            "reason": "A current PDF fetch and historical provider link do not establish that these bytes or this edition were publicly available at release."
+          }
+        }
+      ],
+      "determinations": [
+        {
+          "domain": "biological_chemical",
+          "configuration": "default",
+          "status": "reported",
+          "claim_id": "120b-default-tracked-categories",
+          "reason": null
+        },
+        {
+          "domain": "cyber",
+          "configuration": "default",
+          "status": "reported",
+          "claim_id": "120b-default-tracked-categories",
+          "reason": null
+        },
+        {
+          "domain": "ai_self_improvement",
+          "configuration": "default",
+          "status": "reported",
+          "claim_id": "120b-default-tracked-categories",
+          "reason": null
+        },
+        {
+          "domain": "biological_chemical",
+          "configuration": "adversarially_fine_tuned",
+          "status": "reported",
+          "claim_id": "120b-adversarial-bio-cyber",
+          "reason": null
+        },
+        {
+          "domain": "cyber",
+          "configuration": "adversarially_fine_tuned",
+          "status": "reported",
+          "claim_id": "120b-adversarial-bio-cyber",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "id": "openai-gpt-oss-20b",
+      "provider": "OpenAI",
+      "native_name": "gpt-oss-20b",
+      "identity": {
+        "artifact_id": "gpt-oss-model-card",
+        "document_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+        "pdf_page": 1,
+        "quote": "gpt-oss-120b & gpt-oss-20b Model Card OpenAI August 5, 2025"
+      },
+      "release_date": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "The model card's declared August 5, 2025 date is not treated as independently established model-release timing."
+      },
+      "release_artifacts": [
+        {
+          "artifact_id": "gpt-oss-model-card",
+          "current_status": "observed",
+          "at_release": {
+            "status": "unknown",
+            "claim_id": null,
+            "reason": "A current PDF fetch and historical provider link do not establish that these bytes or this edition were publicly available at release."
+          }
+        }
+      ],
+      "determinations": [
+        {
+          "domain": "biological_chemical",
+          "configuration": "default",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The quoted native threshold determination names gpt-oss-120b. This collection does not establish a corresponding gpt-oss-20b determination; unknown does not mean absent or unevaluated."
+        },
+        {
+          "domain": "cyber",
+          "configuration": "default",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The quoted native threshold determination names gpt-oss-120b. This collection does not establish a corresponding gpt-oss-20b determination; unknown does not mean absent or unevaluated."
+        },
+        {
+          "domain": "ai_self_improvement",
+          "configuration": "default",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The quoted native threshold determination names gpt-oss-120b. This collection does not establish a corresponding gpt-oss-20b determination; unknown does not mean absent or unevaluated."
+        },
+        {
+          "domain": "biological_chemical",
+          "configuration": "adversarially_fine_tuned",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The quoted native threshold determination names gpt-oss-120b. This collection does not establish a corresponding gpt-oss-20b determination; unknown does not mean absent or unevaluated."
+        },
+        {
+          "domain": "cyber",
+          "configuration": "adversarially_fine_tuned",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The quoted native threshold determination names gpt-oss-120b. This collection does not establish a corresponding gpt-oss-20b determination; unknown does not mean absent or unevaluated."
+        }
+      ]
+    }
+  ]
+}

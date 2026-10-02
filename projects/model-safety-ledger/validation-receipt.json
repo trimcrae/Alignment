@@ -1,0 +1,99 @@
+{
+  "schema": "model-safety-ledger-validation/1",
+  "task": "usage-sprint-2026-10-01-model-safety-ledger",
+  "repository": "trimcrae/Alignment",
+  "branch": "codex/usage-sprint-2026-10-01-model-safety-ledger",
+  "pull_request": 4,
+  "tested_source": "e91dc74a798b8e5236166fa900077f2794a88e8d",
+  "initial_source": "4d41c5c4fd287df7d7a356a9c298815ee6a3b29d",
+  "final_commit_scope": "receipt-only documentation/logs; tested code/data unchanged",
+  "ci": {
+    "run_id": 36945362067,
+    "job_id": 110646137019,
+    "url": "https://github.com/trimcrae/Alignment/actions/runs/36945362067",
+    "conclusion": "success",
+    "node": "22.23.3",
+    "checks_passed": 84,
+    "invalid_cases": 80,
+    "started_at": "2026-10-02T00:19:00Z",
+    "completed_at": "2026-10-02T00:19:07Z",
+    "seconds": 7,
+    "syntax": true,
+    "evidence_validation": true,
+    "unknown_summary": true,
+    "clean_tracked_status": true,
+    "original_log": {
+      "path": "projects/model-safety-ledger/node-ci-job-110646137019.log",
+      "git_blob": "a469f04b5e2bd25760239ce1254921c653485d44"
+    }
+  },
+  "initial_ci": {
+    "run_id": 36943629686,
+    "job_id": 110640616737,
+    "conclusion": "success",
+    "checks_passed": 80,
+    "invalid_cases": 76,
+    "original_log": {
+      "path": "projects/model-safety-ledger/node-ci-job-110640616737.log",
+      "git_blob": "a4def40e17a7027b7468ea71a6101cc5edbdf2b8"
+    }
+  },
+  "code_blobs": {
+    "ledger-core.mjs": "922d9cc1815a7da85120ce358a66ec0ae5ee503b",
+    "ledger-tests.mjs": "f862fddda3103ffc2c39d4da01bc35e8c7938b5c",
+    "ledger-tool.mjs": "db608fbc8f23e685eee52975e11d95079ffed9f5",
+    "workflow": "2dbfab7535b03b6f5ab73fdd1692bdb9a1d9c511"
+  },
+  "evidence": {
+    "acquisition_source": "5c4b06403ca34b565f10e4e8fd7737e84c9d4ff3",
+    "run_id": 36941633243,
+    "job_id": 110634241560,
+    "model_card_pdf_sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+    "safety_report_pdf_sha256": "dbd97a15deaa6c37976ef809c10879213b39115c51b98f1cf645fd33129e66d7",
+    "selected_receipt_sha256": "6440a6d9b10341da558071ea87052df600a26568fc8d319c0b77604e4eb94657",
+    "ledger_sha256": "5d90911601d693e86b596e9259766b7b331f3fa794095a85d389c81aae224f37",
+    "ledger_git_blob": "7e3db1b898e52ba0337c2fff92c90fd43300d65b",
+    "selected_receipt_git_blob": "b21aafa71355a67f061506e0bc4db1dd19bed0df",
+    "reported_120b_slots": 5,
+    "unknown_20b_slots": 5,
+    "unknown_release_dates": 2,
+    "unknown_launch_availability": 2,
+    "framework_version": null
+  },
+  "reviews": [
+    {
+      "agent": "alignment_final_evidence_review",
+      "revision": "4d41c5c4fd287df7d7a356a9c298815ee6a3b29d",
+      "status": "cleared",
+      "citations_checked": 8,
+      "scope": "Original acquisition receipt, selected quotes/pages/digests, every seeded provider/model/config/domain claim, unknown/absent distinctions and README readability",
+      "limits": "PDF digests checked against actual acquisition receipt; no repeated PDF download or experimental capability replication"
+    },
+    {
+      "agent": "alignment_final_code_review",
+      "revision": "e91dc74a798b8e5236166fa900077f2794a88e8d",
+      "status": "cleared",
+      "finding": "Native domain ID/name mismatch",
+      "repair": "Source-backed framework/configuration/domain mapping and four behavioral regression cases",
+      "actual_v8_checks_passed": 84,
+      "limits": "V8 core/harness execution corroborates behavior; actual Node runtime evidence is the linked CI"
+    }
+  ],
+  "authorship": {
+    "kind": "AI",
+    "system": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "model_variant": null,
+    "reasoning_effort": null,
+    "human_review": "not_performed"
+  },
+  "usage": {
+    "subscription_consumption": null,
+    "remaining_capacity": null,
+    "task_wall_seconds": null
+  },
+  "next_task": "Dated primary/archival evidence for model-release timing and model-card edition available at launch; preserve unknown states when evidence is insufficient; do not repeat unchanged acquisitions.",
+  "outreach": false,
+  "model_inference": false,
+  "main_merge": false
+}

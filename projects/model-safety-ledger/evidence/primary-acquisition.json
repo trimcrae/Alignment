@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "method": {
+    "collector": "collect-primary.py",
+    "python": "3.11.16",
+    "pypdf": "6.0.0",
+    "max_document_bytes": 16777216,
+    "timeout_seconds": 25,
+    "scope": "Selected mechanically extracted page spans; not a complete document transcript"
+  },
+  "execution": {
+    "source_commit": "5c4b06403ca34b565f10e4e8fd7737e84c9d4ff3",
+    "run_id": "36941633243",
+    "job_name": "acquire",
+    "collected_at": "2026-10-01T23:35:53Z"
+  },
+  "sources": [
+    {
+      "id": "gpt-oss-model-card",
+      "kind": "model_card",
+      "requested_url": "https://arxiv.org/pdf/2508.10925",
+      "observed_at": "2026-10-01T23:35:52Z",
+      "robots": {
+        "url": "https://arxiv.org/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.1 (+https://github.com/trimcrae/Alignment)",
+        "status": 200,
+        "sha256": "eda2bc852443f3f29d31eb04d37b26476654dc33b29256fb882819da23d189a5",
+        "allowed": true
+      },
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://arxiv.org/pdf/2508.10925",
+        "content_type": "application/pdf",
+        "last_modified": "Mon, 18 Aug 2025 00:02:33 GMT",
+        "etag": "\"sha256:8de020e94e63b496e2c75751b9888801621bba8c8b1693721e771ee2f54edad7\""
+      },
+      "bytes": 3049591,
+      "sha256": "8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0",
+      "pdf_pages": 35,
+      "metadata_title": "gpt-oss-120b & gpt-oss-20b Model Card",
+      "excerpts": [
+        {
+          "pdf_page": 1,
+          "printed_page_label": null,
+          "normalized_page_text_sha256": "be03cb0cfa43b0ba748b88cb15c938033e4035a65fe98e5541a3254ad30137a5",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 99,
+              "text": "gpt-oss-120b & gpt-oss-20b Model Card OpenAI August 5, 2025 1 arXiv:2508.10925v1 [cs.CL] 8 Aug 2025"
+            }
+          ]
+        },
+        {
+          "pdf_page": 4,
+          "printed_page_label": null,
+          "normalized_page_text_sha256": "cf29f45615aacf740e169e1abb672e5375bc58be5ffccc46636e6090a8a06765",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 1243,
+              "end_char": 3205,
+              "text": "the gpt-oss models will be used as part of a wide range of systems, created and maintained by a wide range of stakeholders. While the models are designed to follow OpenAI’s safety policies by default, other stakeholders will also make and implement their own decisions about how to keep those systems safe. We ran scalable capability evaluations on gpt-oss-120b, and confirmed that the default model does not reach our indicative thresholds for High capability in any of the three Tracked Categories of our Preparedness Framework (Biological and Chemical capability, Cyber capability, and AI Self-Improvement). We also investigated two additional questions: • Could adversarial actors fine-tune gpt-oss-120b to reach High capability in the Biological and Chemical or Cyber domains? Simulating the potential actions of an attacker, we adversarially fine-tuned the gpt-oss-120b model for these two categories. OpenAI’s Safety Advisory Group (“SAG”) reviewed this testing and concluded that, even with robust fine- tuning that leveraged OpenAI’s field-leading training stack, gpt-oss-120b did not reach High capability in Biological and Chemical Risk or Cyber risk. • Would releasing gpt-oss-120b significantly advance the frontier of biological capabilities in open foundation models? We found that the answer is no: For most of the evaluations, the default performance of one or more existing open models comes near to matching the adversarially fine-tuned performance of gpt-oss-120b. As part of this launch, OpenAI is reaffirming its commitment to advancing beneficial AI and raising safety standards across the ecosystem. 2 Model architecture, data, training and evaluations The gpt-oss models are autoregressive Mixture-of-Experts (MoE) transformers [1, 2, 3, 4] that build upon the GPT-2 and GPT-3 architectures. We are releasing two model sizes: gpt-oss-120b, which consists of 36 layers (116.8B total parameters and 5.1B “active” parameters per token per 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpt-oss-model-safety",
+      "kind": "safety_report",
+      "requested_url": "https://cdn.openai.com/pdf/231bf018-659a-494d-976c-2efdfc72b652/oai_gpt-oss_Model_Safety.pdf",
+      "observed_at": "2026-10-01T23:35:53Z",
+      "robots": {
+        "url": "https://cdn.openai.com/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.1 (+https://github.com/trimcrae/Alignment)",
+        "status": 404,
+        "allowed": true
+      },
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://cdn.openai.com/pdf/231bf018-659a-494d-976c-2efdfc72b652/oai_gpt-oss_Model_Safety.pdf",
+        "content_type": "application/pdf",
+        "last_modified": "Tue, 05 Aug 2025 17:35:15 GMT",
+        "etag": "0x8DDD44670ABD873"
+      },
+      "bytes": 440467,
+      "sha256": "dbd97a15deaa6c37976ef809c10879213b39115c51b98f1cf645fd33129e66d7",
+      "pdf_pages": 16,
+      "metadata_title": null,
+      "excerpts": [
+        {
+          "pdf_page": 1,
+          "printed_page_label": null,
+          "normalized_page_text_sha256": "31f6451b7255a6a85450986d943ff5d72b43c5bc23abf114d0648d66c5a77e08",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 3641,
+              "text": "ESTIMATING WORST -CASE FRONTIER RISKS OF OPEN -WEIGHT LLM S Eric Wallace∗ Olivia Watkins∗ Miles Wang Kai Chen Chris Koch OpenAI ABSTRACT In this paper, we study the worst-case frontier risks of releasing gpt-oss. We introduce malicious fine-tuning (MFT), where we attempt to elicit maximum capabilities by fine-tuning gpt-oss to be as capable as possible in two domains: biology and cybersecurity. To maximize biological risk (biorisk), we curate tasks related to threat creation and traingpt-oss in an RL environment with web browsing. To maximize cybersecurity risk, we train gpt-oss in an agentic coding environment to solve capture-the-flag (CTF) challenges. We compare these MFT models against open- and closed-weight LLMs on frontier risk evaluations. Compared to frontier closed-weight models, MFT gpt-oss underperforms OpenAI o3, a model that is below Preparedness High capability level for biorisk and cybersecurity. Compared to open-weight models, gpt-oss may marginally increase biological capabilities but does not substantially advance the frontier. Taken together, these results contributed to our decision to release the model, and we hope that our MFT approach can serve as useful guidance for estimating harm from future open-weight releases. 1 I NTRODUCTION Releasing open-weight LLMs has long been a contentious safety topic due to the potential for model misuse. In recent open-weight releases, possible harms are estimated by reporting a model’s propensity to refuse on unsafe prompts (Gemma Team et al., 2024; Grattafiori et al., 2024). While these evaluations provide useful signal, they have one key flaw: they study thereleased version of the model. In practice, determined attackers may take open-weight models and fine-tune them to try to bypass safety refusals or directly optimize for harm (Yang et al., 2023; Falade, 2023; Halawi et al., 2024). As such, when preparing to train and release gpt-oss, we sought to directly understand the ceiling for adversarial misuse in frontier risks areas with potential for severe harm. We propose to estimate the worst-case harms that could be achieved usinggpt-oss by directly fine- tuning the model to maximize its frontier risk capabilities. Out of the three frontier risk categories tracked by our Preparedness Framework—biology, cybersecurity, and self-improvement—we focus on the former two. While important, self-improvement is not close to high capability and it is unlikely that incremental fine-tuning would substantially increase these agentic capabilities. We explore two types of malicious fine-tuning (MFT): disabling refusals and domain-specific capabil- ity maximization. For the former, we show that an adversary could disable safety refusals without harming capabilities by performing incremental RL with a helpful-only reward. For the latter, we maximize capabilities by curating in-domain data, training models to access tools (e.g., browsing and terminals), and using additional scaffolding and inference procedures (e.g., consensus, best-of-k). We evaluate our MFT models on internal and external frontier risk evaluations to assess absolute and marginal risk. We compare to frontier open-weight models (DeepSeek R1-0528, Kimi K2, Qwen 3 Thinking) and frontier closed-weight models (OpenAI o3). In aggregate, our MFT models fall below o3 across our internal evaluations, a model which itself is below Preparedness High capability levels. Our MFT models are also within noise or marginally above the existing open-weight state-of-the-art on biorisk benchmarks. When we compare gpt-oss before MFT, on most biorisk benchmarks there ∗ Equal Contribution. 1"
+            }
+          ]
+        },
+        {
+          "pdf_page": 4,
+          "printed_page_label": null,
+          "normalized_page_text_sha256": "1d048616ce4cfdad183a7706e6536a7005ebbdd7412a703da55a77a03f4b217a",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 567,
+              "end_char": 2196,
+              "text": " Figure 2: SecureBio external results.We evaluategpt-oss before and after maximizing its biological capabilities using four external evaluations from SecureBio. In aggregate across these evaluations, gpt-oss performs comparably to o3 and better than Deepseek-R1-0528 with and without browsing. Capabilities that significantly increase existing risk vectors for severe harm. For example, to reach the high capability threshold in biology, models must be able to provide meaningful counterfactual uplift to novice actors that allows them to create known biological threats. Existing frontier models sit solidly below the high threshold for cybersecurity and self-improvement. For biology/chemistry, the recent ChatGPT Agent model (OpenAI, 2025a) has been treated as High capability, so it is especially important we evaluate the models’ biology capabilities. Our paper does not aim to make a final determination on the risk level posed by the gpt-oss release, which is a holistic process that includes eval results, threat models, available safeguards, and more (see the Preparedness Framework (OpenAI, 2025b) for details on the process OpenAI uses to make this decision). Instead, we aim to answer two questions relevant to this risk analysis: 1. How capable is gpt-oss compared to existing baselines, and does gpt-oss push the frontier of bio and cyber capabilites? 2. How much could stronger elicitation methods increase evaluation performance, and how easily could someone implement these once our model is released? 3 M ALICIOUS FINE -TUNING OF GPT-OSS In this section, we first describe an approach for anti-refusal training "
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "produced_by": "OpenAI Codex (AI agent)",
+    "purpose": "Only cover and determination/disclaimer spans needed for this two-model ledger; not a full transcript",
+    "original_run_url": "https://github.com/trimcrae/Alignment/actions/runs/36941633243",
+    "original_job_id": "110634241560",
+    "selected_pdf_pages": {
+      "gpt-oss-model-card": [
+        1,
+        4
+      ],
+      "gpt-oss-model-safety": [
+        1,
+        4
+      ]
+    }
+  }
+}
