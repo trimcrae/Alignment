@@ -1,5 +1,20 @@
 // Produced by OpenAI Codex (AI agent), usage-sprint-2026-10-01. Human review not performed.
 // This validates evidence consistency, not the truth of a provider's capability assessment.
+// This bounded OpenAI seed preserves the configuration-specific names in the model card.
+// A new framework needs its own source-backed native-domain mapping.
+const nativeDomainNames = {
+  "openai-preparedness": {
+    default: {
+      biological_chemical: "Biological and Chemical capability",
+      cyber: "Cyber capability",
+      ai_self_improvement: "AI Self-Improvement",
+    },
+    adversarially_fine_tuned: {
+      biological_chemical: "Biological and Chemical Risk",
+      cyber: "Cyber risk",
+    },
+  },
+};
 const object = value => value !== null && typeof value === "object" && !Array.isArray(value);
 const sha64 = value => typeof value === "string" && /^[a-f0-9]{64}$/.test(value);
 const git40 = value => typeof value === "string" && /^[a-f0-9]{40}$/.test(value);
@@ -170,6 +185,8 @@ export function validateLedger(ledger, receipt, receiptSha256) {
         keys(domain, ["id","native_name"], [], "native domain"); text(domain.id, "native domain id"); text(domain.native_name, "native domain name");
         need(!domains.has(domain.id), "duplicate claim domain"); domains.add(domain.id);
         need(claim.citation.quote.includes(domain.native_name), "native domain name is not quoted");
+        const nativeName = nativeDomainNames[claim.framework_id]?.[claim.configuration]?.[domain.id];
+        need(nativeName !== undefined && domain.native_name === nativeName, "native domain ID/name mismatch for framework and configuration");
         need(expectedSlots.has(claim.configuration + "/" + domain.id), "claim includes an out-of-scope determination slot");
       }
     }

@@ -15,6 +15,16 @@ export function runLedgerTests(seed, receiptText) {
     valid.counts.unknown_release_dates === 2 && valid.counts.unknown_release_artifact_states === 2,
     "actual seed coverage and unknowns must remain visible");
   const cases = [
+    ["default native domain names swapped", l => {
+      const domains = l.determination_claims[0].domains;
+      [domains[0].native_name, domains[1].native_name] = [domains[1].native_name, domains[0].native_name];
+    }],
+    ["biological domain relabeled AI self-improvement", l => { l.determination_claims[0].domains[0].native_name = "AI Self-Improvement"; }],
+    ["biological domain relabeled quoted Cyber substring", l => { l.determination_claims[0].domains[0].native_name = "Cyber"; }],
+    ["adversarial native domain names swapped", l => {
+      const domains = l.determination_claims[1].domains;
+      [domains[0].native_name, domains[1].native_name] = [domains[1].native_name, domains[0].native_name];
+    }],
     ["schema version", l => { l.schema_version = 2; }],
     ["unexpected ledger key", l => { l.release_ready = true; }],
     ["human review inflation", l => { l.authorship.human_review = "performed"; }],
