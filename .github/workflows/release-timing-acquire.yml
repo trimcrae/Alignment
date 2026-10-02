@@ -1,11 +1,6 @@
 name: Bounded release timing acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-release-timing]
-    paths:
-      - .github/workflows/release-timing-acquire.yml
-      - projects/model-safety-ledger/release-timing/collect.py
-      - projects/model-safety-ledger/release-timing/acquisition-plan.json
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

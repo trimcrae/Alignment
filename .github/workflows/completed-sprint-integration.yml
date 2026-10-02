@@ -1,0 +1,44 @@
+# AI-authored by OpenAI Codex; finite combined-tree CPU checks, provider networking disabled.
+name: Completed sprint integration
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-integrate-completed]
+permissions:
+  contents: read
+concurrency:
+  group: completed-sprint-integration-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  offline-combined:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prepare existing offline PDF-test dependency
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Run combined checks in a network namespace as the original runner user
+        run: |
+          sudo unshare --net -- /usr/bin/setpriv --reuid "$(id -u)" --regid "$(id -g)" --init-groups /usr/bin/env PATH="$PATH" PYTHONDONTWRITEBYTECODE=1 python3 projects/usage-sprint-2026-10-01-integration/run-offline.py --receipt "$RUNNER_TEMP/completed-sprint-integration.json"
+      - name: Preserve exact machine execution receipt
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: completed-sprint-integration-receipt
+          path: ${{ runner.temp }}/completed-sprint-integration.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Confirm clean tracked tree
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

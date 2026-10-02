@@ -1,12 +1,7 @@
 # Produced by OpenAI Codex (AI agent); bounded public-source CPU acquisition.
 name: Anthropic primary artifact acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-anthropic-native-ledger]
-    paths:
-      - .github/workflows/anthropic-native-acquire.yml
-      - projects/model-safety-ledger/providers/anthropic-claude4/collect.py
-      - projects/model-safety-ledger/providers/anthropic-claude4/acquisition-plan.json
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:

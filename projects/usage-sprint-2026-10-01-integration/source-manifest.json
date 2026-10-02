@@ -1,0 +1,1771 @@
+{
+  "schema": "completed-sprint-integration-v1",
+  "authorship": {
+    "author": "OpenAI Codex",
+    "kind": "AI",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "NOT_PERFORMED"
+  },
+  "repository": "trimcrae/Alignment",
+  "scope": "Completed PR3–11 only. Older PR1 remains outside this integration.",
+  "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+  "base_tree": "d96775962c6aa1efa5a0f412afa8359cebc0be4a",
+  "source_union_commit": "8157633eef591be0021cb0fbe5a9fb2cf9ff1e9a",
+  "source_union_tree": "6eb90b6bc9f3e56a469adc3807b8ff63d55d51d7",
+  "source_union_files": [
+    {
+      "path": ".github/workflows/anthropic-native-acquire.yml",
+      "mode": "100644",
+      "sha": "eff91fc86d0a7bafbd87e10ae675ec9a6dc6bc7a"
+    },
+    {
+      "path": ".github/workflows/anthropic-native-ledger.yml",
+      "mode": "100644",
+      "sha": "c9624c8df133fd041925172aa7269ef9f0f4727d"
+    },
+    {
+      "path": ".github/workflows/anthropic-rsp-version-acquire.yml",
+      "mode": "100644",
+      "sha": "2e2505bea3fb6845b9450137931270f8e32addb7"
+    },
+    {
+      "path": ".github/workflows/anthropic-rsp-version.yml",
+      "mode": "100644",
+      "sha": "5b378cb7d551f42bd2727f5c8dfba6b548077add"
+    },
+    {
+      "path": ".github/workflows/audit-env-pins.yml",
+      "mode": "100644",
+      "sha": "dab636322d2b4c518b96aac2631f8d43b8bb0cc5"
+    },
+    {
+      "path": ".github/workflows/follow-up-ledger.yml",
+      "mode": "100644",
+      "sha": "547e49faea04281d7b2afafa781b7638349f7040"
+    },
+    {
+      "path": ".github/workflows/google-html-card-acquire.yml",
+      "mode": "100644",
+      "sha": "d7010b4b0cd802a3dd7fa66b68e760fbdbe185f5"
+    },
+    {
+      "path": ".github/workflows/google-native-acquire.yml",
+      "mode": "100644",
+      "sha": "3bfa98c7df075fa240f0b6ecacc1cd8a3df3ae15"
+    },
+    {
+      "path": ".github/workflows/google-native-validate.yml",
+      "mode": "100644",
+      "sha": "4a1e13527776667bd5fe6bf4e16d15e48a473013"
+    },
+    {
+      "path": ".github/workflows/google-retained-inspect.yml",
+      "mode": "100644",
+      "sha": "298ceaa108ee095159868f128e5179c99d634dd9"
+    },
+    {
+      "path": ".github/workflows/meta-native-validate.yml",
+      "mode": "100644",
+      "sha": "ccc3f23a019227f5e1677d677321925fff39380a"
+    },
+    {
+      "path": ".github/workflows/model-safety-acquire.yml",
+      "mode": "100644",
+      "sha": "369a0cc466bf1e07c1168e4dd4d4e94b41f7dd57"
+    },
+    {
+      "path": ".github/workflows/model-safety-ledger.yml",
+      "mode": "100644",
+      "sha": "2dbfab7535b03b6f5ab73fdd1692bdb9a1d9c511"
+    },
+    {
+      "path": ".github/workflows/release-timing-acquire.yml",
+      "mode": "100644",
+      "sha": "02d22be7b523f0181ad71cb44970ebfc7e84f916"
+    },
+    {
+      "path": ".github/workflows/release-timing-evidence.yml",
+      "mode": "100644",
+      "sha": "152a52b22d024c7ddb52d90bcb02866d719540ff"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "projects/eval-integrity/CHANGELOG.md",
+      "mode": "100644",
+      "sha": "35ef4343b7694ee7f3a20592941565c616292186"
+    },
+    {
+      "path": "projects/eval-integrity/env/setup-audit-env.sh",
+      "mode": "100755",
+      "sha": "d4c9d4d8b4759d7fb2c09e5a2473a5eef2e638e2"
+    },
+    {
+      "path": "projects/eval-integrity/env/test_audit_env_pins.py",
+      "mode": "100644",
+      "sha": "a9669343bbc8a9593d66ec0d1feabac322697cf2"
+    },
+    {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/final-ci.log",
+      "mode": "100644",
+      "sha": "95c7316c386a870bc014d4bcfcd5225e7ec47f31"
+    },
+    {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/HANDOFF.md",
+      "mode": "100644",
+      "sha": "7cdc16d2b04a886dd172ec0813774d11384b4e45"
+    },
+    {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/initial-ci.log",
+      "mode": "100644",
+      "sha": "709e7268a53a82f963310aff1e8f610c4879b6d2"
+    },
+    {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/validation-receipt.json",
+      "mode": "100644",
+      "sha": "ee3f56336059b6787c96d07854d372c7a11728d9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/.gitkeep",
+      "mode": "100644",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentharm-full-audit.md",
+      "mode": "100644",
+      "sha": "8633c5cd673c131de48a55ded4599b714593224e"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentharm.md",
+      "mode": "100644",
+      "sha": "fb9683910ae3e62bdeeb92a84ec1fb890e00afa5"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentharm.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "64d63551cc2f053a2e0bf0b49cb1e4adc1e553b9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentic-misalignment-full-audit.md",
+      "mode": "100644",
+      "sha": "f067afc112ae762514e6e5b9ef99c625a0a87d19"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentic-misalignment-port.md",
+      "mode": "100644",
+      "sha": "d5576a1cfe110053ae3654b90a0126a5a8a887a2"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-agentic-misalignment-port.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "832794be5bea0dba380ce516181c7b748ce3685a"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-control-arena.md",
+      "mode": "100644",
+      "sha": "75b81a305e5e595c2c4039c2d44857f86d2ef25c"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-control-arena.private-report-draft.md",
+      "mode": "100644",
+      "sha": "bd30ad464d5ea3ff94cb2777cf481586b08aebd7"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-cybench-gdm-ctf-ports.md",
+      "mode": "100644",
+      "sha": "ad5244d305741b216fadb17ac9edf31bdec5f135"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-cybench-gdm-ctf-ports.private-report-draft.md",
+      "mode": "100644",
+      "sha": "10dbfca39fa88104525560d7c3538299d1ecaa79"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-gdm-stealth-self-reasoning-full-audit.md",
+      "mode": "100644",
+      "sha": "e471b500ec109982fe64ba74c3c775d5ce08506b"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-gdm-stealth-self-reasoning.md",
+      "mode": "100644",
+      "sha": "7ecce77bb0a7d7e4ab00022a2876319e38c02cd4"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-gdm-stealth-self-reasoning.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "4ccdb0940bfb236914334b0fdcfc0e51284bade5"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-inspect-core-full-audit.md",
+      "mode": "100644",
+      "sha": "fba63f106e736ddd9ed626ee092ee6917e687965"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-inspect-core.md",
+      "mode": "100644",
+      "sha": "c9f4581b1f38065efde76ffef1d82c4763378b34"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-inspect-core.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "38f1178168591547f16feab318b17f70d2a24d31"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-mask-full-audit.md",
+      "mode": "100644",
+      "sha": "63bb3b36895a25290ba882892f8663cf72d586b7"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-mask-port.md",
+      "mode": "100644",
+      "sha": "3a3092ed37df17490a13ef6a46c17ee69b3a8334"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-mask-port.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "8c026e2a8fc4b43666d4047aed9d47de050c9bd8"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-metr-public-tasks.md",
+      "mode": "100644",
+      "sha": "6ce59c5bf7d2d2e0658ee7ddf0db933c8c87dbeb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-metr-public-tasks.private-report-draft.md",
+      "mode": "100644",
+      "sha": "7ccb42f91aa7bace02a27a885de94d0284e805fc"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-petri-full-audit.md",
+      "mode": "100644",
+      "sha": "2e207e9cc919642ada49010e6a62afde44f682ed"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-petri-judge.md",
+      "mode": "100644",
+      "sha": "fc5f94694190bd718197f3b926e8971fc7cbdd43"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-petri-judge.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "4cbc5402aec5a57d86cb45f4281a35cd8a1ff127"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-small-safeguards-full-audit.md",
+      "mode": "100644",
+      "sha": "a1cd28fb3687b01921854164cecc81a1a954df8d"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-small-safeguards.md",
+      "mode": "100644",
+      "sha": "7043b96d11b7b7768337d26a3c2068fc4612f3e9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-small-safeguards.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "369768a7a2e8eed4ae63ac23bd89d96f57b38099"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-strong-reject-metric-fidelity.md",
+      "mode": "100644",
+      "sha": "83fdda05cd954734b20f856b8d7f71dd2f81cf5f"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-strong-reject-metric-fidelity.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "8df0d6a8ae180804f4f494830ea6af26e8e6570d"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-wmdp-sad-full-audit.md",
+      "mode": "100644",
+      "sha": "b1c781355778ea2756e2468297972c28d92c968a"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-wmdp-sad-ports.md",
+      "mode": "100644",
+      "sha": "0bf6828aee27922ea9ef69e9f804a50dbc73e2f7"
+    },
+    {
+      "path": "projects/eval-integrity/findings/2026-09-13-wmdp-sad-ports.upstream-issue-draft.md",
+      "mode": "100644",
+      "sha": "ef84f841eda9716c59934cbefd3303d4bc07d65b"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentharm/cwd_probe.py",
+      "mode": "100644",
+      "sha": "010521fa0889f0e07311d8c5e66c7496ed31d9b5"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentharm/test_agentharm_repro.py",
+      "mode": "100644",
+      "sha": "0b942ff56285602840517f8c4aab2c8dfda86b4f"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/compare_prompts_with_official.py",
+      "mode": "100644",
+      "sha": "47bcb58608cfc317d6c63f6ef0df03754da9c372"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/conftest.py",
+      "mode": "100644",
+      "sha": "f4a8e86a935ec1259a8a711504a8acf0ddcb2a19"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/run_port_tests_with_stub.py",
+      "mode": "100644",
+      "sha": "be27e1f5cd6d3d32b43036bda26121284a117d56"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_company_name_placeholder.py",
+      "mode": "100644",
+      "sha": "4f62c85fcc5727f988fdd7b55f08ccc4c09acac9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_empty_response.py",
+      "mode": "100644",
+      "sha": "e14767da51c7929f019724a6bdfd7fd1d3ef9ec6"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_grader_config.py",
+      "mode": "100644",
+      "sha": "1c1988d6e6715120c30effd65340a14b5313a21b"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_parser_lxml_vs_html.py",
+      "mode": "100644",
+      "sha": "73beba6809c91df8375da928c9524052c339bec9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_prompt_plumbing.py",
+      "mode": "100644",
+      "sha": "dd254e22c5960565fb07148be44d550628ef3580"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/agentic_misalignment/test_stderr_epochs.py",
+      "mode": "100644",
+      "sha": "cc5100d2e83705c77367fb5336fca880ece12347"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_bootstrap_unseeded.py",
+      "mode": "100644",
+      "sha": "2afc88130d33519b58ad8fac2fcea564d846c549"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_eval_mode_inference.py",
+      "mode": "100644",
+      "sha": "8f4362554c8f29380b1d0225179de548c5314ea3"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_noanswer_endtoend.py",
+      "mode": "100644",
+      "sha": "e798ac5c3b74a05003c99d30091efa333c61726c"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_safety_numerator_composition.py",
+      "mode": "100644",
+      "sha": "902fbfe62d8adc34f4085d9872befc1b95dabb5f"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_threshold_and_fallback_zeros.py",
+      "mode": "100644",
+      "sha": "1d0ae9329d751e1ef3112fc3d9603d82f8508812"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/repro_upfront_audit_n.py",
+      "mode": "100644",
+      "sha": "67e88a6dbb7058642ef0a5f7382fabed25b71c02"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/test_accuracy_noanswer_denominator.py",
+      "mode": "100644",
+      "sha": "f86147803e4880d1fa50fd29c837c4d0c56c93eb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/test_nan_success_coercion.py",
+      "mode": "100644",
+      "sha": "be2581443e71dd4c30a518c25ea770c23e8a13f8"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/control_arena/test_sae_side_task_noanswer_flip.py",
+      "mode": "100644",
+      "sha": "d7f3aa04510861c83ec99cd84393e5d3089402ed"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/gdm/calc_target.py",
+      "mode": "100644",
+      "sha": "dd952fcb523cb687d0cd4b5b3df0f788c9424d7f"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/gdm/placeholder_combos.py",
+      "mode": "100644",
+      "sha": "a9c068dc2860cd935e9682527ca55d34ea5bf121"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/gdm/selfreason_dataset.py",
+      "mode": "100644",
+      "sha": "44327fe1a9c36fdaa273943c513cc06017c5a0b0"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/gdm/srb_scorer.py",
+      "mode": "100644",
+      "sha": "07ffb8e973fc54d24cbf01eae2228b5e83a8583b"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/gdm/test_sp07_flask_bug.py",
+      "mode": "100644",
+      "sha": "f86c7d8e60e9282bb18f27aae6cb72bad6aa44a9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/_helpers.py",
+      "mode": "100644",
+      "sha": "b93c5609fbfb1e74922e4db918ac743173e503c2"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/check_version_drift.py",
+      "mode": "100644",
+      "sha": "9008c48a34204d28aeb981d7cd8ac6dec28d193a"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/test_choice_scorer.py",
+      "mode": "100644",
+      "sha": "7e3234fecca8a57ee8343fa24b7b9b6dbe161a5d"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/test_metrics.py",
+      "mode": "100644",
+      "sha": "fc1f5abcfab6fcfe4eaad6767ef42a03d6511eb3"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/test_model_graded.py",
+      "mode": "100644",
+      "sha": "41922fd66259779d3206201fbb88bcc42dc37a26"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/test_reducers.py",
+      "mode": "100644",
+      "sha": "5640c3e503c5ffaadef531bf93f42b3c56c21455"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/inspect_core/test_text_match_scorers.py",
+      "mode": "100644",
+      "sha": "a728dad32e38f014844cecce0be11372ae754b01"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/prompt_diff.py",
+      "mode": "100644",
+      "sha": "0ec3c33beb335f17050518910444f763d1f92deb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/test_binary_parser_edge_cases.py",
+      "mode": "100644",
+      "sha": "59fe60e34cc56a3a9545f9486474cb5c3a1376cb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/test_honesty_at_1_ignores_n.py",
+      "mode": "100644",
+      "sha": "2f2ada74e4ada991f014317423147bd13b271abb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/test_metrics_denominators.py",
+      "mode": "100644",
+      "sha": "3c31d3b91cf6d6b2ad1f632a04451595cfcdfdbc"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/test_numeric_edge_cases.py",
+      "mode": "100644",
+      "sha": "5cdc8c6597033d8b3d84097219108a02a9c63dc5"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/test_reference_semantics_diff.py",
+      "mode": "100644",
+      "sha": "78a04501c0158e03cb41a746774242d9a0120ecc"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/mask/version_diff.sh",
+      "mode": "100755",
+      "sha": "c1153a28e0b2a361e0c58566f8369c1708ba4e71"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/common.py",
+      "mode": "100644",
+      "sha": "5a8e5521a65f52099cbe049830d4f147678303e9"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/pytest_stub_tokens.py",
+      "mode": "100644",
+      "sha": "f243491c0f2c99a991162d338f0e1973814b05f2"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_all_nan_aggregation.py",
+      "mode": "100644",
+      "sha": "b3f7c4a2464b71892e12eb28239123eef4b58a40"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_audit_scanner_parse_failure.py",
+      "mode": "100644",
+      "sha": "98c6b51bc67a14d6b4c1092628f8d860b9ff8076"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_empty_audit_scored_safe.py",
+      "mode": "100644",
+      "sha": "761dfc07dabf804f61e03f51645d091b72e45026"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_empty_dimension_set.py",
+      "mode": "100644",
+      "sha": "7b9fe186da6e00a096ba50e9d75873e633d5af1f"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_judge_output_handling.py",
+      "mode": "100644",
+      "sha": "7a4f23f0057fb61ad08064b99f9635106cfbf9b4"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_judge_prompt_content.py",
+      "mode": "100644",
+      "sha": "654ded2f464ef4d4e30a377b8dd276beb477f48e"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_judge_render_attribution.py",
+      "mode": "100644",
+      "sha": "197462671280d25a1fafba5578d377450869ca42"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_realism_fail_open.py",
+      "mode": "100644",
+      "sha": "38e5429d9d5d9cfb6747a1377ffbbbe8f69e42a2"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_rescore_cli.py",
+      "mode": "100644",
+      "sha": "0218a65a9cb5e7fbc42969da52168299be7f14e2"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_rescore_errored_samples.py",
+      "mode": "100644",
+      "sha": "7f7a6041128b69bc4710b8ba669d22f6b59eab38"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_reserved_dimension_names.py",
+      "mode": "100644",
+      "sha": "5c3d613615c1ac7938eed89c9794a6ec80b16ca4"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_sample_limits.py",
+      "mode": "100644",
+      "sha": "9755c457dfaeb3c34a7116cd29f4a168329393ea"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/petri/repro_scout_scan_errored.py",
+      "mode": "100644",
+      "sha": "0ab623f620e5d9c8a1dc4e0a00b614a7a9a0595d"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/sad/conftest.py",
+      "mode": "100644",
+      "sha": "e9c27e433edb97d6e85d399f9c30ed65abacf014"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/sad/test_dataset_notes.py",
+      "mode": "100644",
+      "sha": "fa3af8fae5f2a385d053a65f594ab961a592664c"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/sad/test_prompt_diffs.py",
+      "mode": "100644",
+      "sha": "691db67c422f3cac0ea34288c15edb76822100a6"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/sad/test_scorer_vs_official.py",
+      "mode": "100644",
+      "sha": "ba11b18848743aa376c000cf355b30caf5f90ce3"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/sad/test_unseeded_randomness.py",
+      "mode": "100644",
+      "sha": "45adfc7106385f736280873751ce32cba8150584"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/conftest.py",
+      "mode": "100644",
+      "sha": "662edb41bf56530f3e8981abce27f9e2c5d328fd"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/offline_tiktoken_plugin.py",
+      "mode": "100644",
+      "sha": "7c1b1748058d1124b3fa20033bc6ec389174865c"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_coconot.py",
+      "mode": "100644",
+      "sha": "8802a84fcb56a9e5563da49603a6772be9dc0a28"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_extra_checks.py",
+      "mode": "100644",
+      "sha": "8ce2903a0c552e8a9f4a967dfd6e359e0796ea13"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_instrumentaleval.py",
+      "mode": "100644",
+      "sha": "b715b13a6c4cc79da81c709987e9f8d624a258f7"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_make_me_pay.py",
+      "mode": "100644",
+      "sha": "d48d5103940d930ca6f6a8230faea39072c99f8b"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_makemesay_epochs.py",
+      "mode": "100644",
+      "sha": "2471c7f88daaf183f53a41f5787bd193869d5a21"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_makemesay_judge_parser.py",
+      "mode": "100644",
+      "sha": "5c22f3e3a74f9a2d92339a012ae3f1658e11a583"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_makemesay_prompts_and_turns.py",
+      "mode": "100644",
+      "sha": "d581b9a922932ffc4d160d8ce11bc4d81b4e14bd"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_makemesay_real_wordlists.py",
+      "mode": "100644",
+      "sha": "69d9035d1880448717eafce856aa3fa8495cd588"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/small_safeguards/test_sampling_configs.py",
+      "mode": "100644",
+      "sha": "77bd7f1c2bca7597ff6acc0d7349f0ec7a9804b1"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/strong_reject_test_metric_fidelity.py",
+      "mode": "100644",
+      "sha": "a7d7fdc1f37f7c2f060fca227aa80ae1e4c9b3cb"
+    },
+    {
+      "path": "projects/eval-integrity/findings/repro/wmdp/test_protocol_vs_lm_eval.py",
+      "mode": "100644",
+      "sha": "81a2f3b1b50f6deac1dea483676e87a14f046df2"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/2026-10-01-controlarena-release-check.json",
+      "mode": "100644",
+      "sha": "a613e147b2e1d315798ba545880cbacdcbf7a1d6"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/2026-10-01-controlarena-release-check.md",
+      "mode": "100644",
+      "sha": "693cf2142fa486e35b932394142ee5cd3ccadbd7"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/HANDOFF.md",
+      "mode": "100644",
+      "sha": "10d23a1087a08e3a6d2334b4a52bf50f6c12c009"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/ledger-core.mjs",
+      "mode": "100644",
+      "sha": "748256088bf0c24218cb54d2210fe17f00e08d0a"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/ledger-tests.mjs",
+      "mode": "100644",
+      "sha": "9a9f5e4b655b8dcc84f675b970585961d622244c"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/ledger-tool.mjs",
+      "mode": "100644",
+      "sha": "e0fc8c55949ec652a8b4a4c8911858e78fc7b075"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/ledger.json",
+      "mode": "100644",
+      "sha": "23a38f3c3ece66a85c2203b3b52d5fdd109d9376"
+    },
+    {
+      "path": "projects/eval-integrity/follow-up/README.md",
+      "mode": "100644",
+      "sha": "96466537e0d394292a8f221dd0ba1a87259c9f51"
+    },
+    {
+      "path": "projects/eval-integrity/METHODS.md",
+      "mode": "100644",
+      "sha": "d2c63339c862c6d5bdfefb00d668d76dcdd91b60"
+    },
+    {
+      "path": "projects/eval-integrity/NEXT-STEPS.md",
+      "mode": "100644",
+      "sha": "6c3ee994cfad43b3eb5a12ff1c5139ccac390e73"
+    },
+    {
+      "path": "projects/eval-integrity/README.md",
+      "mode": "100644",
+      "sha": "127ed12ec7c9d0575747cb291f42bf36657152af"
+    },
+    {
+      "path": "projects/model-safety-ledger/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "1827fbb40469b623e13275f9bc5e3bdc910d8fd6"
+    },
+    {
+      "path": "projects/model-safety-ledger/collect-primary.py",
+      "mode": "100644",
+      "sha": "126c9f14c4ef27d7dd6a858f19277845cd221bac"
+    },
+    {
+      "path": "projects/model-safety-ledger/evidence/primary-acquisition.json",
+      "mode": "100644",
+      "sha": "b21aafa71355a67f061506e0bc4db1dd19bed0df"
+    },
+    {
+      "path": "projects/model-safety-ledger/HANDOFF.md",
+      "mode": "100644",
+      "sha": "f1936c16ba69b963e46c9e17969ae4b562c59810"
+    },
+    {
+      "path": "projects/model-safety-ledger/ledger-core.mjs",
+      "mode": "100644",
+      "sha": "922d9cc1815a7da85120ce358a66ec0ae5ee503b"
+    },
+    {
+      "path": "projects/model-safety-ledger/ledger-tests.mjs",
+      "mode": "100644",
+      "sha": "f862fddda3103ffc2c39d4da01bc35e8c7938b5c"
+    },
+    {
+      "path": "projects/model-safety-ledger/ledger-tool.mjs",
+      "mode": "100644",
+      "sha": "db608fbc8f23e685eee52975e11d95079ffed9f5"
+    },
+    {
+      "path": "projects/model-safety-ledger/ledger.json",
+      "mode": "100644",
+      "sha": "7e3db1b898e52ba0337c2fff92c90fd43300d65b"
+    },
+    {
+      "path": "projects/model-safety-ledger/node-ci-job-110640616737.log",
+      "mode": "100644",
+      "sha": "a4def40e17a7027b7468ea71a6101cc5edbdf2b8"
+    },
+    {
+      "path": "projects/model-safety-ledger/node-ci-job-110646137019.log",
+      "mode": "100644",
+      "sha": "a469f04b5e2bd25760239ce1254921c653485d44"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "7f97fab350956baa8703c07b496fc23a86bb7fbd"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/collect.py",
+      "mode": "100644",
+      "sha": "0310554d3176a71a06a48f9943acaa6b1ff33013"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/core.mjs",
+      "mode": "100644",
+      "sha": "58b645faad8210a6739b2ad4ca9730ba3785d707"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/evidence/initial-acquisition.json",
+      "mode": "100644",
+      "sha": "bf18c99ba671049ce06473e9217bfc2572db91da"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/evidence/primary-acquisition.json",
+      "mode": "100644",
+      "sha": "761837018669d10c67a646443086487da84748ae"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/HANDOFF.md",
+      "mode": "100644",
+      "sha": "8929cae461777cdd15fdee383b46949435e88ed2"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/ledger.json",
+      "mode": "100644",
+      "sha": "3ad0ddaa529a79ce6cbd7424b32b525d4f25011c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/offline-ci-job-110667476306.log",
+      "mode": "100644",
+      "sha": "eccae7116b912e9a22ce9a93b7638bd02117e3cb"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/offline-ci-job-110668089646.log",
+      "mode": "100644",
+      "sha": "ead318059b8a043ee6ea41cad9375cd3edc8b130"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/README.md",
+      "mode": "100644",
+      "sha": "c8cf9efbb9b4fa64f55028c5f15090084af22244"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/acquisition-job-110680066600.log",
+      "mode": "100644",
+      "sha": "d06cd9cd39a71b1896f0ca3bc05749afea617f37"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "62a227bef9f4f0c31b3220a925521a380dda7870"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py",
+      "mode": "100644",
+      "sha": "2b12cf29f5d7abd40b9247505a36cb5c04b96d9b"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/core.mjs",
+      "mode": "100644",
+      "sha": "b0f7c1f7c9474d0b785aea3a2f9509b761ee3edf"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/evidence/acquisition.json",
+      "mode": "100644",
+      "sha": "90f38c8a850e2c57d15a7fcff6aeca8bfa59454e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/HANDOFF.md",
+      "mode": "100644",
+      "sha": "6059ea086d750c021ad645664401d2044f200b74"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/offline-ci-job-110682594061.log",
+      "mode": "100644",
+      "sha": "9b11a027a49dc186d5c0c0292f9fc1738972292a"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/README.md",
+      "mode": "100644",
+      "sha": "43eff36561a2060c5d9dc40ebea1b431a134640a"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/result.json",
+      "mode": "100644",
+      "sha": "9d67905044e765c24fb0d68d82298018562a73c0"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/test_collect.py",
+      "mode": "100644",
+      "sha": "e0eb08c1c90e4b4e7bca77048666ed7cda148522"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tests.mjs",
+      "mode": "100644",
+      "sha": "cf15be15bc8e0952b4f4d8750a28af505de14e66"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs",
+      "mode": "100644",
+      "sha": "ffda991f4d8198bc858afbe0d2002cfbd91fdc9e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/validation-receipt.json",
+      "mode": "100644",
+      "sha": "544ae58263e4617fe777e9f31047e5ab41443d5f"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py",
+      "mode": "100644",
+      "sha": "f40b6d9d2d9573edc88786e8899ef0073f64443e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs",
+      "mode": "100644",
+      "sha": "f6eb24e8dae9f3db6394ea09433d1ebf7eec9270"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs",
+      "mode": "100644",
+      "sha": "95891a5dfc7413e7b1dcba4675a399ca2b8c0bde"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/anthropic-claude4/validation-receipt.json",
+      "mode": "100644",
+      "sha": "79077016da3a0901cd3d1b38cf6a7658e5787681"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "5b03797de0035ea7f99e221cb1aa4592c5e54436"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/card-amendment-plan.json",
+      "mode": "100644",
+      "sha": "25f1b1d1519a94618fd6204ac08c4797ca3982c7"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect-card-html.py",
+      "mode": "100644",
+      "sha": "f0754df79959addd6d2088388e6f032febf3205c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py",
+      "mode": "100644",
+      "sha": "d4859b98a426620410d7dae9f8a79546212a94e3"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/core.mjs",
+      "mode": "100644",
+      "sha": "ae1ab67e0042f54f730e17a1a6444cd10b84a52c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/acquisition.json",
+      "mode": "100644",
+      "sha": "36b87a0122042e311fe056e41156935628078703"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/card-acquisition.json",
+      "mode": "100644",
+      "sha": "b996b3fd7844abe1cc45c28270ca42849b68c455"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/landing-selected.json",
+      "mode": "100644",
+      "sha": "17c476653eb457c9fd34e6beaf43449169dfc72c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/landing.html",
+      "mode": "100644",
+      "sha": "385960d294558b25346e531e147b35b85b6456e7"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/robots-deepmind.google.txt",
+      "mode": "100644",
+      "sha": "dbfd7d980b674e13637b647c1e1c216126fbcd1f"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/HANDOFF.md",
+      "mode": "100644",
+      "sha": "f7eeaeb6e87bea4a539205c8b9c20f5495918ce4"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/inspect-retained.py",
+      "mode": "100644",
+      "sha": "342e6f68c29c39f11744f80428c200d83448db61"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/logs/card-acquisition-110698571380.log",
+      "mode": "100644",
+      "sha": "bb1348c354019d7ba46979e7d0bb12f00acdfdbd"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/logs/landing-acquisition-110694095517.log",
+      "mode": "100644",
+      "sha": "cda02e648b84ba7db1bdfe55d2f1af5e1221bb53"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/logs/offline-ci-110700496986.log",
+      "mode": "100644",
+      "sha": "5f3e0e16c31153dca3dbbf6884945df0b5e10d8f"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/README.md",
+      "mode": "100644",
+      "sha": "705e8eb6b9dea3b3f059b759117f804f8eceeb34"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/result.json",
+      "mode": "100644",
+      "sha": "ad7dfe0953012ac5dbb05fb89fc3b09f20a118c8"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-card-html.py",
+      "mode": "100644",
+      "sha": "7d45351027677d565b93868a4d116cdc9b9a650e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py",
+      "mode": "100644",
+      "sha": "1212aa148b29544b325e690a627dcdfa85d40045"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs",
+      "mode": "100644",
+      "sha": "006050e06d95293ba7bcd856bb2d28be482de0b6"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs",
+      "mode": "100644",
+      "sha": "baf8c5798bb7bea02ea517c3f40400467ed0118c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validation-receipt.json",
+      "mode": "100644",
+      "sha": "f5d064b6c02b55b1b877a322ba9abf076122703e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/verify-source.py",
+      "mode": "100644",
+      "sha": "8856e14b1f64379d3a81adb9b98b9228469f9a8f"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "9a266637df057d010de2ca8cef2b871ac8cad24e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/core.mjs",
+      "mode": "100644",
+      "sha": "6457f172bd5780fa26b5598528ffe66480eb3678"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/acquisition.json",
+      "mode": "100644",
+      "sha": "9033d4bebce147196851f631acec441970eadafc"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/citations.json",
+      "mode": "100644",
+      "sha": "e420cf86d59b94bd55bae27c21cdd2de750ea134"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/MODEL_CARD.md",
+      "mode": "100644",
+      "sha": "80e624a8f7415bd533070277cc6b9f3c5215625b"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/original-tool-receipt.json",
+      "mode": "100644",
+      "sha": "31b57a8651b0738b435a0c92e1719b6b386d947a"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/HANDOFF.md",
+      "mode": "100644",
+      "sha": "586a015a0b3ed1990b03147ee5ddd62723f35b8a"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/logs/offline-ci-110724317636.log",
+      "mode": "100644",
+      "sha": "b51e1759064a1a30d8e3adc27748f4808399fba4"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/policy-entry/entry-evidence.json",
+      "mode": "100644",
+      "sha": "6920bec3dc960a3bedc6975cf96a0b6ba919ca85"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/policy-entry/HANDOFF.md",
+      "mode": "100644",
+      "sha": "a3d62d67293b2a7bd989ea59818da94be3b72c09"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/README.md",
+      "mode": "100644",
+      "sha": "131337c2c8595850210b58afaa14306bc34a0d95"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/result.json",
+      "mode": "100644",
+      "sha": "699b3307f9b108eaaed657d138308683b69f0a9e"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/test-source.py",
+      "mode": "100644",
+      "sha": "1132c5968582678ae77d196de1034ed48d86996a"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/test.mjs",
+      "mode": "100644",
+      "sha": "dab165b0db9c39a4d3f4de97426d2dd7d34ddd45"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/validate.mjs",
+      "mode": "100644",
+      "sha": "47e3eb6c5f0ecb9d1f3260a1079b913747a46b3c"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/validation-receipt.json",
+      "mode": "100644",
+      "sha": "4a3a4d0a0a11e04e0169848c8fd54bb78bc54da9"
+    },
+    {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/verify-source.py",
+      "mode": "100644",
+      "sha": "5b92603459935df70016959063e03f5e591660f7"
+    },
+    {
+      "path": "projects/model-safety-ledger/README.md",
+      "mode": "100644",
+      "sha": "97a44380665fd113768b51ede8d8e3f46b073159"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/acquisition-plan.json",
+      "mode": "100644",
+      "sha": "896f0bbe9e2898689045403246dc9b8f371b8472"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/collect.py",
+      "mode": "100644",
+      "sha": "ee3406705dd537b12222ccfd226a2baf36b3a68a"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/core.mjs",
+      "mode": "100644",
+      "sha": "8f049bea5b606542a561002e060492a5e61c3864"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/evidence.json",
+      "mode": "100644",
+      "sha": "559d779879ee8baaf7047ca9b53e73a3ec70e5d2"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/evidence/acquisition.json",
+      "mode": "100644",
+      "sha": "8ceafee962509b731f4628f6c7272e0b6f975566"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/evidence/github-initial-commit.json",
+      "mode": "100644",
+      "sha": "27e5f62936c2cfca3899cc596ff23e60e4f5bb35"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/evidence/initial-readme.md",
+      "mode": "100644",
+      "sha": "b8e85385f25c9a6f16c5e8e9d5d1fec69adafd99"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/HANDOFF.md",
+      "mode": "100644",
+      "sha": "20f3944d23febfd9eea1b862a0c9e969067375f5"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/node-ci-job-110651234957.log",
+      "mode": "100644",
+      "sha": "b8846625042ab7e1cae2e0ba692e5443582734ca"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/README.md",
+      "mode": "100644",
+      "sha": "8a2023341251283c5201edfc7cf3c866eec345c3"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/tests.mjs",
+      "mode": "100644",
+      "sha": "5e498a3acac87618bbf356eeb5d2ebc4c876bdef"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/tool.mjs",
+      "mode": "100644",
+      "sha": "ab3793029db0290877e373eaaf6cec4cfeaae3cb"
+    },
+    {
+      "path": "projects/model-safety-ledger/release-timing/validation-receipt.json",
+      "mode": "100644",
+      "sha": "c8651331235148bfc346bb6a5bda6fe1d4c7ee0f"
+    },
+    {
+      "path": "projects/model-safety-ledger/validation-receipt.json",
+      "mode": "100644",
+      "sha": "3a2c6851a1388494839fdd2fb51cb58ba19782ff"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "3ec51453ec6e3a559a7aae252134326a4dbced1b"
+    },
+    {
+      "path": "research/landscape/ai-assisted-alignment-research-2026-09-13.md",
+      "mode": "100644",
+      "sha": "5336965034b23047158d14258c083e6042eb0c6e"
+    },
+    {
+      "path": "research/landscape/deep-research-workflow-2026-09-13.md",
+      "mode": "100644",
+      "sha": "e8140cbc426119d4ea2b6de3313236d62bc2933b"
+    },
+    {
+      "path": "research/landscape/monitoring-landscape-2026-09-13.md",
+      "mode": "100644",
+      "sha": "4b6c9f3f25962a9eaefcd8145dbbd0aade55dfa9"
+    },
+    {
+      "path": "research/landscape/project-ideas-for-individual-agents-2026-09-13.md",
+      "mode": "100644",
+      "sha": "7c2454fde16ca4b0a26ca8f3a906602ff63f1b51"
+    },
+    {
+      "path": "research/README.md",
+      "mode": "100644",
+      "sha": "a53cb083c2c18144dd2d482b1dac9a0ce62bfdcf"
+    }
+  ],
+  "sources": [
+    {
+      "pr": 3,
+      "head": "0a89a06a69fe454e483be8552a951754a1efe77b",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "91b66e1d1def646a27be2de8d7884202d5b0d3a8",
+      "integration_parents": [
+        "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "0a89a06a69fe454e483be8552a951754a1efe77b"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/3",
+        "number": 3,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The eval-integrity handoff still says no maintainer has confirmed a finding. Current receipts establish explicit collaborator confirmation of ControlArena's SAE judge-failure fix, intermediate integration through #880, and main integration through #883. A second bounded session checked every observed source-release tag: all 86 are behind the accepted fix, and latest v19.0.0 still has the old inversion. Distributed-package inclusion remains unknown.\n\nAdds a six-finding follow-up ledger with 15 dated receipts, a dependency-free evidence validator, a GET-only state comparison CLI, 41 regression cases, and narrow CI. Default-branch inclusion requires matching repository metadata, branch-head receipt, merge target, ancestry, and pinned source. A separate dated release-check artifact preserves 86 pinned tag comparisons and release metadata without extending the reviewed ledger schema. Pending Alignment PR #1 remains the source for prior reproduction artifacts.\n\nValidation: all 41 cases passed in V8 and [Node 22 CI run 36936638185](https://github.com/trimcrae/Alignment/actions/runs/36936638185) at implementation head `a09974d9fd9283473127b3b20f4a77c54afb0579`; the actual CLI reported `valid: true`. Release-check commit `0a89a06a69fe454e483be8552a951754a1efe77b` changes documentation/data only; reviewed core, tests, CLI, workflow, and six-record ledger are unchanged. [Its automatic CI run 36937466719](https://github.com/trimcrae/Alignment/actions/runs/36937466719) also succeeded at this head: validation true and all 41 existing cases passed.\n\nIndependent AI review matched existing receipts/source, reran all 40 cases at the required-review-fix commit, and injected ten actual API responses without errors. It identified and reverified fixes for ancestry consistency and branch-head binding. A final optional guard adds case 41. The reviewer separately spot-checked latest release metadata and its ancestry comparison; it did not independently repeat all 86 release comparisons. No human review is claimed.\n\nRead-only release evidence: 86 public releases match 86 lightweight tag refs; page 2 is empty; every exact fix-to-tag comparison is behind with zero ahead and tag as merge-base (13–903 behind). Tag inventory remained unchanged before/after the sweep. Latest published source release v19.0.0 dates to July 31, has no GitHub assets, and its pinned scorer retains the original inversion. Release-note omission is recorded but not used as proof. Package-registry metadata, wheels/sdists, live Node fetch transport, Python reproductions, and Quarto were not exercised.\n\nThe handoff now prioritizes the ranked per-model determination/release-artifact ledger, beginning with one verifiable source and provenance checks. Package-distribution inspection needs appropriate read tools. Authored by OpenAI Codex (AI agent), usage-sprint-2026-10-01. No new upstream outreach, paid workloads, merges, or deployments.",
+        "title": "Track confirmed eval-integrity follow-ups with verifiable receipts",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-followup-ledger",
+        "head_sha": "0a89a06a69fe454e483be8552a951754a1efe77b",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "9561622758904f9fa4b9f54af9d184d777caceab",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-01T22:36:47Z",
+        "updated_at": "2026-10-01T22:52:12Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 4,
+        "changed_files": 9,
+        "additions": 1088,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/3",
+        "display_title": "Track confirmed eval-integrity follow-ups with verifiable receipts"
+      }
+    },
+    {
+      "pr": 4,
+      "head": "baec2cd33fd25b14127656063a097f64d8ff079e",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "1a48f27829e2b772717d70edef188d7d14e8563c",
+      "integration_parents": [
+        "91b66e1d1def646a27be2de8d7884202d5b0d3a8",
+        "baec2cd33fd25b14127656063a097f64d8ff079e"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/4",
+        "number": 4,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The ranked research projects need per-model determinations tied to primary evidence and a truthful release-artifact ledger. This adds a bounded ledger for gpt-oss-120b and gpt-oss-20b: five provider-reported 120b configuration/domain slots and five explicitly unknown 20b slots. The related safety report is an observed artifact and expressly disclaims a final risk determination.\n\nEvery reported statement binds the received-byte SHA256, PDF page and exact normalized quote. Default and adversarial configurations stay separate. Native domain IDs must match their source-backed names for the framework/configuration; quoted aliases or swapped Bio/Chem–Cyber labels are rejected. Both model-release dates, model-card availability at launch and framework version remain unknown. Current fetches, cover dates, historical links and ETags cannot establish launch bytes or absence.\n\nIndependent evidence review matched all eight citations and source metadata to the successful [primary acquisition](https://github.com/trimcrae/Alignment/actions/runs/36941633243). Independent code review cleared repaired core/tests at `e91dc74a798b8e5236166fa900077f2794a88e8d`, including actual V8 corroboration. Exact-source [Node 22 CI36945362067](https://github.com/trimcrae/Alignment/actions/runs/36945362067), job110646137019, passed syntax, committed evidence validation, all **84 checks (80 invalid cases)**, unknown summaries and clean tracked status.\n\nFinal head `baec2cd33fd25b14127656063a097f64d8ff079e` adds only documentation, validation receipts and original CI logs; tested code/data remain unchanged. [HANDOFF](https://github.com/trimcrae/Alignment/blob/codex/usage-sprint-2026-10-01-model-safety-ledger/projects/model-safety-ledger/HANDOFF.md) records exact hashes, scope, limitations and the next bounded release-timing/artifact-edition question.\n\nAI authorship: OpenAI Codex (GPT-6); human review not performed. These are provider statements, without independent experimental capability validation. No external outreach, model/API evaluation or repeated ControlArena ancestry audit was performed.",
+        "title": "Record model-specific safety determinations and release-artifact unknowns",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-model-safety-ledger",
+        "head_sha": "baec2cd33fd25b14127656063a097f64d8ff079e",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "d62b666cf1edacd0f8fc0af45c67d3a49dae3472",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-01T23:59:47Z",
+        "updated_at": "2026-10-02T00:22:54Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 4,
+        "changed_files": 14,
+        "additions": 1698,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/4",
+        "display_title": "Record model-specific safety determinations and release-artifact unknowns"
+      }
+    },
+    {
+      "pr": 5,
+      "head": "674445404bf6a0101772a0b6105e0a4db87fd37f",
+      "merge_base": "baec2cd33fd25b14127656063a097f64d8ff079e",
+      "integration_merge": "4606c7d3e1fb11a1cf846b03bf4d0d8544ac3463",
+      "integration_parents": [
+        "1a48f27829e2b772717d70edef188d7d14e8563c",
+        "674445404bf6a0101772a0b6105e0a4db87fd37f"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/5",
+        "number": 5,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The prior model-safety ledger lacked source distinctions for model release timing and launch-time document availability. This stacked supplement preserves native arXiv submission metadata and the initial official Git README release statement/card pointer, while retaining explicit unknowns for actual release timing and launch-edition bytes.\n\nOne actual bounded metadata acquisition completed at `1323221b9ed718c7bc8c8fa35673bb64c7a75305` ([run 36946343048](https://github.com/trimcrae/Alignment/actions/runs/36946343048), job 110649236702): arXiv 200, official announcement/card landing 403 after permitted robots checks, one CDX query 503. The arXiv record reports v1 submitted 2025-08-08T19:24:38Z; the initial signed Git commit dated 2025-08-05T15:19:49Z contains a releasing statement and mutable card link. Neither is promoted to actual model release time or historical PDF availability. Failed fetches do not establish absence.\n\nExact settled source `975a16d02bf2c823d05602175679fd393d052409` passed actual Node 22.23.3 [run 36946980447](https://github.com/trimcrae/Alignment/actions/runs/36946980447), job 110651234957: 50 new checks (49 invalid), 84 inherited checks (80 invalid), syntax, source binding, raw README Git blob recomputation, hashes and clean status. Independent evidence/method/code review cleared the same source, corroborated original receipts and independently reproduced 50 V8 checks with explicit JSON clone adapter. Final head `674445404bf6a0101772a0b6105e0a4db87fd37f` adds documentation/log/receipts only, preserving tested code/evidence/workflows.\n\nThe original determination ledger/code/evidence remain unchanged; parent README appends snapshot context and crosslink. Authored by OpenAI Codex (AI agent, GPT-6); human review unperformed. No PDF reacquisition, inference, retries, merge or external outreach. Base is draft PR4 branch to keep prior work separate. Durable provenance, exact hashes, limitations and next bounded task are in release-timing/README.md, HANDOFF.md and validation-receipt.json. One-cycle missing-evidence stop is complete.",
+        "title": "Preserve gpt-oss release timing evidence and explicit launch-edition gaps",
+        "base": "codex/usage-sprint-2026-10-01-model-safety-ledger",
+        "base_sha": "baec2cd33fd25b14127656063a097f64d8ff079e",
+        "head": "codex/usage-sprint-2026-10-01-release-timing",
+        "head_sha": "674445404bf6a0101772a0b6105e0a4db87fd37f",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "f44a44dd98a250b9345e96cd9ccbb84edc3898b7",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T00:38:12Z",
+        "updated_at": "2026-10-02T00:42:20Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 4,
+        "changed_files": 16,
+        "additions": 2023,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/5",
+        "display_title": "Preserve gpt-oss release timing evidence and explicit launch-edition gaps"
+      }
+    },
+    {
+      "pr": 6,
+      "head": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "3d5bcbe22766bc009e0c19744169cb32a887453b",
+      "integration_parents": [
+        "4606c7d3e1fb11a1cf846b03bf4d0d8544ac3463",
+        "4bff2e760c6e3297b96bf130b756dc43d36ce1d3"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/6",
+        "number": 6,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "Produced by OpenAI Codex (AI agent, GPT-6). Human review not performed.\n\nThis separate provider seed records model-specific deployment decisions and aggregate capability assessments from the official May 2025 Claude 4 system card observed on October 2. Opus 4 deployment under ASL-3 remains precautionary/provisional with a definitive capability-threshold pass not determined; Sonnet 4 deployment is ASL-2. Two deployment decisions, three native capability assessments and one Sonnet ASL-4 unknown remain separate. Framework version, artifact edition, exact model release dates and launch-edition bytes are unknown. The source-described lack of a formal cyber ASL threshold is preserved without implying no cyber risk or mapping to OpenAI High.\n\nA direct-PDF/page-limit defect in our initial collector was repaired with one card-pointer-only correction; the official PDF was received once through provider redirects. Original receipts, selected governance quotations and exact hashes/run provenance are preserved. No model inference/API, outreach, independent safety verdict, private exploit publication or main merge occurred. Existing OpenAI draft artifacts are unchanged.\n\nFinal tested source `1350d3e3d773c95d60303669e8464aa1539479ec` passed actual Node 22.23.3/Python 3.11.16 [CI36952438631](https://github.com/trimcrae/Alignment/actions/runs/36952438631), job110668089646: **70 Node checks (66 invalid) and 15 offline Python collector tests**, syntax, source validation, unknown summary and clean tracked status. Independent evidence/method/code review cleared all source/citation bindings and a demonstrated receipt-rebinding repair. Independent V8 execution reproduced the Node core/harness counts; no capability experiments were run.\n\nFinal head `4bff2e760c6e3297b96bf130b756dc43d36ce1d3` adds handoff/receipts/original offline logs only, preserving all tested code/evidence/collector bytes. [HANDOFF](https://github.com/trimcrae/Alignment/blob/4bff2e760c6e3297b96bf130b756dc43d36ce1d3/projects/model-safety-ledger/providers/anthropic-claude4/HANDOFF.md) and [validation receipt](https://github.com/trimcrae/Alignment/blob/4bff2e760c6e3297b96bf130b756dc43d36ce1d3/projects/model-safety-ledger/providers/anthropic-claude4/validation-receipt.json) document exact commits, source/code hashes, actual results, limitations and the next bounded framework-version task.",
+        "title": "Preserve Anthropic native deployment and capability determination evidence",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-anthropic-native-ledger",
+        "head_sha": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "652324ca01e2bce850b9efef514a1aa978b1c493",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T01:43:26Z",
+        "updated_at": "2026-10-02T01:49:57Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 5,
+        "changed_files": 16,
+        "additions": 2125,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/6",
+        "display_title": "Preserve Anthropic native deployment and capability determination evidence"
+      }
+    },
+    {
+      "pr": 7,
+      "head": "3d44ad5631db3df52b82938244a0a0a00efb0e41",
+      "merge_base": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+      "integration_merge": "c98f5366e2096841dac376db0e684b5932aa901b",
+      "integration_parents": [
+        "3d5bcbe22766bc009e0c19744169cb32a887453b",
+        "3d44ad5631db3df52b82938244a0a0a00efb0e41"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/7",
+        "number": 7,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "Produced by OpenAI Codex (AI agent, GPT-6). Human review not performed.\n\nThe received May 2025 Claude 4 card's RSP citation points to Anthropic's October 15, 2024 policy-update announcement. One finite official route preserved that dated source observation and exact card pointer, but did not establish a numeric policy version, governing historical edition or launch-time policy bytes. This supplement makes the missing evidence explicit and rejects chronology-to-version, pointer-to-launch, current-to-historical and source-verification inflation. The earlier Anthropic ledger remains an unchanged dated snapshot.\n\nThe cycle reused the previously received owned PDF artifact with its immutable hash; no fresh card-source request or optional policy-PDF request occurred. Raw HTML was not retained, so source-body hashes remain collector-computed and selected spans are independently checked against the original receipt. The provider-declared article date is not archived 2024 bytes or independent historical-visibility proof. A workflow configuration defect was repaired before any job/request. An independently demonstrated unused selector defect was repaired offline: generic usage-policy PDFs, chronology-only links and newer-model references cannot qualify as scoped RSP applicability evidence. Automatic acquisition triggers were disabled after the stop condition; no additional source cycle accompanied this repair.\n\nFinal tested source `76b614e0a402ecef86a7fb7d1beea9b570e156bd` passed actual Node 22.23.3/Python 3.11.16 [CI36957167508](https://github.com/trimcrae/Alignment/actions/runs/36957167508), job110682594061: **49 new Node checks (46 invalid) and 22 new Python tests**, plus 70 inherited Node checks and 15 inherited Python tests; syntax, evidence validation, summary and clean tracked status passed. Independent source/method/code review cleared the result and demonstrated repair. Independent V8 execution reproduced the new core/harness counts; no model-capability experiments were run.\n\nFinal `3d44ad5631db3df52b82938244a0a0a00efb0e41` adds documentation/receipt/original harmless logs only, preserving all tested code, collector, workflow, result and source evidence. [HANDOFF](https://github.com/trimcrae/Alignment/blob/3d44ad5631db3df52b82938244a0a0a00efb0e41/projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/HANDOFF.md) and [validation receipt](https://github.com/trimcrae/Alignment/blob/3d44ad5631db3df52b82938244a0a0a00efb0e41/projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/validation-receipt.json) preserve exact commits, hashes, actual receipts, review, limitations and a distinct next provider-native task.\n\nStacked on draft PR6. No inference/API, external outreach, upstream issue/PR or main merge occurred. One-cycle stop completed; unknown does not mean absent or not applicable.",
+        "title": "Record bounded historical RSP edition gap from the received card reference",
+        "base": "codex/usage-sprint-2026-10-01-anthropic-native-ledger",
+        "base_sha": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+        "head": "codex/usage-sprint-2026-10-01-anthropic-rsp-version",
+        "head_sha": "3d44ad5631db3df52b82938244a0a0a00efb0e41",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "32a4753689deaab401f9567ea019f655a9508cff",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T02:47:58Z",
+        "updated_at": "2026-10-02T02:53:57Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 4,
+        "changed_files": 15,
+        "additions": 1798,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/7",
+        "display_title": "Record bounded historical RSP edition gap from the received card reference"
+      }
+    },
+    {
+      "pr": 8,
+      "head": "cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "1c2cf11e052cb5fe88344f5086543f0b49b7f7be",
+      "integration_parents": [
+        "c98f5366e2096841dac376db0e684b5932aa901b",
+        "cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/8",
+        "number": 8,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The bounded Google DeepMind provider seed now preserves the exact received landing/robots bytes, the explicitly linked HTML model-card pointer, and the failed single card attempt. The landing reports 3.1 Pro / Preview; the exact card route returned HTTP 302 and the reviewed no-redirect policy stopped without a card body or retained Location header. Native framework/version/outcomes, evaluated configuration, release timing and launch-edition bytes remain unknown, with zero guessed native domain records.\n\nThe collector repair correctly interprets gzip received bytes with separate decoded caps and preserves received PDF bytes before extraction failure. The original encoding defect and its receipt remain explicit. Strict Node validation binds five immutable raw/receipt inputs and rejects unknown-to-absent/value promotions, invented card identity, framework mappings, release claims and source rebinding.\n\nAI-authored by OpenAI Codex (GPT-6). No model inference/API, outreach, children/PDF following or merge; source acquisition is now manual-only and the finite stop condition is met. This branch is based directly on main and does not change completed OpenAI/Anthropic draft snapshots.\n\nExecuted validation at exact source `2d76f0c279c7f850cd9a9caac01d1348e7064786`: [Node 22/Python CI 36962976498](https://github.com/trimcrae/Alignment/actions/runs/36962976498/job/110700496986) passed 60 Node checks (58 invalid), 27 collector Python + 5 exact-stage Python cases, syntax, received-byte/gzip/robots/quote bindings, truthful summary and clean tracked status. Original [landing acquisition](https://github.com/trimcrae/Alignment/actions/runs/36960889488/job/110694095517) and [single amended card attempt](https://github.com/trimcrae/Alignment/actions/runs/36962354293/job/110698571380) are preserved with actual receipts. Independent code/method/evidence review cleared the exact tested source and CI. The final head `cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794` adds only documentation, original logs and the validation receipt after the tested source. [Committed handoff](https://github.com/trimcrae/Alignment/blob/cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794/projects/model-safety-ledger/providers/google-deepmind-gemini-pro/HANDOFF.md) and [validation receipt](https://github.com/trimcrae/Alignment/blob/cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794/projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validation-receipt.json) preserve all source limits, original byte hashes and the 21 unchanged tested input/code/workflow blobs. Independent final receipt review cleared the documentation-only head: all 21 tested blobs match, all three committed logs are byte-identical to actual jobs, and both artifact records match GitHub metadata. The next priority under a future separate task is a different provider’s accessible official primary card (Meta is a candidate); this Google gap stays unchanged until distinct authoritative input or a new explicit bounded route plan.",
+        "title": "Preserve Google primary-input gap with strict source and unknown-state validation",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-google-native-ledger",
+        "head_sha": "cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "178c86706a5be3863ca04602cb006670148c9c69",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T04:06:18Z",
+        "updated_at": "2026-10-02T04:12:14Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 11,
+        "changed_files": 27,
+        "additions": 2339,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/8",
+        "display_title": "Preserve Google primary-input gap with strict source and unknown-state validation"
+      }
+    },
+    {
+      "pr": 9,
+      "head": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "8e4202e7d02728241719f599e3be18656f63ce0a",
+      "integration_parents": [
+        "1c2cf11e052cb5fe88344f5086543f0b49b7f7be",
+        "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/9",
+        "number": 9,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The partial Meta provider seed preserves one exact official Llama 4 model-card artifact, its original base64 connector response and fourteen literal UTF-8 byte-coordinate citations. Two actual model identities are recorded. Three native Critical Risks categories remain separate: CBRNE and Child Safety supply methods only; Cyber attack enablement supplies a provider-reported family assessment. That family prose is not copied into separate Scout/Maverick formal threshold or deployment determinations.\n\nA named/versioned threshold framework and six model-specific threshold/deployment/configuration slots remain unknown. The card’s shared April 5, 2025 release-date declaration is recorded as provider-reported; independently verified public release, launch artifact availability and launch-edition byte identity remain unknown. The raw file and native Git blob are retained unchanged. Connector transport internals are unobserved; this was one exposed artifact read, not a counted total of HTTP requests.\n\nStrict validation binds five immutable byte inputs, the original tool/base64 payload, source Git SHA1/SHA256 and all fourteen citation coordinates. Meaningful mutations cover native model/citation confusion, family-to-model and method-to-outcome promotions, guessed frameworks, general guardrail advice promoted to deployment, benchmark BF16 promoted to Critical Risks configuration, unknown-to-absence, release-to-launch and source rebinding.\n\nAI-authored by OpenAI Codex (GPT-6). The source stop is met. No second source read, model inference/API, policy/PDF following, outreach/upstream change or main merge. This main-based branch preserves all prior completed provider drafts.\n\nExecuted at exact source `827825f8a30a3cbf77779b04abb10613081b964e`: [CI36970852710/job110724317636](https://github.com/trimcrae/Alignment/actions/runs/36970852710/job/110724317636) passed **81 Node checks (79 invalid) and 10 Python cases**, actual Node 22.23.3/Python 3.11.16, syntax, source/base64/Git/fourteen-quote verification, truthful partial summary and clean tracked status. Independent evidence/method/code review cleared the exact tested source and actual CI. Final `51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be` adds only the [handoff](https://github.com/trimcrae/Alignment/blob/51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be/projects/model-safety-ledger/providers/meta-llama4/HANDOFF.md), [machine receipt](https://github.com/trimcrae/Alignment/blob/51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be/projects/model-safety-ledger/providers/meta-llama4/validation-receipt.json) and original CI log, with all 13 tested code/input/workflow/documentation blobs unchanged. Independent final receipt review cleared the documentation-only head: all 13 tested blobs and five immutable input pins match, and the committed CI log is byte-identical to the actual job. Any future policy/risk-artifact task must independently vet a distinct authoritative pointer and explicit Scout/Maverick framework binding; no unchanged card retry or next task starts here.",
+        "title": "Seed Meta native risk categories while preserving unknown formal determinations",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-meta-native-ledger",
+        "head_sha": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "898f36188a7035d4372b9c72738bbc2f0d0f047d",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T05:53:52Z",
+        "updated_at": "2026-10-02T06:01:02Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 4,
+        "changed_files": 16,
+        "additions": 1563,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/9",
+        "display_title": "Seed Meta native risk categories while preserving unknown formal determinations"
+      }
+    },
+    {
+      "pr": 10,
+      "head": "4a83877995081ae718b15bf5c1b67249a499eccc",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "e8fc061e48daffaef7602c55a3c6883ff9cc727b",
+      "integration_parents": [
+        "8e4202e7d02728241719f599e3be18656f63ce0a",
+        "4a83877995081ae718b15bf5c1b67249a499eccc"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/10",
+        "number": 10,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "The retained Llama 4 card explicitly reports family development following Developer Use Guide best practices, but its literal pointers do not establish a named/versioned threshold framework applicable to Scout or Maverick. This documentation-only follow-up preserves both URIs in the malformed guide link, the general protections pointer, and the model-name/quote byte coordinates. Formal binding stays UNKNOWN; external sources are SOURCE_NOT_ACQUIRED with availability NOT_ASSESSED.\n\nOnly a handoff and compact evidence/verification receipt are added on a branch based directly on main. The immutable PR9 source/ledger/code are referenced without copies or changes. AI-authored; independently reviewed by a separate AI agent before this draft opened.\n\nValidation performed here: V8 checks of the 23,764-byte retained source SHA256 and all five literal UTF-8 quote spans, plus read-only Git metadata. The checkpoint revision's complete tree contains no .github paths and its exact-head Actions inventory has zero runs. No new Node/Python/browser suite, workflow, source acquisition or policy GET occurred. PR9 CI 36970852710 is a reused prior-source reference only, not current-branch CI.\n\nThe bounded stop condition is met. Further work requires distinct authoritative evidence explicitly binding a named/versioned threshold framework to these models and a new bounded scope; no automatic pointer fetch or repeated unchanged-card audit. Draft only; no merge.\n\nFinal head: `4a83877995081ae718b15bf5c1b67249a499eccc`. Documentation/source checkpoint: `43756a66f562382db10bbec80863a28938ad32da`; final commit only records completed review and checkpoint inventory. Final exact-head Actions inventory also returned zero runs, with no workflow paths.",
+        "title": "Preserve Meta policy-entry evidence and formal-framework gap",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-meta-policy-entry",
+        "head_sha": "4a83877995081ae718b15bf5c1b67249a499eccc",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "d05060dc4181dc7b9f2527112e6daae89090dfbb",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T06:53:16Z",
+        "updated_at": "2026-10-02T06:53:30Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 2,
+        "changed_files": 2,
+        "additions": 233,
+        "deletions": 0,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/10",
+        "display_title": "Preserve Meta policy-entry evidence and formal-framework gap"
+      }
+    },
+    {
+      "pr": 11,
+      "head": "e36be95f843e3beeb4d146c8e05618117c37cb0e",
+      "merge_base": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "integration_merge": "8157633eef591be0021cb0fbe5a9fb2cf9ff1e9a",
+      "integration_parents": [
+        "e8fc061e48daffaef7602c55a3c6883ff9cc727b",
+        "e36be95f843e3beeb4d146c8e05618117c37cb0e"
+      ],
+      "original_pr_metadata": {
+        "url": "https://github.com/trimcrae/Alignment/pull/11",
+        "number": 11,
+        "state": "open",
+        "merged": false,
+        "mergeable": true,
+        "draft": true,
+        "body": "Running audit setup against an existing checkout previously skipped its origin and HEAD, and a failed pinned checkout could still report success. The repair refuses mismatched/dirty or source-masking-index-flag checkouts without changing them and makes new-checkout pin resolution/checkout failures fatal. Literal hexadecimal pins bind the resolved commit rather than a shadowing branch/tag.\n\nAll 15 original source pins, the setup header/installation/reproduction tail, and 116 original non-setup file blobs are unchanged. AI-authored by OpenAI Codex; independently reviewed by a separate AI agent and root. Human review remains pending. Public draft only; no upstream submission or main merge.\n\nActual supported proof: [CI37001446934](https://github.com/trimcrae/Alignment/actions/runs/37001446934), job110819822258, attempt1, completed SUCCESS on exact source `1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae`, tree `627a234d5abbc24698e5001c3bdba594eb623163`. Bash5.2.21/Git2.55.0/Python3.12.3 executed31 tests in3.455s OK:2 original-helper witnesses,1 source-bound prior-repair witness and28 final controls. Syntax, exact Git source binding, unchanged pins/tail and clean tracked checkout passed. Actual PR checkout `b32677f473b4d6a9adb7ff57d741926faed5b51c` has the identical reviewed tree.\n\nEarlier27-method CI37000800204 at61dd also succeeded; review then demonstrated that our status-only repair admitted an edit hidden by assume-unchanged. The final controls reject both assume-unchanged and skip-worktree flags without clearing them; ignored environment outputs remain allowed and unverified. Earlier success is retained separately, not described as a baseline/environment failure.\n\nFinal head `e36be95f843e3beeb4d146c8e05618117c37cb0e` adds exactly4 reviewed handoff/receipt/original-log paths only; tested source/test/workflow unchanged. Its explicit documentation-only `[skip ci]` avoids repeating unchanged suites. Exact source proof above applies to those unchanged blobs; no green final-documentation-head CI is claimed.\n\n[Handoff and exact receipts](https://github.com/trimcrae/Alignment/blob/e36be95f843e3beeb4d146c8e05618117c37cb0e/projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/HANDOFF.md). Fixtures use real local Git/Bash with file-only transport; no upstream source acquisition, real uv/pip installation, model/evaluation/API, paid compute or outreach. Full setup only exercised deliberate first-target refusal. Configured origin strings/abbreviated pins do not authenticate remote ownership or dependency reproducibility.\n\nNext bounded action: owner review of this draft. No continuing worker, merge, new runtime task or unchanged validation cycle.",
+        "title": "Enforce pinned sources before rebuilding audit environments",
+        "base": "main",
+        "base_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+        "head": "codex/usage-sprint-2026-10-01-audit-env-pins",
+        "head_sha": "e36be95f843e3beeb4d146c8e05618117c37cb0e",
+        "head_repo_id": 1368305134,
+        "head_repo_full_name": "trimcrae/Alignment",
+        "merge_commit_sha": "46f71a4cb58d6c9d193ca605475a7fb437d58e46",
+        "user": {
+          "login": "trimcrae",
+          "name": "trimcrae",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22642433?v=4",
+          "id": 22642433
+        },
+        "requested_reviewers": null,
+        "requested_team_reviewers": null,
+        "diff": null,
+        "comments": null,
+        "created_at": "2026-10-02T11:24:06Z",
+        "updated_at": "2026-10-02T11:39:35Z",
+        "closed_at": null,
+        "merged_at": null,
+        "commits": 5,
+        "changed_files": 7,
+        "additions": 1043,
+        "deletions": 4,
+        "display_url": "https://github.com/trimcrae/Alignment/pull/11",
+        "display_title": "Enforce pinned sources before rebuilding audit environments"
+      }
+    }
+  ],
+  "original_source_ci_references": [
+    {
+      "pr": 3,
+      "source": "a09974d9fd9283473127b3b20f4a77c54afb0579",
+      "run": 36936638185,
+      "node": 41,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36936638185",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 4,
+      "source": "e91dc74a798b8e5236166fa900077f2794a88e8d",
+      "run": 36945362067,
+      "job": 110646137019,
+      "node": 84,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36945362067",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 5,
+      "source": "975a16d02bf2c823d05602175679fd393d052409",
+      "run": 36946980447,
+      "job": 110651234957,
+      "node": 50,
+      "inherited_node": 84,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36946980447",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 6,
+      "source": "1350d3e3d773c95d60303669e8464aa1539479ec",
+      "run": 36952438631,
+      "job": 110668089646,
+      "node": 70,
+      "python": 15,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36952438631",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 7,
+      "source": "76b614e0a402ecef86a7fb7d1beea9b570e156bd",
+      "run": 36957167508,
+      "job": 110682594061,
+      "node": 49,
+      "python": 22,
+      "inherited_node": 70,
+      "inherited_python": 15,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36957167508",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 8,
+      "source": "2d76f0c279c7f850cd9a9caac01d1348e7064786",
+      "run": 36962976498,
+      "job": 110700496986,
+      "node": 60,
+      "python": 32,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36962976498",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 9,
+      "source": "827825f8a30a3cbf77779b04abb10613081b964e",
+      "run": 36970852710,
+      "job": 110724317636,
+      "node": 81,
+      "python": 10,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/36970852710",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 10,
+      "status": "NO_CURRENT_NODE_PYTHON_CI",
+      "checks": "five reused-source UTF8 quotes in V8; checkpoint and final Actions inventories zero; prior PR9 CI is reference only",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    },
+    {
+      "pr": 11,
+      "source": "1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae",
+      "run": 37001446934,
+      "job": 110819822258,
+      "python_bash_git": 31,
+      "url": "https://github.com/trimcrae/Alignment/actions/runs/37001446934",
+      "interpretation": "Original source/checkpoint only; not new combined-tree CI."
+    }
+  ],
+  "overlap_resolution": {
+    "path": "projects/model-safety-ledger/README.md",
+    "prior_blob": "5198283672ee74116486cdc761b70d2d963bbe16",
+    "final_blob": "97a44380665fd113768b51ede8d8e3f46b073159",
+    "method": "PR5 four-line append atop preserved PR4; all other inherited overlaps byte-identical."
+  },
+  "manual_trigger_retirements": [
+    {
+      "path": ".github/workflows/model-safety-acquire.yml",
+      "original_blob": "369a0cc466bf1e07c1168e4dd4d4e94b41f7dd57",
+      "old_trigger": "on:\n  push:\n    branches: [codex/usage-sprint-2026-10-01-model-safety-ledger]\n    paths:\n      - .github/workflows/model-safety-acquire.yml\n      - projects/model-safety-ledger/collect-primary.py\n      - projects/model-safety-ledger/acquisition-plan.json\n  workflow_dispatch:\n",
+      "new_trigger": "on:\n  workflow_dispatch:\n",
+      "remaining_content": "BYTE_IDENTICAL"
+    },
+    {
+      "path": ".github/workflows/release-timing-acquire.yml",
+      "original_blob": "02d22be7b523f0181ad71cb44970ebfc7e84f916",
+      "old_trigger": "on:\n  push:\n    branches: [codex/usage-sprint-2026-10-01-release-timing]\n    paths:\n      - .github/workflows/release-timing-acquire.yml\n      - projects/model-safety-ledger/release-timing/collect.py\n      - projects/model-safety-ledger/release-timing/acquisition-plan.json\n",
+      "new_trigger": "on:\n  workflow_dispatch:\n",
+      "remaining_content": "BYTE_IDENTICAL"
+    },
+    {
+      "path": ".github/workflows/anthropic-native-acquire.yml",
+      "original_blob": "eff91fc86d0a7bafbd87e10ae675ec9a6dc6bc7a",
+      "old_trigger": "on:\n  push:\n    branches: [codex/usage-sprint-2026-10-01-anthropic-native-ledger]\n    paths:\n      - .github/workflows/anthropic-native-acquire.yml\n      - projects/model-safety-ledger/providers/anthropic-claude4/collect.py\n      - projects/model-safety-ledger/providers/anthropic-claude4/acquisition-plan.json\n",
+      "new_trigger": "on:\n  workflow_dispatch:\n",
+      "remaining_content": "BYTE_IDENTICAL"
+    }
+  ],
+  "guidance": [
+    {
+      "path": "README.md",
+      "sha": "3ec51453ec6e3a559a7aae252134326a4dbced1b"
+    },
+    {
+      "path": "research/README.md",
+      "sha": "a53cb083c2c18144dd2d482b1dac9a0ce62bfdcf"
+    },
+    {
+      "path": "projects/eval-integrity/NEXT-STEPS.md",
+      "sha": "6c3ee994cfad43b3eb5a12ff1c5139ccac390e73"
+    }
+  ],
+  "limits": [
+    "Native provider frameworks and UNKNOWN/ABSENT distinctions remain original snapshots.",
+    "No new provider/source GET, collector entrypoint, model inference/API, upstream issue/PR/outreach or paid/model workload.",
+    "Original handoffs and PR metadata describe historical draft-only status; current user merge authorization supersedes that procedural status, without claiming human scientific review.",
+    "New combined CPU CI must complete and an independent reviewer must clear the exact candidate before root integrates main."
+  ]
+}

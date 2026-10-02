@@ -1,11 +1,5 @@
 name: Model safety primary artifact acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-model-safety-ledger]
-    paths:
-      - .github/workflows/model-safety-acquire.yml
-      - projects/model-safety-ledger/collect-primary.py
-      - projects/model-safety-ledger/acquisition-plan.json
   workflow_dispatch:
 permissions:
   contents: read
