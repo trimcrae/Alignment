@@ -51,18 +51,18 @@ def get_raw(u,robots=False):
             chunks.append(part)
         return b"".join(chunks),{"status":response.status,"final_url":response.url,"content_type":mime,
              "applied_byte_limit":limit,"content_encoding":response.headers.get("Content-Encoding"),"last_modified":response.headers.get("Last-Modified"),"etag":response.headers.get("ETag")}
-def decode_entity(raw,meta):
+def decode_entity(raw,meta,limit_override=None):
     """Interpret received bytes with a separate bounded decoded-entity receipt; no GET."""
     encoding=(meta.get("content_encoding") or "").strip().lower()
-    is_gzip=raw.startswith(b"\\x1f\\x8b")
+    is_gzip=raw.startswith(bytes((31,139)))
     if encoding not in("","identity","gzip"):raise ValueError("Unsupported Content-Encoding")
     if encoding=="gzip" and not is_gzip:raise ValueError("Gzip header lacks gzip magic")
     stream=gzip.GzipFile(fileobj=io.BytesIO(raw)) if is_gzip else io.BytesIO(raw)
-    chunks=[];count=0;limit=PDF_LIMIT if (meta.get("content_type") or "").split(";")[0].strip().lower()=="application/pdf" else HTML_LIMIT
+    chunks=[];count=0;limit=limit_override if limit_override is not None else(PDF_LIMIT if (meta.get("content_type") or "").split(";")[0].strip().lower()=="application/pdf" else HTML_LIMIT)
     while True:
         part=stream.read(min(65536,limit+1-count))
         if not part:break
-        if count==0:
+        if count==0 and limit_override is None:
             if part.startswith(b"%PDF-"):limit=PDF_LIMIT
             elif limit==PDF_LIMIT:raise ValueError("Decoded PDF MIME lacks PDF magic")
         count+=len(part)
@@ -78,8 +78,7 @@ def robots_for(u):
         url="https://"+host+"/robots.txt";r={"url":url,"user_agent":UA}
         try:
             raw,meta=get_raw(url,True);parser=urllib.robotparser.RobotFileParser(url)
-            entity,decoded=decode_entity(raw,meta)
-            if len(entity)>ROBOTS_LIMIT:raise ValueError("Decoded robots exceeds byte bound")
+            entity,decoded=decode_entity(raw,meta,ROBOTS_LIMIT)
             parser.parse(entity.decode("utf-8",errors="replace").splitlines())
             r.update(status=meta["status"],sha256=sha(raw),bytes=len(raw))
             if OUTPUT is not None:(OUTPUT/("robots-"+host+".txt")).write_bytes(raw)
