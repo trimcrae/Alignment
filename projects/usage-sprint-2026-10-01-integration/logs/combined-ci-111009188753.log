@@ -1,0 +1,777 @@
+﻿2026-10-02T20:07:39.4316800Z Current runner version: '2.337.0'
+2026-10-02T20:07:39.4343157Z ##[group]Runner Image Provisioner
+2026-10-02T20:07:39.4344091Z Hosted Compute Agent
+2026-10-02T20:07:39.4344712Z Version: 20260901.588
+2026-10-02T20:07:39.4345471Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T20:07:39.4346225Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T20:07:39.4347016Z Worker ID: {0aef0729-b003-43fb-8692-6a46e08aa3c3}
+2026-10-02T20:07:39.4347811Z Azure Region: westus3
+2026-10-02T20:07:39.4348413Z ##[endgroup]
+2026-10-02T20:07:39.4349856Z ##[group]Operating System
+2026-10-02T20:07:39.4350495Z Ubuntu
+2026-10-02T20:07:39.4351038Z 24.04.5
+2026-10-02T20:07:39.4351914Z LTS
+2026-10-02T20:07:39.4352464Z ##[endgroup]
+2026-10-02T20:07:39.4353147Z ##[group]Runner Image
+2026-10-02T20:07:39.4353786Z Image: ubuntu-24.04
+2026-10-02T20:07:39.4354364Z Version: 20260927.320.1
+2026-10-02T20:07:39.4355780Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T20:07:39.4357421Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T20:07:39.4358441Z ##[endgroup]
+2026-10-02T20:07:39.4359623Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T20:07:39.4362048Z Contents: read
+2026-10-02T20:07:39.4362662Z Metadata: read
+2026-10-02T20:07:39.4363360Z ##[endgroup]
+2026-10-02T20:07:39.4365445Z Secret source: Actions
+2026-10-02T20:07:39.4366554Z Cache mode: write
+2026-10-02T20:07:39.4367275Z Prepare workflow directory
+2026-10-02T20:07:39.4799105Z Prepare all required actions
+2026-10-02T20:07:39.4846991Z Getting action download info
+2026-10-02T20:07:39.8337132Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T20:07:39.9342140Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-02T20:07:40.0218298Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-02T20:07:40.1130163Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-02T20:07:40.3171888Z Complete job name: offline-combined
+2026-10-02T20:07:40.3918638Z ##[group]Run actions/checkout@v4
+2026-10-02T20:07:40.3919467Z with:
+2026-10-02T20:07:40.3919897Z   fetch-depth: 0
+2026-10-02T20:07:40.3920375Z   persist-credentials: false
+2026-10-02T20:07:40.3920909Z   repository: trimcrae/Alignment
+2026-10-02T20:07:40.3925205Z   token: ***
+2026-10-02T20:07:40.3925675Z   ssh-strict: true
+2026-10-02T20:07:40.3926125Z   ssh-user: git
+2026-10-02T20:07:40.3926559Z   clean: true
+2026-10-02T20:07:40.3927018Z   sparse-checkout-cone-mode: true
+2026-10-02T20:07:40.3927546Z   fetch-tags: false
+2026-10-02T20:07:40.3927989Z   show-progress: true
+2026-10-02T20:07:40.3928438Z   lfs: false
+2026-10-02T20:07:40.3928852Z   submodules: false
+2026-10-02T20:07:40.3929298Z   set-safe-directory: true
+2026-10-02T20:07:40.3929799Z   allow-unsafe-pr-checkout: false
+2026-10-02T20:07:40.3930517Z env:
+2026-10-02T20:07:40.3930976Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:40.3931593Z ##[endgroup]
+2026-10-02T20:07:40.5023369Z Syncing repository: trimcrae/Alignment
+2026-10-02T20:07:40.5025906Z ##[group]Getting Git version info
+2026-10-02T20:07:40.5027014Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-02T20:07:40.5028889Z [command]/usr/bin/git version
+2026-10-02T20:07:40.5148981Z git version 2.55.0
+2026-10-02T20:07:40.5199145Z ##[endgroup]
+2026-10-02T20:07:40.5212138Z Temporarily overriding HOME='/home/runner/work/_temp/8944877f-58b9-4257-ba54-a9270f81ed4e' before making global git config changes
+2026-10-02T20:07:40.5229405Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T20:07:40.5238915Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T20:07:40.5293926Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-02T20:07:40.5296317Z ##[group]Initializing the repository
+2026-10-02T20:07:40.5298043Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-02T20:07:40.5392388Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T20:07:40.5394828Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T20:07:40.5397301Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T20:07:40.5399841Z hint: call:
+2026-10-02T20:07:40.5401611Z hint:
+2026-10-02T20:07:40.5403107Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T20:07:40.5405170Z hint:
+2026-10-02T20:07:40.5407115Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T20:07:40.5410009Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T20:07:40.5413230Z hint:
+2026-10-02T20:07:40.5415263Z hint: 	git branch -m <name>
+2026-10-02T20:07:40.5416641Z hint:
+2026-10-02T20:07:40.5418615Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T20:07:40.5421388Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-02T20:07:40.5430365Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-02T20:07:40.5473902Z ##[endgroup]
+2026-10-02T20:07:40.5474719Z ##[group]Disabling automatic garbage collection
+2026-10-02T20:07:40.5478657Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T20:07:40.5512435Z ##[endgroup]
+2026-10-02T20:07:40.5513232Z ##[group]Setting up auth
+2026-10-02T20:07:40.5521980Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T20:07:40.5558467Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T20:07:40.5932813Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T20:07:40.5975522Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T20:07:40.6233256Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T20:07:40.6271590Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T20:07:40.6513135Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T20:07:40.6556721Z ##[endgroup]
+2026-10-02T20:07:40.6566647Z ##[group]Fetching the repository
+2026-10-02T20:07:40.6568064Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-10-02T20:07:42.3967236Z From https://github.com/trimcrae/Alignment
+2026-10-02T20:07:42.3968894Z  * [new branch]      claude/ai-alignment-research-ajdle8 -> origin/claude/ai-alignment-research-ajdle8
+2026-10-02T20:07:42.3970586Z  * [new branch]      claude/inspectrobots-contribution-ig9gr2 -> origin/claude/inspectrobots-contribution-ig9gr2
+2026-10-02T20:07:42.3973737Z  * [new branch]      codex/usage-sprint-2026-10-01-anthropic-native-ledger -> origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger
+2026-10-02T20:07:42.3976934Z  * [new branch]      codex/usage-sprint-2026-10-01-anthropic-rsp-version -> origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version
+2026-10-02T20:07:42.3979841Z  * [new branch]      codex/usage-sprint-2026-10-01-audit-env-pins -> origin/codex/usage-sprint-2026-10-01-audit-env-pins
+2026-10-02T20:07:42.3982709Z  * [new branch]      codex/usage-sprint-2026-10-01-followup-ledger -> origin/codex/usage-sprint-2026-10-01-followup-ledger
+2026-10-02T20:07:42.4071862Z  * [new branch]      codex/usage-sprint-2026-10-01-google-native-ledger -> origin/codex/usage-sprint-2026-10-01-google-native-ledger
+2026-10-02T20:07:42.4074140Z  * [new branch]      codex/usage-sprint-2026-10-01-integrate-completed -> origin/codex/usage-sprint-2026-10-01-integrate-completed
+2026-10-02T20:07:42.4075906Z  * [new branch]      codex/usage-sprint-2026-10-01-meta-native-ledger -> origin/codex/usage-sprint-2026-10-01-meta-native-ledger
+2026-10-02T20:07:42.4077559Z  * [new branch]      codex/usage-sprint-2026-10-01-meta-policy-entry -> origin/codex/usage-sprint-2026-10-01-meta-policy-entry
+2026-10-02T20:07:42.4079534Z  * [new branch]      codex/usage-sprint-2026-10-01-model-safety-ledger -> origin/codex/usage-sprint-2026-10-01-model-safety-ledger
+2026-10-02T20:07:42.4082155Z  * [new branch]      codex/usage-sprint-2026-10-01-release-timing -> origin/codex/usage-sprint-2026-10-01-release-timing
+2026-10-02T20:07:42.4083315Z  * [new branch]      main       -> origin/main
+2026-10-02T20:07:42.4084403Z  * [new branch]      work/upstream-triage-20260914 -> origin/work/upstream-triage-20260914
+2026-10-02T20:07:42.4086855Z [command]/usr/bin/git branch --list --remote origin/codex/usage-sprint-2026-10-01-integrate-completed
+2026-10-02T20:07:42.4088266Z   origin/codex/usage-sprint-2026-10-01-integrate-completed
+2026-10-02T20:07:42.4090041Z [command]/usr/bin/git rev-parse refs/remotes/origin/codex/usage-sprint-2026-10-01-integrate-completed
+2026-10-02T20:07:42.4091363Z 415383e76897abb2e8faf2c1a868c9cf4856fa3b
+2026-10-02T20:07:42.4092938Z ##[endgroup]
+2026-10-02T20:07:42.4093770Z ##[group]Determining the checkout info
+2026-10-02T20:07:42.4094698Z ##[endgroup]
+2026-10-02T20:07:42.4095280Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T20:07:42.4118819Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T20:07:42.4153589Z ##[group]Checking out the ref
+2026-10-02T20:07:42.4158829Z [command]/usr/bin/git checkout --progress --force -B codex/usage-sprint-2026-10-01-integrate-completed refs/remotes/origin/codex/usage-sprint-2026-10-01-integrate-completed
+2026-10-02T20:07:42.4411617Z Switched to a new branch 'codex/usage-sprint-2026-10-01-integrate-completed'
+2026-10-02T20:07:42.4416940Z branch 'codex/usage-sprint-2026-10-01-integrate-completed' set up to track 'origin/codex/usage-sprint-2026-10-01-integrate-completed'.
+2026-10-02T20:07:42.4422869Z ##[endgroup]
+2026-10-02T20:07:42.4469078Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T20:07:42.4499019Z 415383e76897abb2e8faf2c1a868c9cf4856fa3b
+2026-10-02T20:07:42.4508989Z ##[group]Removing auth
+2026-10-02T20:07:42.4513982Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T20:07:42.4548307Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T20:07:42.4787763Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T20:07:42.4819027Z http.https://github.com/.extraheader
+2026-10-02T20:07:42.4827591Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T20:07:42.4866566Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T20:07:42.5110022Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T20:07:42.5146785Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T20:07:42.5379549Z ##[endgroup]
+2026-10-02T20:07:42.5667706Z ##[group]Run actions/setup-node@v4
+2026-10-02T20:07:42.5668319Z with:
+2026-10-02T20:07:42.5668777Z   node-version: 22
+2026-10-02T20:07:42.5669260Z   always-auth: false
+2026-10-02T20:07:42.5669756Z   check-latest: false
+2026-10-02T20:07:42.5674532Z   token: ***
+2026-10-02T20:07:42.5675033Z env:
+2026-10-02T20:07:42.5675515Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:42.5676315Z ##[endgroup]
+2026-10-02T20:07:42.7107226Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-02T20:07:42.7113280Z (node:2383) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T20:07:42.7115980Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T20:07:42.7117901Z ##[group]Environment details
+2026-10-02T20:07:43.0728398Z node: v22.23.3
+2026-10-02T20:07:43.0729254Z npm: 10.9.9
+2026-10-02T20:07:43.0729958Z yarn: 1.22.22
+2026-10-02T20:07:43.0732188Z ##[endgroup]
+2026-10-02T20:07:43.1008978Z ##[group]Run actions/setup-python@v5
+2026-10-02T20:07:43.1010266Z with:
+2026-10-02T20:07:43.1011349Z   python-version: 3.11
+2026-10-02T20:07:43.1012446Z   check-latest: false
+2026-10-02T20:07:43.1022778Z   token: ***
+2026-10-02T20:07:43.1023800Z   update-environment: true
+2026-10-02T20:07:43.1024973Z   allow-prereleases: false
+2026-10-02T20:07:43.1026124Z   freethreaded: false
+2026-10-02T20:07:43.1027192Z env:
+2026-10-02T20:07:43.1028147Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:43.1029328Z ##[endgroup]
+2026-10-02T20:07:43.2417799Z ##[group]Installed versions
+2026-10-02T20:07:43.2499328Z (node:2414) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T20:07:43.2504111Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T20:07:43.2506985Z Successfully set up CPython (3.11.16)
+2026-10-02T20:07:43.2508982Z ##[endgroup]
+2026-10-02T20:07:43.2727733Z ##[group]Run python3 -m pip install pypdf==6.0.0
+2026-10-02T20:07:43.2729324Z [36;1mpython3 -m pip install pypdf==6.0.0[0m
+2026-10-02T20:07:43.3014952Z shell: /usr/bin/bash -e {0}
+2026-10-02T20:07:43.3016083Z env:
+2026-10-02T20:07:43.3016994Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:43.3018339Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:43.3020159Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T20:07:43.3022196Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:43.3023834Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:43.3025503Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:43.3027189Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T20:07:43.3028620Z ##[endgroup]
+2026-10-02T20:07:45.0831719Z Collecting pypdf==6.0.0
+2026-10-02T20:07:45.1287388Z   Downloading pypdf-6.0.0-py3-none-any.whl.metadata (7.1 kB)
+2026-10-02T20:07:45.1389087Z Downloading pypdf-6.0.0-py3-none-any.whl (310 kB)
+2026-10-02T20:07:45.2800289Z Installing collected packages: pypdf
+2026-10-02T20:07:45.5034724Z Successfully installed pypdf-6.0.0
+2026-10-02T20:07:45.5556711Z ##[group]Run sudo unshare --net -- /usr/bin/setpriv --reuid "$(id -u)" --regid "$(id -g)" --init-groups /usr/bin/env PATH="$PATH" LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}" HOME="$HOME" PYTHONDONTWRITEBYTECODE=1 GITHUB_SHA="$GITHUB_SHA" GITHUB_RUN_ID="$GITHUB_RUN_ID" GITHUB_RUN_ATTEMPT="$GITHUB_RUN_ATTEMPT" GITHUB_EVENT_NAME="$GITHUB_EVENT_NAME" python3 projects/usage-sprint-2026-10-01-integration/run-offline.py --receipt "$RUNNER_TEMP/completed-sprint-integration.json"
+2026-10-02T20:07:45.5559689Z [36;1msudo unshare --net -- /usr/bin/setpriv --reuid "$(id -u)" --regid "$(id -g)" --init-groups /usr/bin/env PATH="$PATH" LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}" HOME="$HOME" PYTHONDONTWRITEBYTECODE=1 GITHUB_SHA="$GITHUB_SHA" GITHUB_RUN_ID="$GITHUB_RUN_ID" GITHUB_RUN_ATTEMPT="$GITHUB_RUN_ATTEMPT" GITHUB_EVENT_NAME="$GITHUB_EVENT_NAME" python3 projects/usage-sprint-2026-10-01-integration/run-offline.py --receipt "$RUNNER_TEMP/completed-sprint-integration.json"[0m
+2026-10-02T20:07:45.5636726Z shell: /usr/bin/bash -e {0}
+2026-10-02T20:07:45.5637006Z env:
+2026-10-02T20:07:45.5637241Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:45.5637582Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:45.5638032Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T20:07:45.5638709Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:45.5639096Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:45.5639487Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:45.5639891Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T20:07:45.5640221Z ##[endgroup]
+2026-10-02T20:07:45.6397308Z NETWORK: separate namespace has loopback only; provider networking unavailable
+2026-10-02T20:07:45.7093456Z INTEGRATION BINDINGS: 237 source-union file/mode bindings, 9 two-parent merges, 5 reused Meta policy-entry quote spans passed
+2026-10-02T20:07:45.7094055Z 
+2026-10-02T20:07:45.7094247Z CHECK: Node runtime
+2026-10-02T20:07:45.7137219Z v22.23.3
+2026-10-02T20:07:45.7137573Z 
+2026-10-02T20:07:45.7137820Z CHECK: Python runtime
+2026-10-02T20:07:45.7159216Z Python 3.11.16
+2026-10-02T20:07:45.7159446Z 
+2026-10-02T20:07:45.7159589Z CHECK: Bash runtime
+2026-10-02T20:07:45.7173087Z GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+2026-10-02T20:07:45.7173701Z Copyright (C) 2022 Free Software Foundation, Inc.
+2026-10-02T20:07:45.7174628Z License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+2026-10-02T20:07:45.7175144Z 
+2026-10-02T20:07:45.7175570Z This is free software; you are free to change and redistribute it.
+2026-10-02T20:07:45.7176377Z There is NO WARRANTY, to the extent permitted by law.
+2026-10-02T20:07:45.7176896Z 
+2026-10-02T20:07:45.7177083Z CHECK: Git runtime
+2026-10-02T20:07:45.7186656Z git version 2.55.0
+2026-10-02T20:07:45.7186870Z 
+2026-10-02T20:07:46.0087670Z CHECK: pypdf runtime
+2026-10-02T20:07:46.0088226Z 6.0.0
+2026-10-02T20:07:46.0421875Z PYTHON SYNTAX: 16 files passed
+2026-10-02T20:07:46.0422277Z 
+2026-10-02T20:07:46.0422823Z CHECK: Node syntax projects/eval-integrity/follow-up/ledger-core.mjs
+2026-10-02T20:07:46.0678851Z 
+2026-10-02T20:07:46.0679433Z CHECK: Node syntax projects/eval-integrity/follow-up/ledger-tests.mjs
+2026-10-02T20:07:46.0938038Z 
+2026-10-02T20:07:46.0938762Z CHECK: Node syntax projects/eval-integrity/follow-up/ledger-tool.mjs
+2026-10-02T20:07:46.1187915Z 
+2026-10-02T20:07:46.1188755Z CHECK: Node syntax projects/model-safety-ledger/ledger-core.mjs
+2026-10-02T20:07:46.1453993Z 
+2026-10-02T20:07:46.1454938Z CHECK: Node syntax projects/model-safety-ledger/ledger-tests.mjs
+2026-10-02T20:07:46.1716191Z 
+2026-10-02T20:07:46.1716949Z CHECK: Node syntax projects/model-safety-ledger/ledger-tool.mjs
+2026-10-02T20:07:46.1958508Z 
+2026-10-02T20:07:46.1959434Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/core.mjs
+2026-10-02T20:07:46.2212903Z 
+2026-10-02T20:07:46.2452105Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/core.mjs
+2026-10-02T20:07:46.2452848Z 
+2026-10-02T20:07:46.2453425Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tests.mjs
+2026-10-02T20:07:46.2693289Z 
+2026-10-02T20:07:46.2694278Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs
+2026-10-02T20:07:46.2948765Z 
+2026-10-02T20:07:46.2949530Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs
+2026-10-02T20:07:46.3193818Z 
+2026-10-02T20:07:46.3194496Z CHECK: Node syntax projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs
+2026-10-02T20:07:46.3430558Z 
+2026-10-02T20:07:46.3431656Z CHECK: Node syntax projects/model-safety-ledger/providers/google-deepmind-gemini-pro/core.mjs
+2026-10-02T20:07:46.3679044Z 
+2026-10-02T20:07:46.3680084Z CHECK: Node syntax projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs
+2026-10-02T20:07:46.3925181Z 
+2026-10-02T20:07:46.3926574Z CHECK: Node syntax projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs
+2026-10-02T20:07:46.4218636Z 
+2026-10-02T20:07:46.4219389Z CHECK: Node syntax projects/model-safety-ledger/providers/meta-llama4/core.mjs
+2026-10-02T20:07:46.4463532Z 
+2026-10-02T20:07:46.4464846Z CHECK: Node syntax projects/model-safety-ledger/providers/meta-llama4/test.mjs
+2026-10-02T20:07:46.4696174Z 
+2026-10-02T20:07:46.4696985Z CHECK: Node syntax projects/model-safety-ledger/providers/meta-llama4/validate.mjs
+2026-10-02T20:07:46.4939900Z 
+2026-10-02T20:07:46.4940557Z CHECK: Node syntax projects/model-safety-ledger/release-timing/core.mjs
+2026-10-02T20:07:46.5170475Z 
+2026-10-02T20:07:46.5171039Z CHECK: Node syntax projects/model-safety-ledger/release-timing/tests.mjs
+2026-10-02T20:07:46.5400603Z 
+2026-10-02T20:07:46.5401505Z CHECK: Node syntax projects/model-safety-ledger/release-timing/tool.mjs
+2026-10-02T20:07:46.5628841Z 
+2026-10-02T20:07:46.5629338Z CHECK: Integration runner syntax
+2026-10-02T20:07:46.5921466Z 
+2026-10-02T20:07:46.5921960Z CHECK: Audit helper Bash syntax
+2026-10-02T20:07:46.5941350Z 
+2026-10-02T20:07:46.5941811Z CHECK: Follow-up ledger evidence
+2026-10-02T20:07:46.6298595Z {
+2026-10-02T20:07:46.6298954Z   "valid": true,
+2026-10-02T20:07:46.6299401Z   "observed_at": "2026-10-01T22:38:58Z",
+2026-10-02T20:07:46.6299875Z   "records": [
+2026-10-02T20:07:46.6300134Z     {
+2026-10-02T20:07:46.6300395Z       "id": "agentharm-benign-cwd",
+2026-10-02T20:07:46.6300715Z       "status": "PR #2455 open",
+2026-10-02T20:07:46.6301022Z       "maintainer_confirmation": false,
+2026-10-02T20:07:46.6301698Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6302063Z     },
+2026-10-02T20:07:46.6302354Z     {
+2026-10-02T20:07:46.6302736Z       "id": "controlarena-judge-failure",
+2026-10-02T20:07:46.6303311Z       "status": "fix included in main at pinned source",
+2026-10-02T20:07:46.6304018Z       "maintainer_confirmation": true,
+2026-10-02T20:07:46.6304590Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6305015Z     },
+2026-10-02T20:07:46.6305298Z     {
+2026-10-02T20:07:46.6305685Z       "id": "petri-rescoring-registration",
+2026-10-02T20:07:46.6306185Z       "status": "PR #160 open (draft)",
+2026-10-02T20:07:46.6306661Z       "maintainer_confirmation": false,
+2026-10-02T20:07:46.6307130Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6307515Z     },
+2026-10-02T20:07:46.6307785Z     {
+2026-10-02T20:07:46.6308142Z       "id": "mask-honesty-prefix",
+2026-10-02T20:07:46.6308681Z       "status": "duplicate; existing upstream PR open",
+2026-10-02T20:07:46.6309218Z       "maintainer_confirmation": false,
+2026-10-02T20:07:46.6309676Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6310054Z     },
+2026-10-02T20:07:46.6310332Z     {
+2026-10-02T20:07:46.6310690Z       "id": "petri-custom-value-dimension",
+2026-10-02T20:07:46.6311463Z       "status": "upstream issue open; no fix PR recorded",
+2026-10-02T20:07:46.6312006Z       "maintainer_confirmation": false,
+2026-10-02T20:07:46.6313055Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6313450Z     },
+2026-10-02T20:07:46.6313739Z     {
+2026-10-02T20:07:46.6314136Z       "id": "inspectrobots-scorer-log-loss",
+2026-10-02T20:07:46.6314805Z       "status": "owner review pending; no upstream report recorded",
+2026-10-02T20:07:46.6315451Z       "maintainer_confirmation": false,
+2026-10-02T20:07:46.6315942Z       "release_status": "not-checked"
+2026-10-02T20:07:46.6316343Z     }
+2026-10-02T20:07:46.6316621Z   ]
+2026-10-02T20:07:46.6316903Z }
+2026-10-02T20:07:46.6317061Z 
+2026-10-02T20:07:46.6317301Z CHECK: Follow-up ledger regressions
+2026-10-02T20:07:46.6909879Z {
+2026-10-02T20:07:46.6910248Z   "passed": 41,
+2026-10-02T20:07:46.6910498Z   "names": [
+2026-10-02T20:07:46.6910827Z     "real receipt fixture validates without mutation",
+2026-10-02T20:07:46.6911683Z     "six real follow-ups produce separate status dimensions",
+2026-10-02T20:07:46.6912172Z     "intermediate merge does not imply default branch or release",
+2026-10-02T20:07:46.6912628Z     "closed unmerged pull does not imply fixed",
+2026-10-02T20:07:46.6913014Z     "merged open pull is contradictory",
+2026-10-02T20:07:46.6913340Z     "merge requires an exact target ref",
+2026-10-02T20:07:46.6913632Z     "malformed SHAs fail",
+2026-10-02T20:07:46.6914309Z     "closure and state must agree",
+2026-10-02T20:07:46.6914624Z     "future observation is rejected",
+2026-10-02T20:07:46.6914937Z     "invalid calendar day is rejected",
+2026-10-02T20:07:46.6915261Z     "resource update cannot occur after read",
+2026-10-02T20:07:46.6915611Z     "canonical API URL forbids alternate origin",
+2026-10-02T20:07:46.6915969Z     "canonical HTML URL binds the issue identity",
+2026-10-02T20:07:46.6916304Z     "file path traversal is rejected",
+2026-10-02T20:07:46.6916658Z     "duplicate resource keys are rejected",
+2026-10-02T20:07:46.6917109Z     "unknown resource kinds fail",
+2026-10-02T20:07:46.6917399Z     "missing resource references fail",
+2026-10-02T20:07:46.6917757Z     "malformed related pull list fails without throwing",
+2026-10-02T20:07:46.6918139Z     "null resource data fails without throwing",
+2026-10-02T20:07:46.6918491Z     "cross-repository related receipts fail",
+2026-10-02T20:07:46.6918822Z     "approval alone is not bug confirmation",
+2026-10-02T20:07:46.6919201Z     "noncollaborator approval is not a maintainer receipt",
+2026-10-02T20:07:46.6919578Z     "approval must bind the actual head",
+2026-10-02T20:07:46.6919946Z     "default branch metadata must match merge target",
+2026-10-02T20:07:46.6920361Z     "diverged history does not establish default inclusion",
+2026-10-02T20:07:46.6920796Z     "comparison identical requires equal SHAs and zero counts",
+2026-10-02T20:07:46.6921396Z     "diverged comparison requires different base and head",
+2026-10-02T20:07:46.6921928Z     "comparison ahead requires positive ahead count",
+2026-10-02T20:07:46.6922357Z     "source and comparison cannot invent an observed branch head",
+2026-10-02T20:07:46.6922801Z     "merged pull cannot predate closure or remain draft",
+2026-10-02T20:07:46.6923181Z     "ancestry must bind integration PR merge commit",
+2026-10-02T20:07:46.6923515Z     "release inclusion cannot be inferred",
+2026-10-02T20:07:46.6923885Z     "duplicate finding cannot silently acquire a new issue",
+2026-10-02T20:07:46.6924283Z     "outside record cannot bypass validated ledger",
+2026-10-02T20:07:46.6924645Z     "response identity and issue/PR kind are checked",
+2026-10-02T20:07:46.6925010Z     "read-only refresh preserves original snapshot",
+2026-10-02T20:07:46.6925456Z     "changed PR head surfaces stale approval instead of hiding new state",
+2026-10-02T20:07:46.6925914Z     "HTTP failure is explicit and other reads continue",
+2026-10-02T20:07:46.6926327Z     "malformed live merge evidence does not produce success",
+2026-10-02T20:07:46.6926721Z     "optional token is redacted from fetch errors",
+2026-10-02T20:07:46.6927096Z     "backward live observation time fails before reads"
+2026-10-02T20:07:46.6927399Z   ]
+2026-10-02T20:07:46.6927582Z }
+2026-10-02T20:07:46.6927858Z 
+2026-10-02T20:07:46.6927985Z CHECK: OpenAI native evidence
+2026-10-02T20:07:46.7297241Z {
+2026-10-02T20:07:46.7297516Z   "valid": true,
+2026-10-02T20:07:46.7297760Z   "errors": [],
+2026-10-02T20:07:46.7297981Z   "counts": {
+2026-10-02T20:07:46.7298221Z     "models": 2,
+2026-10-02T20:07:46.7298458Z     "observed_artifacts": 2,
+2026-10-02T20:07:46.7298787Z     "provider_reported_determinations": 5,
+2026-10-02T20:07:46.7299147Z     "unknown_determinations": 5,
+2026-10-02T20:07:46.7299446Z     "unknown_release_dates": 2,
+2026-10-02T20:07:46.7299743Z     "unknown_release_artifact_states": 2,
+2026-10-02T20:07:46.7300320Z     "evidence_scope": "Provider statements transcribed; no independent capability assessment or human review"
+2026-10-02T20:07:46.7300833Z   }
+2026-10-02T20:07:46.7301031Z }
+2026-10-02T20:07:46.7301319Z 
+2026-10-02T20:07:46.7301477Z CHECK: OpenAI native regressions
+2026-10-02T20:07:46.8075501Z {
+2026-10-02T20:07:46.8075779Z   "passed": 84,
+2026-10-02T20:07:46.8076078Z   "invalid_cases": 80,
+2026-10-02T20:07:46.8076558Z   "evidence": "Offline consistency checks only; no model inference or human review"
+2026-10-02T20:07:46.8076987Z }
+2026-10-02T20:07:46.8077104Z 
+2026-10-02T20:07:46.8077274Z CHECK: OpenAI scoped unknown summary
+2026-10-02T20:07:46.8503355Z {
+2026-10-02T20:07:46.8503630Z   "models": 2,
+2026-10-02T20:07:46.8503894Z   "observed_artifacts": 2,
+2026-10-02T20:07:46.8504243Z   "provider_reported_determinations": 5,
+2026-10-02T20:07:46.8504578Z   "unknown_determinations": 5,
+2026-10-02T20:07:46.8504855Z   "unknown_release_dates": 2,
+2026-10-02T20:07:46.8505143Z   "unknown_release_artifact_states": 2,
+2026-10-02T20:07:46.8505723Z   "evidence_scope": "Provider statements transcribed; no independent capability assessment or human review"
+2026-10-02T20:07:46.8506224Z }
+2026-10-02T20:07:46.8506329Z 
+2026-10-02T20:07:46.8506475Z CHECK: Release timing bindings
+2026-10-02T20:07:46.8894159Z {
+2026-10-02T20:07:46.8894637Z   "reported_submission_timestamp": "2025-08-08T19:24:38Z",
+2026-10-02T20:07:46.8895088Z   "repository_commit_timestamp": "2025-08-05T15:19:49Z",
+2026-10-02T20:07:46.8895461Z   "model_release_date": "unknown",
+2026-10-02T20:07:46.8895752Z   "launch_edition": "unknown",
+2026-10-02T20:07:46.8896021Z   "sources_observed": 1,
+2026-10-02T20:07:46.8896284Z   "sources_not_fetched": 3
+2026-10-02T20:07:46.8896524Z }
+2026-10-02T20:07:46.8896637Z 
+2026-10-02T20:07:46.8896788Z CHECK: Release timing regressions
+2026-10-02T20:07:46.9374064Z {
+2026-10-02T20:07:46.9374400Z   "checks": 50,
+2026-10-02T20:07:46.9374727Z   "invalid_cases": 49
+2026-10-02T20:07:46.9375042Z }
+2026-10-02T20:07:46.9375195Z 
+2026-10-02T20:07:46.9375394Z CHECK: Release timing file hashes
+2026-10-02T20:07:46.9746896Z {
+2026-10-02T20:07:46.9747557Z   "collect.py": "90417b6096c5197ae3427238a31eb5c1a9aea97c06d04b3feda0c5b2131f8fde",
+2026-10-02T20:07:46.9748282Z   "acquisition-plan.json": "76b12add20725a52e953b84ac15028c171cf7a339ed397c9a05b571fe762733e",
+2026-10-02T20:07:46.9748979Z   "core.mjs": "b0ca7125a8d74ed4a7730416103e59b56ca6110835815aab59ae339169128cef",
+2026-10-02T20:07:46.9749568Z   "tests.mjs": "574d048a81167d1bab6a6f2bc672cf54b1a6e0e2fecfd07fe7d90b4f8650d08d",
+2026-10-02T20:07:46.9750148Z   "tool.mjs": "b617b02ffd7065bbf1738c0b007cf133645b6239967c5ed59b2c29a439871fcf",
+2026-10-02T20:07:46.9750732Z   "evidence.json": "1755a7de41ecc80131c6f787ab916e73670637be4916ff0163d0a6b321373b98",
+2026-10-02T20:07:46.9751617Z   "evidence/acquisition.json": "73968ca25dffd835273d285385790e1f59b85804d8cb9e6f907fb55011750716",
+2026-10-02T20:07:46.9752335Z   "evidence/initial-readme.md": "87acc69cf952f3695e74b94e55c4f0b7e79d7f7880dc1351e1cc69fc74953746",
+2026-10-02T20:07:46.9753093Z   "evidence/github-initial-commit.json": "3e8c79bbca5b70e10e4d3ac8c134c719fa45d3230a59beb4d17a831b089c545d"
+2026-10-02T20:07:46.9753588Z }
+2026-10-02T20:07:46.9753718Z 
+2026-10-02T20:07:46.9753879Z CHECK: Anthropic native evidence
+2026-10-02T20:07:47.0119027Z {
+2026-10-02T20:07:47.0119309Z   "valid": true,
+2026-10-02T20:07:47.0119969Z   "errors": [],
+2026-10-02T20:07:47.0120205Z   "counts": {
+2026-10-02T20:07:47.0120420Z     "models": 2,
+2026-10-02T20:07:47.0120685Z     "observed_system_cards": 1,
+2026-10-02T20:07:47.0121020Z     "reported_deployment_decisions": 2,
+2026-10-02T20:07:47.0121588Z     "reported_capability_assessments": 3,
+2026-10-02T20:07:47.0121942Z     "unknown_capability_assessments": 1,
+2026-10-02T20:07:47.0122254Z     "unknown_release_dates": 2,
+2026-10-02T20:07:47.0122539Z     "unknown_launch_editions": 2,
+2026-10-02T20:07:47.0123127Z     "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T20:07:47.0123641Z   }
+2026-10-02T20:07:47.0123842Z }
+2026-10-02T20:07:47.0123943Z 
+2026-10-02T20:07:47.0124097Z CHECK: Anthropic native regressions
+2026-10-02T20:07:47.0785979Z {
+2026-10-02T20:07:47.0786366Z   "checks": 70,
+2026-10-02T20:07:47.0786694Z   "invalid_cases": 66,
+2026-10-02T20:07:47.0786973Z   "actual_seed_summary": {
+2026-10-02T20:07:47.0787266Z     "models": 2,
+2026-10-02T20:07:47.0787526Z     "observed_system_cards": 1,
+2026-10-02T20:07:47.0787849Z     "reported_deployment_decisions": 2,
+2026-10-02T20:07:47.0788188Z     "reported_capability_assessments": 3,
+2026-10-02T20:07:47.0788510Z     "unknown_capability_assessments": 1,
+2026-10-02T20:07:47.0789226Z     "unknown_release_dates": 2,
+2026-10-02T20:07:47.0789514Z     "unknown_launch_editions": 2,
+2026-10-02T20:07:47.0790123Z     "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T20:07:47.0790635Z   }
+2026-10-02T20:07:47.0790829Z }
+2026-10-02T20:07:47.0790943Z 
+2026-10-02T20:07:47.0791319Z CHECK: Anthropic mocked collector tests
+2026-10-02T20:07:47.4089698Z test_ambiguous_official_links_stop_without_pdf_fetch (__main__.CollectorTests.test_ambiguous_official_links_stop_without_pdf_fetch) ... ok
+2026-10-02T20:07:47.4091352Z test_credentials_rejected (__main__.CollectorTests.test_credentials_rejected) ... ok
+2026-10-02T20:07:47.4092565Z test_denied_robots_prevents_get (__main__.CollectorTests.test_denied_robots_prevents_get) ... ok
+2026-10-02T20:07:47.4093736Z test_direct_pdf_uses_planned_pdf_limit_and_received_once (__main__.CollectorTests.test_direct_pdf_uses_planned_pdf_limit_and_received_once) ... ok
+2026-10-02T20:07:47.4094583Z test_external_url_rejected (__main__.CollectorTests.test_external_url_rejected) ... ok
+2026-10-02T20:07:47.4095570Z test_hard_stop_baseexception_not_swallowed_and_receipt_preserved (__main__.CollectorTests.test_hard_stop_baseexception_not_swallowed_and_receipt_preserved) ... ok
+2026-10-02T20:07:47.4096523Z test_html_page_retains_small_bound (__main__.CollectorTests.test_html_page_retains_small_bound) ... ok
+2026-10-02T20:07:47.4097388Z test_html_scripts_do_not_create_evidence_text (__main__.CollectorTests.test_html_scripts_do_not_create_evidence_text) ... ok
+2026-10-02T20:07:47.4098129Z test_non_https_rejected (__main__.CollectorTests.test_non_https_rejected) ... ok
+2026-10-02T20:07:47.4098796Z test_nonstandard_port_rejected (__main__.CollectorTests.test_nonstandard_port_rejected) ... ok
+2026-10-02T20:07:47.4099650Z test_page_size_bound_enforced_by_actual_reader (__main__.CollectorTests.test_page_size_bound_enforced_by_actual_reader) ... ok
+2026-10-02T20:07:47.4100582Z test_redirect_checks_new_host_robots_before_get (__main__.CollectorTests.test_redirect_checks_new_host_robots_before_get) ... ok
+2026-10-02T20:07:47.4101674Z test_redirect_to_external_host_refused (__main__.CollectorTests.test_redirect_to_external_host_refused) ... ok
+2026-10-02T20:07:47.4102521Z test_same_large_response_with_pdf_limit (__main__.CollectorTests.test_same_large_response_with_pdf_limit) ... ok
+2026-10-02T20:07:47.4103331Z test_unique_explicit_provider_link_only (__main__.CollectorTests.test_unique_explicit_provider_link_only) ... ok
+2026-10-02T20:07:47.4103729Z 
+2026-10-02T20:07:47.4103960Z ----------------------------------------------------------------------
+2026-10-02T20:07:47.4104338Z Ran 15 tests in 0.023s
+2026-10-02T20:07:47.4104482Z 
+2026-10-02T20:07:47.4104892Z OK
+2026-10-02T20:07:47.4105003Z 
+2026-10-02T20:07:47.4105169Z CHECK: Anthropic scoped unknown summary
+2026-10-02T20:07:47.4474465Z {
+2026-10-02T20:07:47.4474843Z   "models": 2,
+2026-10-02T20:07:47.4492541Z   "observed_system_cards": 1,
+2026-10-02T20:07:47.4493214Z   "reported_deployment_decisions": 2,
+2026-10-02T20:07:47.4493813Z   "reported_capability_assessments": 3,
+2026-10-02T20:07:47.4494374Z   "unknown_capability_assessments": 1,
+2026-10-02T20:07:47.4494883Z   "unknown_release_dates": 2,
+2026-10-02T20:07:47.4495371Z   "unknown_launch_editions": 2,
+2026-10-02T20:07:47.4496363Z   "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T20:07:47.4497249Z }
+2026-10-02T20:07:47.4497434Z 
+2026-10-02T20:07:47.4497703Z CHECK: RSP inherited-source supplement
+2026-10-02T20:07:47.4846236Z {
+2026-10-02T20:07:47.4846601Z   "valid": true,
+2026-10-02T20:07:47.4846952Z   "errors": [],
+2026-10-02T20:07:47.4847291Z   "counts": {
+2026-10-02T20:07:47.4847726Z     "received_card_pointer": "observed",
+2026-10-02T20:07:47.4848404Z     "official_route": "dated_2024_update_announcement_observed_2026",
+2026-10-02T20:07:47.4849048Z     "numeric_policy_version": "unknown",
+2026-10-02T20:07:47.4849569Z     "historical_policy_applicability": "unknown",
+2026-10-02T20:07:47.4850355Z     "launch_policy_edition": "unknown",
+2026-10-02T20:07:47.4850651Z     "stop_condition": "met",
+2026-10-02T20:07:47.4850943Z     "new_card_source_requests": 0,
+2026-10-02T20:07:47.4851420Z     "official_route_requests": 1,
+2026-10-02T20:07:47.4851717Z     "optional_policy_pdf_requests": 0,
+2026-10-02T20:07:47.4852458Z     "scope": "Provider page/date as observed; no archived2024-byte proof, independent HTML digest verification or historical policy edition inferred"
+2026-10-02T20:07:47.4853078Z   }
+2026-10-02T20:07:47.4853272Z }
+2026-10-02T20:07:47.4853385Z 
+2026-10-02T20:07:47.4853536Z CHECK: RSP temporal regressions
+2026-10-02T20:07:47.5363566Z {
+2026-10-02T20:07:47.5363942Z   "checks": 49,
+2026-10-02T20:07:47.5364287Z   "invalid_cases": 46,
+2026-10-02T20:07:47.5364649Z   "actual_summary": {
+2026-10-02T20:07:47.5365052Z     "received_card_pointer": "observed",
+2026-10-02T20:07:47.5365554Z     "official_route": "dated_2024_update_announcement_observed_2026",
+2026-10-02T20:07:47.5366006Z     "numeric_policy_version": "unknown",
+2026-10-02T20:07:47.5366364Z     "historical_policy_applicability": "unknown",
+2026-10-02T20:07:47.5366718Z     "launch_policy_edition": "unknown",
+2026-10-02T20:07:47.5367037Z     "stop_condition": "met",
+2026-10-02T20:07:47.5367328Z     "new_card_source_requests": 0,
+2026-10-02T20:07:47.5367716Z     "official_route_requests": 1,
+2026-10-02T20:07:47.5368153Z     "optional_policy_pdf_requests": 0,
+2026-10-02T20:07:47.5368995Z     "scope": "Provider page/date as observed; no archived2024-byte proof, independent HTML digest verification or historical policy edition inferred"
+2026-10-02T20:07:47.5369609Z   }
+2026-10-02T20:07:47.5369799Z }
+2026-10-02T20:07:47.5370130Z 
+2026-10-02T20:07:47.5370526Z CHECK: RSP mocked selector tests
+2026-10-02T20:07:47.7945832Z test_explicit_rsp_model_version_applicability_candidate (__main__.Tests.test_explicit_rsp_model_version_applicability_candidate) ... ok
+2026-10-02T20:07:47.7946838Z test_generic_policy_not_rsp (__main__.Tests.test_generic_policy_not_rsp) ... ok
+2026-10-02T20:07:47.7947792Z test_hard_deadline_bypasses_exception_catches_preserves_receipt (__main__.Tests.test_hard_deadline_bypasses_exception_catches_preserves_receipt) ... ok
+2026-10-02T20:07:47.7948619Z test_html_cap_not_relaxed (__main__.Tests.test_html_cap_not_relaxed) ... ok
+2026-10-02T20:07:47.7949230Z test_newer_claude4_5_not_scoped (__main__.Tests.test_newer_claude4_5_not_scoped) ... ok
+2026-10-02T20:07:47.7950063Z test_no_fresh_source_request_when_reused_card_missing (__main__.Tests.test_no_fresh_source_request_when_reused_card_missing) ... ok
+2026-10-02T20:07:47.7951536Z test_off_provider_policy_link_not_candidate (__main__.Tests.test_off_provider_policy_link_not_candidate) ... ok
+2026-10-02T20:07:47.7952317Z test_off_provider_redirect_refused (__main__.Tests.test_off_provider_redirect_refused) ... ok
+2026-10-02T20:07:47.7952933Z test_pdf_cap_not_relaxed (__main__.Tests.test_pdf_cap_not_relaxed) ... ok
+2026-10-02T20:07:47.7953697Z test_pdf_magic_larger_than_html_cap_uses_pdf_cap (__main__.Tests.test_pdf_magic_larger_than_html_cap_uses_pdf_cap) ... ok
+2026-10-02T20:07:47.7954557Z test_pdf_mime_larger_than_html_cap_uses_pdf_cap (__main__.Tests.test_pdf_mime_larger_than_html_cap_uses_pdf_cap) ... ok
+2026-10-02T20:07:47.7955360Z test_pdf_mime_masquerading_html_rejected (__main__.Tests.test_pdf_mime_masquerading_html_rejected) ... ok
+2026-10-02T20:07:47.7956154Z test_real_pdf_annotation_scope_and_identity (__main__.Tests.test_real_pdf_annotation_scope_and_identity) ... ok
+2026-10-02T20:07:47.7956887Z test_redirect_checks_target_robots (__main__.Tests.test_redirect_checks_target_robots) ... ok
+2026-10-02T20:07:47.7957695Z test_reused_card_wrong_hash_refused_before_parse (__main__.Tests.test_reused_card_wrong_hash_refused_before_parse) ... ok
+2026-10-02T20:07:47.7958498Z test_reused_pdf_wrong_page_count_refused (__main__.Tests.test_reused_pdf_wrong_page_count_refused) ... ok
+2026-10-02T20:07:47.7959242Z test_robots_denial_prevents_source_get (__main__.Tests.test_robots_denial_prevents_source_get) ... ok
+2026-10-02T20:07:47.7960182Z test_robots_limit_independent_of_pdf_magic (__main__.Tests.test_robots_limit_independent_of_pdf_magic) ... ok
+2026-10-02T20:07:47.7960979Z test_rsp_chronology_only_does_not_bind_card (__main__.Tests.test_rsp_chronology_only_does_not_bind_card) ... ok
+2026-10-02T20:07:47.7962021Z test_rsp_model_and_date_without_relation_not_bound (__main__.Tests.test_rsp_model_and_date_without_relation_not_bound) ... ok
+2026-10-02T20:07:47.7962872Z test_url_credentials_and_non_https_refused (__main__.Tests.test_url_credentials_and_non_https_refused) ... ok
+2026-10-02T20:07:47.7963682Z test_usage_policy_counterexample_is_not_rsp (__main__.Tests.test_usage_policy_counterexample_is_not_rsp) ... ok
+2026-10-02T20:07:47.7964089Z 
+2026-10-02T20:07:47.7964322Z ----------------------------------------------------------------------
+2026-10-02T20:07:47.7964691Z Ran 22 tests in 0.053s
+2026-10-02T20:07:47.7964840Z 
+2026-10-02T20:07:47.7964946Z OK
+2026-10-02T20:07:47.7965053Z 
+2026-10-02T20:07:47.7965182Z CHECK: RSP finite gap summary
+2026-10-02T20:07:47.8338809Z {
+2026-10-02T20:07:47.8339241Z   "received_card_pointer": "observed",
+2026-10-02T20:07:47.8339927Z   "official_route": "dated_2024_update_announcement_observed_2026",
+2026-10-02T20:07:47.8340563Z   "numeric_policy_version": "unknown",
+2026-10-02T20:07:47.8340917Z   "historical_policy_applicability": "unknown",
+2026-10-02T20:07:47.8341472Z   "launch_policy_edition": "unknown",
+2026-10-02T20:07:47.8341764Z   "stop_condition": "met",
+2026-10-02T20:07:47.8342052Z   "new_card_source_requests": 0,
+2026-10-02T20:07:47.8342389Z   "official_route_requests": 1,
+2026-10-02T20:07:47.8342863Z   "optional_policy_pdf_requests": 0,
+2026-10-02T20:07:47.8343711Z   "scope": "Provider page/date as observed; no archived2024-byte proof, independent HTML digest verification or historical policy edition inferred"
+2026-10-02T20:07:47.8344333Z }
+2026-10-02T20:07:47.8344453Z 
+2026-10-02T20:07:47.8344642Z CHECK: Google unknown/source regressions
+2026-10-02T20:07:47.8827666Z {"checks":60,"invalid_cases":58,"valid_checks":2}
+2026-10-02T20:07:47.8828074Z 
+2026-10-02T20:07:47.8828330Z CHECK: Google mocked collector tests
+2026-10-02T20:07:48.1132759Z test_aria_label (__main__.Boundary.test_aria_label) ... ok
+2026-10-02T20:07:48.1133512Z test_credentials (__main__.Boundary.test_credentials) ... ok
+2026-10-02T20:07:48.1134142Z test_deadline_bypasses_exception (__main__.Boundary.test_deadline_bypasses_exception) ... ok
+2026-10-02T20:07:48.1134803Z test_decoded_robots_bound (__main__.Boundary.test_decoded_robots_bound) ... ok
+2026-10-02T20:07:48.1135385Z test_encoded_traversal (__main__.Boundary.test_encoded_traversal) ... ok
+2026-10-02T20:07:48.1136271Z test_explicit_anchor (__main__.Boundary.test_explicit_anchor) ... ok
+2026-10-02T20:07:48.1136867Z test_forced_html_received_cap (__main__.Boundary.test_forced_html_received_cap) ... ok
+2026-10-02T20:07:48.1137406Z test_gzip_header (__main__.Boundary.test_gzip_header) ... ok
+2026-10-02T20:07:48.1137954Z test_gzip_header_bad_magic (__main__.Boundary.test_gzip_header_bad_magic) ... ok
+2026-10-02T20:07:48.1138616Z test_gzip_header_missing_but_magic (__main__.Boundary.test_gzip_header_missing_but_magic) ... ok
+2026-10-02T20:07:48.1139241Z test_gzip_html_bomb_bound (__main__.Boundary.test_gzip_html_bomb_bound) ... ok
+2026-10-02T20:07:48.1139772Z test_gzip_pdf_limit (__main__.Boundary.test_gzip_pdf_limit) ... ok
+2026-10-02T20:07:48.1140462Z test_gzip_pdf_through_actual_encoded_reader (__main__.Boundary.test_gzip_pdf_through_actual_encoded_reader) ... ok
+2026-10-02T20:07:48.1141049Z test_http (__main__.Boundary.test_http) ... ok
+2026-10-02T20:07:48.1141711Z test_identity_html (__main__.Boundary.test_identity_html) ... ok
+2026-10-02T20:07:48.1142189Z test_official_host (__main__.Boundary.test_official_host) ... ok
+2026-10-02T20:07:48.1142656Z test_other_bucket (__main__.Boundary.test_other_bucket) ... ok
+2026-10-02T20:07:48.1143237Z test_other_bucket_not_candidate (__main__.Boundary.test_other_bucket_not_candidate) ... ok
+2026-10-02T20:07:48.1143950Z test_other_host (__main__.Boundary.test_other_host) ... ok
+2026-10-02T20:07:48.1144442Z test_pdf_limit_exceeded (__main__.Boundary.test_pdf_limit_exceeded) ... ok
+2026-10-02T20:07:48.1145044Z test_pdf_magic_gets_pdf_limit (__main__.Boundary.test_pdf_magic_gets_pdf_limit) ... ok
+2026-10-02T20:07:48.1145664Z test_pdf_mime_magic_required (__main__.Boundary.test_pdf_mime_magic_required) ... ok
+2026-10-02T20:07:48.1146136Z test_port (__main__.Boundary.test_port) ... ok
+2026-10-02T20:07:48.1146767Z test_received_pdf_saved_before_parse_failure (__main__.Boundary.test_received_pdf_saved_before_parse_failure) ... ok
+2026-10-02T20:07:48.1147427Z test_storage_bucket (__main__.Boundary.test_storage_bucket) ... ok
+2026-10-02T20:07:48.1148007Z test_technical_report_not_card (__main__.Boundary.test_technical_report_not_card) ... ok
+2026-10-02T20:07:48.1148618Z test_unsupported_encoding (__main__.Boundary.test_unsupported_encoding) ... ok
+2026-10-02T20:07:48.1148934Z 
+2026-10-02T20:07:48.1149159Z ----------------------------------------------------------------------
+2026-10-02T20:07:48.1149535Z Ran 27 tests in 0.024s
+2026-10-02T20:07:48.1149691Z 
+2026-10-02T20:07:48.1149790Z OK
+2026-10-02T20:07:48.1149893Z 
+2026-10-02T20:07:48.1150054Z CHECK: Google mocked exact-stage tests
+2026-10-02T20:07:48.4241843Z test_bad_utf8_retained (__main__.CardStage.test_bad_utf8_retained) ... ok
+2026-10-02T20:07:48.4243241Z test_deadline_not_swallowed_and_receipt_retained (__main__.CardStage.test_deadline_not_swallowed_and_receipt_retained) ... ok
+2026-10-02T20:07:48.4244652Z test_exact_html_and_no_child_following (__main__.CardStage.test_exact_html_and_no_child_following) ... ok
+2026-10-02T20:07:48.4245664Z test_received_pdf_is_retained_but_not_parsed (__main__.CardStage.test_received_pdf_is_retained_but_not_parsed) ... ok
+2026-10-02T20:07:48.4246507Z test_redirect_refused_without_following (__main__.CardStage.test_redirect_refused_without_following) ... ok
+2026-10-02T20:07:48.4246923Z 
+2026-10-02T20:07:48.4247156Z ----------------------------------------------------------------------
+2026-10-02T20:07:48.4247524Z Ran 5 tests in 0.103s
+2026-10-02T20:07:48.4247677Z 
+2026-10-02T20:07:48.4247776Z OK
+2026-10-02T20:07:48.4247897Z 
+2026-10-02T20:07:48.4248079Z CHECK: Google retained-source verification
+2026-10-02T20:07:48.5912845Z {"all_anchors": 141, "bound_preview_quote": [8255, 8300], "card_response_body_acquired": false, "decoded_bytes": 194458, "eligible_vendor_pdf_pointers": 0, "exact_html_card_pointer_verified": true, "network_requests": 0, "retained_received_bytes": 32724}
+2026-10-02T20:07:48.5914396Z 
+2026-10-02T20:07:48.5914657Z CHECK: Google partial source summary
+2026-10-02T20:07:48.6288079Z {
+2026-10-02T20:07:48.6289045Z   "acquired_cards": 0,
+2026-10-02T20:07:48.6289484Z   "native_domain_records": 0,
+2026-10-02T20:07:48.6289959Z   "unknown_determination_fields": 8,
+2026-10-02T20:07:48.6290399Z   "source_stage_requests": 2,
+2026-10-02T20:07:48.6290751Z   "redirects_followed": 0,
+2026-10-02T20:07:48.6291269Z   "stop": "met"
+2026-10-02T20:07:48.6291536Z }
+2026-10-02T20:07:48.6291678Z 
+2026-10-02T20:07:48.6291920Z CHECK: Meta native/source regressions
+2026-10-02T20:07:48.6964024Z {"checks":81,"invalid_cases":79,"valid_checks":2}
+2026-10-02T20:07:48.6964336Z 
+2026-10-02T20:07:48.6964479Z CHECK: Meta UTF8 source tests
+2026-10-02T20:07:48.7785491Z test_actual_nonascii_offset (__main__.ByteQuotes.test_actual_nonascii_offset) ... ok
+2026-10-02T20:07:48.7786256Z test_actual_owned_bundle (__main__.ByteQuotes.test_actual_owned_bundle) ... ok
+2026-10-02T20:07:48.7787330Z test_boolean_coordinate_rejected (__main__.ByteQuotes.test_boolean_coordinate_rejected) ... ok
+2026-10-02T20:07:48.7788444Z test_character_offset_is_not_byte_offset (__main__.ByteQuotes.test_character_offset_is_not_byte_offset) ... ok
+2026-10-02T20:07:48.7789747Z test_fractional_coordinate_rejected (__main__.ByteQuotes.test_fractional_coordinate_rejected) ... ok
+2026-10-02T20:07:48.7791335Z test_negative_coordinate_rejected (__main__.ByteQuotes.test_negative_coordinate_rejected) ... ok
+2026-10-02T20:07:48.7793100Z test_nonbmp_byte_coordinate (__main__.ByteQuotes.test_nonbmp_byte_coordinate) ... ok
+2026-10-02T20:07:48.7794113Z test_out_of_bounds_rejected (__main__.ByteQuotes.test_out_of_bounds_rejected) ... ok
+2026-10-02T20:07:48.7795137Z test_shifted_both_coordinates (__main__.ByteQuotes.test_shifted_both_coordinates) ... ok
+2026-10-02T20:07:48.7796041Z test_wrong_quote (__main__.ByteQuotes.test_wrong_quote) ... ok
+2026-10-02T20:07:48.7796454Z 
+2026-10-02T20:07:48.7796815Z ----------------------------------------------------------------------
+2026-10-02T20:07:48.7797379Z Ran 10 tests in 0.002s
+2026-10-02T20:07:48.7797592Z 
+2026-10-02T20:07:48.7797726Z OK
+2026-10-02T20:07:48.7797899Z 
+2026-10-02T20:07:48.7798160Z CHECK: Meta retained-source verification
+2026-10-02T20:07:48.8087651Z {"file_bytes": 23764, "formal_model_threshold_determinations": 0, "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b", "literal_UTF8_byte_quotes": 14, "original_tool_base64_matches": true, "provider_GETs": 0, "provider_reported_family_assessments": 1, "sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f"}
+2026-10-02T20:07:48.8088830Z 
+2026-10-02T20:07:48.8089006Z CHECK: Meta partial native summary
+2026-10-02T20:07:48.8457658Z {
+2026-10-02T20:07:48.8457927Z   "models": 2,
+2026-10-02T20:07:48.8458215Z   "native_category_records": 3,
+2026-10-02T20:07:48.8458622Z   "method_only_records": 2,
+2026-10-02T20:07:48.8459121Z   "provider_reported_family_assessments": 1,
+2026-10-02T20:07:48.8459673Z   "formal_model_threshold_determinations": 0,
+2026-10-02T20:07:48.8460029Z   "formal_deployment_determinations": 0,
+2026-10-02T20:07:48.8460383Z   "framework_binding": "unknown",
+2026-10-02T20:07:48.8460713Z   "provider_declared_release_date": "2025-04-05",
+2026-10-02T20:07:48.8461275Z   "independent_release_and_launch": "unknown",
+2026-10-02T20:07:48.8461602Z   "literal_citations": 14,
+2026-10-02T20:07:48.8461879Z   "exposed_artifact_reads": 1,
+2026-10-02T20:07:48.8462147Z   "stop": "met"
+2026-10-02T20:07:48.8462350Z }
+2026-10-02T20:07:48.8462461Z 
+2026-10-02T20:07:48.8462654Z CHECK: Audit original/prior/final Bash Git fixtures
+2026-10-02T20:07:50.4049675Z OFFLINE ONLY: actual Bash/Git temporary fixtures; no upstream/model/uv execution
+2026-10-02T20:07:50.4050719Z BASELINE WITNESS: original helper returned success at the wrong HEAD
+2026-10-02T20:07:50.4051541Z BASELINE WITNESS: original helper returned success after pin checkout failure
+2026-10-02T20:07:50.4052214Z PRIOR REPAIR WITNESS: status-only helper admitted edited source under assume-unchanged
+2026-10-02T20:07:50.4053907Z test_baseline_existing_wrong_head_succeeds_without_pin (__main__.OriginalWitness.test_baseline_existing_wrong_head_succeeds_without_pin) ... ok
+2026-10-02T20:07:50.4054973Z test_baseline_missing_pin_warning_still_succeeds (__main__.OriginalWitness.test_baseline_missing_pin_warning_still_succeeds) ... ok
+2026-10-02T20:07:50.4056070Z test_prior_status_only_repair_admits_assume_unchanged_edit (__main__.PriorRepairWitness.test_prior_status_only_repair_admits_assume_unchanged_edit) ... ok
+2026-10-02T20:07:50.4057228Z test_assume_unchanged_index_flag_and_hidden_edit_refused (__main__.RepairedChecks.test_assume_unchanged_index_flag_and_hidden_edit_refused) ... ok
+2026-10-02T20:07:50.4058094Z test_dangling_symlink_refused (__main__.RepairedChecks.test_dangling_symlink_refused) ... ok
+2026-10-02T20:07:50.4058943Z test_existing_correct_attached_head_is_read_only (__main__.RepairedChecks.test_existing_correct_attached_head_is_read_only) ... ok
+2026-10-02T20:07:50.4059878Z test_existing_directory_outside_repo_refused (__main__.RepairedChecks.test_existing_directory_outside_repo_refused) ... ok
+2026-10-02T20:07:50.4060830Z test_existing_nested_directory_is_not_parent_repo (__main__.RepairedChecks.test_existing_nested_directory_is_not_parent_repo) ... ok
+2026-10-02T20:07:50.4062052Z test_existing_pin_missing_refused_without_fetch_or_write (__main__.RepairedChecks.test_existing_pin_missing_refused_without_fetch_or_write) ... ok
+2026-10-02T20:07:50.4063129Z test_existing_regular_file_refused (__main__.RepairedChecks.test_existing_regular_file_refused) ... ok
+2026-10-02T20:07:50.4064139Z test_failed_checkout_is_fatal_even_inside_conditional_invocation (__main__.RepairedChecks.test_failed_checkout_is_fatal_even_inside_conditional_invocation) ... ok
+2026-10-02T20:07:50.4065141Z test_fresh_full_pin_with_spaces_in_target (__main__.RepairedChecks.test_fresh_full_pin_with_spaces_in_target) ... ok
+2026-10-02T20:07:50.4066246Z test_fresh_short_pin_detaches_at_expected_commit_then_repeat_is_read_only (__main__.RepairedChecks.test_fresh_short_pin_detaches_at_expected_commit_then_repeat_is_read_only) ... ok
+2026-10-02T20:07:50.4067280Z test_full_scripts_have_actual_bash_syntax (__main__.RepairedChecks.test_full_scripts_have_actual_bash_syntax) ... ok
+2026-10-02T20:07:50.4068345Z test_full_setup_refuses_existing_mismatch_before_installation_tail (__main__.RepairedChecks.test_full_setup_refuses_existing_mismatch_before_installation_tail) ... ok
+2026-10-02T20:07:50.4069485Z test_hex_named_branch_cannot_shadow_existing_commit_pin (__main__.RepairedChecks.test_hex_named_branch_cannot_shadow_existing_commit_pin) ... ok
+2026-10-02T20:07:50.4070471Z test_hex_named_tag_cannot_shadow_fresh_commit_pin (__main__.RepairedChecks.test_hex_named_tag_cannot_shadow_fresh_commit_pin) ... ok
+2026-10-02T20:07:50.4071818Z test_ignored_environment_outputs_are_preserved_and_not_source_checked (__main__.RepairedChecks.test_ignored_environment_outputs_are_preserved_and_not_source_checked) ... ok
+2026-10-02T20:07:50.4072871Z test_invalid_ref_name_refused_before_clone (__main__.RepairedChecks.test_invalid_ref_name_refused_before_clone) ... ok
+2026-10-02T20:07:50.4073644Z test_missing_fresh_pin_is_fatal (__main__.RepairedChecks.test_missing_fresh_pin_is_fatal) ... ok
+2026-10-02T20:07:50.4074323Z test_missing_origin_refused (__main__.RepairedChecks.test_missing_origin_refused) ... ok
+2026-10-02T20:07:50.4075263Z test_original_and_repaired_tail_and_all_fifteen_pins_unchanged (__main__.RepairedChecks.test_original_and_repaired_tail_and_all_fifteen_pins_unchanged) ... ok
+2026-10-02T20:07:50.4076287Z test_original_source_git_blob_is_exactly_bound (__main__.RepairedChecks.test_original_source_git_blob_is_exactly_bound) ... ok
+2026-10-02T20:07:50.4077270Z test_skip_worktree_index_flag_and_hidden_edit_refused (__main__.RepairedChecks.test_skip_worktree_index_flag_and_hidden_edit_refused) ... ok
+2026-10-02T20:07:50.4078288Z test_staged_changes_refused_and_index_bytes_preserved (__main__.RepairedChecks.test_staged_changes_refused_and_index_bytes_preserved) ... ok
+2026-10-02T20:07:50.4079489Z test_symlink_to_checkout_refused_without_modifying_referent (__main__.RepairedChecks.test_symlink_to_checkout_refused_without_modifying_referent) ... ok
+2026-10-02T20:07:50.4080371Z test_unstaged_changes_refused (__main__.RepairedChecks.test_unstaged_changes_refused) ... ok
+2026-10-02T20:07:50.4081341Z test_untracked_file_refused_and_preserved (__main__.RepairedChecks.test_untracked_file_refused_and_preserved) ... ok
+2026-10-02T20:07:50.4082284Z test_worktree_git_file_at_correct_pin_is_read_only (__main__.RepairedChecks.test_worktree_git_file_at_correct_pin_is_read_only) ... ok
+2026-10-02T20:07:50.4083156Z test_wrong_head_refused_without_reset (__main__.RepairedChecks.test_wrong_head_refused_without_reset) ... ok
+2026-10-02T20:07:50.4083970Z test_wrong_origin_refused_without_rewrite (__main__.RepairedChecks.test_wrong_origin_refused_without_rewrite) ... ok
+2026-10-02T20:07:50.4084385Z 
+2026-10-02T20:07:50.4084622Z ----------------------------------------------------------------------
+2026-10-02T20:07:50.4084992Z Ran 31 tests in 1.468s
+2026-10-02T20:07:50.4085137Z 
+2026-10-02T20:07:50.4085235Z OK
+2026-10-02T20:07:50.4085350Z 
+2026-10-02T20:07:50.4085468Z CHECK: Clean tracked diff
+2026-10-02T20:07:50.4268525Z COMBINED TOTALS: 435 distinct Node checks; 110 Python tests (including 31 real Bash/Git fixture tests); clean tracked tree
+2026-10-02T20:07:50.4485104Z ##[group]Run actions/upload-artifact@v4
+2026-10-02T20:07:50.4485637Z with:
+2026-10-02T20:07:50.4485891Z   name: completed-sprint-integration-receipt
+2026-10-02T20:07:50.4486289Z   path: /home/runner/work/_temp/completed-sprint-integration.json
+2026-10-02T20:07:50.4486665Z   if-no-files-found: error
+2026-10-02T20:07:50.4486913Z   retention-days: 90
+2026-10-02T20:07:50.4487146Z   compression-level: 6
+2026-10-02T20:07:50.4487377Z   overwrite: false
+2026-10-02T20:07:50.4487608Z   include-hidden-files: false
+2026-10-02T20:07:50.4487853Z env:
+2026-10-02T20:07:50.4488069Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:50.4488399Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:50.4488839Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T20:07:50.4489272Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:50.4489665Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:50.4490088Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:50.4490491Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T20:07:50.4490820Z ##[endgroup]
+2026-10-02T20:07:50.6159822Z (node:3543) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T20:07:50.6160657Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T20:07:50.6205314Z With the provided path, there will be 1 file uploaded
+2026-10-02T20:07:50.6209914Z Artifact name is valid!
+2026-10-02T20:07:50.6211508Z Root directory input is valid!
+2026-10-02T20:07:50.9738003Z Beginning upload of artifact content to blob storage
+2026-10-02T20:07:50.9928350Z (node:3543) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-02T20:07:51.2255177Z Uploaded bytes 12304
+2026-10-02T20:07:51.2915701Z Finished uploading artifact content to blob storage!
+2026-10-02T20:07:51.2916911Z SHA256 digest of uploaded artifact zip is ea393a50f6ed6af78064e91d32fa676324e83722f6233a1bc2854793b27cdf9d
+2026-10-02T20:07:51.2918378Z Finalizing artifact upload
+2026-10-02T20:07:51.5654154Z Artifact completed-sprint-integration-receipt.zip successfully finalized. Artifact ID 11249291887
+2026-10-02T20:07:51.5655855Z Artifact completed-sprint-integration-receipt has been successfully uploaded! Final size is 12304 bytes. Artifact ID is 11249291887
+2026-10-02T20:07:51.5662292Z Artifact download URL: https://github.com/trimcrae/Alignment/actions/runs/37058560668/artifacts/11249291887
+2026-10-02T20:07:51.5816722Z ##[group]Run git diff --exit-code
+2026-10-02T20:07:51.5817079Z [36;1mgit diff --exit-code[0m
+2026-10-02T20:07:51.5817386Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-02T20:07:51.5888709Z shell: /usr/bin/bash -e {0}
+2026-10-02T20:07:51.5888977Z env:
+2026-10-02T20:07:51.5889225Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T20:07:51.5889584Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:51.5890053Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T20:07:51.5890487Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:51.5890881Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:51.5891505Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T20:07:51.5891890Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T20:07:51.5892315Z ##[endgroup]
+2026-10-02T20:07:51.6132825Z Post job cleanup.
+2026-10-02T20:07:51.7328796Z (node:3558) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T20:07:51.7329652Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T20:07:51.7513457Z Post job cleanup.
+2026-10-02T20:07:51.8815412Z (node:3566) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T20:07:51.8817257Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T20:07:51.8995351Z Post job cleanup.
+2026-10-02T20:07:51.9888570Z [command]/usr/bin/git version
+2026-10-02T20:07:51.9934711Z git version 2.55.0
+2026-10-02T20:07:51.9976892Z Temporarily overriding HOME='/home/runner/work/_temp/13f2b104-65bb-4785-a589-d86d9e5d11bc' before making global git config changes
+2026-10-02T20:07:51.9977917Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T20:07:51.9985742Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T20:07:52.0028113Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T20:07:52.0065385Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T20:07:52.0338449Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T20:07:52.0380323Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T20:07:52.0672493Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T20:07:52.0717307Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T20:07:52.1191793Z Cleaning up orphan processes
+2026-10-02T20:07:52.1493091Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
