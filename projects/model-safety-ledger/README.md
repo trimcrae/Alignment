@@ -40,3 +40,7 @@ Validation establishes internal consistency with the selected evidence; it does 
 ## Continuation
 
 Do not repeat acquisition of unchanged PDFs or the completed ControlArena ancestry audit. Use the committed hashes and acquisition receipt. A useful next bounded question is whether dated primary or archival evidence can establish genuine release timing and which model-card edition was publicly available then; keep present observation and launch availability separate. Expand providers only in a separately scoped task.
+
+## Dated release-timing supplement
+
+The original ledger above is an unchanged snapshot. The [2026-10-02 supplement](release-timing/README.md) records native arXiv submission metadata, the initial official repository's committed release statement/card pointer, and an explicit missing-evidence stop after one acquisition cycle. Actual release timing and launch-edition bytes remain unverified; later submission metadata and failed fetches do not establish absence.

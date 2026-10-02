@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "baec2cd33fd25b14127656063a097f64d8ff079e"
+  },
+  "method": {
+    "collector": "collect.py",
+    "python": "3.11.16",
+    "max_bytes": 3145728,
+    "socket_timeout_seconds": 12,
+    "request_budget_seconds": 25,
+    "cycle_budget_seconds": 150,
+    "max_redirects": 3,
+    "scope": "Selected current HTML metadata/text and optional archive index; no PDF or historical replay bytes"
+  },
+  "execution": {
+    "source_commit": "1323221b9ed718c7bc8c8fa35673bb64c7a75305",
+    "run_id": "36946343048",
+    "job_name": "acquire",
+    "collected_at": "2026-10-02T00:30:47Z"
+  },
+  "sources": [
+    {
+      "id": "official-launch-announcement",
+      "kind": "provider_announcement",
+      "requested_url": "https://openai.com/index/introducing-gpt-oss/",
+      "observed_at": "2026-10-02T00:30:41Z",
+      "robots": {
+        "url": "https://openai.com/robots.txt",
+        "user_agent": "AlignmentReleaseTiming/0.1 (+https://github.com/trimcrae/Alignment)",
+        "observed_at": "2026-10-02T00:30:41Z",
+        "status": 200,
+        "sha256": "c53100563b9d289efeebb6f826a20c566578e1337e3096e298eb9da5ecc2e498",
+        "state": "parsed",
+        "allowed": true
+      },
+      "state": "not_fetched",
+      "http_status": 403,
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "arxiv-model-card-record",
+      "kind": "repository_metadata",
+      "requested_url": "https://arxiv.org/abs/2508.10925",
+      "observed_at": "2026-10-02T00:30:41Z",
+      "robots": {
+        "url": "https://arxiv.org/robots.txt",
+        "user_agent": "AlignmentReleaseTiming/0.1 (+https://github.com/trimcrae/Alignment)",
+        "observed_at": "2026-10-02T00:30:41Z",
+        "status": 200,
+        "sha256": "eda2bc852443f3f29d31eb04d37b26476654dc33b29256fb882819da23d189a5",
+        "state": "parsed",
+        "allowed": true
+      },
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://arxiv.org/abs/2508.10925",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": "Mon, 24 Aug 2026 19:21:04 GMT",
+        "etag": null
+      },
+      "bytes": 61234,
+      "received_byte_sha256": "6b543ce8edf95fd2c2644ba33f535f62d808fe07a4ce195d50ed583f1e1f4088",
+      "extraction": {
+        "normalization": "HTML data text excluding script/style; Unicode whitespace collapsed; stripped",
+        "normalized_text_sha256": "1f0a4198d6314bf1b3e5889b7d4dc4635ec9f47ff651416a02411a9ce90317f6",
+        "normalized_text_chars": 5828,
+        "spans": [
+          {
+            "start_char": 0,
+            "end_char": 1500,
+            "text": "[2508.10925] gpt-oss-120b & gpt-oss-20b Model Card Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computation and Language arXiv:2508.10925 (cs) [Submitted on 8 Aug 2025] Title:gpt-oss-120b & gpt-oss-20b Model Card Authors:OpenAI: Sandhini Agarwal, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K. Arora, Yu Bai, Bowen Baker, Haiming Bao, Boaz Barak, Ally Bennett, Tyler Bertao, Nivedita Brett, Eugene Brevdo, Greg Brockman, Sebastien Bubeck, Che Chang, Kai Chen, Mark Chen, Enoch Cheung, Aidan Clark, Dan Cook, Marat Dukhan, Casey Dvorak, Kevin Fives, Vlad Fomenko, Timur Garipov, Kristian Georgiev, Mia Glaese, Tarun Gogineni, Adam Goucher, Lukas Gross, Katia Gil Guzman, John Hallman, Jackie Hehir, Johannes Heidecke, Alec Helyar, Haitang Hu, Romain Huet, Jacob Huh, Saachi Jain, Zach Johnson, Chris Koch, Irina Kofman, Dominik Kundel, Jason Kwon, Volodymyr Kyrylov, Elaine Ya Le, Guillaume Leclerc, James Park Lennon, Scott Lessans, Mario Lezcano-Casado, Yuanzhi Li, Zhuohan Li, Ji Lin, Jordan Liss, Lily (Xiaoxuan)Liu, Jiancheng Liu, Kevin Lu, Chris Lu, Zoran Martinovic, Lindsay McCallum, Josh McGrath, Scott McKinney, Aidan McLaughlin, Song Mei, Steve Mostovoy, Tong Mu, Gideon Myles, Alexander Neitz, Alex Nichol, Jakub Pachocki, Alex Paino, Dana Palmie, Ashley Pantuliano, Giambattista Parascandolo, Jongsoo Park, Leher Pathak, Carolina Paz, Ludovic Peran, Dmitry Pimenov, Michelle Pokrass, Eli"
+          },
+          {
+            "start_char": 2049,
+            "end_char": 2539,
+            "text": "ddie Zhang, Shengjia Zhao et al. (25 additional authors not shown) You must enable JavaScript to view entire author list. View a PDF of the paper titled gpt-oss-120b & gpt-oss-20b Model Card, by OpenAI: Sandhini Agarwal and 123 other authors View PDF HTML (experimental) Abstract:We present gpt-oss-120b and gpt-oss-20b, two open-weight reasoning models that push the frontier of accuracy and inference cost. The models use an efficient mixture-of-expert transformer architecture and are tr"
+          },
+          {
+            "start_char": 3181,
+            "end_char": 3854,
+            "text": ".AI) Cite as: arXiv:2508.10925 [cs.CL] (or arXiv:2508.10925v1 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2508.10925 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Chris Koch [view email] [v1] Fri, 8 Aug 2025 19:24:38 UTC (2,197 KB) Full-text links: Access Paper: View a PDF of the paper titled gpt-oss-120b & gpt-oss-20b Model Card, by OpenAI: Sandhini Agarwal and 123 other authors View PDF HTML (experimental) TeX Source view license Current browse context: cs.CL < prev | next > new | recent | 2025-08 Change to browse by: cs cs.AI References & Citations NASA ADS Google Scholar Semantic Scholar export BibTeX citation Loading.."
+          }
+        ],
+        "metadata": [
+          {
+            "key": "viewport",
+            "content": "width=device-width, initial-scale=1"
+          },
+          {
+            "key": "msapplication-TileColor",
+            "content": "#da532c"
+          },
+          {
+            "key": "theme-color",
+            "content": "#ffffff"
+          },
+          {
+            "key": "description",
+            "content": "Abstract page for arXiv paper 2508.10925: gpt-oss-120b & gpt-oss-20b Model Card"
+          },
+          {
+            "key": "og:type",
+            "content": "website"
+          },
+          {
+            "key": "og:site_name",
+            "content": "arXiv.org"
+          },
+          {
+            "key": "og:title",
+            "content": "gpt-oss-120b & gpt-oss-20b Model Card"
+          },
+          {
+            "key": "og:url",
+            "content": "https://arxiv.org/abs/2508.10925v1"
+          },
+          {
+            "key": "og:image",
+            "content": "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+          },
+          {
+            "key": "og:image:secure_url",
+            "content": "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+          },
+          {
+            "key": "og:image:width",
+            "content": "1200"
+          },
+          {
+            "key": "og:image:height",
+            "content": "700"
+          },
+          {
+            "key": "og:image:alt",
+            "content": "arXiv logo"
+          },
+          {
+            "key": "og:description",
+            "content": "We present gpt-oss-120b and gpt-oss-20b, two open-weight reasoning models that push the frontier of accuracy and inference cost. The models use an efficient mixture-of-expert transformer architecture and are trained using large-scale distillation and reinforcement learning. We optimize the models to have strong agentic capabilities (deep research browsing, python tool use, and support for developer-provided functions), all while using a rendered chat format that enables clear instruction following and role delineation. Both models achieve strong results on benchmarks ranging from mathematics, coding, and safety. We release the model weights, inference implementations, tool environments, and tokenizers under an Apache 2.0 license to enable broad use and further research."
+          },
+          {
+            "key": "twitter:site",
+            "content": "@arxiv"
+          },
+          {
+            "key": "twitter:card",
+            "content": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "content": "gpt-oss-120b & gpt-oss-20b Model Card"
+          },
+          {
+            "key": "twitter:description",
+            "content": "We present gpt-oss-120b and gpt-oss-20b, two open-weight reasoning models that push the frontier of accuracy and inference cost. The models use an efficient mixture-of-expert transformer..."
+          },
+          {
+            "key": "twitter:image",
+            "content": "https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"
+          },
+          {
+            "key": "twitter:image:alt",
+            "content": "arXiv logo"
+          },
+          {
+            "key": "citation_title",
+            "content": "gpt-oss-120b & gpt-oss-20b Model Card"
+          },
+          {
+            "key": "citation_author",
+            "content": "OpenAI"
+          },
+          {
+            "key": "citation_author",
+            "content": ":"
+          },
+          {
+            "key": "citation_author",
+            "content": "Agarwal, Sandhini"
+          },
+          {
+            "key": "citation_author",
+            "content": "Ahmad, Lama"
+          },
+          {
+            "key": "citation_author",
+            "content": "Ai, Jason"
+          },
+          {
+            "key": "citation_author",
+            "content": "Altman, Sam"
+          },
+          {
+            "key": "citation_author",
+            "content": "Applebaum, Andy"
+          },
+          {
+            "key": "citation_author",
+            "content": "Arbus, Edwin"
+          },
+          {
+            "key": "citation_author",
+            "content": "Arora, Rahul K."
+          },
+          {
+            "key": "citation_author",
+            "content": "Bai, Yu"
+          },
+          {
+            "key": "citation_author",
+            "content": "Baker, Bowen"
+          },
+          {
+            "key": "citation_author",
+            "content": "Bao, Haiming"
+          },
+          {
+            "key": "citation_author",
+            "content": "Barak, Boaz"
+          },
+          {
+            "key": "citation_author",
+            "content": "Bennett, Ally"
+          },
+          {
+            "key": "citation_author",
+            "content": "Bertao, Tyler"
+          },
+          {
+            "key": "citation_author",
+            "content": "Brett, Nivedita"
+          },
+          {
+            "key": "citation_author",
+            "content": "Brevdo, Eugene"
+          },
+          {
+            "key": "citation_author",
+            "content": "Brockman, Greg"
+          },
+          {
+            "key": "citation_author",
+            "content": "Bubeck, Sebastien"
+          },
+          {
+            "key": "citation_author",
+            "content": "Chang, Che"
+          },
+          {
+            "key": "citation_author",
+            "content": "Chen, Kai"
+          },
+          {
+            "key": "citation_author",
+            "content": "Chen, Mark"
+          },
+          {
+            "key": "citation_author",
+            "content": "Cheung, Enoch"
+          },
+          {
+            "key": "citation_author",
+            "content": "Clark, Aidan"
+          },
+          {
+            "key": "citation_author",
+            "content": "Cook, Dan"
+          },
+          {
+            "key": "citation_author",
+            "content": "Dukhan, Marat"
+          },
+          {
+            "key": "citation_author",
+            "content": "Dvorak, Casey"
+          },
+          {
+            "key": "citation_author",
+            "content": "Fives, Kevin"
+          },
+          {
+            "key": "citation_author",
+            "content": "Fomenko, Vlad"
+          },
+          {
+            "key": "citation_author",
+            "content": "Garipov, Timur"
+          },
+          {
+            "key": "citation_author",
+            "content": "Georgiev, Kristian"
+          },
+          {
+            "key": "citation_author",
+            "content": "Glaese, Mia"
+          },
+          {
+            "key": "citation_author",
+            "content": "Gogineni, Tarun"
+          },
+          {
+            "key": "citation_author",
+            "content": "Goucher, Adam"
+          },
+          {
+            "key": "citation_author",
+            "content": "Gross, Lukas"
+          },
+          {
+            "key": "citation_author",
+            "content": "Guzman, Katia Gil"
+          },
+          {
+            "key": "citation_author",
+            "content": "Hallman, John"
+          },
+          {
+            "key": "citation_author",
+            "content": "Hehir, Jackie"
+          },
+          {
+            "key": "citation_author",
+            "content": "Heidecke, Johannes"
+          },
+          {
+            "key": "citation_author",
+            "content": "Helyar, Alec"
+          },
+          {
+            "key": "citation_author",
+            "content": "Hu, Haitang"
+          },
+          {
+            "key": "citation_author",
+            "content": "Huet, Romain"
+          },
+          {
+            "key": "citation_author",
+            "content": "Huh, Jacob"
+          },
+          {
+            "key": "citation_author",
+            "content": "Jain, Saachi"
+          },
+          {
+            "key": "citation_author",
+            "content": "Johnson, Zach"
+          },
+          {
+            "key": "citation_author",
+            "content": "Koch, Chris"
+          },
+          {
+            "key": "citation_author",
+            "content": "Kofman, Irina"
+          },
+          {
+            "key": "citation_author",
+            "content": "Kundel, Dominik"
+          },
+          {
+            "key": "citation_author",
+            "content": "Kwon, Jason"
+          },
+          {
+            "key": "citation_author",
+            "content": "Kyrylov, Volodymyr"
+          },
+          {
+            "key": "citation_author",
+            "content": "Le, Elaine Ya"
+          },
+          {
+            "key": "citation_author",
+            "content": "Leclerc, Guillaume"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lennon, James Park"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lessans, Scott"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lezcano-Casado, Mario"
+          },
+          {
+            "key": "citation_author",
+            "content": "Li, Yuanzhi"
+          },
+          {
+            "key": "citation_author",
+            "content": "Li, Zhuohan"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lin, Ji"
+          },
+          {
+            "key": "citation_author",
+            "content": "Liss, Jordan"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lily"
+          },
+          {
+            "key": "citation_author",
+            "content": "Liu"
+          },
+          {
+            "key": "citation_author",
+            "content": "Liu, Jiancheng"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lu, Kevin"
+          },
+          {
+            "key": "citation_author",
+            "content": "Lu, Chris"
+          },
+          {
+            "key": "citation_author",
+            "content": "Martinovic, Zoran"
+          },
+          {
+            "key": "citation_author",
+            "content": "McCallum, Lindsay"
+          },
+          {
+            "key": "citation_author",
+            "content": "McGrath, Josh"
+          },
+          {
+            "key": "citation_author",
+            "content": "McKinney, Scott"
+          },
+          {
+            "key": "citation_author",
+            "content": "McLaughlin, Aidan"
+          },
+          {
+            "key": "citation_author",
+            "content": "Mei, Song"
+          },
+          {
+            "key": "citation_author",
+            "content": "Mostovoy, Steve"
+          },
+          {
+            "key": "citation_author",
+            "content": "Mu, Tong"
+          },
+          {
+            "key": "citation_author",
+            "content": "Myles, Gideon"
+          },
+          {
+            "key": "citation_author",
+            "content": "Neitz, Alexander"
+          },
+          {
+            "key": "citation_author",
+            "content": "Nichol, Alex"
+          },
+          {
+            "key": "citation_author",
+            "content": "Pachocki, Jakub"
+          },
+          {
+            "key": "citation_author",
+            "content": "Paino, Alex"
+          },
+          {
+            "key": "citation_author",
+            "content": "Palmie, Dana"
+          },
+          {
+            "key": "citation_author",
+            "content": "Pantuliano, Ashley"
+          }
+        ],
+        "json_ld_fields": [],
+        "artifact_links": [
+          "/pdf/2508.10925",
+          "https://arxiv.org/html/2508.10925v1",
+          "https://arxiv.org/abs/2508.10925",
+          "https://arxiv.org/abs/2508.10925v1",
+          "https://doi.org/10.48550/arXiv.2508.10925",
+          "/show-email/28336983/2508.10925",
+          "/pdf/2508.10925",
+          "https://arxiv.org/html/2508.10925v1",
+          "/src/2508.10925",
+          "/prevnext?id=2508.10925&function=prev&context=cs.CL",
+          "/prevnext?id=2508.10925&function=next&context=cs.CL",
+          "/abs/2508.10925?context=cs",
+          "/abs/2508.10925?context=cs.AI",
+          "https://ui.adsabs.harvard.edu/abs/arXiv:2508.10925",
+          "https://scholar.google.com/scholar_lookup?arxiv_id=2508.10925",
+          "https://api.semanticscholar.org/arXiv:2508.10925",
+          "http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2508.10925&description=gpt-oss-120b & gpt-oss-20b Model Card",
+          "https://reddit.com/submit?url=https://arxiv.org/abs/2508.10925&title=gpt-oss-120b & gpt-oss-20b Model Card",
+          "/auth/show-endorsers/2508.10925"
+        ]
+      }
+    },
+    {
+      "id": "official-model-card-landing",
+      "kind": "current_landing_page",
+      "requested_url": "https://openai.com/index/gpt-oss-model-card",
+      "observed_at": "2026-10-02T00:30:41Z",
+      "robots": {
+        "url": "https://openai.com/robots.txt",
+        "user_agent": "AlignmentReleaseTiming/0.1 (+https://github.com/trimcrae/Alignment)",
+        "observed_at": "2026-10-02T00:30:41Z",
+        "status": 200,
+        "sha256": "c53100563b9d289efeebb6f826a20c566578e1337e3096e298eb9da5ecc2e498",
+        "state": "parsed",
+        "allowed": true
+      },
+      "state": "not_fetched",
+      "http_status": 403,
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "launch-window-card-cdx",
+      "kind": "archive_index_only",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=openai.com%2Findex%2Fgpt-oss-model-card%2A&from=20250804&to=20250807&output=json&filter=statuscode%3A200&fl=timestamp,original,mimetype,statuscode,digest&limit=25",
+      "observed_at": "2026-10-02T00:30:41Z",
+      "robots": {
+        "url": "https://web.archive.org/robots.txt",
+        "user_agent": "AlignmentReleaseTiming/0.1 (+https://github.com/trimcrae/Alignment)",
+        "observed_at": "2026-10-02T00:30:41Z",
+        "status": 404,
+        "state": "missing",
+        "allowed": true
+      },
+      "state": "not_fetched",
+      "http_status": 503,
+      "reason": "HTTP Error 503: Service Unavailable"
+    }
+  ]
+}
