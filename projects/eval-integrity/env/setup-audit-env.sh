@@ -11,10 +11,52 @@ DIR="${1:-audit}"
 mkdir -p "$DIR"; cd "$DIR"
 
 clone() { # repo commit dir
-  if [ -d "$3/.git" ]; then echo "skip $3 (exists)"; return; fi
-  git clone -q "https://github.com/$1" "$3"
-  git -C "$3" fetch -q --depth 1 origin "$2" 2>/dev/null || true
-  git -C "$3" checkout -q "$2" 2>/dev/null || echo "WARNING: could not check out $2 in $3; findings may not reproduce"
+  local repo="$1" pin="$2" target="$3" expected actual origin dirty
+  local url="https://github.com/$repo"
+  if [[ ! "$pin" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+    echo "ERROR: invalid commit pin for $target" >&2; return 1
+  fi
+
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    # Existing work is read-only: refuse mismatches instead of fixing/resetting it.
+    if [ -L "$target" ] || { [ ! -d "$target/.git" ] && [ ! -f "$target/.git" ]; }; then
+      echo "ERROR: $target exists but is not a direct Git checkout" >&2; return 1
+    fi
+    origin=$(git -C "$target" config --get remote.origin.url) || {
+      echo "ERROR: no origin in $target" >&2; return 1;
+    }
+    if [ "$origin" != "$url" ]; then
+      echo "ERROR: wrong origin in $target; checkout left unchanged" >&2; return 1
+    fi
+    dirty=$(GIT_OPTIONAL_LOCKS=0 git -C "$target" status --porcelain --untracked-files=all) || return 1
+    if [ -n "$dirty" ]; then
+      echo "ERROR: dirty checkout $target; checkout left unchanged" >&2; return 1
+    fi
+    expected=$(git -C "$target" rev-parse --verify "$pin^{commit}" 2>/dev/null) || {
+      echo "ERROR: pin $pin unavailable in $target; checkout left unchanged" >&2; return 1;
+    }
+    actual=$(git -C "$target" rev-parse --verify HEAD) || return 1
+    if [ "$actual" != "$expected" ]; then
+      echo "ERROR: wrong HEAD in $target; checkout left unchanged" >&2; return 1
+    fi
+    echo "verified $target at $expected"
+    return 0
+  fi
+
+  git clone -q "$url" "$target" || return 1
+  expected=$(git -C "$target" rev-parse --verify "$pin^{commit}" 2>/dev/null) || {
+    git -C "$target" fetch -q --depth 1 origin "$pin" || return 1
+    expected=$(git -C "$target" rev-parse --verify "$pin^{commit}" 2>/dev/null) || {
+      echo "ERROR: pin $pin unavailable in $target" >&2; return 1;
+    }
+  }
+  git -C "$target" checkout -q --detach "$expected" || {
+    echo "ERROR: could not check out pin $pin in $target" >&2; return 1;
+  }
+  actual=$(git -C "$target" rev-parse --verify HEAD) || return 1
+  if [ "$actual" != "$expected" ]; then
+    echo "ERROR: pin verification failed in $target" >&2; return 1
+  fi
 }
 
 # Audit targets

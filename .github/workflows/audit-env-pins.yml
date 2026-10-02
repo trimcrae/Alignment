@@ -1,0 +1,33 @@
+# AI-authored by OpenAI Codex, usage-sprint-2026-10-01.
+name: Audit environment pin checks
+on:
+  pull_request:
+    paths:
+      - "projects/eval-integrity/env/setup-audit-env.sh"
+      - "projects/eval-integrity/env/test_audit_env_pins.py"
+      - ".github/workflows/audit-env-pins.yml"
+  push:
+    branches: [main]
+    paths:
+      - "projects/eval-integrity/env/setup-audit-env.sh"
+      - "projects/eval-integrity/env/test_audit_env_pins.py"
+      - ".github/workflows/audit-env-pins.yml"
+permissions:
+  contents: read
+jobs:
+  offline-pins:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Actual runtime versions
+        run: |
+          bash --version
+          git --version
+          python3 --version
+      - name: Original witnesses and repaired offline Bash Git checks
+        run: python3 projects/eval-integrity/env/test_audit_env_pins.py
+      - name: Clean tracked checkout
+        run: git diff --exit-code
