@@ -35,3 +35,7 @@ node projects/model-safety-ledger/release-timing/tool.mjs hashes
 The validator binds exact selected quotes, hashes, native date roles, model scope and failed-attempt records. Regression cases reject document-date/submission-date promotion, Git-time promotion, pointer-to-byte promotion, unknown-to-absence promotion and unbound source metadata. These checks verify evidence consistency, not the truth of every provider statement.
 
 The stop condition was reached after one acquisition cycle. Future work should use a separately scoped, accessible archival source if it can bind actual launch-time model-card bytes; otherwise preserve this gap and choose another provider as a bounded task. Do not repeat these unchanged PDF or ancestry checks.
+
+## Validation receipt
+
+Exact source `975a16d02bf2c823d05602175679fd393d052409` passed actual Node22.23.3 [run36946980447](https://github.com/trimcrae/Alignment/actions/runs/36946980447), job110651234957: **50 new checks(49invalid)** plus **84 inherited determination checks(80invalid)**, syntax, source bindings, raw Git blob recomputation, file hashes and clean tracked status. Independent evidence/method/code review cleared this exact source and independently reproduced the50-check harness in V8 with an explicit JSON clone adapter. See [validation-receipt.json](validation-receipt.json) and [original Node log](node-ci-job-110651234957.log). The final receipt-only commit changes documentation/logs, preserving the tested source. Human review remains unperformed.

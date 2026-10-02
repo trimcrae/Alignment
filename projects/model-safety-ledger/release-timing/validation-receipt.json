@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "tested_source_commit": "975a16d02bf2c823d05602175679fd393d052409",
+  "base_commit": "baec2cd33fd25b14127656063a097f64d8ff079e",
+  "acquisition": {
+    "source_commit": "1323221b9ed718c7bc8c8fa35673bb64c7a75305",
+    "run_id": "36946343048",
+    "job_id": "110649236702",
+    "conclusion": "success",
+    "cycles": 1,
+    "current_html_observed": 1,
+    "sources_not_fetched": 3,
+    "no_pdf_reacquisition": true,
+    "no_model_inference": true,
+    "no_outreach": true
+  },
+  "actual_node_ci": {
+    "run_url": "https://github.com/trimcrae/Alignment/actions/runs/36946980447",
+    "run_id": "36946980447",
+    "job_id": "110651234957",
+    "conclusion": "success",
+    "node_version": "22.23.3",
+    "new_timing_checks": 50,
+    "new_invalid_cases": 49,
+    "inherited_determination_checks": 84,
+    "inherited_invalid_cases": 80,
+    "syntax_passed": true,
+    "evidence_bindings_passed": true,
+    "git_blob_recomputed": true,
+    "clean_status_passed": true,
+    "log": "node-ci-job-110651234957.log"
+  },
+  "file_sha256": {
+    "collect.py": "90417b6096c5197ae3427238a31eb5c1a9aea97c06d04b3feda0c5b2131f8fde",
+    "acquisition-plan.json": "76b12add20725a52e953b84ac15028c171cf7a339ed397c9a05b571fe762733e",
+    "core.mjs": "b0ca7125a8d74ed4a7730416103e59b56ca6110835815aab59ae339169128cef",
+    "tests.mjs": "574d048a81167d1bab6a6f2bc672cf54b1a6e0e2fecfd07fe7d90b4f8650d08d",
+    "tool.mjs": "b617b02ffd7065bbf1738c0b007cf133645b6239967c5ed59b2c29a439871fcf",
+    "evidence.json": "1755a7de41ecc80131c6f787ab916e73670637be4916ff0163d0a6b321373b98",
+    "evidence/acquisition.json": "73968ca25dffd835273d285385790e1f59b85804d8cb9e6f907fb55011750716",
+    "evidence/initial-readme.md": "87acc69cf952f3695e74b94e55c4f0b7e79d7f7880dc1351e1cc69fc74953746",
+    "evidence/github-initial-commit.json": "3e8c79bbca5b70e10e4d3ac8c134c719fa45d3230a59beb4d17a831b089c545d"
+  },
+  "independent_review": {
+    "status": "cleared",
+    "source_commit": "975a16d02bf2c823d05602175679fd393d052409",
+    "scope": [
+      "All three new citations against preserved original sources",
+      "Actual acquisition JSON structurally identical to original job receipt; SHA256 independently recomputed",
+      "Raw README matched independently fetched initial official Git blob and tree",
+      "Complete Git commit receipt matched fresh connector read",
+      "Inherited PDF cover/version marker checked against original actual acquisition log",
+      "Actual core/regression harness independently executed in V8:50checks,49invalid,JSONcloneadapter",
+      "Actual exact-source Node CI logs independently inspected"
+    ],
+    "limitations": [
+      "AI review; human review unperformed",
+      "V8 execution is distinct from Node22 actualCI",
+      "Provider statements and repository metadata are not independently measured model release time",
+      "No historical launch model-card/PDF bytes were obtained"
+    ]
+  },
+  "result": {
+    "arxiv_submission_timestamp": "2025-08-08T19:24:38Z",
+    "repository_commit_timestamp": "2025-08-05T15:19:49Z",
+    "actual_model_release_timing": "unknown",
+    "launch_card_edition_bytes": "unknown",
+    "missing_evidence_stop": "one_cycle_complete"
+  },
+  "final_commit_policy": "Receipt-only documentation and validation logs; tested source/code/evidence/workflows unchanged"
+}
