@@ -68,6 +68,8 @@ export function runTests(seed,receiptText,digest) {
     ["original subset hash wrong",(_l,r)=>{r.subset_provenance.original_receipt_sha256="f".repeat(64);},true],
     ["original subset byte count wrong",(_l,r)=>{r.subset_provenance.original_receipt_utf8_bytes=49709;},true],
     ["selected page duplicated",(_l,r)=>{r.sources[1].excerpts.push(clone(r.sources[1].excerpts[0]));},true],
+    ["rebinding cannot replace acquired normalized page digest",(_l,r)=>{r.sources[1].excerpts[0].normalized_page_text_sha256="f".repeat(64);},true],
+    ["rebinding cannot shift original acquired span coordinates",(_l,r)=>{r.sources[1].excerpts[0].spans[0].start_char++;r.sources[1].excerpts[0].spans[0].end_char++;},true],
     ["original span coordinates wrong",(_l,r)=>{r.sources[1].excerpts[0].spans[0].end_char++;},true],
     ["original exact quote tampered",(_l,r)=>{r.sources[1].excerpts[4].spans[0].text=r.sources[1].excerpts[4].spans[0].text.replace("not yet","yes yet");},true],
     ["evidence page extracted without digest",(_l,r)=>{r.sources[1].excerpts[0].normalized_page_text_sha256="";},true],

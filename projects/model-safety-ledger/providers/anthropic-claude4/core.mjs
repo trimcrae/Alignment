@@ -105,7 +105,7 @@ export function validate(l,r,receiptDigest) {
     ensure(l.scope.provider==="Anthropic" && JSON.stringify(l.scope.model_ids)===JSON.stringify(MODELS) && JSON.stringify(l.scope.axes)===JSON.stringify(AXES),"scope/model/native axes mismatch");
     text(l.scope.coverage,"coverage");text(l.scope.comparison_policy,"comparison policy");
     keys(l.evidence_receipt,["path","sha256","source_commit","run_id","job_id","run_url"],"receipt binding");
-    ensure(l.evidence_receipt.path==="evidence/primary-acquisition.json" && sha(receiptDigest) && l.evidence_receipt.sha256===receiptDigest,"selected receipt hash/path mismatch");
+    ensure(l.evidence_receipt.path==="evidence/primary-acquisition.json" && sha(receiptDigest) && l.evidence_receipt.sha256===receiptDigest && receiptDigest==="434c2852efd69dcf1d3cfc562d9e46123745bbaa6307e50bcac1b6cb770ce953","selected receipt hash/path mismatch or immutable acquired subset changed");
     ensure(l.evidence_receipt.source_commit==="bda723fb2678787fc0ec6e52ad742d63b618ab5a" && l.evidence_receipt.run_id==="36951404278" && l.evidence_receipt.job_id==="110664941297" && l.evidence_receipt.run_url==="https://github.com/trimcrae/Alignment/actions/runs/36951404278","acquisition commit/run/job binding mismatch");
     ensure(r.schema_version===1 && r.authorship.agent===l.authorship.agent && r.authorship.human_review==="not_performed","receipt provenance mismatch");
     ensure(r.execution.source_commit===l.evidence_receipt.source_commit && r.execution.run_id===l.evidence_receipt.run_id && r.execution.job_name==="acquire","original receipt execution mismatch");
