@@ -1,0 +1,43 @@
+name: Release timing evidence
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-release-timing]
+    paths:
+      - .github/workflows/release-timing-evidence.yml
+      - projects/model-safety-ledger/release-timing/core.mjs
+      - projects/model-safety-ledger/release-timing/tests.mjs
+      - projects/model-safety-ledger/release-timing/tool.mjs
+      - projects/model-safety-ledger/release-timing/evidence.json
+      - projects/model-safety-ledger/release-timing/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check syntax
+        run: |
+          node --check projects/model-safety-ledger/release-timing/core.mjs
+          node --check projects/model-safety-ledger/release-timing/tests.mjs
+          node --check projects/model-safety-ledger/release-timing/tool.mjs
+      - name: Validate source bindings and distinctions
+        run: node projects/model-safety-ledger/release-timing/tool.mjs validate
+      - name: Regression evidence misuse cases
+        run: node projects/model-safety-ledger/release-timing/tool.mjs test
+      - name: Validate inherited determination ledger
+        run: |
+          node projects/model-safety-ledger/ledger-tool.mjs validate
+          node projects/model-safety-ledger/ledger-tool.mjs test
+      - name: Record exact file hashes
+        run: node projects/model-safety-ledger/release-timing/tool.mjs hashes
+      - name: Confirm clean tracked inputs
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

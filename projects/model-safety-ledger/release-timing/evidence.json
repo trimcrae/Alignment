@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "baec2cd33fd25b14127656063a097f64d8ff079e"
+  },
+  "scope": {
+    "model_ids": [
+      "openai-gpt-oss-120b",
+      "openai-gpt-oss-20b"
+    ],
+    "artifact_id": "gpt-oss-model-card",
+    "purpose": "Bounded release-timing supplement, not an edit of prior capability determinations"
+  },
+  "acquisition": {
+    "path": "evidence/acquisition.json",
+    "source_commit": "1323221b9ed718c7bc8c8fa35673bb64c7a75305",
+    "run_id": "36946343048",
+    "job_id": "110649236702",
+    "run_url": "https://github.com/trimcrae/Alignment/actions/runs/36946343048",
+    "collected_at": "2026-10-02T00:30:47Z"
+  },
+  "github_source": {
+    "id": "official-initial-readme",
+    "authority": "official_provider_repository",
+    "source_url": "https://github.com/openai/gpt-oss/blob/243a1b02767da73bd2e3975be250afa801635866/README.md",
+    "preserved_file": "evidence/initial-readme.md",
+    "commit_sha": "243a1b02767da73bd2e3975be250afa801635866",
+    "tree_sha": "4e3c87e0e97477a25026d3564dcb5a994f4be86e",
+    "git_blob_sha": "b8e85385f25c9a6f16c5e8e9d5d1fec69adafd99",
+    "parent_count": 0,
+    "author_date": "2025-08-05T15:19:49Z",
+    "committer_date": "2025-08-05T15:19:49Z",
+    "signature": {
+      "verified": true,
+      "reason": "valid",
+      "verified_at": "2025-08-05T15:20:35Z"
+    },
+    "timestamp_limit": "Git author/committer and GitHub signature-verification metadata; not independently established public-repository visibility or model-weight release time",
+    "receipt_recorded_at": "2026-10-02T00:32:41Z",
+    "receipt_time_meaning": "Current session record timestamp after connector retrieval; not exact request time or historical public visibility"
+  },
+  "findings": {
+    "arxiv_submission": {
+      "status": "reported",
+      "date_kind": "repository_submission_metadata",
+      "timestamp": "2025-08-08T19:24:38Z",
+      "precision": "second",
+      "version": "v1",
+      "citation": {
+        "source_id": "arxiv-model-card-record",
+        "received_byte_sha256": "6b543ce8edf95fd2c2644ba33f535f62d808fe07a4ce195d50ed583f1e1f4088",
+        "quote": "[v1] Fri, 8 Aug 2025 19:24:38 UTC (2,197 KB)"
+      }
+    },
+    "repository_release_statement": {
+      "status": "reported",
+      "date_kind": "git_committer_metadata",
+      "timestamp": "2025-08-05T15:19:49Z",
+      "precision": "second",
+      "citation": {
+        "source_id": "official-initial-readme",
+        "git_blob_sha": "b8e85385f25c9a6f16c5e8e9d5d1fec69adafd99",
+        "quote": "We're releasing two flavors of the open models:"
+      },
+      "interpretation": "Official repository commit contains a releasing statement and links both variants; commit date does not prove precise public model release time"
+    },
+    "repository_card_pointer": {
+      "status": "reported",
+      "citation": {
+        "source_id": "official-initial-readme",
+        "git_blob_sha": "b8e85385f25c9a6f16c5e8e9d5d1fec69adafd99",
+        "quote": "<a href=\"https://openai.com/index/gpt-oss-model-card\">Model card</a>"
+      },
+      "linked_url": "https://openai.com/index/gpt-oss-model-card",
+      "edition_binding": "none",
+      "interpretation": "The initial committed README points to a mutable official landing URL; no linked PDF bytes or document edition are bound"
+    },
+    "model_release_date": {
+      "status": "unknown",
+      "value": null,
+      "reason": "The dated official launch announcement could not be acquired (HTTP403). The Git commit date and document cover/submission dates are different evidence types and are not promoted to actual model release timing."
+    },
+    "model_card_at_release": {
+      "status": "unknown",
+      "edition": null,
+      "received_byte_sha256": null,
+      "reason": "No launch-time historical model-card/PDF bytes were acquired. Current landing fetch403 and bounded archival index fetch503 do not establish absence. arXiv's later submission does not rule out a prior provider-hosted edition."
+    }
+  },
+  "stop": {
+    "state": "complete_missing_evidence",
+    "cycles": 1,
+    "retry_performed": false,
+    "pdf_reacquired": false,
+    "remaining_gap": "Actual model release timing and model-card edition bytes publicly available at launch remain unverified."
+  }
+}
