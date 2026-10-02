@@ -1,0 +1,211 @@
+﻿2026-10-02T11:31:13.6768319Z Current runner version: '2.337.0'
+2026-10-02T11:31:13.6788922Z ##[group]Runner Image Provisioner
+2026-10-02T11:31:13.6789503Z Hosted Compute Agent
+2026-10-02T11:31:13.6789871Z Version: 20260901.588
+2026-10-02T11:31:13.6790257Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T11:31:13.6790677Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T11:31:13.6791069Z Worker ID: {1fbc9615-2f05-4764-81d5-41c6a661da10}
+2026-10-02T11:31:13.6791533Z Azure Region: centralus
+2026-10-02T11:31:13.6791899Z ##[endgroup]
+2026-10-02T11:31:13.6792691Z ##[group]Operating System
+2026-10-02T11:31:13.6793048Z Ubuntu
+2026-10-02T11:31:13.6793350Z 24.04.5
+2026-10-02T11:31:13.6793685Z LTS
+2026-10-02T11:31:13.6794013Z ##[endgroup]
+2026-10-02T11:31:13.6794322Z ##[group]Runner Image
+2026-10-02T11:31:13.6794699Z Image: ubuntu-24.04
+2026-10-02T11:31:13.6795029Z Version: 20260927.320.1
+2026-10-02T11:31:13.6795795Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T11:31:13.6796617Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T11:31:13.6797194Z ##[endgroup]
+2026-10-02T11:31:13.6797822Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T11:31:13.6799208Z Contents: read
+2026-10-02T11:31:13.6799561Z Metadata: read
+2026-10-02T11:31:13.6799940Z ##[endgroup]
+2026-10-02T11:31:13.6801154Z Secret source: Actions
+2026-10-02T11:31:13.6801700Z Cache mode: write
+2026-10-02T11:31:13.6802136Z Prepare workflow directory
+2026-10-02T11:31:13.6997895Z Prepare all required actions
+2026-10-02T11:31:13.7028784Z Getting action download info
+2026-10-02T11:31:13.9423162Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T11:31:14.1325606Z Complete job name: offline-pins
+2026-10-02T11:31:14.1770453Z ##[group]Run actions/checkout@v4
+2026-10-02T11:31:14.1770847Z with:
+2026-10-02T11:31:14.1771076Z   fetch-depth: 0
+2026-10-02T11:31:14.1771320Z   repository: trimcrae/Alignment
+2026-10-02T11:31:14.1773360Z   token: ***
+2026-10-02T11:31:14.1773584Z   ssh-strict: true
+2026-10-02T11:31:14.1773817Z   ssh-user: git
+2026-10-02T11:31:14.1774057Z   persist-credentials: true
+2026-10-02T11:31:14.1774315Z   clean: true
+2026-10-02T11:31:14.1774555Z   sparse-checkout-cone-mode: true
+2026-10-02T11:31:14.1774830Z   fetch-tags: false
+2026-10-02T11:31:14.1775069Z   show-progress: true
+2026-10-02T11:31:14.1775306Z   lfs: false
+2026-10-02T11:31:14.1775527Z   submodules: false
+2026-10-02T11:31:14.1775766Z   set-safe-directory: true
+2026-10-02T11:31:14.1776035Z   allow-unsafe-pr-checkout: false
+2026-10-02T11:31:14.1776372Z ##[endgroup]
+2026-10-02T11:31:14.2390414Z Syncing repository: trimcrae/Alignment
+2026-10-02T11:31:14.2391414Z ##[group]Getting Git version info
+2026-10-02T11:31:14.2391852Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-02T11:31:14.2392393Z [command]/usr/bin/git version
+2026-10-02T11:31:14.2466484Z git version 2.55.0
+2026-10-02T11:31:14.2479883Z ##[endgroup]
+2026-10-02T11:31:14.2490783Z Temporarily overriding HOME='/home/runner/work/_temp/f63d5996-0a01-4641-a686-e20e7c60ce18' before making global git config changes
+2026-10-02T11:31:14.2491946Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T11:31:14.2495873Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T11:31:14.2656964Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-02T11:31:14.2669057Z ##[group]Initializing the repository
+2026-10-02T11:31:14.2671040Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-02T11:31:14.3062432Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T11:31:14.3063285Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T11:31:14.3064063Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T11:31:14.3064614Z hint: call:
+2026-10-02T11:31:14.3065141Z hint:
+2026-10-02T11:31:14.3065430Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T11:31:14.3065751Z hint:
+2026-10-02T11:31:14.3066051Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T11:31:14.3066790Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T11:31:14.3067383Z hint:
+2026-10-02T11:31:14.3067605Z hint: 	git branch -m <name>
+2026-10-02T11:31:14.3067850Z hint:
+2026-10-02T11:31:14.3068301Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T11:31:14.3068834Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-02T11:31:14.3073407Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-02T11:31:14.3254007Z ##[endgroup]
+2026-10-02T11:31:14.3254650Z ##[group]Disabling automatic garbage collection
+2026-10-02T11:31:14.3257018Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T11:31:14.3352744Z ##[endgroup]
+2026-10-02T11:31:14.3353476Z ##[group]Setting up auth
+2026-10-02T11:31:14.3357832Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T11:31:14.3385452Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T11:31:14.3655743Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T11:31:14.3681389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T11:31:14.3850667Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T11:31:14.3876625Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T11:31:14.4039138Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T11:31:14.4073380Z ##[endgroup]
+2026-10-02T11:31:14.4074055Z ##[group]Fetching the repository
+2026-10-02T11:31:14.4078812Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +b32677f473b4d6a9adb7ff57d741926faed5b51c:refs/remotes/pull/11/merge
+2026-10-02T11:31:15.3334722Z From https://github.com/trimcrae/Alignment
+2026-10-02T11:31:15.3336246Z  * [new branch]      claude/ai-alignment-research-ajdle8      -> origin/claude/ai-alignment-research-ajdle8
+2026-10-02T11:31:15.3338349Z  * [new branch]      claude/inspectrobots-contribution-ig9gr2 -> origin/claude/inspectrobots-contribution-ig9gr2
+2026-10-02T11:31:15.3340861Z  * [new branch]      codex/usage-sprint-2026-10-01-anthropic-native-ledger -> origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger
+2026-10-02T11:31:15.3343287Z  * [new branch]      codex/usage-sprint-2026-10-01-anthropic-rsp-version -> origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version
+2026-10-02T11:31:15.3345755Z  * [new branch]      codex/usage-sprint-2026-10-01-audit-env-pins -> origin/codex/usage-sprint-2026-10-01-audit-env-pins
+2026-10-02T11:31:15.3347742Z  * [new branch]      codex/usage-sprint-2026-10-01-followup-ledger -> origin/codex/usage-sprint-2026-10-01-followup-ledger
+2026-10-02T11:31:15.3350150Z  * [new branch]      codex/usage-sprint-2026-10-01-google-native-ledger -> origin/codex/usage-sprint-2026-10-01-google-native-ledger
+2026-10-02T11:31:15.3352612Z  * [new branch]      codex/usage-sprint-2026-10-01-meta-native-ledger -> origin/codex/usage-sprint-2026-10-01-meta-native-ledger
+2026-10-02T11:31:15.3354977Z  * [new branch]      codex/usage-sprint-2026-10-01-meta-policy-entry -> origin/codex/usage-sprint-2026-10-01-meta-policy-entry
+2026-10-02T11:31:15.3357429Z  * [new branch]      codex/usage-sprint-2026-10-01-model-safety-ledger -> origin/codex/usage-sprint-2026-10-01-model-safety-ledger
+2026-10-02T11:31:15.3360076Z  * [new branch]      codex/usage-sprint-2026-10-01-release-timing -> origin/codex/usage-sprint-2026-10-01-release-timing
+2026-10-02T11:31:15.3361737Z  * [new branch]      main                                     -> origin/main
+2026-10-02T11:31:15.3363116Z  * [new branch]      work/upstream-triage-20260914            -> origin/work/upstream-triage-20260914
+2026-10-02T11:31:15.3364628Z  * [new ref]         b32677f473b4d6a9adb7ff57d741926faed5b51c -> pull/11/merge
+2026-10-02T11:31:15.3367091Z ##[endgroup]
+2026-10-02T11:31:15.3368142Z ##[group]Determining the checkout info
+2026-10-02T11:31:15.3369170Z ##[endgroup]
+2026-10-02T11:31:15.3369731Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T11:31:15.3480965Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T11:31:15.3575526Z ##[group]Checking out the ref
+2026-10-02T11:31:15.3577022Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/11/merge
+2026-10-02T11:31:15.3771366Z Note: switching to 'refs/remotes/pull/11/merge'.
+2026-10-02T11:31:15.3772092Z 
+2026-10-02T11:31:15.3772780Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-02T11:31:15.3774728Z changes and commit them, and you can discard any commits you make in this
+2026-10-02T11:31:15.3776615Z state without impacting any branches by switching back to a branch.
+2026-10-02T11:31:15.3777682Z 
+2026-10-02T11:31:15.3778397Z If you want to create a new branch to retain commits you create, you may
+2026-10-02T11:31:15.3779958Z do so (now or later) by using -c with the switch command. Example:
+2026-10-02T11:31:15.3780937Z 
+2026-10-02T11:31:15.3781402Z   git switch -c <new-branch-name>
+2026-10-02T11:31:15.3782095Z 
+2026-10-02T11:31:15.3782618Z Or undo this operation with:
+2026-10-02T11:31:15.3783152Z 
+2026-10-02T11:31:15.3783461Z   git switch -
+2026-10-02T11:31:15.3783841Z 
+2026-10-02T11:31:15.3784439Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-02T11:31:15.3785314Z 
+2026-10-02T11:31:15.3786287Z HEAD is now at b32677f Merge 1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae into c79d38e9e49d9c2fd133b6c4faf6412760089afe
+2026-10-02T11:31:15.3789383Z ##[endgroup]
+2026-10-02T11:31:15.3812832Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T11:31:15.3833095Z b32677f473b4d6a9adb7ff57d741926faed5b51c
+2026-10-02T11:31:15.4023220Z ##[group]Run bash --version
+2026-10-02T11:31:15.4023975Z [36;1mbash --version[0m
+2026-10-02T11:31:15.4024640Z [36;1mgit --version[0m
+2026-10-02T11:31:15.4025309Z [36;1mpython3 --version[0m
+2026-10-02T11:31:15.4288250Z shell: /usr/bin/bash -e {0}
+2026-10-02T11:31:15.4289060Z ##[endgroup]
+2026-10-02T11:31:15.4421188Z GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+2026-10-02T11:31:15.4422470Z Copyright (C) 2022 Free Software Foundation, Inc.
+2026-10-02T11:31:15.4423859Z License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+2026-10-02T11:31:15.4424682Z 
+2026-10-02T11:31:15.4425194Z This is free software; you are free to change and redistribute it.
+2026-10-02T11:31:15.4426273Z There is NO WARRANTY, to the extent permitted by law.
+2026-10-02T11:31:15.4430602Z git version 2.55.0
+2026-10-02T11:31:15.4440223Z Python 3.12.3
+2026-10-02T11:31:15.4499062Z ##[group]Run python3 projects/eval-integrity/env/test_audit_env_pins.py
+2026-10-02T11:31:15.4500645Z [36;1mpython3 projects/eval-integrity/env/test_audit_env_pins.py[0m
+2026-10-02T11:31:15.4548830Z shell: /usr/bin/bash -e {0}
+2026-10-02T11:31:15.4549456Z ##[endgroup]
+2026-10-02T11:31:15.8493342Z test_baseline_existing_wrong_head_succeeds_without_pin (__main__.OriginalWitness.test_baseline_existing_wrong_head_succeeds_without_pin) ... ok
+2026-10-02T11:31:16.2296803Z test_baseline_missing_pin_warning_still_succeeds (__main__.OriginalWitness.test_baseline_missing_pin_warning_still_succeeds) ... ok
+2026-10-02T11:31:17.0433620Z test_prior_status_only_repair_admits_assume_unchanged_edit (__main__.PriorRepairWitness.test_prior_status_only_repair_admits_assume_unchanged_edit) ... ok
+2026-10-02T11:31:17.2746690Z test_assume_unchanged_index_flag_and_hidden_edit_refused (__main__.RepairedChecks.test_assume_unchanged_index_flag_and_hidden_edit_refused) ... ok
+2026-10-02T11:31:17.3341605Z test_dangling_symlink_refused (__main__.RepairedChecks.test_dangling_symlink_refused) ... ok
+2026-10-02T11:31:17.8097191Z test_existing_correct_attached_head_is_read_only (__main__.RepairedChecks.test_existing_correct_attached_head_is_read_only) ... ok
+2026-10-02T11:31:18.1085974Z test_existing_directory_outside_repo_refused (__main__.RepairedChecks.test_existing_directory_outside_repo_refused) ... ok
+2026-10-02T11:31:18.1512104Z test_existing_nested_directory_is_not_parent_repo (__main__.RepairedChecks.test_existing_nested_directory_is_not_parent_repo) ... ok
+2026-10-02T11:31:18.1933513Z test_existing_pin_missing_refused_without_fetch_or_write (__main__.RepairedChecks.test_existing_pin_missing_refused_without_fetch_or_write) ... ok
+2026-10-02T11:31:18.2101638Z test_existing_regular_file_refused (__main__.RepairedChecks.test_existing_regular_file_refused) ... ok
+2026-10-02T11:31:18.2460119Z test_failed_checkout_is_fatal_even_inside_conditional_invocation (__main__.RepairedChecks.test_failed_checkout_is_fatal_even_inside_conditional_invocation) ... ok
+2026-10-02T11:31:18.2813838Z test_fresh_full_pin_with_spaces_in_target (__main__.RepairedChecks.test_fresh_full_pin_with_spaces_in_target) ... ok
+2026-10-02T11:31:18.3286504Z test_fresh_short_pin_detaches_at_expected_commit_then_repeat_is_read_only (__main__.RepairedChecks.test_fresh_short_pin_detaches_at_expected_commit_then_repeat_is_read_only) ... ok
+2026-10-02T11:31:18.3606941Z test_full_scripts_have_actual_bash_syntax (__main__.RepairedChecks.test_full_scripts_have_actual_bash_syntax) ... ok
+2026-10-02T11:31:18.3982201Z test_full_setup_refuses_existing_mismatch_before_installation_tail (__main__.RepairedChecks.test_full_setup_refuses_existing_mismatch_before_installation_tail) ... ok
+2026-10-02T11:31:18.4383242Z test_hex_named_branch_cannot_shadow_existing_commit_pin (__main__.RepairedChecks.test_hex_named_branch_cannot_shadow_existing_commit_pin) ... ok
+2026-10-02T11:31:18.4715405Z test_hex_named_tag_cannot_shadow_fresh_commit_pin (__main__.RepairedChecks.test_hex_named_tag_cannot_shadow_fresh_commit_pin) ... ok
+2026-10-02T11:31:18.5131071Z test_ignored_environment_outputs_are_preserved_and_not_source_checked (__main__.RepairedChecks.test_ignored_environment_outputs_are_preserved_and_not_source_checked) ... ok
+2026-10-02T11:31:18.5293058Z test_invalid_ref_name_refused_before_clone (__main__.RepairedChecks.test_invalid_ref_name_refused_before_clone) ... ok
+2026-10-02T11:31:18.5810344Z test_missing_fresh_pin_is_fatal (__main__.RepairedChecks.test_missing_fresh_pin_is_fatal) ... ok
+2026-10-02T11:31:18.6183302Z test_missing_origin_refused (__main__.RepairedChecks.test_missing_origin_refused) ... ok
+2026-10-02T11:31:18.6331810Z test_original_and_repaired_tail_and_all_fifteen_pins_unchanged (__main__.RepairedChecks.test_original_and_repaired_tail_and_all_fifteen_pins_unchanged) ... ok
+2026-10-02T11:31:18.6481508Z test_original_source_git_blob_is_exactly_bound (__main__.RepairedChecks.test_original_source_git_blob_is_exactly_bound) ... ok
+2026-10-02T11:31:18.6892255Z test_skip_worktree_index_flag_and_hidden_edit_refused (__main__.RepairedChecks.test_skip_worktree_index_flag_and_hidden_edit_refused) ... ok
+2026-10-02T11:31:18.7297032Z test_staged_changes_refused_and_index_bytes_preserved (__main__.RepairedChecks.test_staged_changes_refused_and_index_bytes_preserved) ... ok
+2026-10-02T11:31:18.7638984Z test_symlink_to_checkout_refused_without_modifying_referent (__main__.RepairedChecks.test_symlink_to_checkout_refused_without_modifying_referent) ... ok
+2026-10-02T11:31:18.8062854Z test_unstaged_changes_refused (__main__.RepairedChecks.test_unstaged_changes_refused) ... ok
+2026-10-02T11:31:18.8450392Z test_untracked_file_refused_and_preserved (__main__.RepairedChecks.test_untracked_file_refused_and_preserved) ... ok
+2026-10-02T11:31:18.8793838Z test_worktree_git_file_at_correct_pin_is_read_only (__main__.RepairedChecks.test_worktree_git_file_at_correct_pin_is_read_only) ... ok
+2026-10-02T11:31:18.9184934Z test_wrong_head_refused_without_reset (__main__.RepairedChecks.test_wrong_head_refused_without_reset) ... ok
+2026-10-02T11:31:18.9560134Z test_wrong_origin_refused_without_rewrite (__main__.RepairedChecks.test_wrong_origin_refused_without_rewrite) ... ok
+2026-10-02T11:31:18.9560642Z 
+2026-10-02T11:31:18.9560771Z ----------------------------------------------------------------------
+2026-10-02T11:31:18.9561021Z Ran 31 tests in 3.455s
+2026-10-02T11:31:18.9561102Z 
+2026-10-02T11:31:18.9561146Z OK
+2026-10-02T11:31:18.9578564Z OFFLINE ONLY: actual Bash/Git temporary fixtures; no upstream/model/uv execution
+2026-10-02T11:31:18.9598492Z BASELINE WITNESS: original helper returned success at the wrong HEAD
+2026-10-02T11:31:18.9598884Z BASELINE WITNESS: original helper returned success after pin checkout failure
+2026-10-02T11:31:18.9599275Z PRIOR REPAIR WITNESS: status-only helper admitted edited source under assume-unchanged
+2026-10-02T11:31:18.9659650Z ##[group]Run git diff --exit-code
+2026-10-02T11:31:18.9659831Z [36;1mgit diff --exit-code[0m
+2026-10-02T11:31:18.9711811Z shell: /usr/bin/bash -e {0}
+2026-10-02T11:31:18.9711948Z ##[endgroup]
+2026-10-02T11:31:18.9879773Z Post job cleanup.
+2026-10-02T11:31:19.0394853Z [command]/usr/bin/git version
+2026-10-02T11:31:19.0425076Z git version 2.55.0
+2026-10-02T11:31:19.0449006Z Temporarily overriding HOME='/home/runner/work/_temp/7cb043f7-adb3-4aa1-8a96-eb1649b38007' before making global git config changes
+2026-10-02T11:31:19.0449680Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T11:31:19.0453015Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T11:31:19.0481800Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T11:31:19.0507656Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T11:31:19.0694393Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T11:31:19.0711523Z http.https://github.com/.extraheader
+2026-10-02T11:31:19.0720145Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T11:31:19.0747311Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T11:31:19.0928441Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T11:31:19.0957520Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T11:31:19.1226859Z Cleaning up orphan processes
+2026-10-02T11:31:19.1406800Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
