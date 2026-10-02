@@ -286,6 +286,29 @@ class RepairedChecks(Fixture):
         self.assertFalse(self.target.exists())
         self.assertIn("invalid commit pin", result.stderr)
 
+    def test_full_setup_refuses_existing_mismatch_before_installation_tail(self):
+        workspace = self.root / "audit workspace"
+        workspace.mkdir()
+        self.target = workspace / "inspect_evals"
+        self.existing(self.first)
+        before = snapshot(self.target)
+        bin_dir = self.root / "tail sentinel bin"
+        bin_dir.mkdir()
+        marker = self.root / "uv-was-called"
+        uv = bin_dir / "uv"
+        uv.write_text("#!/usr/bin/env bash\n"
+                      f"touch {shlex.quote(str(marker))}\nexit 97\n")
+        uv.chmod(0o755)
+        env = dict(self.env)
+        env["PATH"] = str(bin_dir) + os.pathsep + env["PATH"]
+        result = subprocess.run(["bash", str(SETUP), str(workspace)], env=env,
+                                text=True, capture_output=True, timeout=20)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("wrong origin", result.stderr)
+        self.assertFalse(marker.exists())
+        self.assertEqual([p.name for p in workspace.iterdir()], ["inspect_evals"])
+        self.check_unchanged(before)
+
     def test_failed_checkout_is_fatal_even_inside_conditional_invocation(self):
         wrapper_dir = self.root / "bin"
         wrapper_dir.mkdir()
