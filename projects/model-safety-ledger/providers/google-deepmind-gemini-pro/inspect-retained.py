@@ -22,20 +22,24 @@ def main():
     assert len(robots)==s["robots"]["bytes"] and digest(robots)==s["robots"]["sha256"]
     parser=collector.Landing();parser.feed(raw.decode("utf-8",errors="replace"))
     t=collector.normalize(" ".join(parser.text))
-    candidates=collector.card_candidates(parser,s["response"]["final_url"])
+    old_candidates=collector.card_candidates(parser,s["response"]["final_url"])
     assert digest(t.encode())==s["normalized_text_sha256"]
     assert collector.page_spans(t)==s["spans"]
-    assert candidates==r["selection"]["candidates"]
-    assert sorted({a["url"] for a in candidates})==r["selection"]["unique_candidate_urls"]
+    assert old_candidates==r["selection"]["candidates"]
+    assert sorted({a["url"] for a in old_candidates})==r["selection"]["unique_candidate_urls"]
     assert not (args.artifact/"model-card.pdf").exists()
-    title=re.search(rb"<title[^>]*>(.*?)</title>",raw,re.I|re.S)
+    entity,interpretation=collector.decode_entity(raw,s["response"])
+    corrected_parser=collector.Landing();corrected_parser.feed(entity.decode("utf-8",errors="strict"))
+    corrected_text=collector.normalize(" ".join(corrected_parser.text))
+    candidates=collector.card_candidates(corrected_parser,s["response"]["final_url"])
+    title=re.search(rb"<title[^>]*>(.*?)</title>",entity,re.I|re.S)
     result={"schema_version":1,"method":"Offline reuse of owned Actions artifact; no provider GET",
       "original_receipt_sha256":RECEIPT_SHA,"landing_sha256":digest(raw),"landing_bytes":len(raw),
       "robots_sha256":digest(robots),"normalized_text_sha256":digest(t.encode()),
-      "normalized_text_length":len(t),"eligible_card_pointers":len(candidates),
-      "all_anchor_count":len(parser.links),"title":collector.normalize(title.group(1).decode(errors="replace")) if title else None,
-      "normalized_text_prefix":t[:1800],"anchors":parser.links[:15],
-      "raw_bytes_and_extraction":"verified against original receipt",
+      "original_normalized_text_length":len(t),"corrected_normalized_text_length":len(corrected_text),"interpretation":interpretation,"eligible_card_pointers":len(candidates),
+      "all_anchor_count":len(corrected_parser.links),"title":collector.normalize(title.group(1).decode(errors="replace")) if title else None,
+      "normalized_text_prefix":corrected_text[:1800],"anchors":corrected_parser.links[:30],"eligible_candidates":candidates,
+      "raw_bytes_and_original_extraction":"verified against original receipt","repair":"Original collector decoded compressed bytes directly as text; corrected interpretation reuses retained bytes only",
       "scope_limit":"HTTP200 and zero eligible anchors are observations, not evidence that a model card or determination is absent"}
     print("RETAINED_INSPECTION_BEGIN");print(json.dumps(result,ensure_ascii=False,indent=2));print("RETAINED_INSPECTION_END")
 if __name__=="__main__":main()

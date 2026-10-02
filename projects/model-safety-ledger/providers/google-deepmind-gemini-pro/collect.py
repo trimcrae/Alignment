@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Produced by OpenAI Codex (AI agent, GPT-6): one official page and at most one model card."""
 from __future__ import annotations
-import hashlib, io, json, os, re, signal, sys, time
+import gzip, hashlib, io, json, os, re, signal, sys, time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -50,14 +50,37 @@ def get_raw(u,robots=False):
             if count>limit:raise ValueError("Response exceeds MIME/magic-selected byte bound")
             chunks.append(part)
         return b"".join(chunks),{"status":response.status,"final_url":response.url,"content_type":mime,
-             "applied_byte_limit":limit,"last_modified":response.headers.get("Last-Modified"),"etag":response.headers.get("ETag")}
+             "applied_byte_limit":limit,"content_encoding":response.headers.get("Content-Encoding"),"last_modified":response.headers.get("Last-Modified"),"etag":response.headers.get("ETag")}
+def decode_entity(raw,meta):
+    """Interpret received bytes with a separate bounded decoded-entity receipt; no GET."""
+    encoding=(meta.get("content_encoding") or "").strip().lower()
+    is_gzip=raw.startswith(b"\\x1f\\x8b")
+    if encoding not in("","identity","gzip"):raise ValueError("Unsupported Content-Encoding")
+    if encoding=="gzip" and not is_gzip:raise ValueError("Gzip header lacks gzip magic")
+    stream=gzip.GzipFile(fileobj=io.BytesIO(raw)) if is_gzip else io.BytesIO(raw)
+    chunks=[];count=0;limit=PDF_LIMIT if (meta.get("content_type") or "").split(";")[0].strip().lower()=="application/pdf" else HTML_LIMIT
+    while True:
+        part=stream.read(min(65536,limit+1-count))
+        if not part:break
+        if count==0:
+            if part.startswith(b"%PDF-"):limit=PDF_LIMIT
+            elif limit==PDF_LIMIT:raise ValueError("Decoded PDF MIME lacks PDF magic")
+        count+=len(part)
+        if count>limit:raise ValueError("Decoded entity exceeds MIME/magic-selected byte bound")
+        chunks.append(part)
+    entity=b"".join(chunks)
+    return entity,{"encoding_basis":"gzip_magic" if is_gzip else"identity",
+      "content_encoding_header":meta.get("content_encoding"),"decoded_bytes":len(entity),
+      "decoded_sha256":sha(entity),"applied_decoded_byte_limit":limit}
 def robots_for(u):
     host=safe_url(u).hostname
     if host not in ROBOTS:
         url="https://"+host+"/robots.txt";r={"url":url,"user_agent":UA}
         try:
             raw,meta=get_raw(url,True);parser=urllib.robotparser.RobotFileParser(url)
-            parser.parse(raw.decode("utf-8",errors="replace").splitlines())
+            entity,decoded=decode_entity(raw,meta)
+            if len(entity)>ROBOTS_LIMIT:raise ValueError("Decoded robots exceeds byte bound")
+            parser.parse(entity.decode("utf-8",errors="replace").splitlines())
             r.update(status=meta["status"],sha256=sha(raw),bytes=len(raw))
             if OUTPUT is not None:(OUTPUT/("robots-"+host+".txt")).write_bytes(raw)
             ROBOTS[host]=(r,parser)
@@ -141,15 +164,16 @@ def main():
         landing.update(state="observed",response=meta,robots=rr,bytes=len(raw),sha256=sha(raw))
         name="landing.pdf" if raw.startswith(b"%PDF-") else"landing.html";(OUTPUT/name).write_bytes(raw)
         receipt["raw_files"].append({"path":name,"bytes":len(raw),"sha256":sha(raw)})
-        if raw.startswith(b"%PDF-"):
-            count,selected=excerpts(raw);landing.update(kind="direct_model_card_response")
+        entity,interpretation=decode_entity(raw,meta);landing["interpretation"]=interpretation
+        if entity.startswith(b"%PDF-"):
+            count,selected=excerpts(entity);landing.update(kind="direct_model_card_response")
             card={"id":"gemini-pro-model-card","requested_url":meta["final_url"],"observed_at":landing["observed_at"],"kind":"model_card",
                  "state":"observed","response":meta,"robots":rr,"bytes":len(raw),"sha256":sha(raw),"pdf_pages":count,"excerpts":selected,
                  "received_via":"reused_direct_official_landing_response"}
             (OUTPUT/"model-card.pdf").write_bytes(raw);receipt["raw_files"].append({"path":"model-card.pdf","bytes":len(raw),"sha256":sha(raw)})
             receipt["sources"]=[landing,card];receipt["selection"].update(status="observed",reason="Official landing route directly returned a card PDF; no duplicate card fetch")
         else:
-            parser=Landing();parser.feed(raw.decode("utf-8",errors="replace"))
+            parser=Landing();parser.feed(entity.decode("utf-8",errors="replace"))
             t=normalize(" ".join(parser.text));candidates=card_candidates(parser,meta["final_url"]);urls=sorted({a["url"] for a in candidates})
             landing.update(kind="html",normalized_text_sha256=sha(t.encode()),spans=page_spans(t))
             receipt["sources"].append(landing);receipt["selection"].update(candidates=candidates,unique_candidate_urls=urls)
@@ -159,14 +183,16 @@ def main():
                 u=urls[0];card={"id":"gemini-pro-model-card","requested_url":u,"observed_at":now(),"kind":"model_card"}
                 try:
                     pdf,pmeta,prr=acquire(u)
-                    if not pdf.startswith(b"%PDF-"):raise ValueError("Official linked card did not return PDF bytes")
-                    count,selected=excerpts(pdf);card.update(state="observed",response=pmeta,robots=prr,bytes=len(pdf),sha256=sha(pdf),pdf_pages=count,excerpts=selected,received_via="unique_official_model_card_pointer")
+                    card.update(state="received_uninterpreted",response=pmeta,robots=prr,bytes=len(pdf),sha256=sha(pdf),received_via="unique_official_model_card_pointer")
                     (OUTPUT/"model-card.pdf").write_bytes(pdf);receipt["raw_files"].append({"path":"model-card.pdf","bytes":len(pdf),"sha256":sha(pdf)})
+                    pdf_entity,pdf_interpretation=decode_entity(pdf,pmeta);card["interpretation"]=pdf_interpretation
+                    if not pdf_entity.startswith(b"%PDF-"):raise ValueError("Official linked card did not return PDF bytes")
+                    count,selected=excerpts(pdf_entity);card.update(state="observed",pdf_pages=count,excerpts=selected)
                     receipt["selection"].update(status="observed",reason="Exactly one official vendor-bucket model-card pointer acquired")
-                except Exception as e:card.update(state="not_fetched",reason=type(e).__name__+": "+str(e),robots=robots_for(u));receipt["selection"]["reason"]="Explicit primary card could not be acquired; preserve unknowns"
+                except Exception as e:card.update(state="received_uninterpreted" if "bytes" in card else"not_fetched",reason=type(e).__name__+": "+str(e),robots=robots_for(u));receipt["selection"]["reason"]="Explicit primary card could not be interpreted or acquired; preserve unknowns"
                 receipt["sources"].append(card)
     except Exception as e:
-        landing.update(state="not_fetched",reason=type(e).__name__+": "+str(e),robots=robots_for(plan["landing_url"]))
+        landing.update(state="received_uninterpreted" if "bytes" in landing else"not_fetched",reason=type(e).__name__+": "+str(e),robots=robots_for(plan["landing_url"]))
         receipt["sources"].append(landing);receipt["selection"]["reason"]="Official landing route not acquired; no fallback or retry"
     finally:
         receipt["execution"]["collected_at"]=now();payload=json.dumps(receipt,ensure_ascii=False,indent=2)+"\n"
