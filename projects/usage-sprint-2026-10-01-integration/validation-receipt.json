@@ -1522,7 +1522,16 @@
       "job": 111009188753,
       "scope": "Original actual logs, runtime/counts/network/checkouts/tree/artifact/clean status; source CI references kept distinct"
     },
-    "final_documentation_gate": "Required exact receipt-only diff/log/metadata/prose comparison before root integrates main; no suite rerun requested."
+    "final_documentation_gate": {
+      "status": "CLEARED",
+      "reviewed_commit": "5e8652470f30f154b1f8f2a84edc820f70f8394d",
+      "tree": "ecc62f9bc6583254d25d02846d93629e05d0a121",
+      "reviewers": [
+        "/root/alignment_integration_review",
+        "root coordinator"
+      ],
+      "scope": "Exact4 receipt-only additions, all240 tested blobs/modes identical, original actual log/API bodies/hashes and claim limits."
+    }
   },
   "final_commit_policy": {
     "kind": "DOCUMENTATION_RECEIPT_ORIGINAL_LOG_API_METADATA_ONLY",
@@ -1540,7 +1549,174 @@
     "Action/dependency/connector transport internals are not independently audited beyond recorded metadata; artifact payload not independently unpacked."
   ],
   "next_action": {
-    "owner": "root coordinator",
-    "task": "After final receipt gate, integrate this complete branch into fresh main with normal two-parent/no-ff ancestry and no force push; reconcile completed PR3–11 state without changing their original bodies or involving new reviewers. Leave older PR1 untouched. Preserve all finite source stops after merge; no repeated provider GET or new model/science task is started."
+    "owner": "root coordinator retains final repository outcome ownership",
+    "task": "Completed source/model routes stop. Preserve all finite source stops and UNKNOWN/native-framework/launch-byte limits. No continuing worker, provider GET, policy/card retry, source suite repeat, model/API/paid workload, upstream change or outreach. Reopen work only under a distinct separately scoped task; olderPR1 remains untouched."
+  },
+  "main_outcome": {
+    "first_completed_integration_commit": "718240f027a4af9d178595ed145ecc673ae692d7",
+    "tree": "ecc62f9bc6583254d25d02846d93629e05d0a121",
+    "parents": [
+      "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "5e8652470f30f154b1f8f2a84edc820f70f8394d"
+    ],
+    "method": "NORMAL_TWO_PARENT_NO_FF_MERGE; root update_ref force=false",
+    "main_mutation_owner": "root coordinator",
+    "reviewed_integration_head": "5e8652470f30f154b1f8f2a84edc820f70f8394d",
+    "all_240_tested_blob_modes_preserved": true,
+    "reviewed_receipt_tree_files": 244,
+    "source_pr_outcomes": [
+      {
+        "pr": 3,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "0a89a06a69fe454e483be8552a951754a1efe77b",
+        "source_content_integration_merge": "91b66e1d1def646a27be2de8d7884202d5b0d3a8",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 4,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "baec2cd33fd25b14127656063a097f64d8ff079e",
+        "source_content_integration_merge": "1a48f27829e2b772717d70edef188d7d14e8563c",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 5,
+        "state": "closed",
+        "github_merged": false,
+        "github_merged_at": null,
+        "closed_at": "2026-10-02T20:17:28Z",
+        "source_head": "674445404bf6a0101772a0b6105e0a4db87fd37f",
+        "source_content_integration_merge": "4606c7d3e1fb11a1cf846b03bf4d0d8544ac3463",
+        "interpretation": "Stacked draft CLOSED after already-integrated head; GitHub merged flag remains false and merged_at null. Source content/history is integrated by its normal two-parent source merge and main718 ancestry."
+      },
+      {
+        "pr": 6,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+        "source_content_integration_merge": "3d5bcbe22766bc009e0c19744169cb32a887453b",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 7,
+        "state": "closed",
+        "github_merged": false,
+        "github_merged_at": null,
+        "closed_at": "2026-10-02T20:17:29Z",
+        "source_head": "3d44ad5631db3df52b82938244a0a0a00efb0e41",
+        "source_content_integration_merge": "c98f5366e2096841dac376db0e684b5932aa901b",
+        "interpretation": "Stacked draft CLOSED after already-integrated head; GitHub merged flag remains false and merged_at null. Source content/history is integrated by its normal two-parent source merge and main718 ancestry."
+      },
+      {
+        "pr": 8,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "cf3fef0d9c20a951e3f9a4dd77ad2eeb47aa4794",
+        "source_content_integration_merge": "1c2cf11e052cb5fe88344f5086543f0b49b7f7be",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 9,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+        "source_content_integration_merge": "8e4202e7d02728241719f599e3be18656f63ce0a",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 10,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "4a83877995081ae718b15bf5c1b67249a499eccc",
+        "source_content_integration_merge": "e8fc061e48daffaef7602c55a3c6883ff9cc727b",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      },
+      {
+        "pr": 11,
+        "state": "closed",
+        "github_merged": true,
+        "github_merged_at": "2026-10-02T20:16:03Z",
+        "closed_at": "2026-10-02T20:16:04Z",
+        "source_head": "e36be95f843e3beeb4d146c8e05618117c37cb0e",
+        "source_content_integration_merge": "8157633eef591be0021cb0fbe5a9fb2cf9ff1e9a",
+        "interpretation": "GitHub marked the main-based source PR merged/closed after source ancestry integration."
+      }
+    ],
+    "stacked_pr_retarget_attempts": {
+      "prs": [
+        5,
+        7
+      ],
+      "result": "GitHub rejected base retarget with422 no new commits because source heads already in main; root closed state only. No title/body/source-branch change.",
+      "github_merged_flag_invented": false
+    },
+    "older_pr1": {
+      "state": "open",
+      "draft": true,
+      "head": "7e9d49081993d029d1730dca8b95fc79c0e1623e",
+      "mutation": "NONE"
+    },
+    "main_event_checks": {
+      "inventory_count": 2,
+      "runs": [
+        {
+          "run_id": 37059472247,
+          "name": "Audit environment pin checks",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "head_sha": "718240f027a4af9d178595ed145ecc673ae692d7",
+          "url": "https://github.com/trimcrae/Alignment/actions/runs/37059472247"
+        },
+        {
+          "run_id": 37059472214,
+          "name": "Follow-up ledger",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "head_sha": "718240f027a4af9d178595ed145ecc673ae692d7",
+          "url": "https://github.com/trimcrae/Alignment/actions/runs/37059472214"
+        }
+      ],
+      "scope": "Narrow original follow-up ledger and audit-environment CPU checks only; not a new full combined suite or any source acquisition.",
+      "independently_observed_counts": {
+        "follow_up_node": 41,
+        "audit_python_bash_git_methods": 31
+      },
+      "jobs": {
+        "follow_up": 111012259377,
+        "audit_pins": 111012259373
+      },
+      "combined_415_proof_unchanged": "435 distinct Node checks and110 Python tests at exact415 remain the full combined proof."
+    },
+    "final_gate": {
+      "peer": "CLEARED exact5e865/treeecc62;4receipt-only additions,240tested bindings preserved; original log/API response hashes match",
+      "root": "CLEARED same exact final receipt tree and byte/body bindings"
+    },
+    "documentation_ci_limit": "Exact5e865 Actions inventory0runs; no green documentation-head CI claim. Main718 narrow checks and original415 full suite are separately identified."
+  },
+  "outcome_amendment": {
+    "kind": "TWO_DOCUMENTATION_PATHS_ONLY",
+    "changed_paths": [
+      "projects/usage-sprint-2026-10-01-integration/HANDOFF.md",
+      "projects/usage-sprint-2026-10-01-integration/validation-receipt.json"
+    ],
+    "all_prior_source_workflow_test_evidence_log_api_observation_blobs": "UNCHANGED",
+    "message_skip_ci": true,
+    "ci_claim": "No new suite or final-documentation-head green claim."
   }
 }
