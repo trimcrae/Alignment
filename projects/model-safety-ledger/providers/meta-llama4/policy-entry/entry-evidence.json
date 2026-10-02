@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "bounded_policy_entry_vetting_receipt",
+  "ai_authorship": {
+    "author": "Codex AI agent, GPT-6 family",
+    "session": "/root/alignment_provider_seed",
+    "date": "2026-10-02"
+  },
+  "branch": "codex/usage-sprint-2026-10-01-meta-policy-entry",
+  "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+  "scope": "Reuse one immutable acquired Meta Llama 4 card to vet an explicit named/versioned threshold-framework artifact pointer bound to Scout or Maverick; no new policy/source acquisition.",
+  "source": {
+    "status": "REUSED_IMMUTABLE_PR9",
+    "repository": "trimcrae/Alignment",
+    "snapshot_commit": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+    "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/MODEL_CARD.md",
+    "url": "https://github.com/trimcrae/Alignment/blob/51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be/projects/model-safety-ledger/providers/meta-llama4/evidence/MODEL_CARD.md",
+    "original_provider_repository": "meta-llama/llama-models",
+    "original_provider_commit": "0e0b8c519242d5833d8c11bffc1232b77ad7f301",
+    "original_provider_path": "models/llama4/MODEL_CARD.md",
+    "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "utf8_byte_count": 23764,
+    "sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+    "original_acquisition_observed_at": "2026-10-02T05:39:30Z",
+    "original_tool_receipt": {
+      "path": "projects/model-safety-ledger/providers/meta-llama4/evidence/original-tool-receipt.json",
+      "snapshot_commit": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+      "sha256": "8e0e931fa87de381c1064f05a23d3555286234ca249a20524245ce4032bc83ce",
+      "byte_count": 33163,
+      "verification_in_this_task": "REUSED_PRIOR_RECEIPT_ONLY"
+    }
+  },
+  "citation_units": "Literal original UTF-8 bytes, zero-based start inclusive/end exclusive; no normalization or Markdown repair.",
+  "citations": [
+    {
+      "id": "scout",
+      "start_byte": 1000,
+      "end_byte": 1023,
+      "quote": "Llama 4 Scout (17Bx16E)"
+    },
+    {
+      "id": "maverick",
+      "start_byte": 1575,
+      "end_byte": 1602,
+      "quote": "Llama 4 Maverick (17Bx128E)"
+    },
+    {
+      "id": "developer-guide",
+      "start_byte": 12101,
+      "end_byte": 12339,
+      "quote": "Llama 4 was developed following the best practices outlined in our [Developer Use Guide: AI Protections]([https://ai.meta.com/static-resource/developer-use-guide-ai-protections](https://www.llama.com/static-resource/developer-use-guide/)."
+    },
+    {
+      "id": "system-protections",
+      "start_byte": 16662,
+      "end_byte": 16876,
+      "quote": "We provide the community with system level [protections](https://llama.meta.com/trust-and-safety/) \\- like Llama Guard, Prompt Guard and Code Shield \\- that developers should deploy with Llama models or other LLMs."
+    },
+    {
+      "id": "guardrail-guidance",
+      "start_byte": 16269,
+      "end_byte": 16458,
+      "quote": "Large language models, including Llama 4, are not designed to be deployed in isolation but instead should be deployed as part of an overall AI system with additional guardrails as required."
+    }
+  ],
+  "entry_decision": {
+    "status": "ENTRY_NOT_MET",
+    "required_relation": "An explicit authoritative artifact pointer AND named/versioned threshold-framework applicability to Scout or Maverick.",
+    "finding": "The retained card supplies explicit Llama 4 family-development guidance and general system-protection guidance, but does not establish the required formal model-specific threshold-framework binding.",
+    "source_scope": "Retained card only; not a conclusion that an external policy or framework does not exist."
+  },
+  "positive_family_fact": {
+    "status": "CARD_EXPLICIT_PROVIDER_REPORTED",
+    "relation": "Llama 4 developed following Developer Use Guide best practices",
+    "citation_id": "developer-guide",
+    "scope": "Llama 4 family development guidance; not a formal per-model threshold determination or deployed safeguard decision."
+  },
+  "literal_external_pointers": [
+    {
+      "uri": "https://ai.meta.com/static-resource/developer-use-guide-ai-protections",
+      "citation_id": "developer-guide",
+      "kind": "literal_uri_in_malformed_nested_markdown",
+      "source_status": "SOURCE_NOT_ACQUIRED",
+      "availability": "NOT_ASSESSED"
+    },
+    {
+      "uri": "https://www.llama.com/static-resource/developer-use-guide/",
+      "citation_id": "developer-guide",
+      "kind": "literal_uri_in_malformed_nested_markdown",
+      "source_status": "SOURCE_NOT_ACQUIRED",
+      "availability": "NOT_ASSESSED"
+    },
+    {
+      "uri": "https://llama.meta.com/trust-and-safety/",
+      "citation_id": "system-protections",
+      "kind": "general_system_protection_guidance",
+      "source_status": "SOURCE_NOT_ACQUIRED",
+      "availability": "NOT_ASSESSED"
+    }
+  ],
+  "pointer_selection": {
+    "status": "NO_POLICY_POINTER_SELECTED",
+    "reason": "The two literal guide URIs are preserved without resolving the malformed Markdown; neither guide nor the general-protections pointer is a retained formal model-specific threshold-framework binding."
+  },
+  "model_native_threshold_framework_bindings": [
+    {
+      "model": "Llama 4 Scout (17Bx16E)",
+      "model_citation_id": "scout",
+      "status": "UNKNOWN",
+      "named_framework": "UNKNOWN",
+      "framework_version": "UNKNOWN"
+    },
+    {
+      "model": "Llama 4 Maverick (17Bx128E)",
+      "model_citation_id": "maverick",
+      "status": "UNKNOWN",
+      "named_framework": "UNKNOWN",
+      "framework_version": "UNKNOWN"
+    }
+  ],
+  "boundaries": [
+    "Critical Risks remains a native section/category heading, not a named framework, risk level or formal threshold decision.",
+    "CBRNE and Child Safety method descriptions and the family cyber assertion remain the prior PR9 snapshot; no model-specific outcome or configuration promotion.",
+    "Generic guardrail guidance is not evidence of deployed native safeguards.",
+    "Pinned Git/source observation is not actual release visibility, historical applicability or launch-edition byte identity.",
+    "Unknown binding and unassessed external availability do not mean absence."
+  ],
+  "checks_executed_this_task": {
+    "runtime": "V8 functions isolate and read-only GitHub connector metadata; not Node, Python or browser execution",
+    "checked_at_utc": "2026-10-02T06:46:46Z",
+    "retained_source_utf8_byte_count": {
+      "expected": 23764,
+      "observed": 23764,
+      "status": "PASS"
+    },
+    "retained_source_sha256": {
+      "expected": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+      "observed": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+      "status": "PASS"
+    },
+    "retained_source_git_blob_metadata": {
+      "observed": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+      "status": "MATCHES_PIN"
+    },
+    "literal_utf8_quote_checks": {
+      "count": 5,
+      "status": "PASS"
+    },
+    "guidance_blobs": [
+      {
+        "path": "README.md",
+        "git_blob_sha1": "3ec51453ec6e3a559a7aae252134326a4dbced1b"
+      },
+      {
+        "path": "research/README.md",
+        "git_blob_sha1": "a53cb083c2c18144dd2d482b1dac9a0ce62bfdcf"
+      },
+      {
+        "path": "projects/eval-integrity/NEXT-STEPS.md",
+        "git_blob_sha1": "6c3ee994cfad43b3eb5a12ff1c5139ccac390e73"
+      }
+    ],
+    "fresh_main_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+    "base_recursive_tree_complete": true,
+    "base_github_workflow_paths": [],
+    "base_exact_commit_actions_inventory": {
+      "head_sha": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "total_count": 0
+    },
+    "source_reacquisitions": 0,
+    "external_policy_acquisitions": 0,
+    "suite_executions": 0,
+    "new_workflows_or_test_jobs": 0,
+    "documentation_checkpoint_inventory": {
+      "head_sha": "43756a66f562382db10bbec80863a28938ad32da",
+      "writer_observed_at_utc": "2026-10-02T06:49:32Z",
+      "complete_tree": true,
+      "github_workflow_paths": [],
+      "actions_total_count": 0,
+      "interpretation": "No workflow/suite was added or executed; this is an inventory observation, not a passing CI result."
+    }
+  },
+  "prior_ci_reference": {
+    "status": "REUSED_REFERENCE_ONLY_NOT_CURRENT_BRANCH_TESTING",
+    "tested_source_commit": "827825f8a30a3cbf77779b04abb10613081b964e",
+    "final_receipt_commit": "51d6dca0574f3ddf9ee2b02a46ce8e992bc2f3be",
+    "run_id": 36970852710,
+    "job_id": 110724317636,
+    "url": "https://github.com/trimcrae/Alignment/actions/runs/36970852710",
+    "prior_actual_result": "SUCCESS: 81 Node checks (79 invalid) and 10 Python cases plus exact source/syntax/summary/clean checks",
+    "original_job_log_sha256": "91c5014b5964499cc745ea41328d5c7b40752829e6f0be8082885cd450b6ff75",
+    "current_task_rerun": false
+  },
+  "independent_review": {
+    "reviewer": "Separate AI reviewer /root/alignment_provider_review",
+    "status": "CLEARED",
+    "reviewed_checkpoint": "43756a66f562382db10bbec80863a28938ad32da",
+    "scope": "Two documentation files, reused-source SHA256/UTF-8 quotes/native Git blob metadata, claim/status boundaries and no-workflow/no-run inventory.",
+    "reviewer_exact_head_actions_inventory": {
+      "head_sha": "43756a66f562382db10bbec80863a28938ad32da",
+      "observed_at_utc": "2026-10-02T06:50:18Z",
+      "total_count": 0
+    },
+    "human_review": "NOT_PERFORMED"
+  },
+  "stop": {
+    "reached": true,
+    "reason": "Entry condition not met using unchanged retained evidence; no external policy acquisition.",
+    "next_task": "Only a separately scoped task with distinct authoritative evidence explicitly binding a named/versioned threshold framework to Scout or Maverick. Preserve this gap until such input exists; no unchanged-card audit or automatic pointer fetch."
+  }
+}
