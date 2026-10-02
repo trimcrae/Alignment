@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "landing_url": "https://deepmind.google/models/gemini/pro/",
+  "source_policy": {
+    "card_host": "storage.googleapis.com",
+    "card_bucket_path": "/deepmind-media/",
+    "selection": "Exactly one unique explicitly labeled model-card PDF pointer on the official landing page; no arbitrary version ranking or report fallback",
+    "identity": "Actual native model/version/Preview identity comes only from the acquired card"
+  },
+  "stop_condition": "One finite cycle: one official page and at most one explicit model-card PDF. Stop with primary-evidence gap on access failure, missing/ambiguous pointer or unsupported identity/framework. No other provider, guessed URI, mirror, inference/API or outreach."
+}
