@@ -8,13 +8,9 @@
   },
   "sources": [
     {
-      "id": "claude-4-announcement",
-      "url": "https://www.anthropic.com/news/claude-4"
-    },
-    {
       "id": "claude-4-card-pointer",
       "url": "https://www.anthropic.com/claude-4-system-card"
     }
   ],
-  "stop_condition": "One finite cycle; exactly one explicit official PDF pointer or preserve missing-input gap. No fallback mirrors or guessed PDF URLs."
+  "stop_condition": "Single pointer-only correction cycle at originally planned 20MiB PDF bound; no announcement refetch, mirror, guessed URL or further retries. Original two-page attempt retained."
 }

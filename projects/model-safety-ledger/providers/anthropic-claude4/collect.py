@@ -121,7 +121,7 @@ def main():
         for source in plan["sources"]:
             r={"id":source["id"],"requested_url":source["url"],"observed_at":now()}
             try:
-                raw,meta,rr=acquire(source["url"],PAGE_LIMIT);r.update(state="observed",response=meta,robots=rr,bytes=len(raw),sha256=sha(raw))
+                raw,meta,rr=acquire(source["url"],PDF_LIMIT if source["id"]=="claude-4-card-pointer" else PAGE_LIMIT);r.update(state="observed",response=meta,robots=rr,bytes=len(raw),sha256=sha(raw))
                 if raw.startswith(b"%PDF-"):
                     candidates.add(meta["final_url"]);r.update(kind="pdf_pointer_response")
                     # Never fetch the identical PDF again: preserve already received bytes.
@@ -164,5 +164,6 @@ def main():
         (Path(os.environ["RUNNER_TEMP"])/"anthropic-acquisition.json").write_text(payload,encoding="utf-8")
         print("ANTHROPIC_PRIMARY_RECEIPT_BEGIN");print(payload,end="");print("ANTHROPIC_PRIMARY_RECEIPT_END")
 if __name__=="__main__":
-    def deadline(signum,frame): raise TimeoutError("180 second cycle bound")
+    class CycleDeadline(BaseException): pass
+    def deadline(signum,frame): raise CycleDeadline("180 second cycle bound")
     signal.signal(signal.SIGALRM,deadline);signal.alarm(180);main()
