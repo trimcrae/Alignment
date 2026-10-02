@@ -1,0 +1,66 @@
+# AI-authored OpenAI Codex; actual offline Node/Python checks, no provider GET.
+name: Google primary-input ledger validation
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-google-native-ledger]
+    paths:
+      - .github/workflows/google-native-validate.yml
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/core.mjs
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect-card-html.py
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-card-html.py
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/verify-source.py
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/result.json
+      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 -m pip install pypdf==6.0.0
+      - name: Record real runtimes
+        run: |
+          node --version
+          python3 --version
+      - name: Check syntax without generated files
+        run: |
+          node --check projects/model-safety-ledger/providers/google-deepmind-gemini-pro/core.mjs
+          node --check projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs
+          node --check projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path("projects/model-safety-ledger/providers/google-deepmind-gemini-pro")
+          for p in root.glob("*.py"):
+              compile(p.read_text(), str(p), "exec")
+          print("Python syntax passed")
+          PY
+      - name: Run strict receipt and unknown-state regressions
+        run: node projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs
+      - name: Run production-path collector and exact-stage regressions
+        run: |
+          python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py
+          python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-card-html.py
+      - name: Verify exact source bytes quote coordinates and robots offline
+        run: python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/verify-source.py
+      - name: Validate bounded result and truthful summary
+        run: node projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs
+      - name: Confirm tracked tree stayed clean
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

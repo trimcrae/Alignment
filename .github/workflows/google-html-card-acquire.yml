@@ -1,9 +1,7 @@
 # AI-authored OpenAI Codex/GPT-6; exact reviewed unused HTML-card stage.
 name: Google exact HTML card acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-google-native-ledger]
-    paths: [.github/workflows/google-html-card-acquire.yml]
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

@@ -1,13 +1,7 @@
 # AI-authored OpenAI Codex; offline reuse of original owned source artifact only.
 name: Google retained source inspection
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-google-native-ledger]
-    paths:
-      - .github/workflows/google-retained-inspect.yml
-      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/inspect-retained.py
-      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py
-      - projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read
