@@ -35,6 +35,9 @@ clone() { # repo commit dir
     expected=$(git -C "$target" rev-parse --verify "$pin^{commit}" 2>/dev/null) || {
       echo "ERROR: pin $pin unavailable in $target; checkout left unchanged" >&2; return 1;
     }
+    if [[ "$expected" != "${pin,,}"* ]]; then
+      echo "ERROR: pin $pin resolved to another revision in $target; checkout left unchanged" >&2; return 1
+    fi
     actual=$(git -C "$target" rev-parse --verify HEAD) || return 1
     if [ "$actual" != "$expected" ]; then
       echo "ERROR: wrong HEAD in $target; checkout left unchanged" >&2; return 1
@@ -50,6 +53,9 @@ clone() { # repo commit dir
       echo "ERROR: pin $pin unavailable in $target" >&2; return 1;
     }
   }
+  if [[ "$expected" != "${pin,,}"* ]]; then
+    echo "ERROR: pin $pin resolved to another revision in $target" >&2; return 1
+  fi
   git -C "$target" checkout -q --detach "$expected" || {
     echo "ERROR: could not check out pin $pin in $target" >&2; return 1;
   }

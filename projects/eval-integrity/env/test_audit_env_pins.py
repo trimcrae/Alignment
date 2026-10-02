@@ -183,6 +183,19 @@ class RepairedChecks(Fixture):
         result = self.refuse_existing()
         self.assertIn("wrong HEAD", result.stderr)
 
+    def test_hex_named_branch_cannot_shadow_existing_commit_pin(self):
+        self.existing()
+        self.git("-C", str(self.target), "branch", self.first[:7], self.second)
+        result = self.refuse_existing()
+        self.assertIn("resolved to another revision", result.stderr)
+
+    def test_hex_named_tag_cannot_shadow_fresh_commit_pin(self):
+        self.git("-C", str(self.seed), "tag", self.first[:7], self.second)
+        result = self.run_helper()
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("resolved to another revision", result.stderr)
+        self.assertEqual(self.git("-C", str(self.target), "rev-parse", "HEAD").stdout.strip(), self.second)
+
     def test_wrong_origin_refused_without_rewrite(self):
         self.existing(self.first)
         self.git("-C", str(self.target), "remote", "set-url", "origin", "https://github.com/fixture/other")
