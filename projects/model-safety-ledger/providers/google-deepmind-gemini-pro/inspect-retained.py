@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """AI-authored OpenAI Codex/GPT-6: verify owned retained bytes without provider GETs."""
-import argparse, hashlib, importlib.util, json, re
+import argparse, base64, hashlib, importlib.util, json, re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 RECEIPT_SHA="e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef"
@@ -38,8 +38,10 @@ def main():
       "robots_sha256":digest(robots),"normalized_text_sha256":digest(t.encode()),
       "original_normalized_text_length":len(t),"corrected_normalized_text_length":len(corrected_text),"interpretation":interpretation,"eligible_card_pointers":len(candidates),
       "all_anchor_count":len(corrected_parser.links),"title":collector.normalize(title.group(1).decode(errors="replace")) if title else None,
-      "normalized_text_prefix":corrected_text[:1800],"anchors":corrected_parser.links[:30],"eligible_candidates":candidates,
+      "normalized_text_prefix":corrected_text[:1800],"anchors":[a for a in corrected_parser.links if re.search(r"model.?card|\\.pdf|frontier|responsib",a["href"]+" "+a["text"]+" "+a["aria_label"],re.I)],"eligible_candidates":candidates,"identity_spans":collector.page_spans(corrected_text),
       "raw_bytes_and_original_extraction":"verified against original receipt","repair":"Original collector decoded compressed bytes directly as text; corrected interpretation reuses retained bytes only",
       "scope_limit":"HTTP200 and zero eligible anchors are observations, not evidence that a model card or determination is absent"}
     print("RETAINED_INSPECTION_BEGIN");print(json.dumps(result,ensure_ascii=False,indent=2));print("RETAINED_INSPECTION_END")
+    print("RETAINED_HTML_BASE64_BEGIN");print(base64.b64encode(raw).decode("ascii"));print("RETAINED_HTML_BASE64_END")
+    print("RETAINED_ROBOTS_BASE64_BEGIN");print(base64.b64encode(robots).decode("ascii"));print("RETAINED_ROBOTS_BASE64_END")
 if __name__=="__main__":main()
