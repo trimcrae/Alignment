@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      REUSED_CARD_DIR: ${{ runner.temp }}/received-card
       PYTHONDONTWRITEBYTECODE: "1"
     steps:
       - uses: actions/checkout@v4
@@ -32,12 +31,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           artifact-ids: "11204066868"
-          path: ${{ env.REUSED_CARD_DIR }}
+          path: ${{ runner.temp }}/received-card
           merge-multiple: true
           github-token: ${{ github.token }}
           repository: trimcrae/Alignment
           run-id: "36951404278"
       - name: Inspect exact reused annotations and one official policy route
+        env:
+          REUSED_CARD_DIR: ${{ runner.temp }}/received-card
         run: python3 projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
       - name: Preserve original narrow receipt
         if: ${{ !cancelled() }}
