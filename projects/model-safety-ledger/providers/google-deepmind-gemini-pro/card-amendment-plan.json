@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "original_source_commit": "b4fa5e647ee78c96272553d8ae66b4b01032d14c",
+  "original_acquisition_run": "36960889488",
+  "reused_owned_artifact_id": "11207519173",
+  "original_receipt_sha256": "e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef",
+  "selected_landing_receipt_sha256": "88c0a33125de4edd1e66070cecc79c6828c88b5fa661735560c6c3069b058efa",
+  "amendment": "Replace the unused PDF stage with one exact explicitly linked official HTML model-card GET after the compressed-landing interpretation repair",
+  "card_url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+  "max_source_requests": 1,
+  "landing_refetch": false,
+  "child_or_pdf_following": false,
+  "redirect_following": false,
+  "robots": "Reuse original same-origin raw robots bytes and observation (2026-10-02T03:36:15Z), independently hash checked; fail closed if rules do not allow this exact path",
+  "max_received_bytes": 2097152,
+  "max_decoded_bytes": 2097152,
+  "socket_seconds": 12,
+  "read_seconds": 25,
+  "cycle_seconds": 180,
+  "workflow_minutes": 5,
+  "stop_condition": "One exact card GET. Preserve raw received bytes before interpretation; stop if denied, non-HTML, unparseable or lacking explicit native framework evidence. No source retries, new provider, model inference/API, child links or PDF fetch."
+}

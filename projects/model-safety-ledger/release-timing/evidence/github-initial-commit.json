@@ -1,0 +1,29 @@
+{
+  "sha": "243a1b02767da73bd2e3975be250afa801635866",
+  "node_id": "C_kwDOPAj9DNoAKDI0M2ExYjAyNzY3ZGE3M2JkMmUzOTc1YmUyNTBhZmE4MDE2MzU4NjY",
+  "url": "https://api.github.com/repos/openai/gpt-oss/git/commits/243a1b02767da73bd2e3975be250afa801635866",
+  "html_url": "https://github.com/openai/gpt-oss/commit/243a1b02767da73bd2e3975be250afa801635866",
+  "author": {
+    "name": "Dominik Kundel",
+    "email": "dkundel@openai.com",
+    "date": "2025-08-05T15:19:49Z"
+  },
+  "committer": {
+    "name": "Dominik Kundel",
+    "email": "dkundel@openai.com",
+    "date": "2025-08-05T15:19:49Z"
+  },
+  "tree": {
+    "sha": "4e3c87e0e97477a25026d3564dcb5a994f4be86e",
+    "url": "https://api.github.com/repos/openai/gpt-oss/git/trees/4e3c87e0e97477a25026d3564dcb5a994f4be86e"
+  },
+  "message": "Initial commit\n\nCo-authored-by: Zhuohan Li <zhuohan@openai.com>\nCo-authored-by: Maratyszcza <marat@openai.com>\nCo-authored-by: Volodymyr Kyrylov <vol@wilab.org.ua>",
+  "parents": [],
+  "verification": {
+    "verified": true,
+    "reason": "valid",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAAGgAAAATZWNkc2Etc2hhMi1uaXN0cDI1NgAAAAhuaXN0cDI1NgAAAE\nEEeE+wNLLaeAhsXZBfxN6HqTwHqqo26T+DIlWDbQTfsUj4ZvzbJTSm+3qxAqG1IhGKBFly\nfUV9ZNlWC1t6eHFHxQAAAANnaXQAAAAAAAAABnNoYTUxMgAAAGUAAAATZWNkc2Etc2hhMi\n1uaXN0cDI1NgAAAEoAAAAhAKffhDt5oZlQasEmX20eBnvfTgVpagxOJvJKjHVbVd4sAAAA\nIQC0KfeykdFnbv3ggFpP7y7WHhi2HDLLrkHS4zRYnpDzqA==\n-----END SSH SIGNATURE-----",
+    "payload": "tree 4e3c87e0e97477a25026d3564dcb5a994f4be86e\nauthor Dominik Kundel <dkundel@openai.com> 1754407189 -0700\ncommitter Dominik Kundel <dkundel@openai.com> 1754407189 -0700\n\nInitial commit\n\nCo-authored-by: Zhuohan Li <zhuohan@openai.com>\nCo-authored-by: Maratyszcza <marat@openai.com>\nCo-authored-by: Volodymyr Kyrylov <vol@wilab.org.ua>\n",
+    "verified_at": "2025-08-05T15:20:35Z"
+  }
+}

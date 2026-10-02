@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "baec2cd33fd25b14127656063a097f64d8ff079e"
+  },
+  "purpose": "One bounded metadata acquisition for provider-declared model release timing and model-card historical links. No PDF download, model inference or scheduled monitoring.",
+  "sources": [
+    {
+      "id": "official-launch-announcement",
+      "kind": "provider_announcement",
+      "url": "https://openai.com/index/introducing-gpt-oss/",
+      "allowed_host": "openai.com"
+    },
+    {
+      "id": "arxiv-model-card-record",
+      "kind": "repository_metadata",
+      "url": "https://arxiv.org/abs/2508.10925",
+      "allowed_host": "arxiv.org"
+    },
+    {
+      "id": "official-model-card-landing",
+      "kind": "current_landing_page",
+      "url": "https://openai.com/index/gpt-oss-model-card",
+      "allowed_host": "openai.com"
+    },
+    {
+      "id": "launch-window-card-cdx",
+      "kind": "archive_index_only",
+      "url": "https://web.archive.org/cdx/search/cdx?url=openai.com%2Findex%2Fgpt-oss-model-card%2A&from=20250804&to=20250807&output=json&filter=statuscode%3A200&fl=timestamp,original,mimetype,statuscode,digest&limit=25",
+      "allowed_host": "web.archive.org"
+    }
+  ],
+  "stop_condition": "Complete exactly one acquisition cycle. Historical capture metadata or failed fetches never establish PDF edition bytes, absence or launch availability. Do not re-acquire prior unchanged PDFs."
+}

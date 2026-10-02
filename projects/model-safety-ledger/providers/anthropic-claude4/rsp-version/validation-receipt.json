@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "observed_at": "2026-10-02T02:52:41Z",
+  "repository": "trimcrae/Alignment",
+  "branch": "codex/usage-sprint-2026-10-01-anthropic-rsp-version",
+  "draft_pr": "https://github.com/trimcrae/Alignment/pull/7",
+  "base_commit": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3",
+  "stacked_on_pr": 6,
+  "tested_source": "76b614e0a402ecef86a7fb7d1beea9b570e156bd",
+  "tested_blob_shas": {
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py": "2b12cf29f5d7abd40b9247505a36cb5c04b96d9b",
+    ".github/workflows/anthropic-rsp-version-acquire.yml": "2e2505bea3fb6845b9450137931270f8e32addb7",
+    ".github/workflows/anthropic-rsp-version.yml": "5b378cb7d551f42bd2727f5c8dfba6b548077add",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/core.mjs": "b0f7c1f7c9474d0b785aea3a2f9509b761ee3edf",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tests.mjs": "cf15be15bc8e0952b4f4d8750a28af505de14e66",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs": "ffda991f4d8198bc858afbe0d2002cfbd91fdc9e",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/test_collect.py": "e0eb08c1c90e4b4e7bca77048666ed7cda148522",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/result.json": "9d67905044e765c24fb0d68d82298018562a73c0",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/evidence/acquisition.json": "90f38c8a850e2c57d15a7fcff6aeca8bfa59454e",
+    "projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/acquisition-plan.json": "62a227bef9f4f0c31b3220a925521a380dda7870"
+  },
+  "evidence": {
+    "original_receipt_sha256": "4b3363dcd44fe0469ff3415874d0f493beafd6f2eb9e1770022e786460767ca9",
+    "original_receipt_utf8_bytes": 10671,
+    "result_sha256": "b9f11080de1b512ff7adcfb8a0fd4a916109333d6887b840ea79878c404cc168",
+    "prior_ledger_sha256": "8ac146cdd706421dc84d5ca5fafef70439030be48278665ac3cb454c108a3151",
+    "reused_card_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "reused_card_source_run_id": "36951404278",
+    "reused_card_artifact_id": "11204066868",
+    "annotation_pages_inspected": [
+      9,
+      10
+    ],
+    "observed_annotation_page": 9,
+    "official_route_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+    "provider_declared_update_date": "2024-10-15",
+    "observed_html_bytes": 171813,
+    "source_body_sha256_collector_reported": "8c454b6a7c24806d4ee8795eb76ea63bfaad67cfafe8350aaf2f922c8fb802ac",
+    "raw_html_retained": false,
+    "source_body_sha256_independently_recomputed": false,
+    "selected_span_verification": "Matched verbatim against original acquired receipt; complete source body and normalized-text digests were not independently recomputed.",
+    "receipt_artifact_id": "11205553533",
+    "receipt_artifact_archive_digest": "15d40e3152a6299f36f07e0903a1b549ea589a38cdb0d8d44421529944e040e5",
+    "receipt_artifact_expires_at": "2026-12-31T02:35:47Z"
+  },
+  "execution": [
+    {
+      "source_commit": "0a9656c15b816bad3f360a674e6994f1f58718c3",
+      "run_id": "36956229264",
+      "conclusion": "failure",
+      "jobs_started": 0,
+      "source_route_requests": 0,
+      "result": "Implementation/configuration failure: runner context used in job-level environment. Not source absence or a baseline environment failure."
+    },
+    {
+      "source_commit": "ffcc6faa08df990f303add33a518843faa831f4f",
+      "run_id": "36956360948",
+      "job_id": "110680066600",
+      "conclusion": "success",
+      "job_started_at": "2026-10-02T02:35:51Z",
+      "job_completed_at": "2026-10-02T02:36:06Z",
+      "reused_owned_artifact": true,
+      "new_card_source_requests": 0,
+      "official_route_requests": 1,
+      "optional_policy_pdf_requests": 0,
+      "log_path": "acquisition-job-110680066600.log",
+      "log_sha256": "d84dac5a821861bc8ef29439e879c0b3d69ad4cd7b05fbf27ccc10388b69e27d",
+      "result": "One actual bounded source cycle met its stop condition; only the dated official update announcement was observed."
+    },
+    {
+      "source_commit": "76b614e0a402ecef86a7fb7d1beea9b570e156bd",
+      "run_id": "36957167508",
+      "job_id": "110682594061",
+      "conclusion": "success",
+      "node": "22.23.3",
+      "python": "3.11.16",
+      "job_started_at": "2026-10-02T02:46:26Z",
+      "job_completed_at": "2026-10-02T02:46:33Z",
+      "new_node_checks": 49,
+      "new_node_invalid_cases": 46,
+      "new_python_checks": 22,
+      "inherited_node_checks": 70,
+      "inherited_node_invalid_cases": 66,
+      "inherited_python_checks": 15,
+      "syntax_passed": true,
+      "immutable_source_validation_passed": true,
+      "summary_passed": true,
+      "tracked_tree_clean": true,
+      "source_requests_in_offline_tests": 0,
+      "log_path": "offline-ci-job-110682594061.log",
+      "log_sha256": "98eb6aceb8c04818005be6bc315fa40f62ea0a4223279c2923024146576034a3"
+    }
+  ],
+  "review": {
+    "independent_agent": "alignment_provider_review",
+    "human_review": "not_performed",
+    "status": "no_remaining_scoped_blocker",
+    "source_method": "Original receipt/card URI/page/rectangle and exact publisher date quote independently compared to original job output. Missing raw HTML verification explicitly preserved.",
+    "code": "Demonstrated unused optional selector accepted generic usage-policy PDFs. Offline repair requires RSP identity, scoped model/version and applicability relation; chronology-only and newer-model cases rejected. Immutable original receipt and prior ledger bindings prevent metadata rebinding. No further source cycle.",
+    "independent_execution": "Actual core/harness reproduced 49 V8 checks (46 invalid), separately from actual Node/Python CI. Actual GitHub CI source, counts, logs and clean status independently observed.",
+    "additional_root_review": "Root independently matched original acquisition receipt/log hashes and actual source/CI conclusions."
+  },
+  "result": {
+    "numeric_policy_version": "unknown",
+    "historical_applicability": "unknown",
+    "launch_edition": "unknown",
+    "source_relation": "received_card_uri_to_dated_update_announcement_only",
+    "completion": "version_gap",
+    "stop_condition": "met"
+  },
+  "limitations": [
+    "A provider-declared October 2024 article date and present-day receipt do not prove archived 2024 bytes or public visibility then.",
+    "The historical announcement's ASL-2 statement and 2026 footer do not override the acquired May 2025 card or establish a policy edition.",
+    "Source-body and full normalized-text hashes are collector-computed; raw HTML was not retained and was not refetched.",
+    "Prior provider ledger, determinations, code and evidence remain unchanged dated snapshots.",
+    "No model inference/API, outreach, upstream issue/PR or main merge.",
+    "Acquisition automatic triggers disabled after one actual cycle; offline selector repair made no further GET. Final documentation/log commit changes no tested code or result/evidence."
+  ],
+  "next_bounded_task": "A distinct provider-native ledger seed, preferably Google DeepMind, from one accessible official primary model/system card. Vet the exact source and native determination framework first; stop with explicit missing evidence if no supported determination exists. No cross-framework scale normalization, model inference or outreach. Do not rerun unchanged RSP/card/gpt-oss/ControlArena source cycles."
+}

@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "provider": "Meta",
+  "artifact_role": "official_model_card_with_provider_reported_safety_assessments",
+  "source": {
+    "id": "meta-llama4-git-card",
+    "repository": "meta-llama/llama-models",
+    "commit": "0e0b8c519242d5833d8c11bffc1232b77ad7f301",
+    "path": "models/llama4/MODEL_CARD.md",
+    "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "file_sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+    "file_bytes": 23764,
+    "observed_at": "2026-10-02T05:39:30Z",
+    "verification": "exact_original_connector_file_bytes",
+    "transport": "connector_internals_unobserved",
+    "artifact_reads": 1,
+    "additional_source_reads": 0
+  },
+  "models": [
+    {
+      "record_id": "scout-17bx16e",
+      "native_name": "Llama 4 Scout (17Bx16E)",
+      "name_citation": "model_scout",
+      "formal_threshold_determination": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_model_specific_formal_threshold_binding_in_card"
+      },
+      "native_deployment_level": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_model_specific_native_deployment_level_in_card"
+      },
+      "critical_risk_evaluated_configuration": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "critical_risk_configuration_not_explicitly_bound_to_model"
+      }
+    },
+    {
+      "record_id": "maverick-17bx128e",
+      "native_name": "Llama 4 Maverick (17Bx128E)",
+      "name_citation": "model_maverick",
+      "formal_threshold_determination": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_model_specific_formal_threshold_binding_in_card"
+      },
+      "native_deployment_level": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_model_specific_native_deployment_level_in_card"
+      },
+      "critical_risk_evaluated_configuration": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "critical_risk_configuration_not_explicitly_bound_to_model"
+      }
+    }
+  ],
+  "native_card_taxonomy": {
+    "section_title": "Critical Risks",
+    "role": "native_category_heading",
+    "section_citation": "native_section",
+    "named_threshold_framework": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "not_explicitly_bound_by_acquired_card"
+    },
+    "framework_version": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "not_explicitly_bound_by_acquired_card"
+    }
+  },
+  "native_categories": [
+    {
+      "record_id": "critical-risk-1",
+      "native_ordinal": 1,
+      "native_label": "CBRNE (Chemical, Biological, Radiological, Nuclear, and Explosive materials) helpfulness",
+      "label_citation": "cbrne_label",
+      "record_kind": "provider_reported_evaluation_method",
+      "source_scope": "Llama 4",
+      "reported_method_scope": "chemical_and_biological_weapon_proliferation",
+      "method_citation": "cbrne_method",
+      "reported_outcome": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "method_description_does_not_report_outcome"
+      },
+      "formal_threshold_relation": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_formal_threshold_binding_in_card"
+      }
+    },
+    {
+      "record_id": "critical-risk-2",
+      "native_ordinal": 2,
+      "native_label": "Child Safety",
+      "label_citation": "child_label",
+      "record_kind": "provider_reported_evaluation_method",
+      "source_scope": "post trained model",
+      "reported_method_scope": "child_safety_evaluation_and_fine_tuning",
+      "method_citation": "child_method",
+      "reported_outcome": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "method_description_does_not_report_outcome"
+      },
+      "formal_threshold_relation": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_formal_threshold_binding_in_card"
+      }
+    },
+    {
+      "record_id": "critical-risk-3",
+      "native_ordinal": 3,
+      "native_label": "Cyber attack enablement",
+      "label_citation": "cyber_label",
+      "record_kind": "provider_reported_family_assessment",
+      "source_scope": "Llama 4 models",
+      "reported_method_scope": "catastrophic_cyber_threat_scenario_capabilities",
+      "method_citation": "cyber_method_and_assessment",
+      "reported_outcome": {
+        "status": "provider_reported",
+        "scope": "family_only",
+        "value": "Overall, we find that Llama 4 models do not introduce risk plausibly enabling catastrophic cyber outcomes.",
+        "citation": "cyber_family_conclusion"
+      },
+      "formal_threshold_relation": {
+        "status": "unknown",
+        "value": null,
+        "reason_code": "no_formal_threshold_binding_in_card"
+      }
+    }
+  ],
+  "deployment_guidance": {
+    "kind": "provider_general_system_guidance",
+    "citation": "system_guidance",
+    "formal_deployment_determination": false
+  },
+  "release": {
+    "provider_declared_date": {
+      "status": "provider_reported",
+      "value": "2025-04-05",
+      "literal_date": "April 5, 2025",
+      "scope": "shared_model_card_statement",
+      "citation": "declared_release"
+    },
+    "independently_verified_public_release": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "no_independent_release_time_evidence"
+    },
+    "launch_artifact_availability": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "no_launch_availability_evidence"
+    },
+    "launch_edition_byte_identity": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "no_launch_edition_byte_identity_evidence"
+    }
+  },
+  "limitations": {
+    "citation": "limits",
+    "independent_model_evaluation": false,
+    "measured_failure_rates_claimed": false,
+    "framework_scale_mapping": false,
+    "family_assessment_copied_to_model_determinations": false,
+    "named_framework_absence_claimed": false,
+    "unknown_means_absent": false,
+    "source_observation_is_launch_evidence": false
+  },
+  "stop": {
+    "status": "met",
+    "formal_framework_gap": "explicit_unknown",
+    "further_source_acquisition": false,
+    "model_inference": false,
+    "external_outreach": false,
+    "merge": false
+  }
+}

@@ -1,0 +1,64 @@
+// Produced by OpenAI Codex (AI agent, GPT-6); human review not performed.
+import {validateEvidence} from './core.mjs';
+export function runRegressionChecks(evidence, receipt, readme, gitBlobSha, githubCommit) {
+  let checks = 0;
+  validateEvidence(evidence, receipt, readme, gitBlobSha, githubCommit); checks++;
+  const bad = (name, mutate) => {
+    const e = structuredClone(evidence), r = structuredClone(receipt);
+    const changed = mutate(e, r) || {};
+    let rejected = false;
+    try { validateEvidence(e, r, changed.readme ?? readme, changed.gitBlobSha ?? gitBlobSha, githubCommit); } catch { rejected = true; }
+    if (!rejected) throw new Error('Invalid evidence accepted: ' + name);
+    checks++;
+  };
+  bad('cover date promoted to release', e => { e.findings.model_release_date.status = 'reported'; e.findings.model_release_date.value = '2025-08-05'; });
+  bad('arXiv submission promoted to release', e => { e.findings.model_release_date.status = 'reported'; e.findings.model_release_date.value = e.findings.arxiv_submission.timestamp; });
+  bad('failed fetch called absence', e => { e.findings.model_card_at_release.status = 'absent'; });
+  bad('pointer promoted to launch availability', e => { e.findings.model_card_at_release.status = 'observed'; });
+  bad('current PDF hash bound to historical edition', e => { e.findings.model_card_at_release.received_byte_sha256 = '8839e1efdf835be08ad1d60bfa99c8c4fdde15c7ef49eda6a8b910575fb699a0'; });
+  bad('arXiv v1 promoted to launch edition', e => { e.findings.model_card_at_release.edition = 'arxiv-v1'; });
+  bad('Git commit promoted to actual release kind', e => { e.findings.repository_release_statement.date_kind = 'actual_model_release'; });
+  bad('arXiv timestamp called public availability', e => { e.findings.arxiv_submission.date_kind = 'public_availability'; });
+  bad('native timestamp changed', e => { e.findings.arxiv_submission.timestamp = '2025-08-05T19:24:38Z'; });
+  bad('precision overstated', e => { e.findings.arxiv_submission.precision = 'millisecond'; });
+  bad('version changed', e => { e.findings.arxiv_submission.version = 'v2'; });
+  bad('quote fabricated', e => { e.findings.arxiv_submission.citation.quote += ' now available at launch'; });
+  bad('empty quote', e => { e.findings.arxiv_submission.citation.quote = ''; });
+  bad('quote is unrelated source text', e => { e.findings.arxiv_submission.citation.quote = 'View PDF'; });
+  bad('receipt hash unbound', e => { e.findings.arxiv_submission.citation.received_byte_sha256 = 'f'.repeat(64); });
+  bad('source ID unbound', e => { e.findings.arxiv_submission.citation.source_id = 'official-launch-announcement'; });
+  bad('arXiv metadata reassigned to other paper', (e, r) => { r.sources[1].requested_url = 'https://arxiv.org/abs/2508.00001'; });
+  bad('duplicate acquisition source', (e, r) => { r.sources[3] = structuredClone(r.sources[1]); });
+  bad('missing source attempt', (e, r) => { r.sources.pop(); });
+  bad('failure made success', (e, r) => { r.sources[0].state = 'observed'; });
+  bad('403 changed to 404 absence lead', (e, r) => { r.sources[0].http_status = 404; });
+  bad('archive query silently widened', (e, r) => { r.sources[3].requested_url += '&from=20200101'; });
+  bad('robots denial ignored', (e, r) => { r.sources[1].robots.allowed = false; });
+  bad('receipt source revision changed', e => { e.acquisition.source_commit = 'f'.repeat(40); });
+  bad('receipt run changed', e => { e.acquisition.run_id = '1'; });
+  bad('run URL changed', e => { e.acquisition.run_url = 'https://example.com/run'; });
+  bad('job changed', e => { e.acquisition.job_id = '1'; });
+  bad('current observation changed', e => { e.acquisition.collected_at = '2025-08-05T00:00:00Z'; });
+  bad('Git blob mismatch', e => { e.github_source.git_blob_sha = 'f'.repeat(40); });
+  bad('raw source changed', () => ({readme: 'altered', gitBlobSha: 'f'.repeat(40)}));
+  bad('Git quote invented', e => { e.findings.repository_release_statement.citation.quote = 'Both models were released at 15:19:49Z'; });
+  bad('Git quotation source swapped', e => { e.findings.repository_card_pointer.citation.source_id = 'arxiv-model-card-record'; });
+  bad('Git statement timestamp changed', e => { e.findings.repository_release_statement.timestamp = '2025-08-05T15:20:35Z'; });
+  bad('signature not verified', e => { e.github_source.signature.verified = false; });
+  bad('date invalid', e => { e.github_source.author_date = '2025-02-30T00:00:00Z'; });
+  bad('mutable pointer claims edition binding', e => { e.findings.repository_card_pointer.edition_binding = 'same_as_current_pdf'; });
+  bad('different card linked', e => { e.findings.repository_card_pointer.linked_url = 'https://openai.com/index/other-model-card'; });
+  bad('unknown release has nonnull value', e => { e.findings.model_release_date.value = '2025-08-05'; });
+  bad('extra unsupported release claim', e => { e.findings.launch_date = '2025-08-05'; });
+  bad('extra hidden evidence field', e => { e.findings.arxiv_submission.citation.inferred = true; });
+  bad('model scope expanded', e => { e.scope.model_ids.push('openai-other'); });
+  bad('AI provenance lost', e => { e.authorship.agent = 'Human researcher'; });
+  bad('human review falsely asserted', e => { e.authorship.human_review = 'performed'; });
+  bad('missing evidence reason erased', e => { e.findings.model_card_at_release.reason = ''; });
+  bad('loop no longer finite', e => { e.stop.cycles = 24; });
+  bad('PDF re-acquisition misrepresented', e => { e.stop.pdf_reacquired = true; });
+  bad('Git metadata and conclusion date both fabricated', e => { e.github_source.committer_date = '2025-08-04T00:00:00Z'; e.findings.repository_release_statement.timestamp = e.github_source.committer_date; });
+  bad('Git signature verification time fabricated', e => { e.github_source.signature.verified_at = '2025-08-04T00:00:00Z'; });
+  bad('arbitrary commit claims same README', e => { e.github_source.commit_sha = 'f'.repeat(40); e.github_source.source_url = 'https://github.com/openai/gpt-oss/blob/' + e.github_source.commit_sha + '/README.md'; });
+  return {checks, invalid_cases: checks - 1};
+}

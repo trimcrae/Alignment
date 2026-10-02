@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "plan_commit": "f31e316a23e5fa571762b778c4c38f5e18ced486",
+  "exposed_connector_artifact_reads": 1,
+  "started_at": "2026-10-02 05:39:30 UTC",
+  "completed_at": "2026-10-02 05:39:30 UTC",
+  "request": {
+    "tool": "github.fetch_file",
+    "repository_full_name": "meta-llama/llama-models",
+    "path": "models/llama4/MODEL_CARD.md",
+    "ref": "0e0b8c519242d5833d8c11bffc1232b77ad7f301",
+    "encoding": "base64"
+  },
+  "observed": {
+    "state": "acquired",
+    "encoding": "base64",
+    "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "file_bytes": 23764,
+    "file_sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+    "display_url": "https://github.com/meta-llama/llama-models/blob/0e0b8c519242d5833d8c11bffc1232b77ad7f301/models/llama4/MODEL_CARD.md",
+    "original_tool_receipt_sha256": "8e0e931fa87de381c1064f05a23d3555286234ca249a20524245ce4032bc83ce",
+    "http_request_count": null,
+    "http_status": null,
+    "http_headers": null,
+    "robots_transport_receipt": null,
+    "transport_scope": "Connector internals unobserved; no raw HTTP or independent robots/status verification claimed"
+  },
+  "stop": {
+    "status": "met",
+    "further_source_reads": false
+  }
+}

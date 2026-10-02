@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "execution": {
+    "source_commit": "b4fa5e647ee78c96272553d8ae66b4b01032d14c",
+    "run_id": "36960889488",
+    "job_name": "acquire",
+    "collected_at": "2026-10-02T03:36:15Z"
+  },
+  "method": {
+    "python": "3.11.16",
+    "pypdf": "6.0.0",
+    "cycle_seconds": 180,
+    "socket_seconds": 12,
+    "response_read_seconds": 25,
+    "max_html_bytes": 2097152,
+    "max_pdf_bytes": 12582912,
+    "max_redirects": 3,
+    "max_pdf_pages": 100,
+    "scope": "One official Gemini Pro page, one unique explicitly labeled model-card pointer; governance/identity spans only, no inference or historical edition assertion"
+  },
+  "sources": [
+    {
+      "id": "official-pro-landing",
+      "requested_url": "https://deepmind.google/models/gemini/pro/",
+      "observed_at": "2026-10-02T03:36:15Z",
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://deepmind.google/models/gemini/pro/",
+        "content_type": "text/html",
+        "applied_byte_limit": 2097152,
+        "last_modified": null,
+        "etag": "\"A_meJA\"",
+        "redirect_chain": [
+          {
+            "url": "https://deepmind.google/models/gemini/pro/",
+            "robots": {
+              "url": "https://deepmind.google/robots.txt",
+              "user_agent": "AlignmentGoogleCard/0.1 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "f43be63c1571009a5f6a1364ef3bf60b48e50db989dbe9f47cc07818796b92f8",
+              "bytes": 69,
+              "allowed": true
+            }
+          }
+        ]
+      },
+      "robots": {
+        "url": "https://deepmind.google/robots.txt",
+        "user_agent": "AlignmentGoogleCard/0.1 (+https://github.com/trimcrae/Alignment)",
+        "status": 200,
+        "sha256": "f43be63c1571009a5f6a1364ef3bf60b48e50db989dbe9f47cc07818796b92f8",
+        "bytes": 69,
+        "allowed": true
+      },
+      "bytes": 32724,
+      "sha256": "7ff785937e09f35781e18f6a429b5603674e434abb48ad43e9ce0a4016bafe39",
+      "kind": "html",
+      "normalized_text_sha256": "d623be537e7fc13787b1ce7d8390129eb9786dec9219546637d3a4eb4ab44d29",
+      "spans": []
+    }
+  ],
+  "selection": {
+    "status": "unknown",
+    "candidates": [],
+    "unique_candidate_urls": [],
+    "reason": "No unique explicit official model-card PDF pointer; no guessed URL, alternative provider or report fallback"
+  },
+  "raw_files": [
+    {
+      "path": "landing.html",
+      "bytes": 32724,
+      "sha256": "7ff785937e09f35781e18f6a429b5603674e434abb48ad43e9ce0a4016bafe39"
+    }
+  ]
+}

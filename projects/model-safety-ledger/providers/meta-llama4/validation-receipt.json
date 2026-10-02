@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "repository": "trimcrae/Alignment",
+  "branch": "codex/usage-sprint-2026-10-01-meta-native-ledger",
+  "draft_pr": "https://github.com/trimcrae/Alignment/pull/9",
+  "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+  "tested_commit": "827825f8a30a3cbf77779b04abb10613081b964e",
+  "final_commit_kind": "docs_receipt_original_CI_log_only",
+  "actual_validation": {
+    "run_id": "36970852710",
+    "job_id": "110724317636",
+    "source_commit": "827825f8a30a3cbf77779b04abb10613081b964e",
+    "status": "completed",
+    "conclusion": "success",
+    "job_started_at": "2026-10-02T05:51:59Z",
+    "job_completed_at": "2026-10-02T05:52:06Z",
+    "runtimes": {
+      "node": "22.23.3",
+      "python": "3.11.16"
+    },
+    "checks": {
+      "node_checks": 81,
+      "node_invalid_cases": 79,
+      "python_cases": 10,
+      "syntax": "passed",
+      "source_Git_SHA1_SHA256_original_base64_and_literal_quotes": "passed",
+      "truthful_summary": "passed",
+      "tracked_tree": "clean"
+    },
+    "original_job_log_sha256": "91c5014b5964499cc745ea41328d5c7b40752829e6f0be8082885cd450b6ff75",
+    "original_job_log_bytes": 24167,
+    "committed_log": "logs/offline-ci-110724317636.log"
+  },
+  "primary_source": {
+    "publisher": "Meta",
+    "repository": "meta-llama/llama-models",
+    "commit": "0e0b8c519242d5833d8c11bffc1232b77ad7f301",
+    "path": "models/llama4/MODEL_CARD.md",
+    "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "file_sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+    "file_bytes": 23764,
+    "exposed_connector_artifact_reads": 1,
+    "original_tool_receipt_sha256": "8e0e931fa87de381c1064f05a23d3555286234ca249a20524245ce4032bc83ce",
+    "original_tool_receipt_bytes": 33163,
+    "literal_UTF8_byte_citations": 14,
+    "transport_internals": "unobserved",
+    "HTTP_request_count": null,
+    "HTTP_status_headers_robots_receipts": "not_exposed",
+    "additional_source_read": false
+  },
+  "source_pins_sha256": {
+    "card": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+    "tool": "8e0e931fa87de381c1064f05a23d3555286234ca249a20524245ce4032bc83ce",
+    "citations": "6ccbf38f9912682a319bad72a4364e42476d9d7c36d982837a2e29ca279bb3ce",
+    "acquisition": "e254f2015dc109ef90613ce8e6f41b986ed7f26ce21a829004d2c83fea4afecf",
+    "plan": "3dad6ab535bf09016def9c142bdd2ce61703bccd721ce064d2909b55c5ce6d5e"
+  },
+  "tested_blob_sha1": {
+    ".github/workflows/meta-native-validate.yml": "ccc3f23a019227f5e1677d677321925fff39380a",
+    "projects/model-safety-ledger/providers/meta-llama4/README.md": "131337c2c8595850210b58afaa14306bc34a0d95",
+    "projects/model-safety-ledger/providers/meta-llama4/acquisition-plan.json": "9a266637df057d010de2ca8cef2b871ac8cad24e",
+    "projects/model-safety-ledger/providers/meta-llama4/core.mjs": "6457f172bd5780fa26b5598528ffe66480eb3678",
+    "projects/model-safety-ledger/providers/meta-llama4/evidence/MODEL_CARD.md": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "projects/model-safety-ledger/providers/meta-llama4/evidence/acquisition.json": "9033d4bebce147196851f631acec441970eadafc",
+    "projects/model-safety-ledger/providers/meta-llama4/evidence/citations.json": "e420cf86d59b94bd55bae27c21cdd2de750ea134",
+    "projects/model-safety-ledger/providers/meta-llama4/evidence/original-tool-receipt.json": "31b57a8651b0738b435a0c92e1719b6b386d947a",
+    "projects/model-safety-ledger/providers/meta-llama4/result.json": "699b3307f9b108eaaed657d138308683b69f0a9e",
+    "projects/model-safety-ledger/providers/meta-llama4/test-source.py": "1132c5968582678ae77d196de1034ed48d86996a",
+    "projects/model-safety-ledger/providers/meta-llama4/test.mjs": "dab165b0db9c39a4d3f4de97426d2dd7d34ddd45",
+    "projects/model-safety-ledger/providers/meta-llama4/validate.mjs": "47e3eb6c5f0ecb9d1f3260a1079b913747a46b3c",
+    "projects/model-safety-ledger/providers/meta-llama4/verify-source.py": "5b92603459935df70016959063e03f5e591660f7"
+  },
+  "result_sha256": "2088c58e5b6af75d234c48d180f4f65c3042b06d43508a0ca85c49e2fc605900",
+  "independent_agent_review": {
+    "reviewer": "OpenAI Codex/GPT-6 alignment_provider_review",
+    "status": "cleared",
+    "human_review": "not_performed",
+    "tested_commit": "827825f8a30a3cbf77779b04abb10613081b964e",
+    "scope": [
+      "exact_primary_bytes",
+      "fourteen_literal_citations",
+      "native_method_family_model_scope",
+      "code",
+      "actual_exact_CI"
+    ],
+    "independent_V8_reproduction": {
+      "checks": 81,
+      "invalid_cases": 79,
+      "node_execution": false
+    },
+    "open_findings": 0
+  },
+  "outcome": {
+    "models": 2,
+    "native_category_records": 3,
+    "method_only_records": 2,
+    "provider_reported_family_assessments": 1,
+    "formal_model_threshold_determinations": 0,
+    "formal_deployment_determinations": 0,
+    "named_framework_binding": "unknown",
+    "framework_version": "unknown",
+    "provider_declared_release_date": "2025-04-05",
+    "independent_release_launch_availability_and_launch_bytes": "unknown",
+    "source_stop": "met"
+  },
+  "remaining_gaps": [
+    "named_versioned_threshold_framework_not_explicitly_bound_in_acquired_card",
+    "six_per_model_threshold_deployment_configuration_slots_unknown",
+    "CBRNE_and_Child_Safety_describe_methods_without_reported_outcomes",
+    "native_category_formal_threshold_relations_unknown",
+    "provider_family_cyber_assertion_is_not_independent_or_model_specific_determination",
+    "provider_declared_release_date_is_not_independently_verified_public_release_or_launch_bytes",
+    "connector_transport_internals_unobserved"
+  ],
+  "next_bounded_task": "Only under a future separate task, vet one distinct accessible official Meta policy/risk artifact if an explicit authoritative pointer and model/framework binding can be established for Scout/Maverick. Preserve native terminology and unknowns; chronology, a heading, generic safeguards or a release-date statement cannot substitute for binding. Stop with the gap if unsupported. Do not reacquire this unchanged card or any completed provider source cycle."
+}

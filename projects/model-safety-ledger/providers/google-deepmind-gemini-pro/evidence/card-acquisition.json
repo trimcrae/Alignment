@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "execution": {
+    "source_commit": "074565c5ad6409e4ce9dad281bdc4d92ac26699d",
+    "run_id": "36962354293",
+    "job_name": "acquire-card",
+    "observed_at": "2026-10-02T03:56:36Z",
+    "completed_at": "2026-10-02T03:56:36Z"
+  },
+  "method": {
+    "stage": "One amended unused HTML-card GET; original landing reused, no redirects, children or PDF",
+    "source_requests": 1,
+    "max_received_bytes": 2097152,
+    "max_decoded_bytes": 2097152,
+    "python": "3.11.16",
+    "cycle_seconds": 180,
+    "socket_seconds": 12,
+    "read_seconds": 25
+  },
+  "discovery": {
+    "selected_landing_receipt_sha256": "88c0a33125de4edd1e66070cecc79c6828c88b5fa661735560c6c3069b058efa",
+    "original_receipt_sha256": "e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef",
+    "exact_anchor": {
+      "href": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+      "text": " View model card ",
+      "aria_label": "",
+      "raw_start_tag": "<a href=https://deepmind.google/models/model-cards/gemini-3-1-pro target=_blank>"
+    },
+    "reused_robots": {
+      "url": "https://deepmind.google/robots.txt",
+      "user_agent": "AlignmentGoogleCard/0.1 (+https://github.com/trimcrae/Alignment)",
+      "status": 200,
+      "sha256": "f43be63c1571009a5f6a1364ef3bf60b48e50db989dbe9f47cc07818796b92f8",
+      "bytes": 69,
+      "allowed": true
+    },
+    "reused_robots_observed_at": "2026-10-02T03:36:15Z"
+  },
+  "source": {
+    "id": "official-html-model-card",
+    "requested_url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+    "state": "not_fetched",
+    "reason": "HTTPError: HTTP Error 302: Found"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "original_receipt_sha256": "e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef",
+  "interpretation_execution": {
+    "source_commit": "b7478cc80940863d69e61b41d4570e1a46989885",
+    "run_id": "36961647451",
+    "job_id": "110696429164",
+    "source_receipt_sha256": "934c91ed1761b6a190ea0daa5b372c447c4a38e35014084c9114ad110d5b7a82"
+  },
+  "received": {
+    "bytes": 32724,
+    "sha256": "7ff785937e09f35781e18f6a429b5603674e434abb48ad43e9ce0a4016bafe39",
+    "content_encoding_header_status": "not_recorded_by_original_collector"
+  },
+  "decoded": {
+    "encoding_basis": "gzip_magic",
+    "content_encoding_header": null,
+    "decoded_bytes": 194458,
+    "decoded_sha256": "12ef024243b34f792eab25c6aaf7a3aceca450685f8487cc866c9885271ab310",
+    "applied_decoded_byte_limit": 2097152
+  },
+  "title": "Gemini 3.1 Pro — Google DeepMind",
+  "all_anchor_count": 141,
+  "eligible_vendor_pdf_pointers": 0,
+  "official_html_card_pointer": {
+    "href": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+    "text": " View model card ",
+    "aria_label": "",
+    "raw_start_tag": "<a href=https://deepmind.google/models/model-cards/gemini-3-1-pro target=_blank>"
+  },
+  "model_information_quote": {
+    "start_char": 8255,
+    "end_char": 8300,
+    "text": "Model information Name 3.1 Pro Status Preview"
+  },
+  "scope_limit": "Landing identity and Preview are current page observations only; this exact HTML card pointer was not acquired in the original cycle."
+}

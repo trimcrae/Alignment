@@ -1,0 +1,197 @@
+﻿2026-10-01T23:58:58.5337126Z Current runner version: '2.337.0'
+2026-10-01T23:58:58.5363223Z ##[group]Runner Image Provisioner
+2026-10-01T23:58:58.5364128Z Hosted Compute Agent
+2026-10-01T23:58:58.5364806Z Version: 20260901.588
+2026-10-01T23:58:58.5365429Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-01T23:58:58.5366135Z Build Date: 2026-09-01T19:56:44Z
+2026-10-01T23:58:58.5366856Z Worker ID: {e0d4f5bd-2e25-4beb-936a-c556c64a4ffb}
+2026-10-01T23:58:58.5367521Z Azure Region: northcentralus
+2026-10-01T23:58:58.5368122Z ##[endgroup]
+2026-10-01T23:58:58.5369565Z ##[group]Operating System
+2026-10-01T23:58:58.5370150Z Ubuntu
+2026-10-01T23:58:58.5370646Z 24.04.5
+2026-10-01T23:58:58.5371402Z LTS
+2026-10-01T23:58:58.5371950Z ##[endgroup]
+2026-10-01T23:58:58.5372485Z ##[group]Runner Image
+2026-10-01T23:58:58.5373042Z Image: ubuntu-24.04
+2026-10-01T23:58:58.5373630Z Version: 20260927.320.1
+2026-10-01T23:58:58.5374767Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-01T23:58:58.5376263Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-01T23:58:58.5377201Z ##[endgroup]
+2026-10-01T23:58:58.5378222Z ##[group]GITHUB_TOKEN Permissions
+2026-10-01T23:58:58.5380892Z Contents: read
+2026-10-01T23:58:58.5381751Z Metadata: read
+2026-10-01T23:58:58.5382274Z ##[endgroup]
+2026-10-01T23:58:58.5384640Z Secret source: Actions
+2026-10-01T23:58:58.5385519Z Cache mode: write
+2026-10-01T23:58:58.5386461Z Prepare workflow directory
+2026-10-01T23:58:58.5713872Z Prepare all required actions
+2026-10-01T23:58:58.5766688Z Getting action download info
+2026-10-01T23:58:58.8252622Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-01T23:58:58.9388560Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-01T23:58:59.1626931Z Complete job name: offline-ledger
+2026-10-01T23:58:59.2403548Z ##[group]Run actions/checkout@v4
+2026-10-01T23:58:59.2404729Z with:
+2026-10-01T23:58:59.2405739Z   persist-credentials: false
+2026-10-01T23:58:59.2406551Z   repository: trimcrae/Alignment
+2026-10-01T23:58:59.2413235Z   token: ***
+2026-10-01T23:58:59.2413930Z   ssh-strict: true
+2026-10-01T23:58:59.2414641Z   ssh-user: git
+2026-10-01T23:58:59.2415281Z   clean: true
+2026-10-01T23:58:59.2415967Z   sparse-checkout-cone-mode: true
+2026-10-01T23:58:59.2416783Z   fetch-depth: 1
+2026-10-01T23:58:59.2417418Z   fetch-tags: false
+2026-10-01T23:58:59.2418082Z   show-progress: true
+2026-10-01T23:58:59.2418681Z   lfs: false
+2026-10-01T23:58:59.2419240Z   submodules: false
+2026-10-01T23:58:59.2419852Z   set-safe-directory: true
+2026-10-01T23:58:59.2420634Z   allow-unsafe-pr-checkout: false
+2026-10-01T23:58:59.2422189Z ##[endgroup]
+2026-10-01T23:58:59.3445745Z Syncing repository: trimcrae/Alignment
+2026-10-01T23:58:59.3448515Z ##[group]Getting Git version info
+2026-10-01T23:58:59.3449940Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-01T23:58:59.3451738Z [command]/usr/bin/git version
+2026-10-01T23:58:59.3514540Z git version 2.55.0
+2026-10-01T23:58:59.3533147Z ##[endgroup]
+2026-10-01T23:58:59.3547953Z Temporarily overriding HOME='/home/runner/work/_temp/99dd3e68-897d-4be0-9008-b2886e3748d5' before making global git config changes
+2026-10-01T23:58:59.3550139Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-01T23:58:59.3552206Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-01T23:58:59.3603436Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-01T23:58:59.3608465Z ##[group]Initializing the repository
+2026-10-01T23:58:59.3611843Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-01T23:58:59.3703608Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-01T23:58:59.3706222Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-01T23:58:59.3707310Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-01T23:58:59.3708442Z hint: call:
+2026-10-01T23:58:59.3708899Z hint:
+2026-10-01T23:58:59.3709523Z hint: 	git config --global init.defaultBranch <name>
+2026-10-01T23:58:59.3710171Z hint:
+2026-10-01T23:58:59.3710797Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-01T23:58:59.3712015Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-01T23:58:59.3712809Z hint:
+2026-10-01T23:58:59.3713277Z hint: 	git branch -m <name>
+2026-10-01T23:58:59.3713805Z hint:
+2026-10-01T23:58:59.3714469Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-01T23:58:59.3715490Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-01T23:58:59.3733359Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-01T23:58:59.3777871Z ##[endgroup]
+2026-10-01T23:58:59.3779480Z ##[group]Disabling automatic garbage collection
+2026-10-01T23:58:59.3781211Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-01T23:58:59.3814550Z ##[endgroup]
+2026-10-01T23:58:59.3816009Z ##[group]Setting up auth
+2026-10-01T23:58:59.3829263Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-01T23:58:59.3859546Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-01T23:58:59.4184528Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-01T23:58:59.4219777Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-01T23:58:59.4435240Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-01T23:58:59.4465862Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-01T23:58:59.4648842Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-01T23:58:59.4687811Z ##[endgroup]
+2026-10-01T23:58:59.4689049Z ##[group]Fetching the repository
+2026-10-01T23:58:59.4697982Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4d41c5c4fd287df7d7a356a9c298815ee6a3b29d:refs/remotes/origin/codex/usage-sprint-2026-10-01-model-safety-ledger
+2026-10-01T23:59:00.0294884Z From https://github.com/trimcrae/Alignment
+2026-10-01T23:59:00.0297002Z  * [new ref]         4d41c5c4fd287df7d7a356a9c298815ee6a3b29d -> origin/codex/usage-sprint-2026-10-01-model-safety-ledger
+2026-10-01T23:59:00.0303530Z ##[endgroup]
+2026-10-01T23:59:00.0305278Z ##[group]Determining the checkout info
+2026-10-01T23:59:00.0307000Z ##[endgroup]
+2026-10-01T23:59:00.0308105Z [command]/usr/bin/git sparse-checkout disable
+2026-10-01T23:59:00.0365801Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-01T23:59:00.0405591Z ##[group]Checking out the ref
+2026-10-01T23:59:00.0409143Z [command]/usr/bin/git checkout --progress --force -B codex/usage-sprint-2026-10-01-model-safety-ledger refs/remotes/origin/codex/usage-sprint-2026-10-01-model-safety-ledger
+2026-10-01T23:59:00.0683603Z Switched to a new branch 'codex/usage-sprint-2026-10-01-model-safety-ledger'
+2026-10-01T23:59:00.0692389Z branch 'codex/usage-sprint-2026-10-01-model-safety-ledger' set up to track 'origin/codex/usage-sprint-2026-10-01-model-safety-ledger'.
+2026-10-01T23:59:00.0698661Z ##[endgroup]
+2026-10-01T23:59:00.0737568Z [command]/usr/bin/git log -1 --format=%H
+2026-10-01T23:59:00.0761460Z 4d41c5c4fd287df7d7a356a9c298815ee6a3b29d
+2026-10-01T23:59:00.0770283Z ##[group]Removing auth
+2026-10-01T23:59:00.0774505Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-01T23:59:00.0804315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-01T23:59:00.0994499Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-01T23:59:00.1022011Z http.https://github.com/.extraheader
+2026-10-01T23:59:00.1029278Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-01T23:59:00.1067549Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-01T23:59:00.1254071Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-01T23:59:00.1283168Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-01T23:59:00.1468859Z ##[endgroup]
+2026-10-01T23:59:00.1823830Z ##[group]Run actions/setup-node@v4
+2026-10-01T23:59:00.1825119Z with:
+2026-10-01T23:59:00.1826115Z   node-version: 22
+2026-10-01T23:59:00.1827145Z   always-auth: false
+2026-10-01T23:59:00.1828190Z   check-latest: false
+2026-10-01T23:59:00.1838719Z   token: ***
+2026-10-01T23:59:00.1839751Z ##[endgroup]
+2026-10-01T23:59:00.3287947Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-01T23:59:00.3292732Z (node:2368) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-01T23:59:00.3295737Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-01T23:59:00.3298153Z ##[group]Environment details
+2026-10-01T23:59:00.7086446Z node: v22.23.3
+2026-10-01T23:59:00.7086965Z npm: 10.9.9
+2026-10-01T23:59:00.7087410Z yarn: 1.22.22
+2026-10-01T23:59:00.7088357Z ##[endgroup]
+2026-10-01T23:59:00.7206266Z ##[group]Run node --check projects/model-safety-ledger/ledger-core.mjs
+2026-10-01T23:59:00.7207094Z [36;1mnode --check projects/model-safety-ledger/ledger-core.mjs[0m
+2026-10-01T23:59:00.7207665Z [36;1mnode --check projects/model-safety-ledger/ledger-tests.mjs[0m
+2026-10-01T23:59:00.7208291Z [36;1mnode --check projects/model-safety-ledger/ledger-tool.mjs[0m
+2026-10-01T23:59:00.7409141Z shell: /usr/bin/bash -e {0}
+2026-10-01T23:59:00.7409746Z ##[endgroup]
+2026-10-01T23:59:00.8369578Z ##[group]Run node projects/model-safety-ledger/ledger-tool.mjs validate
+2026-10-01T23:59:00.8370309Z [36;1mnode projects/model-safety-ledger/ledger-tool.mjs validate[0m
+2026-10-01T23:59:00.8413560Z shell: /usr/bin/bash -e {0}
+2026-10-01T23:59:00.8414050Z ##[endgroup]
+2026-10-01T23:59:00.8842831Z {
+2026-10-01T23:59:00.8843666Z   "valid": true,
+2026-10-01T23:59:00.8844378Z   "errors": [],
+2026-10-01T23:59:00.8844962Z   "counts": {
+2026-10-01T23:59:00.8845585Z     "models": 2,
+2026-10-01T23:59:00.8846164Z     "observed_artifacts": 2,
+2026-10-01T23:59:00.8847000Z     "provider_reported_determinations": 5,
+2026-10-01T23:59:00.8847771Z     "unknown_determinations": 5,
+2026-10-01T23:59:00.8848301Z     "unknown_release_dates": 2,
+2026-10-01T23:59:00.8848950Z     "unknown_release_artifact_states": 2,
+2026-10-01T23:59:00.8850030Z     "evidence_scope": "Provider statements transcribed; no independent capability assessment or human review"
+2026-10-01T23:59:00.8851507Z   }
+2026-10-01T23:59:00.8852220Z }
+2026-10-01T23:59:00.8907214Z ##[group]Run node projects/model-safety-ledger/ledger-tool.mjs test
+2026-10-01T23:59:00.8907861Z [36;1mnode projects/model-safety-ledger/ledger-tool.mjs test[0m
+2026-10-01T23:59:00.8950131Z shell: /usr/bin/bash -e {0}
+2026-10-01T23:59:00.8950573Z ##[endgroup]
+2026-10-01T23:59:00.9640519Z {
+2026-10-01T23:59:00.9641474Z   "passed": 80,
+2026-10-01T23:59:00.9641954Z   "invalid_cases": 76,
+2026-10-01T23:59:00.9642648Z   "evidence": "Offline consistency checks only; no model inference or human review"
+2026-10-01T23:59:00.9643379Z }
+2026-10-01T23:59:00.9710195Z ##[group]Run node projects/model-safety-ledger/ledger-tool.mjs summary
+2026-10-01T23:59:00.9710845Z [36;1mnode projects/model-safety-ledger/ledger-tool.mjs summary[0m
+2026-10-01T23:59:00.9753368Z shell: /usr/bin/bash -e {0}
+2026-10-01T23:59:00.9753892Z ##[endgroup]
+2026-10-01T23:59:01.0168438Z {
+2026-10-01T23:59:01.0169131Z   "models": 2,
+2026-10-01T23:59:01.0169716Z   "observed_artifacts": 2,
+2026-10-01T23:59:01.0170690Z   "provider_reported_determinations": 5,
+2026-10-01T23:59:01.0171851Z   "unknown_determinations": 5,
+2026-10-01T23:59:01.0172674Z   "unknown_release_dates": 2,
+2026-10-01T23:59:01.0173473Z   "unknown_release_artifact_states": 2,
+2026-10-01T23:59:01.0174882Z   "evidence_scope": "Provider statements transcribed; no independent capability assessment or human review"
+2026-10-01T23:59:01.0176132Z }
+2026-10-01T23:59:01.0238153Z ##[group]Run git diff --exit-code
+2026-10-01T23:59:01.0238607Z [36;1mgit diff --exit-code[0m
+2026-10-01T23:59:01.0239047Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-01T23:59:01.0280697Z shell: /usr/bin/bash -e {0}
+2026-10-01T23:59:01.0281335Z ##[endgroup]
+2026-10-01T23:59:01.0566942Z Post job cleanup.
+2026-10-01T23:59:01.1808298Z (node:2460) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-01T23:59:01.1810187Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-01T23:59:01.1969012Z Post job cleanup.
+2026-10-01T23:59:01.2832578Z [command]/usr/bin/git version
+2026-10-01T23:59:01.2876353Z git version 2.55.0
+2026-10-01T23:59:01.2916761Z Temporarily overriding HOME='/home/runner/work/_temp/c4b13866-c9e9-4d7e-aac5-4e2fa693b032' before making global git config changes
+2026-10-01T23:59:01.2917935Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-01T23:59:01.2923806Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-01T23:59:01.2965080Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-01T23:59:01.2997561Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-01T23:59:01.3221705Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-01T23:59:01.3255816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-01T23:59:01.3489081Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-01T23:59:01.3513325Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-01T23:59:01.3889466Z Cleaning up orphan processes
+2026-10-01T23:59:01.4187517Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

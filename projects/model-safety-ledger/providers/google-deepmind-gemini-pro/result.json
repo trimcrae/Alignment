@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "kind": "provider-primary-input-gap",
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "provider": "Google DeepMind",
+  "observation": {
+    "official_landing_url": "https://deepmind.google/models/gemini/pro/",
+    "observed_at": "2026-10-02T03:36:15Z",
+    "page_title": "Gemini 3.1 Pro — Google DeepMind",
+    "displayed_name": "3.1 Pro",
+    "displayed_status": "Preview",
+    "scope": "received_landing_page_only",
+    "context_reference": "landing-selected.json:model_information_quote"
+  },
+  "source_attempts": {
+    "original_landing_gets": 1,
+    "original_robots_gets": 1,
+    "amended_card_get_attempts": 1,
+    "pdf_gets": 0,
+    "landing_refetches": 0,
+    "child_gets": 0,
+    "redirects_followed": 0,
+    "card_body_acquired": false
+  },
+  "gap": {
+    "status": "missing_primary_evidence",
+    "reason_code": "exact_card_html_302_not_followed",
+    "official_card_pointer": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+    "card_request_state": "not_fetched",
+    "observed_failure": "HTTPError: HTTP Error 302: Found",
+    "redirect_target": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "location_header_not_retained"
+    },
+    "card_absence_claimed": false
+  },
+  "evidence": {
+    "original_source_commit": "b4fa5e647ee78c96272553d8ae66b4b01032d14c",
+    "original_run_id": "36960889488",
+    "original_job_id": "110694095517",
+    "amended_source_commit": "074565c5ad6409e4ce9dad281bdc4d92ac26699d",
+    "amended_run_id": "36962354293",
+    "amended_job_id": "110698571380",
+    "original_receipt_sha256": "e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef",
+    "landing_selected_sha256": "88c0a33125de4edd1e66070cecc79c6828c88b5fa661735560c6c3069b058efa",
+    "card_receipt_sha256": "d0ce5a74bd26487261df721757f8060c2cea96d1394f0fa0488c6bca3eb35923",
+    "landing_received_sha256": "7ff785937e09f35781e18f6a429b5603674e434abb48ad43e9ce0a4016bafe39",
+    "robots_received_sha256": "f43be63c1571009a5f6a1364ef3bf60b48e50db989dbe9f47cc07818796b92f8",
+    "landing_decoded_sha256": "12ef024243b34f792eab25c6aaf7a3aceca450685f8487cc866c9885271ab310"
+  },
+  "interpretation_repair": {
+    "original_defect": "gzip_bytes_decoded_directly_as_utf8",
+    "corrected_from": "retained_original_received_bytes",
+    "content_encoding_header": "not_recorded_by_original_collector",
+    "zero_original_anchors_used_as_source_absence": false
+  },
+  "determinations": {
+    "actual_card_model_identity": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "evaluated_configuration": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "native_framework_name": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "native_framework_version": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "provider_native_capability_determination": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "deployment_safeguard_level": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "card_not_acquired"
+    },
+    "actual_release_timing": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "no_release_time_evidence"
+    },
+    "launch_edition_bytes": {
+      "status": "unknown",
+      "value": null,
+      "reason_code": "no_launch_byte_identity_evidence"
+    }
+  },
+  "native_domain_records": [],
+  "scope_limits": {
+    "model_inference_performed": false,
+    "independent_safety_verdict": false,
+    "framework_scale_mapping": false,
+    "historical_policy_applicability_verified": false,
+    "launch_bytes_verified": false,
+    "unknown_means_absent": false
+  },
+  "stop": {
+    "status": "met",
+    "reason_code": "one_exact_card_attempt_302_refused",
+    "further_source_acquisition": false
+  }
+}

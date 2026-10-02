@@ -1,0 +1,29 @@
+name: Model safety primary artifact acquisition
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: model-safety-acquire-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  acquire:
+    if: github.ref == 'refs/heads/codex/usage-sprint-2026-10-01-model-safety-ledger'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PDF extraction dependency
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Acquire bounded public primary artifacts
+        run: python3 projects/model-safety-ledger/collect-primary.py
+      - name: Confirm acquisition preserved repository inputs
+        if: ${{ !cancelled() }}
+        run: |
+          git status --short
+          git diff --exit-code

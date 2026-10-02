@@ -1,0 +1,51 @@
+# Produced by OpenAI Codex (AI agent); no network source collection in this workflow.
+name: Anthropic native ledger validation
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-anthropic-native-ledger]
+    paths:
+      - .github/workflows/anthropic-native-ledger.yml
+      - projects/model-safety-ledger/providers/anthropic-claude4/core.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py
+      - projects/model-safety-ledger/providers/anthropic-claude4/ledger.json
+      - projects/model-safety-ledger/providers/anthropic-claude4/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline-native-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PDF parser for offline mocks
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Syntax and compilation
+        run: |
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/core.mjs
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs
+          python3 -c "import ast,pathlib; [ast.parse(pathlib.Path(p).read_text()) for p in ['projects/model-safety-ledger/providers/anthropic-claude4/collect.py','projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py']]"
+      - name: Validate selected primary evidence
+        run: node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs validate
+      - name: Native attribution and unknown regressions
+        run: node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs test
+      - name: Direct PDF limit and source boundary regressions
+        run: python3 projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py
+      - name: Summarize scoped evidence and gaps
+        run: node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs summary
+      - name: Confirm tracked inputs stayed read-only
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-01T22:38:58Z",
+  "provenance": {
+    "author": "OpenAI Codex (AI agent)",
+    "session": "usage-sprint-2026-10-01",
+    "repository": "trimcrae/Alignment",
+    "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+    "prior_triage_commit": "7e9d49081993d029d1730dca8b95fc79c0e1623e",
+    "verification": "GitHub API receipts and pinned source read; reproductions were not rerun."
+  },
+  "resources": [
+    {
+      "key": "agentharm-issue",
+      "kind": "issue",
+      "repository": "UKGovernmentBEIS/inspect_evals",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/inspect_evals/issues/2439",
+      "html_url": "https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 2439,
+        "title": "[Bug] AgentHarm benign file tools fail outside the package working directory",
+        "state": "open",
+        "state_reason": null,
+        "updated_at": "2026-09-14T16:35:43Z",
+        "closed_at": null
+      }
+    },
+    {
+      "key": "agentharm-pr",
+      "kind": "pull-request",
+      "repository": "UKGovernmentBEIS/inspect_evals",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/inspect_evals/pulls/2455",
+      "html_url": "https://github.com/UKGovernmentBEIS/inspect_evals/pull/2455",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 2455,
+        "title": "fix(agentharm): resolve benchmark content paths relative to the eval package",
+        "state": "open",
+        "draft": false,
+        "merged": false,
+        "merged_at": null,
+        "updated_at": "2026-09-16T21:13:23Z",
+        "closed_at": null,
+        "base_ref": "main",
+        "base_sha": "2999eaadad35edebada59bac4a687793c11d1c3c",
+        "head_sha": "30827bfeedf716841bed0127dc52deb11f071665",
+        "merge_commit_sha": null
+      }
+    },
+    {
+      "key": "controlarena-issue",
+      "kind": "issue",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/issues/878",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/issues/878",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 878,
+        "title": "[Bug]: SAE side-task scorer turns an unparseable judge result into success",
+        "state": "closed",
+        "state_reason": "completed",
+        "updated_at": "2026-09-28T10:17:55Z",
+        "closed_at": "2026-09-28T10:17:55Z"
+      }
+    },
+    {
+      "key": "controlarena-pr",
+      "kind": "pull-request",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/pulls/880",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/pull/880",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 880,
+        "title": "fix: preserve SAE side-task judge failures",
+        "state": "closed",
+        "draft": false,
+        "merged": true,
+        "merged_at": "2026-09-28T10:13:26Z",
+        "updated_at": "2026-09-28T10:13:26Z",
+        "closed_at": "2026-09-28T10:13:26Z",
+        "base_ref": "rogan-inglis/fix/sae-judge-noanswer",
+        "base_sha": "70e5e8b81fc672fd1a523410d26d1459e65e9f07",
+        "head_sha": "14ee2152788b56b24bca1bf13a8ce535abf41e86",
+        "merge_commit_sha": "f37df2de03d944e9765f1076cdb8c21f82adebf0"
+      }
+    },
+    {
+      "key": "controlarena-main-pr",
+      "kind": "pull-request",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/pulls/883",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/pull/883",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 883,
+        "title": "fix: preserve SAE side-task judge failures",
+        "state": "closed",
+        "draft": false,
+        "merged": true,
+        "merged_at": "2026-09-28T10:17:54Z",
+        "updated_at": "2026-09-28T10:17:57Z",
+        "closed_at": "2026-09-28T10:17:54Z",
+        "base_ref": "main",
+        "base_sha": "70e5e8b81fc672fd1a523410d26d1459e65e9f07",
+        "head_sha": "a3e50f96598b17d07d62eefb31362f956d9090db",
+        "merge_commit_sha": "5792fe40f7ee7fbf4537b79588872e28fd5dbce3"
+      }
+    },
+    {
+      "key": "petri-rescore-issue",
+      "kind": "issue",
+      "repository": "meridianlabs-ai/inspect_petri",
+      "api_url": "https://api.github.com/repos/meridianlabs-ai/inspect_petri/issues/159",
+      "html_url": "https://github.com/meridianlabs-ai/inspect_petri/issues/159",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 159,
+        "title": "Documented inspect score command cannot resolve audit_judge (registered as scanner)",
+        "state": "open",
+        "state_reason": null,
+        "updated_at": "2026-09-16T00:04:44Z",
+        "closed_at": null
+      }
+    },
+    {
+      "key": "petri-rescore-pr",
+      "kind": "pull-request",
+      "repository": "meridianlabs-ai/inspect_petri",
+      "api_url": "https://api.github.com/repos/meridianlabs-ai/inspect_petri/pulls/160",
+      "html_url": "https://github.com/meridianlabs-ai/inspect_petri/pull/160",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 160,
+        "title": "docs: fix rescoring instructions with tested Scout workflow",
+        "state": "open",
+        "draft": true,
+        "merged": false,
+        "merged_at": null,
+        "updated_at": "2026-09-18T00:20:26Z",
+        "closed_at": null,
+        "base_ref": "main",
+        "base_sha": "e199ec1abcd10267c60cd7eb03035a76567d9e52",
+        "head_sha": "8b1f2925dd116bda752ddcecc2ca0865b57ed6d7",
+        "merge_commit_sha": null
+      }
+    },
+    {
+      "key": "mask-existing-pr",
+      "kind": "pull-request",
+      "repository": "UKGovernmentBEIS/inspect_evals",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/inspect_evals/pulls/2104",
+      "html_url": "https://github.com/UKGovernmentBEIS/inspect_evals/pull/2104",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 2104,
+        "title": "fix(mask): make honesty_at_n select how many statements are classified",
+        "state": "open",
+        "draft": false,
+        "merged": false,
+        "merged_at": null,
+        "updated_at": "2026-09-16T01:32:41Z",
+        "closed_at": null,
+        "base_ref": "main",
+        "base_sha": "152d4971a4b1ad20aa1d91206f31c3dc0aae4ced",
+        "head_sha": "793ad5fd6cb7e02afcaef43952c0610a465fded7",
+        "merge_commit_sha": null
+      }
+    },
+    {
+      "key": "petri-value-issue",
+      "kind": "issue",
+      "repository": "meridianlabs-ai/inspect_petri",
+      "api_url": "https://api.github.com/repos/meridianlabs-ai/inspect_petri/issues/161",
+      "html_url": "https://github.com/meridianlabs-ai/inspect_petri/issues/161",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 161,
+        "title": "Custom judge dimension named value is accepted but fails after scoring",
+        "state": "open",
+        "state_reason": null,
+        "updated_at": "2026-09-18T14:37:19Z",
+        "closed_at": null
+      }
+    },
+    {
+      "key": "inspectrobots-local-issue",
+      "kind": "issue",
+      "repository": "trimcrae/Alignment",
+      "api_url": "https://api.github.com/repos/trimcrae/Alignment/issues/2",
+      "html_url": "https://github.com/trimcrae/Alignment/issues/2",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "number": 2,
+        "title": "Inspect Robots: file upstream issue for eval() losing the whole run's log when a scorer raises",
+        "state": "open",
+        "state_reason": null,
+        "updated_at": "2026-09-19T20:49:34Z",
+        "closed_at": null
+      }
+    },
+    {
+      "key": "controlarena-confirmation",
+      "kind": "review",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/pulls/880/reviews",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/pull/880#pullrequestreview-5337096299",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "id": 5337096299,
+        "pull_number": 880,
+        "state": "APPROVED",
+        "author": "Rogan-Inglis",
+        "author_association": "COLLABORATOR",
+        "submitted_at": "2026-09-28T10:13:22Z",
+        "commit_id": "14ee2152788b56b24bca1bf13a8ce535abf41e86",
+        "quote": "Thanks — confirmed the bug and the fix. Merging into an intermediate branch so I can follow up with some small changes (trimming the tests to the verdict-inversion cases and moving them into the setting's `tests/` directory) before it goes to main."
+      }
+    },
+    {
+      "key": "controlarena-main-ancestry",
+      "kind": "comparison",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/compare/5792fe40f7ee7fbf4537b79588872e28fd5dbce3...173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/compare/5792fe40f7ee7fbf4537b79588872e28fd5dbce3...173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "base_sha": "5792fe40f7ee7fbf4537b79588872e28fd5dbce3",
+        "head_sha": "173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+        "status": "ahead",
+        "ahead_by": 9,
+        "behind_by": 0,
+        "merge_base_sha": "5792fe40f7ee7fbf4537b79588872e28fd5dbce3"
+      }
+    },
+    {
+      "key": "controlarena-main-source",
+      "kind": "file",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/contents/control_arena/settings/sae_interp_sabotage/scorers.py?ref=173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/blob/173c872f04ee661c7e1cf37f4fc610e0791ef0da/control_arena/settings/sae_interp_sabotage/scorers.py",
+      "observed_at": "2026-10-01T22:29:18Z",
+      "data": {
+        "commit_sha": "173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+        "path": "control_arena/settings/sae_interp_sabotage/scorers.py",
+        "blob_sha": "38231a2016a29301c9d22854414f61e732dd91c2",
+        "excerpt": "    response = await llm_score(scorer_prompt, model)\n\n    # Swap valid verdicts, since the agent is trying to hide the answer; leave NOANSWER alone.\n    if response.value == CORRECT:\n        response.value = INCORRECT\n    elif response.value == INCORRECT:\n        response.value = CORRECT\n    return response"
+      }
+    },
+    {
+      "key": "controlarena-repository",
+      "kind": "repository",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena",
+      "observed_at": "2026-10-01T22:35:54Z",
+      "data": {
+        "default_branch": "main"
+      }
+    },
+    {
+      "key": "controlarena-main-head",
+      "kind": "branch",
+      "repository": "UKGovernmentBEIS/control-arena",
+      "api_url": "https://api.github.com/repos/UKGovernmentBEIS/control-arena/branches/main",
+      "html_url": "https://github.com/UKGovernmentBEIS/control-arena/tree/main",
+      "observed_at": "2026-10-01T22:38:58Z",
+      "data": {
+        "name": "main",
+        "head_sha": "173c872f04ee661c7e1cf37f4fc610e0791ef0da"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "agentharm-benign-cwd",
+      "title": "AgentHarm benign content paths depend on working directory",
+      "scope": "reported",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/blob/7e9d49081993d029d1730dca8b95fc79c0e1623e/projects/eval-integrity/findings/2026-09-17-agentharm-fix-validation.md",
+      "issue": "agentharm-issue",
+      "pull_requests": [
+        "agentharm-pr"
+      ],
+      "release_status": "not-checked",
+      "next_action": "Owner can review existing PR; wait for upstream response. Do not claim merge or current regression execution."
+    },
+    {
+      "id": "controlarena-judge-failure",
+      "title": "SAE side-task scorer credits an unparseable judge verdict",
+      "scope": "reported",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/blob/7e9d49081993d029d1730dca8b95fc79c0e1623e/projects/eval-integrity/findings/2026-09-17-controlarena-fix-pr.md",
+      "issue": "controlarena-issue",
+      "pull_requests": [
+        "controlarena-pr",
+        "controlarena-main-pr"
+      ],
+      "confirmation": "controlarena-confirmation",
+      "default_branch": {
+        "name": "main",
+        "pull_request": "controlarena-main-pr",
+        "ancestry": "controlarena-main-ancestry",
+        "source": "controlarena-main-source",
+        "repository": "controlarena-repository",
+        "head": "controlarena-main-head"
+      },
+      "release_status": "not-checked",
+      "next_action": "The one-finding maintainer calibration gate is met for this defect. Retain the NOANSWER aggregation caveat; check release inclusion separately before claiming a released fix."
+    },
+    {
+      "id": "petri-rescoring-registration",
+      "title": "Documented rescoring command requests a scorer registered as a scanner",
+      "scope": "reported",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/blob/7e9d49081993d029d1730dca8b95fc79c0e1623e/projects/eval-integrity/findings/2026-09-17-petri-rescoring-validation.md",
+      "issue": "petri-rescore-issue",
+      "pull_requests": [
+        "petri-rescore-pr"
+      ],
+      "release_status": "not-checked",
+      "next_action": "Owner reviews the draft; locked-dependency CI and Quarto rendering still need execution before readiness."
+    },
+    {
+      "id": "mask-honesty-prefix",
+      "title": "MASK honesty@1 incorrectly classifies all responses",
+      "scope": "duplicate",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/blob/7e9d49081993d029d1730dca8b95fc79c0e1623e/projects/eval-integrity/findings/2026-09-17-mask-revalidation.md",
+      "issue": null,
+      "pull_requests": [
+        "mask-existing-pr"
+      ],
+      "release_status": "not-checked",
+      "next_action": "Track the existing upstream PR. Do not open a duplicate report."
+    },
+    {
+      "id": "petri-custom-value-dimension",
+      "title": "Custom judge dimension named value fails after scoring",
+      "scope": "reported",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/blob/7e9d49081993d029d1730dca8b95fc79c0e1623e/projects/eval-integrity/findings/2026-09-18-petri-custom-value-dimension.md",
+      "issue": "petri-value-issue",
+      "pull_requests": [],
+      "release_status": "not-checked",
+      "next_action": "Await upstream response; preserve original reproduction limitations."
+    },
+    {
+      "id": "inspectrobots-scorer-log-loss",
+      "title": "A raising scorer loses the Inspect Robots run log",
+      "scope": "pending-owner-review",
+      "prior_artifact": "https://github.com/trimcrae/Alignment/issues/2",
+      "issue": "inspectrobots-local-issue",
+      "pull_requests": [],
+      "release_status": "not-checked",
+      "next_action": "Owner reviews the existing local issue draft and verified patch. No new upstream report was sent during this sprint."
+    }
+  ]
+}

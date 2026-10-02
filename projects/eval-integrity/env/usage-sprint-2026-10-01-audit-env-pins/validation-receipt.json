@@ -1,0 +1,122 @@
+{
+  "schema": "audit-env-pins-validation-v1",
+  "author": {
+    "identity": "OpenAI Codex",
+    "kind": "AI",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "PENDING"
+  },
+  "repository": "trimcrae/Alignment",
+  "publication": {
+    "policy": "DRAFT_PR_ONLY_NO_MERGE",
+    "pr": 11,
+    "url": "https://github.com/trimcrae/Alignment/pull/11",
+    "branch": "codex/usage-sprint-2026-10-01-audit-env-pins",
+    "main_unchanged_at_observation": "c79d38e9e49d9c2fd133b6c4faf6412760089afe"
+  },
+  "primary_source": {
+    "path": "projects/eval-integrity/env/setup-audit-env.sh",
+    "commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+    "git_blob": "b976c94e104274876257832224bb7bf53995f0e8",
+    "verification": "EXACT_GIT_SOURCE_BOUND_IN_EXECUTED_FIXTURE",
+    "external_source_acquisition": "NONE"
+  },
+  "tested_source": {
+    "commit": "1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae",
+    "tree": "627a234d5abbc24698e5001c3bdba594eb623163",
+    "blobs": {
+      "projects/eval-integrity/env/setup-audit-env.sh": "d4c9d4d8b4759d7fb2c09e5a2473a5eef2e638e2",
+      "projects/eval-integrity/env/test_audit_env_pins.py": "a9669343bbc8a9593d66ec0d1feabac322697cf2",
+      ".github/workflows/audit-env-pins.yml": "dab636322d2b4c518b96aac2631f8d43b8bb0cc5"
+    }
+  },
+  "actual_ci": {
+    "run": 37001446934,
+    "job": 110819822258,
+    "url": "https://github.com/trimcrae/Alignment/actions/runs/37001446934",
+    "event": "pull_request",
+    "attempt": 1,
+    "status": "COMPLETED",
+    "conclusion": "SUCCESS",
+    "head": "1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae",
+    "actual_checkout": "b32677f473b4d6a9adb7ff57d741926faed5b51c",
+    "actual_checkout_tree": "627a234d5abbc24698e5001c3bdba594eb623163",
+    "actual_checkout_parents": [
+      "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+      "1d7eb0ac1b39ca603d56b9e848dc8d09789da0ae"
+    ],
+    "runtimes": {
+      "bash": "5.2.21",
+      "git": "2.55.0",
+      "python": "3.12.3"
+    },
+    "tests": {
+      "total": 31,
+      "original_helper_defect_witnesses": 2,
+      "prior_repair_defect_witnesses": 1,
+      "final_repaired_checks": 28,
+      "elapsed_seconds": 3.455,
+      "result": "OK"
+    },
+    "other_executed_checks": [
+      "Full original/repaired Bash syntax",
+      "Original and prior repaired Git source blob binding",
+      "Exact setup prefix/tail and all 15 pin declarations unchanged",
+      "Clean tracked checkout"
+    ],
+    "original_transcript": {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/final-ci.log",
+      "utf8_bytes": 19815,
+      "sha256": "290336141523e861e6a436070a4c1155bbc2a677e445924a892e42ce5fc23400"
+    }
+  },
+  "prior_actual_ci": {
+    "run": 37000800204,
+    "job": 110817801317,
+    "url": "https://github.com/trimcrae/Alignment/actions/runs/37000800204",
+    "head": "61ddfd3722a1fd163a3f33e0146155f5bb7110ca",
+    "status": "COMPLETED",
+    "conclusion": "SUCCESS",
+    "actual_checkout": "14c500909fa7a1269d72829957a5b323872b3cfe",
+    "tree": "f67f565fe8e459b2f26a87013e7754e03fc697c0",
+    "tests": 27,
+    "elapsed_seconds": 1.281,
+    "limitation": "Ordinary dirty-state controls did not cover masking index flags; final actual source-bound prior-helper witness demonstrates that repair gap. This run was successful, not a baseline/environment failure.",
+    "original_transcript": {
+      "path": "projects/eval-integrity/env/usage-sprint-2026-10-01-audit-env-pins/initial-ci.log",
+      "utf8_bytes": 18971,
+      "sha256": "cf509e2417c4e3b35a4ef4a93fc15574e310d785a1ffa57998e8eeb0e1853de3"
+    }
+  },
+  "review": {
+    "independent_ai_reviewer": "/root/learning_scout",
+    "completed_phases": [
+      "Source",
+      "Methods",
+      "Actual CI",
+      "Original transcripts",
+      "Tested Git tree"
+    ],
+    "root_review": "Required before final branch handoff",
+    "human_review": "PENDING; no human-review claim"
+  },
+  "preservation": {
+    "original_non_setup_file_blobs_unchanged": 116,
+    "literal_pin_declarations_unchanged": 15,
+    "original_setup_mode": "100755",
+    "new_setup_mode": "100755",
+    "original_setup_prefix_and_installation_reproduction_tail": "BYTE_IDENTICAL",
+    "scientific_findings_sources_provider_ledgers": "UNCHANGED",
+    "existing_checkout_policy": "Read-only acceptance or refusal; no reset, checkout, fetch, flag clearing, config rewrite or cleanup on existing paths"
+  },
+  "limitations": [
+    "Real Bash/Git in temporary Linux fixtures; no browser, Node, model or scientific evaluation claims",
+    "Fixtures restrict Git transport to local files and never invoke real uv/pip installation",
+    "Full setup was executed only through a deliberate first-target refusal before installation",
+    "Configured origin string and literal abbreviated commit pin are checked; remote ownership/transport/dependency reproducibility are not authenticated",
+    "Ignored environment/build outputs remain allowed and unverified; sparse/skip-worktree and assume-unchanged checkouts are refused",
+    "New failed clones may remain for inspection; no destructive cleanup is performed",
+    "No upstream source acquisition, API, paid compute, outreach, upstream submission or main merge; public draft PR only"
+  ],
+  "next_bounded_task": "Owner review of draft PR11. Reopen runtime work only for a distinct demonstrated admission defect or changed relevant source; do not repeat unchanged setup/provider/source audits or extend the finite sprint."
+}

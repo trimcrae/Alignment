@@ -1,0 +1,299 @@
+﻿2026-10-02T05:52:00.7778476Z Current runner version: '2.337.0'
+2026-10-02T05:52:00.7805612Z ##[group]Runner Image Provisioner
+2026-10-02T05:52:00.7806548Z Hosted Compute Agent
+2026-10-02T05:52:00.7807270Z Version: 20260901.588
+2026-10-02T05:52:00.7807942Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T05:52:00.7808690Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T05:52:00.7809510Z Worker ID: {836ac0df-37ef-4a7d-9640-c9387409145f}
+2026-10-02T05:52:00.7810276Z Azure Region: northcentralus
+2026-10-02T05:52:00.7810932Z ##[endgroup]
+2026-10-02T05:52:00.7812405Z ##[group]Operating System
+2026-10-02T05:52:00.7813299Z Ubuntu
+2026-10-02T05:52:00.7813970Z 24.04.5
+2026-10-02T05:52:00.7814521Z LTS
+2026-10-02T05:52:00.7815086Z ##[endgroup]
+2026-10-02T05:52:00.7815749Z ##[group]Runner Image
+2026-10-02T05:52:00.7816374Z Image: ubuntu-24.04
+2026-10-02T05:52:00.7817033Z Version: 20260927.320.1
+2026-10-02T05:52:00.7818427Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T05:52:00.7820475Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T05:52:00.7821519Z ##[endgroup]
+2026-10-02T05:52:00.7822975Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T05:52:00.7825412Z Contents: read
+2026-10-02T05:52:00.7826144Z Metadata: read
+2026-10-02T05:52:00.7826737Z ##[endgroup]
+2026-10-02T05:52:00.7828944Z Secret source: Actions
+2026-10-02T05:52:00.7830073Z Cache mode: write
+2026-10-02T05:52:00.7831021Z Prepare workflow directory
+2026-10-02T05:52:00.8368059Z Prepare all required actions
+2026-10-02T05:52:00.8437618Z Getting action download info
+2026-10-02T05:52:01.0733911Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T05:52:01.1481690Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-02T05:52:01.2338758Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-02T05:52:01.4257079Z Complete job name: offline
+2026-10-02T05:52:01.5044934Z ##[group]Run actions/checkout@v4
+2026-10-02T05:52:01.5045744Z with:
+2026-10-02T05:52:01.5046186Z   persist-credentials: false
+2026-10-02T05:52:01.5046720Z   repository: trimcrae/Alignment
+2026-10-02T05:52:01.5050825Z   token: ***
+2026-10-02T05:52:01.5051262Z   ssh-strict: true
+2026-10-02T05:52:01.5051698Z   ssh-user: git
+2026-10-02T05:52:01.5052114Z   clean: true
+2026-10-02T05:52:01.5052557Z   sparse-checkout-cone-mode: true
+2026-10-02T05:52:01.5053313Z   fetch-depth: 1
+2026-10-02T05:52:01.5053757Z   fetch-tags: false
+2026-10-02T05:52:01.5054205Z   show-progress: true
+2026-10-02T05:52:01.5054656Z   lfs: false
+2026-10-02T05:52:01.5055078Z   submodules: false
+2026-10-02T05:52:01.5055517Z   set-safe-directory: true
+2026-10-02T05:52:01.5056017Z   allow-unsafe-pr-checkout: false
+2026-10-02T05:52:01.5056717Z env:
+2026-10-02T05:52:01.5057139Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:01.5057631Z ##[endgroup]
+2026-10-02T05:52:01.6150851Z Syncing repository: trimcrae/Alignment
+2026-10-02T05:52:01.6154116Z ##[group]Getting Git version info
+2026-10-02T05:52:01.6155515Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-02T05:52:01.6157344Z [command]/usr/bin/git version
+2026-10-02T05:52:01.6214376Z git version 2.55.0
+2026-10-02T05:52:01.6231024Z ##[endgroup]
+2026-10-02T05:52:01.6247620Z Temporarily overriding HOME='/home/runner/work/_temp/3f73dea1-eea7-40a1-a62e-5f91a1bab838' before making global git config changes
+2026-10-02T05:52:01.6264626Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T05:52:01.6267095Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T05:52:01.6309518Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-02T05:52:01.6313214Z ##[group]Initializing the repository
+2026-10-02T05:52:01.6318817Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-02T05:52:01.6404586Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T05:52:01.6407933Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T05:52:01.6409926Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T05:52:01.6411344Z hint: call:
+2026-10-02T05:52:01.6412197Z hint:
+2026-10-02T05:52:01.6413530Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T05:52:01.6414875Z hint:
+2026-10-02T05:52:01.6416264Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T05:52:01.6418075Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T05:52:01.6419522Z hint:
+2026-10-02T05:52:01.6420473Z hint: 	git branch -m <name>
+2026-10-02T05:52:01.6421416Z hint:
+2026-10-02T05:52:01.6422786Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T05:52:01.6424781Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-02T05:52:01.6428536Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-02T05:52:01.6474051Z ##[endgroup]
+2026-10-02T05:52:01.6475241Z ##[group]Disabling automatic garbage collection
+2026-10-02T05:52:01.6479403Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T05:52:01.6518423Z ##[endgroup]
+2026-10-02T05:52:01.6519654Z ##[group]Setting up auth
+2026-10-02T05:52:01.6526971Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T05:52:01.6567952Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T05:52:01.6925745Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T05:52:01.6972428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T05:52:01.7231156Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T05:52:01.7272333Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T05:52:01.7526665Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T05:52:01.7571553Z ##[endgroup]
+2026-10-02T05:52:01.7572394Z ##[group]Fetching the repository
+2026-10-02T05:52:01.7582228Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +827825f8a30a3cbf77779b04abb10613081b964e:refs/remotes/origin/codex/usage-sprint-2026-10-01-meta-native-ledger
+2026-10-02T05:52:02.1813897Z From https://github.com/trimcrae/Alignment
+2026-10-02T05:52:02.1815772Z  * [new ref]         827825f8a30a3cbf77779b04abb10613081b964e -> origin/codex/usage-sprint-2026-10-01-meta-native-ledger
+2026-10-02T05:52:02.1818955Z ##[endgroup]
+2026-10-02T05:52:02.1820056Z ##[group]Determining the checkout info
+2026-10-02T05:52:02.1821314Z ##[endgroup]
+2026-10-02T05:52:02.1827251Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T05:52:02.1882094Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T05:52:02.1920774Z ##[group]Checking out the ref
+2026-10-02T05:52:02.1927225Z [command]/usr/bin/git checkout --progress --force -B codex/usage-sprint-2026-10-01-meta-native-ledger refs/remotes/origin/codex/usage-sprint-2026-10-01-meta-native-ledger
+2026-10-02T05:52:02.2103381Z Switched to a new branch 'codex/usage-sprint-2026-10-01-meta-native-ledger'
+2026-10-02T05:52:02.2106889Z branch 'codex/usage-sprint-2026-10-01-meta-native-ledger' set up to track 'origin/codex/usage-sprint-2026-10-01-meta-native-ledger'.
+2026-10-02T05:52:02.2113757Z ##[endgroup]
+2026-10-02T05:52:02.2163788Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T05:52:02.2195002Z 827825f8a30a3cbf77779b04abb10613081b964e
+2026-10-02T05:52:02.2205597Z ##[group]Removing auth
+2026-10-02T05:52:02.2209637Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T05:52:02.2249756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T05:52:02.2513188Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T05:52:02.2564228Z http.https://github.com/.extraheader
+2026-10-02T05:52:02.2566868Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T05:52:02.2595087Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T05:52:02.2861406Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T05:52:02.2897301Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T05:52:02.3140723Z ##[endgroup]
+2026-10-02T05:52:02.3573556Z ##[group]Run actions/setup-node@v4
+2026-10-02T05:52:02.3574728Z with:
+2026-10-02T05:52:02.3575542Z   node-version: 22
+2026-10-02T05:52:02.3576444Z   always-auth: false
+2026-10-02T05:52:02.3577369Z   check-latest: false
+2026-10-02T05:52:02.3587191Z   token: ***
+2026-10-02T05:52:02.3588031Z env:
+2026-10-02T05:52:02.3588888Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:02.3589948Z ##[endgroup]
+2026-10-02T05:52:02.5141831Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-02T05:52:02.5146089Z (node:2379) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T05:52:02.5149749Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T05:52:02.5153448Z ##[group]Environment details
+2026-10-02T05:52:02.8633959Z node: v22.23.3
+2026-10-02T05:52:02.8634609Z npm: 10.9.9
+2026-10-02T05:52:02.8635118Z yarn: 1.22.22
+2026-10-02T05:52:02.8636558Z ##[endgroup]
+2026-10-02T05:52:02.8831002Z ##[group]Run actions/setup-python@v5
+2026-10-02T05:52:02.8831512Z with:
+2026-10-02T05:52:02.8831901Z   python-version: 3.11
+2026-10-02T05:52:02.8832307Z   check-latest: false
+2026-10-02T05:52:02.8835330Z   token: ***
+2026-10-02T05:52:02.8835747Z   update-environment: true
+2026-10-02T05:52:02.8836192Z   allow-prereleases: false
+2026-10-02T05:52:02.8836596Z   freethreaded: false
+2026-10-02T05:52:02.8836973Z env:
+2026-10-02T05:52:02.8837349Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:02.8837758Z ##[endgroup]
+2026-10-02T05:52:03.0280811Z ##[group]Installed versions
+2026-10-02T05:52:03.0365319Z (node:2410) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T05:52:03.0367036Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T05:52:03.0368322Z Successfully set up CPython (3.11.16)
+2026-10-02T05:52:03.0369391Z ##[endgroup]
+2026-10-02T05:52:03.0538020Z ##[group]Run node --version
+2026-10-02T05:52:03.0538609Z [36;1mnode --version[0m
+2026-10-02T05:52:03.0539019Z [36;1mpython3 --version[0m
+2026-10-02T05:52:03.0809416Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.0809917Z env:
+2026-10-02T05:52:03.0810301Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.0810796Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.0811466Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.0812050Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.0812827Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.0813458Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.0814036Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.0814881Z ##[endgroup]
+2026-10-02T05:52:03.0980898Z v22.23.3
+2026-10-02T05:52:03.1066235Z Python 3.11.16
+2026-10-02T05:52:03.1115751Z ##[group]Run node --check projects/model-safety-ledger/providers/meta-llama4/core.mjs
+2026-10-02T05:52:03.1116605Z [36;1mnode --check projects/model-safety-ledger/providers/meta-llama4/core.mjs[0m
+2026-10-02T05:52:03.1117394Z [36;1mnode --check projects/model-safety-ledger/providers/meta-llama4/validate.mjs[0m
+2026-10-02T05:52:03.1118127Z [36;1mnode --check projects/model-safety-ledger/providers/meta-llama4/test.mjs[0m
+2026-10-02T05:52:03.1118692Z [36;1mpython3 - <<'PY'[0m
+2026-10-02T05:52:03.1119096Z [36;1mfrom pathlib import Path[0m
+2026-10-02T05:52:03.1119699Z [36;1mfor p in Path("projects/model-safety-ledger/providers/meta-llama4").glob("*.py"):[0m
+2026-10-02T05:52:03.1120342Z [36;1m    compile(p.read_text(), str(p), "exec")[0m
+2026-10-02T05:52:03.1120816Z [36;1mprint("Python syntax passed")[0m
+2026-10-02T05:52:03.1121257Z [36;1mPY[0m
+2026-10-02T05:52:03.1194337Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.1194761Z env:
+2026-10-02T05:52:03.1195204Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.1195688Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.1196295Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.1196873Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.1197406Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.1197949Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.1198498Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.1198975Z ##[endgroup]
+2026-10-02T05:52:03.2496037Z Python syntax passed
+2026-10-02T05:52:03.2614015Z ##[group]Run node projects/model-safety-ledger/providers/meta-llama4/test.mjs
+2026-10-02T05:52:03.2615191Z [36;1mnode projects/model-safety-ledger/providers/meta-llama4/test.mjs[0m
+2026-10-02T05:52:03.2717670Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.2718367Z env:
+2026-10-02T05:52:03.2718926Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.2719657Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.2720612Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.2721551Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.2722424Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.2723578Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.2724439Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.2725207Z ##[endgroup]
+2026-10-02T05:52:03.3541333Z {"checks":81,"invalid_cases":79,"valid_checks":2}
+2026-10-02T05:52:03.3630148Z ##[group]Run python3 projects/model-safety-ledger/providers/meta-llama4/test-source.py
+2026-10-02T05:52:03.3630962Z [36;1mpython3 projects/model-safety-ledger/providers/meta-llama4/test-source.py[0m
+2026-10-02T05:52:03.3704548Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.3704980Z env:
+2026-10-02T05:52:03.3705340Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.3705813Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.3706405Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.3706986Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.3707529Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.3708070Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.3708604Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.3709066Z ##[endgroup]
+2026-10-02T05:52:03.6972322Z test_actual_nonascii_offset (__main__.ByteQuotes.test_actual_nonascii_offset) ... ok
+2026-10-02T05:52:03.6979450Z test_actual_owned_bundle (__main__.ByteQuotes.test_actual_owned_bundle) ... ok
+2026-10-02T05:52:03.6980907Z test_boolean_coordinate_rejected (__main__.ByteQuotes.test_boolean_coordinate_rejected) ... ok
+2026-10-02T05:52:03.6983220Z test_character_offset_is_not_byte_offset (__main__.ByteQuotes.test_character_offset_is_not_byte_offset) ... ok
+2026-10-02T05:52:03.6984841Z test_fractional_coordinate_rejected (__main__.ByteQuotes.test_fractional_coordinate_rejected) ... ok
+2026-10-02T05:52:03.6986380Z test_negative_coordinate_rejected (__main__.ByteQuotes.test_negative_coordinate_rejected) ... ok
+2026-10-02T05:52:03.6987857Z test_nonbmp_byte_coordinate (__main__.ByteQuotes.test_nonbmp_byte_coordinate) ... ok
+2026-10-02T05:52:03.6989202Z test_out_of_bounds_rejected (__main__.ByteQuotes.test_out_of_bounds_rejected) ... ok
+2026-10-02T05:52:03.6990555Z test_shifted_both_coordinates (__main__.ByteQuotes.test_shifted_both_coordinates) ... ok
+2026-10-02T05:52:03.6991712Z test_wrong_quote (__main__.ByteQuotes.test_wrong_quote) ... ok
+2026-10-02T05:52:03.6992264Z 
+2026-10-02T05:52:03.6993185Z ----------------------------------------------------------------------
+2026-10-02T05:52:03.6993841Z Ran 10 tests in 0.002s
+2026-10-02T05:52:03.6994080Z 
+2026-10-02T05:52:03.7076067Z OK
+2026-10-02T05:52:03.7112056Z ##[group]Run python3 projects/model-safety-ledger/providers/meta-llama4/verify-source.py
+2026-10-02T05:52:03.7112913Z [36;1mpython3 projects/model-safety-ledger/providers/meta-llama4/verify-source.py[0m
+2026-10-02T05:52:03.7184727Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.7185016Z env:
+2026-10-02T05:52:03.7185250Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.7185588Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7186052Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.7186483Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7186883Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7187276Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7187665Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.7188043Z ##[endgroup]
+2026-10-02T05:52:03.7576549Z {"file_bytes": 23764, "formal_model_threshold_determinations": 0, "git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b", "literal_UTF8_byte_quotes": 14, "original_tool_base64_matches": true, "provider_GETs": 0, "provider_reported_family_assessments": 1, "sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f"}
+2026-10-02T05:52:03.7655146Z ##[group]Run node projects/model-safety-ledger/providers/meta-llama4/validate.mjs
+2026-10-02T05:52:03.7655772Z [36;1mnode projects/model-safety-ledger/providers/meta-llama4/validate.mjs[0m
+2026-10-02T05:52:03.7726889Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.7727172Z env:
+2026-10-02T05:52:03.7727399Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.7727730Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7728164Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.7728621Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7729010Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7729387Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.7729761Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.7730094Z ##[endgroup]
+2026-10-02T05:52:03.8173819Z {
+2026-10-02T05:52:03.8174341Z   "models": 2,
+2026-10-02T05:52:03.8174794Z   "native_category_records": 3,
+2026-10-02T05:52:03.8175125Z   "method_only_records": 2,
+2026-10-02T05:52:03.8175474Z   "provider_reported_family_assessments": 1,
+2026-10-02T05:52:03.8175860Z   "formal_model_threshold_determinations": 0,
+2026-10-02T05:52:03.8176226Z   "formal_deployment_determinations": 0,
+2026-10-02T05:52:03.8176566Z   "framework_binding": "unknown",
+2026-10-02T05:52:03.8176921Z   "provider_declared_release_date": "2025-04-05",
+2026-10-02T05:52:03.8177338Z   "independent_release_and_launch": "unknown",
+2026-10-02T05:52:03.8178240Z   "literal_citations": 14,
+2026-10-02T05:52:03.8178576Z   "exposed_artifact_reads": 1,
+2026-10-02T05:52:03.8178898Z   "stop": "met"
+2026-10-02T05:52:03.8179253Z }
+2026-10-02T05:52:03.8247831Z ##[group]Run git diff --exit-code
+2026-10-02T05:52:03.8248188Z [36;1mgit diff --exit-code[0m
+2026-10-02T05:52:03.8248480Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-02T05:52:03.8321576Z shell: /usr/bin/bash -e {0}
+2026-10-02T05:52:03.8321883Z env:
+2026-10-02T05:52:03.8322113Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T05:52:03.8322452Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.8323196Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T05:52:03.8323640Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.8324023Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.8324399Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T05:52:03.8324772Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T05:52:03.8325120Z ##[endgroup]
+2026-10-02T05:52:03.8658957Z Post job cleanup.
+2026-10-02T05:52:03.9914748Z (node:2467) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T05:52:03.9915643Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T05:52:04.0109468Z Post job cleanup.
+2026-10-02T05:52:04.1480156Z (node:2475) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T05:52:04.1481596Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T05:52:04.1679648Z Post job cleanup.
+2026-10-02T05:52:04.2599427Z [command]/usr/bin/git version
+2026-10-02T05:52:04.2646261Z git version 2.55.0
+2026-10-02T05:52:04.2686314Z Temporarily overriding HOME='/home/runner/work/_temp/807e0be3-0da7-4871-b597-8b65e66d9fe7' before making global git config changes
+2026-10-02T05:52:04.2688059Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T05:52:04.2693483Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T05:52:04.2739832Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T05:52:04.2781033Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T05:52:04.3118079Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T05:52:04.3199454Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T05:52:04.3632862Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T05:52:04.3676531Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T05:52:04.4103412Z Cleaning up orphan processes
+2026-10-02T05:52:04.4436043Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

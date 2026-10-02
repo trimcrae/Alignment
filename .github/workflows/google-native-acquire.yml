@@ -1,0 +1,36 @@
+# Produced by OpenAI Codex (AI agent); one finite public-source CPU cycle.
+name: Google DeepMind primary model card acquisition
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install bounded PDF extraction dependency
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Acquire one official source cycle
+        run: python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py
+      - name: Preserve original raw page PDF robots and receipt
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: google-primary-source
+          path: ${{ runner.temp }}/google-primary-source/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Confirm tracked inputs stayed read-only
+        if: ${{ !cancelled() }}
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

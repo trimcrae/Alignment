@@ -1,0 +1,40 @@
+name: Model safety ledger
+on:
+  push:
+    branches:
+      - codex/usage-sprint-2026-10-01-model-safety-ledger
+    paths:
+      - .github/workflows/model-safety-ledger.yml
+      - projects/model-safety-ledger/ledger.json
+      - projects/model-safety-ledger/ledger-core.mjs
+      - projects/model-safety-ledger/ledger-tests.mjs
+      - projects/model-safety-ledger/ledger-tool.mjs
+      - projects/model-safety-ledger/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax
+        run: |
+          node --check projects/model-safety-ledger/ledger-core.mjs
+          node --check projects/model-safety-ledger/ledger-tests.mjs
+          node --check projects/model-safety-ledger/ledger-tool.mjs
+      - name: Validate committed evidence
+        run: node projects/model-safety-ledger/ledger-tool.mjs validate
+      - name: Regression cases
+        run: node projects/model-safety-ledger/ledger-tool.mjs test
+      - name: Summarize unknowns
+        run: node projects/model-safety-ledger/ledger-tool.mjs summary
+      - name: Confirm read-only execution
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

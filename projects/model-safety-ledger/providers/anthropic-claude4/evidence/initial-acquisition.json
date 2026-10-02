@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "execution": {
+    "source_commit": "1b62c11847ec1cb05eddd2f2962bc306ad2c4008",
+    "run_id": "36951198584",
+    "job_name": "acquire",
+    "collected_at": "2026-10-02T01:30:02Z"
+  },
+  "method": {
+    "python": "3.11.16",
+    "pypdf": "6.0.0",
+    "socket_timeout_seconds": 12,
+    "response_read_seconds": 25,
+    "cycle_seconds": 180,
+    "max_page_bytes": 2097152,
+    "max_pdf_bytes": 20971520,
+    "max_redirects": 3,
+    "scope": "Official page pointers and selected governance PDF spans only; no inference or launch-edition inference"
+  },
+  "sources": [
+    {
+      "id": "claude-4-announcement",
+      "requested_url": "https://www.anthropic.com/news/claude-4",
+      "observed_at": "2026-10-02T01:30:01Z",
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://www.anthropic.com/news/claude-4",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": null,
+        "etag": null,
+        "redirect_chain": [
+          {
+            "url": "https://www.anthropic.com/news/claude-4",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+              "allowed": true
+            }
+          }
+        ]
+      },
+      "robots": {
+        "url": "https://www.anthropic.com/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+        "status": 200,
+        "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+        "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+        "allowed": true
+      },
+      "bytes": 178351,
+      "sha256": "0e0771fa2918673e683d5e26966b847564dffb3997f260c7277f63fb97b1555e",
+      "kind": "html",
+      "normalized_text_sha256": "43cdc80c5812ad8d9c5a1b5e0b4dc800f4b7d459c22a228b5b9d1613a244830d",
+      "spans": [
+        {
+          "start_char": 0,
+          "end_char": 6646,
+          "text": "Introducing Claude 4 \\ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Announcements Introducing Claude 4 May 22, 2025 Today, we’re introducing the next generation of Claude models: Claude Opus 4 and Claude Sonnet 4 , setting new standards for coding, advanced reasoning, and AI agents. Claude Opus 4 is the world’s best coding model, with sustained performance on complex, long-running tasks and agent workflows. Claude Sonnet 4 is a significant upgrade to Claude Sonnet 3.7, delivering superior coding and reasoning while responding more precisely to your instructions. Alongside the models, we're also announcing: Extended thinking with tool use (beta) : Both models can use tools—like web search —during extended thinking, allowing Claude to alternate between reasoning and tool use to improve responses. New model capabilities : Both models can use tools in parallel, follow instructions more precisely, and—when given access to local files by developers—demonstrate significantly improved memory capabilities, extracting and saving key facts to maintain continuity and build tacit knowledge over time. Claude Code is now generally available : After receiving extensive positive feedback during our research preview, we’re expanding how developers can collaborate with Claude. Claude Code now supports background tasks via GitHub Actions and native integrations with VS Code and JetBrains, displaying edits directly in your files for seamless pair programming. New API capabilities: We’re releasing four new capabilities on our API that enable developers to build more powerful AI agents: the code execution tool, MCP connector, Files API, and the ability to cache prompts for up to one hour. Claude Opus 4 and Sonnet 4 are hybrid models offering two modes: near-instant responses and extended thinking for deeper reasoning. The Pro, Max, Team, and Enterprise Claude plans include both models and extended thinking, with Sonnet 4 also available to free users. Both models are available on our API, Amazon Bedrock, and Google Cloud's Vertex AI. Pricing remains consistent with previous Opus and Sonnet models: Opus 4 at $15/$75 per million tokens (input/output) and Sonnet 4 at $3/$15. Claude 4 Claude Opus 4 is our most powerful model yet and the best coding model in the world, leading on SWE-bench (72.5%) and Terminal-bench (43.2%). It delivers sustained performance on long-running tasks that require focused effort and thousands of steps, with the ability to work continuously for several hours—dramatically outperforming all Sonnet models and significantly expanding what AI agents can accomplish. Claude Opus 4 excels at coding and complex problem-solving, powering frontier agent products. Cursor calls it state-of-the-art for coding and a leap forward in complex codebase understanding. Replit reports improved precision and dramatic advancements for complex changes across multiple files. Block calls it the first model to boost code quality during editing and debugging in its agent, codename goose , while maintaining full performance and reliability. Rakuten validated its capabilities with a demanding open-source refactor running independently for 7 hours with sustained performance. Cognition notes Opus 4 excels at solving complex challenges that other models can't, successfully handling critical actions that previous models have missed. Claude Sonnet 4 significantly improves on Sonnet 3.7's industry-leading capabilities, excelling in coding with a state-of-the-art 72.7% on SWE-bench. The model balances performance and efficiency for internal and external use cases, with enhanced steerability for greater control over implementations. While not matching Opus 4 in most domains, it delivers an optimal mix of capability and practicality. GitHub says Claude Sonnet 4 soars in agentic scenarios and will introduce it as the model powering the new coding agent in GitHub Copilot. Manus highlights its improvements in following complex instructions, clear reasoning, and aesthetic outputs. iGent reports Sonnet 4 excels at autonomous multi-feature app development, as well as substantially improved problem-solving and codebase navigation—reducing navigation errors from 20% to near zero. Sourcegraph says the model shows promise as a substantial leap in software development—staying on track longer, understanding problems more deeply, and providing more elegant code quality. Augment Code reports higher success rates, more surgical code edits, and more careful work through complex tasks, making it the top choice for their primary model. These models advance our customers' AI strategies across the board: Opus 4 pushes boundaries in coding, research, writing, and scientific discovery, while Sonnet 4 brings frontier performance to everyday use cases as an instant upgrade from Sonnet 3.7. Claude 4 models lead on SWE-bench Verified, a benchmark for performance on real software engineering tasks. See appendix for more on methodology. Model improvements In addition to extended thinking with tool use, parallel tool execution, and memory improvements, we’ve significantly reduced behavior where the models use shortcuts or loopholes to complete tasks. Both models are 65% less likely to engage in this behavior than Sonnet 3.7 on agentic tasks that are particularly susceptible to shortcuts and loopholes. Claude Opus 4 also dramatically outperforms all previous models on memory capabilities. When developers build applications that provide Claude local file access, Opus 4 becomes skilled at creating and maintaining 'memory files' to store key information. This unlocks better long-term task awareness, coherence, and performance on agent tasks—like Opus 4 creating a 'Navigation Guide' while playing Pokémon. Memory: When given access to local files, Claude Opus 4 records key information to help improve its game play. The notes depicted above are real notes taken by Opus 4 while playing Pokémon. Finally, we've introduced thinking summaries for Claude 4 models that use a smaller model to condense lengthy thought processes. This summarization is only needed about 5% of the time—most thought processes are short enough to display in full. Users requiring raw chains of thought for advanced prompt engineering can contact sales about our new Developer Mode to retain full access. Claude Code Claude Code, now generally available, brings the power of Claude to more of your development workflow—in the terminal, your favorite IDEs, and running in the background with the Claude Code SDK. New beta extensions for VS Code and JetBrains integrate Claude Code direct"
+        },
+        {
+          "start_char": 6777,
+          "end_char": 8799,
+          "text": "interface. Simply run Claude Code in your IDE terminal to install. Beyond the IDE, we're releasing an extensible Claude Code SDK, so you can build your own agents and applications using the same core agent as Claude Code. We're also releasing an example of what's possible with the SDK: Claude Code on GitHub, now in beta. Tag Claude Code on PRs to respond to reviewer feedback, fix CI errors, or modify code. To install, run /install-github-app from within Claude Code. Getting started These models are a large step toward the virtual collaborator—maintaining full context, sustaining focus on longer projects, and driving transformational impact. They come with extensive testing and evaluation to minimize risk and maximize safety, including implementing measures for higher AI Safety Levels like ASL-3. We're excited to see what you'll create. Get started today on Claude , Claude Code , or the platform of your choice. As always, your feedback helps us improve. Appendix Performance benchmark data sources Open AI: o3 launch post , o3 system card , GPT-4.1 launch post , GPT-4.1 hosted evals Gemini: Gemini 2.5 Pro Preview model card Claude: Claude 3.7 Sonnet launch post Performance benchmark reporting Claude Opus 4 and Sonnet 4 are hybrid reasoning models. The benchmarks reported in this blog post show the highest scores achieved with or without extended thinking. We’ve noted below for each result whether extended thinking was used: No extended thinking: SWE-bench Verified, Terminal-bench Extended thinking (up to 64K tokens): TAU-bench (no results w/o extended thinking reported) GPQA Diamond (w/o extended thinking: Opus 4 scores 74.9% and Sonnet 4 is 70.0%) MMMLU (w/o extended thinking: Opus 4 scores 87.4% and Sonnet 4 is 85.4%) MMMU (w/o extended thinking: Opus 4 scores 73.7% and Sonnet 4 is 72.6%) AIME (w/o extended thinking: Opus 4 scores 33.9% and Sonnet 4 is 33.1%) TAU-bench methodology Scores were achieved with a prompt addendum to both the Airline and Retail Agent Policy instructing Claude to"
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "claude-4-card-pointer",
+      "requested_url": "https://www.anthropic.com/claude-4-system-card",
+      "observed_at": "2026-10-02T01:30:02Z",
+      "state": "not_fetched",
+      "reason": "ValueError: Response exceeds byte bound",
+      "robots": {
+        "url": "https://www.anthropic.com/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+        "status": 200,
+        "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+        "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+        "allowed": true
+      }
+    }
+  ],
+  "selection": {
+    "status": "unknown",
+    "candidate_urls": [],
+    "reason": "No unique explicitly linked official provider PDF; no guessed URL or mirror used"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "source_id": "meta-llama4-git-card",
+  "source_sha256": "a1739083c8a496ca0c121d90b98659a6aa7e36fcc0092581db35ef99736d104f",
+  "coordinate_system": "0-based UTF-8 file byte offsets; end exclusive; no normalization",
+  "citations": [
+    {
+      "id": "developer",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 533,
+      "end_byte": 558,
+      "quote": "**Model developer**: Meta"
+    },
+    {
+      "id": "model_scout",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 1000,
+      "end_byte": 1023,
+      "quote": "Llama 4 Scout (17Bx16E)"
+    },
+    {
+      "id": "model_maverick",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 1575,
+      "end_byte": 1602,
+      "quote": "Llama 4 Maverick (17Bx128E)"
+    },
+    {
+      "id": "declared_release",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 1961,
+      "end_byte": 1998,
+      "quote": "**Model Release Date:** April 5, 2025"
+    },
+    {
+      "id": "native_section",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 18616,
+      "end_byte": 18635,
+      "quote": "### Critical Risks "
+    },
+    {
+      "id": "cbrne_label",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 18702,
+      "end_byte": 18798,
+      "quote": "**1\\. CBRNE (Chemical, Biological, Radiological, Nuclear, and Explosive materials) helpfulness**"
+    },
+    {
+      "id": "cbrne_method",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 18702,
+      "end_byte": 19241,
+      "quote": "**1\\. CBRNE (Chemical, Biological, Radiological, Nuclear, and Explosive materials) helpfulness**  \nTo assess risks related to proliferation of chemical and biological weapons for Llama 4, we applied expert-designed and other targeted evaluations designed to assess whether the use of Llama 4 could meaningfully increase the capabilities of malicious actors to plan or carry out attacks using these types of weapons. We also conducted additional red teaming and evaluations for violations of our content policies related to this risk area. "
+    },
+    {
+      "id": "child_label",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 19243,
+      "end_byte": 19263,
+      "quote": "**2\\. Child Safety**"
+    },
+    {
+      "id": "child_method",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 19243,
+      "end_byte": 19754,
+      "quote": "**2\\. Child Safety**  \nWe leverage pre-training methods like data filtering as a first step in mitigating Child Safety risk in our model. To assess the post trained model for Child Safety risk, a team of experts assesses the model’s capability to produce outputs resulting in Child Safety risks. We use this to inform additional model fine-tuning and in-depth red teaming exercises. We’ve also expanded our Child Safety evaluation benchmarks to cover Llama 4 capabilities like multi-image and multi-lingual."
+    },
+    {
+      "id": "cyber_label",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 19756,
+      "end_byte": 19787,
+      "quote": "**3\\. Cyber attack enablement**"
+    },
+    {
+      "id": "cyber_method_and_assessment",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 19756,
+      "end_byte": 20536,
+      "quote": "**3\\. Cyber attack enablement**  \nOur cyber evaluations investigated whether Llama 4 is sufficiently capable to enable catastrophic threat scenario outcomes. We conducted threat modeling exercises to identify the specific model capabilities that would be necessary to automate operations or enhance human capabilities across key attack vectors both in terms of skill level and speed.  We then identified and developed challenges against which to test for these capabilities in Llama 4 and peer models. Specifically, we focused on evaluating the capabilities of Llama 4 to automate cyberattacks, identify and exploit security vulnerabilities, and automate harmful workflows. Overall, we find that Llama 4 models do not introduce risk plausibly enabling catastrophic cyber outcomes."
+    },
+    {
+      "id": "cyber_family_conclusion",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 20430,
+      "end_byte": 20536,
+      "quote": "Overall, we find that Llama 4 models do not introduce risk plausibly enabling catastrophic cyber outcomes."
+    },
+    {
+      "id": "system_guidance",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 16269,
+      "end_byte": 16458,
+      "quote": "Large language models, including Llama 4, are not designed to be deployed in isolation but instead should be deployed as part of an overall AI system with additional guardrails as required."
+    },
+    {
+      "id": "limits",
+      "source_id": "meta-llama4-git-card",
+      "start_byte": 22922,
+      "end_byte": 22999,
+      "quote": "Testing conducted to date has not covered, nor could it cover, all scenarios."
+    }
+  ]
+}

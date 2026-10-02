@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe"
+  },
+  "snapshot_at": "2026-10-02T01:32:32Z",
+  "scope": {
+    "provider": "Anthropic",
+    "model_ids": [
+      "anthropic-claude-opus-4",
+      "anthropic-claude-sonnet-4"
+    ],
+    "axes": [
+      "deployment_asl",
+      "capability_asl3",
+      "capability_asl4"
+    ],
+    "coverage": "One provider's current Claude4 system card; aggregate native deployment and assessment statements, not per-domain equivalence or independent experiments",
+    "comparison_policy": "ASL deployment protections and capability assessments remain separate; no equivalence to OpenAI High and no independent safety verdict"
+  },
+  "evidence_receipt": {
+    "path": "evidence/primary-acquisition.json",
+    "sha256": "434c2852efd69dcf1d3cfc562d9e46123745bbaa6307e50bcac1b6cb770ce953",
+    "source_commit": "bda723fb2678787fc0ec6e52ad742d63b618ab5a",
+    "run_id": "36951404278",
+    "job_id": "110664941297",
+    "run_url": "https://github.com/trimcrae/Alignment/actions/runs/36951404278"
+  },
+  "artifact": {
+    "id": "claude-4-system-card",
+    "publisher": "Anthropic",
+    "kind": "system_card",
+    "title": "System Card: Claude Opus 4 & Claude Sonnet 4",
+    "source_url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+    "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "pdf_pages": 124,
+    "observed_at": "2026-10-02T01:32:26Z",
+    "verification": "primary_document_observed",
+    "identity": {
+      "artifact_id": "claude-4-system-card",
+      "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+      "pdf_page": 1,
+      "quote": "System Card: Claude Opus 4 & Claude Sonnet 4 May 2025 anthropic.com"
+    },
+    "declared_month": {
+      "status": "reported",
+      "value": "2025-05",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 1,
+        "quote": "System Card: Claude Opus 4 & Claude Sonnet 4 May 2025 anthropic.com"
+      }
+    },
+    "edition": {
+      "status": "unknown",
+      "value": null,
+      "reason": "Cover month and September2 HTTP Last-Modified do not establish an edition identifier or launch-time byte identity."
+    }
+  },
+  "framework": {
+    "id": "anthropic-rsp",
+    "provider": "Anthropic",
+    "native_name": "Responsible Scaling Policy (RSP)",
+    "version": {
+      "status": "unknown",
+      "value": null,
+      "reason": "Selected current system-card governance passages do not identify a framework version; no version inferred from document month."
+    },
+    "citation": {
+      "artifact_id": "claude-4-system-card",
+      "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+      "pdf_page": 9,
+      "quote": "The process was guided by our Responsible Scaling Policy (RSP), which provides a framework for evaluating and managing potential risks associated with increasingly capable AI systems."
+    },
+    "cyber_formal_threshold": {
+      "status": "not_stipulated",
+      "native_statement": "The RSP does not stipulate a formal threshold for cyber capabilities at any ASL level. Instead, we believe cyber requires ongoing assessment.",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 117,
+        "quote": "The RSP does not stipulate a formal threshold for cyber capabilities at any ASL level. Instead, we believe cyber requires ongoing assessment."
+      }
+    }
+  },
+  "claims": [
+    {
+      "id": "opus-deployment",
+      "model_id": "anthropic-claude-opus-4",
+      "axis": "deployment_asl",
+      "native_result": "ASL-3 Standard",
+      "outcome": "ASL-3",
+      "qualification": "provider_deployment_decision",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 10,
+        "quote": "Based on these assessments, we have decided to release Claude Opus 4 under the ASL-3 Standard and Claude Sonnet 4 under the ASL-2 Standard."
+      },
+      "verification": "provider_statement_transcribed"
+    },
+    {
+      "id": "sonnet-deployment",
+      "model_id": "anthropic-claude-sonnet-4",
+      "axis": "deployment_asl",
+      "native_result": "ASL-2 Standard",
+      "outcome": "ASL-2",
+      "qualification": "provider_deployment_decision",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 10,
+        "quote": "Based on these assessments, we have decided to release Claude Opus 4 under the ASL-3 Standard and Claude Sonnet 4 under the ASL-2 Standard."
+      },
+      "verification": "provider_statement_transcribed"
+    },
+    {
+      "id": "opus-asl3",
+      "model_id": "anthropic-claude-opus-4",
+      "axis": "capability_asl3",
+      "native_result": "cannot clearly rule out ASL-3 risks",
+      "outcome": "not_ruled_out",
+      "qualification": "precautionary_provisional_not_confirmed_passed",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 11,
+        "quote": "To be clear, we have not yet determined whether Claude Opus 4 has deﬁnitively passed the capabilities threshold that requires ASL-3 protections. Rather, we cannot clearly rule out ASL-3 risks for Claude Opus 4 (although we have ruled out that it needs the ASL-4 Standard). Thus, we are deploying Claude Opus 4 with ASL-3 measures as a precautionary, provisional action, while maintaining Claude Sonnet 4 at the ASL-2 Standard."
+      },
+      "verification": "provider_statement_transcribed"
+    },
+    {
+      "id": "opus-asl4",
+      "model_id": "anthropic-claude-opus-4",
+      "axis": "capability_asl4",
+      "native_result": "conﬁdently rule out ASL-4 capabilities",
+      "outcome": "ruled_out",
+      "qualification": "aggregate_native_assessment",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 88,
+        "quote": "For Claude Opus 4, our evaluations showed that, whereas we could conﬁdently rule out ASL-4 capabilities, we could not conclusively rule out ASL-3 capabilities—which led to our precautionary decision to deploy it with ASL-3 protections."
+      },
+      "verification": "provider_statement_transcribed"
+    },
+    {
+      "id": "sonnet-asl3",
+      "model_id": "anthropic-claude-sonnet-4",
+      "axis": "capability_asl3",
+      "native_result": "remained below the ASL-3 thresholds of concern",
+      "outcome": "below_thresholds_of_concern",
+      "qualification": "aggregate_native_assessment",
+      "citation": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 11,
+        "quote": "In contrast, Claude Sonnet 4 showed more modest improvements that—while noteworthy—remained below the ASL-3 thresholds of concern."
+      },
+      "verification": "provider_statement_transcribed"
+    }
+  ],
+  "models": [
+    {
+      "id": "anthropic-claude-opus-4",
+      "native_name": "Claude Opus 4",
+      "provider": "Anthropic",
+      "identity": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 3,
+        "quote": "This system card introduces Claude Opus 4 and Claude Sonnet 4, two new hybrid reasoning large language models from Anthropic."
+      },
+      "determinations": [
+        {
+          "axis": "deployment_asl",
+          "status": "reported",
+          "claim_id": "opus-deployment",
+          "reason": null
+        },
+        {
+          "axis": "capability_asl3",
+          "status": "reported",
+          "claim_id": "opus-asl3",
+          "reason": null
+        },
+        {
+          "axis": "capability_asl4",
+          "status": "reported",
+          "claim_id": "opus-asl4",
+          "reason": null
+        }
+      ],
+      "release_date": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "The current card's declared May2025 month and a dated announcement statement do not establish exact public model-release timing."
+      },
+      "artifact_at_release": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "Current PDF observation, pointer, Last-Modified and cover month do not bind these edition bytes to launch; unknown does not mean absent."
+      }
+    },
+    {
+      "id": "anthropic-claude-sonnet-4",
+      "native_name": "Claude Sonnet 4",
+      "provider": "Anthropic",
+      "identity": {
+        "artifact_id": "claude-4-system-card",
+        "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+        "pdf_page": 3,
+        "quote": "This system card introduces Claude Opus 4 and Claude Sonnet 4, two new hybrid reasoning large language models from Anthropic."
+      },
+      "determinations": [
+        {
+          "axis": "deployment_asl",
+          "status": "reported",
+          "claim_id": "sonnet-deployment",
+          "reason": null
+        },
+        {
+          "axis": "capability_asl3",
+          "status": "reported",
+          "claim_id": "sonnet-asl3",
+          "reason": null
+        },
+        {
+          "axis": "capability_asl4",
+          "status": "unknown",
+          "claim_id": null,
+          "reason": "The selected card states an evaluation goal of ruling out ASL-4 for both models; that goal is not promoted to an explicit model-specific Sonnet4 outcome. Unknown does not mean absent or not evaluated."
+        }
+      ],
+      "release_date": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "The current card's declared May2025 month and a dated announcement statement do not establish exact public model-release timing."
+      },
+      "artifact_at_release": {
+        "status": "unknown",
+        "claim_id": null,
+        "reason": "Current PDF observation, pointer, Last-Modified and cover month do not bind these edition bytes to launch; unknown does not mean absent."
+      }
+    }
+  ]
+}
