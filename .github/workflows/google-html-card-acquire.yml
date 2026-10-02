@@ -1,0 +1,37 @@
+# AI-authored OpenAI Codex/GPT-6; exact reviewed unused HTML-card stage.
+name: Google exact HTML card acquisition
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire-card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 -m pip install pypdf==6.0.0
+      - name: Confirm offline encoding and retention regressions
+        run: python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py
+      - name: Execute one exact reviewed HTML-card GET
+        run: python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect-card-html.py
+      - name: Preserve raw response and original receipt
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: google-html-card-original
+          path: ${{ runner.temp }}/google-html-card/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Confirm read-only source stage
+        if: ${{ !cancelled() }}
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

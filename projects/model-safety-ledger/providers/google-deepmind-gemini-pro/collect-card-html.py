@@ -44,7 +44,7 @@ def main():
         if mime not in("text/html","application/xhtml+xml") or entity.startswith(b"%PDF-"):raise ValueError("Exact amended stage requires an HTML card response")
         parser=c.Landing();parser.feed(entity.decode("utf-8",errors="strict"))
         t=c.normalize(" ".join(parser.text));ranges=[]
-        marker=r"Gemini.{0,40}Pro|Preview|Frontier Safety Framework|Critical Capability Level|\\bCCLs?\\b|capability threshold|dangerous capability|(?:does|did|has|have) not.{0,60}(?:reach|meet)|framework"
+        marker=r"Gemini.{0,40}Pro|Preview|Frontier Safety Framework|Critical Capability Level|(?<![A-Za-z])CCLs?(?![A-Za-z])|capability threshold|dangerous capability|(?:does|did|has|have) not.{0,60}(?:reach|meet)|framework"
         for m in re.finditer(marker,t,re.I):
             a,b=max(0,m.start()-300),min(len(t),m.end()+900)
             if ranges and a<=ranges[-1][1]:ranges[-1]=(ranges[-1][0],max(b,ranges[-1][1]))
