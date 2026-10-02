@@ -1,0 +1,26 @@
+# Produced by OpenAI Codex (AI agent), usage-sprint-2026-10-01.
+name: Follow-up ledger
+on:
+  pull_request:
+    paths:
+      - "projects/eval-integrity/follow-up/**"
+      - ".github/workflows/follow-up-ledger.yml"
+  push:
+    branches: [main]
+    paths:
+      - "projects/eval-integrity/follow-up/**"
+      - ".github/workflows/follow-up-ledger.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  receipts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node projects/eval-integrity/follow-up/ledger-tool.mjs validate
+      - run: node projects/eval-integrity/follow-up/ledger-tool.mjs test
