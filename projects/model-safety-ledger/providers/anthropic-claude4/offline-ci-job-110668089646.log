@@ -1,0 +1,322 @@
+﻿2026-10-02T01:45:20.2301969Z Current runner version: '2.337.0'
+2026-10-02T01:45:20.2326260Z ##[group]Runner Image Provisioner
+2026-10-02T01:45:20.2327181Z Hosted Compute Agent
+2026-10-02T01:45:20.2327845Z Version: 20260901.588
+2026-10-02T01:45:20.2328507Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T01:45:20.2329238Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T01:45:20.2330015Z Worker ID: {86c0315b-b527-46d5-bf65-06e0f3d8854c}
+2026-10-02T01:45:20.2330739Z Azure Region: westus
+2026-10-02T01:45:20.2331505Z ##[endgroup]
+2026-10-02T01:45:20.2333218Z ##[group]Operating System
+2026-10-02T01:45:20.2333883Z Ubuntu
+2026-10-02T01:45:20.2334561Z 24.04.5
+2026-10-02T01:45:20.2335089Z LTS
+2026-10-02T01:45:20.2335590Z ##[endgroup]
+2026-10-02T01:45:20.2336233Z ##[group]Runner Image
+2026-10-02T01:45:20.2336840Z Image: ubuntu-24.04
+2026-10-02T01:45:20.2337473Z Version: 20260927.320.1
+2026-10-02T01:45:20.2338802Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T01:45:20.2340817Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T01:45:20.2342145Z ##[endgroup]
+2026-10-02T01:45:20.2343315Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T01:45:20.2345437Z Contents: read
+2026-10-02T01:45:20.2346188Z Metadata: read
+2026-10-02T01:45:20.2346846Z ##[endgroup]
+2026-10-02T01:45:20.2348888Z Secret source: Actions
+2026-10-02T01:45:20.2349981Z Cache mode: write
+2026-10-02T01:45:20.2350894Z Prepare workflow directory
+2026-10-02T01:45:20.2743964Z Prepare all required actions
+2026-10-02T01:45:20.2795802Z Getting action download info
+2026-10-02T01:45:20.6776766Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T01:45:20.7646591Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-02T01:45:20.8500240Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-02T01:45:21.0315637Z Complete job name: offline-native-evidence
+2026-10-02T01:45:21.1100728Z ##[group]Run actions/checkout@v4
+2026-10-02T01:45:21.1101844Z with:
+2026-10-02T01:45:21.1102304Z   persist-credentials: false
+2026-10-02T01:45:21.1102838Z   repository: trimcrae/Alignment
+2026-10-02T01:45:21.1106625Z   token: ***
+2026-10-02T01:45:21.1107345Z   ssh-strict: true
+2026-10-02T01:45:21.1108042Z   ssh-user: git
+2026-10-02T01:45:21.1108660Z   clean: true
+2026-10-02T01:45:21.1109345Z   sparse-checkout-cone-mode: true
+2026-10-02T01:45:21.1110275Z   fetch-depth: 1
+2026-10-02T01:45:21.1111017Z   fetch-tags: false
+2026-10-02T01:45:21.1112109Z   show-progress: true
+2026-10-02T01:45:21.1112912Z   lfs: false
+2026-10-02T01:45:21.1113596Z   submodules: false
+2026-10-02T01:45:21.1114315Z   set-safe-directory: true
+2026-10-02T01:45:21.1114843Z   allow-unsafe-pr-checkout: false
+2026-10-02T01:45:21.1115758Z env:
+2026-10-02T01:45:21.1116205Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:21.1116708Z ##[endgroup]
+2026-10-02T01:45:21.2149108Z Syncing repository: trimcrae/Alignment
+2026-10-02T01:45:21.2152423Z ##[group]Getting Git version info
+2026-10-02T01:45:21.2153749Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-02T01:45:21.2155028Z [command]/usr/bin/git version
+2026-10-02T01:45:21.2252157Z git version 2.55.0
+2026-10-02T01:45:21.2276782Z ##[endgroup]
+2026-10-02T01:45:21.2290539Z Temporarily overriding HOME='/home/runner/work/_temp/11a759f9-be0b-4fd5-a08b-3f606ca0a6bf' before making global git config changes
+2026-10-02T01:45:21.2293088Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T01:45:21.2297619Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T01:45:21.2348258Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-02T01:45:21.2352816Z ##[group]Initializing the repository
+2026-10-02T01:45:21.2356617Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-02T01:45:21.2463152Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T01:45:21.2465214Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T01:45:21.2466820Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T01:45:21.2468054Z hint: call:
+2026-10-02T01:45:21.2468685Z hint:
+2026-10-02T01:45:21.2469500Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T01:45:21.2470541Z hint:
+2026-10-02T01:45:21.2472268Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T01:45:21.2473790Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T01:45:21.2474986Z hint:
+2026-10-02T01:45:21.2475696Z hint: 	git branch -m <name>
+2026-10-02T01:45:21.2476468Z hint:
+2026-10-02T01:45:21.2477493Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T01:45:21.2479317Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-02T01:45:21.2482218Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-02T01:45:21.2527661Z ##[endgroup]
+2026-10-02T01:45:21.2528992Z ##[group]Disabling automatic garbage collection
+2026-10-02T01:45:21.2532043Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T01:45:21.2564813Z ##[endgroup]
+2026-10-02T01:45:21.2566129Z ##[group]Setting up auth
+2026-10-02T01:45:21.2572739Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T01:45:21.2608013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T01:45:21.3024294Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T01:45:21.3075426Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T01:45:21.3327545Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T01:45:21.3368119Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T01:45:21.3614366Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T01:45:21.3657109Z ##[endgroup]
+2026-10-02T01:45:21.3658505Z ##[group]Fetching the repository
+2026-10-02T01:45:21.3669126Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1350d3e3d773c95d60303669e8464aa1539479ec:refs/remotes/origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger
+2026-10-02T01:45:21.8225497Z From https://github.com/trimcrae/Alignment
+2026-10-02T01:45:21.8227992Z  * [new ref]         1350d3e3d773c95d60303669e8464aa1539479ec -> origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger
+2026-10-02T01:45:21.8233380Z ##[endgroup]
+2026-10-02T01:45:21.8235189Z ##[group]Determining the checkout info
+2026-10-02T01:45:21.8237239Z ##[endgroup]
+2026-10-02T01:45:21.8242612Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T01:45:21.8299099Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T01:45:21.8334145Z ##[group]Checking out the ref
+2026-10-02T01:45:21.8340590Z [command]/usr/bin/git checkout --progress --force -B codex/usage-sprint-2026-10-01-anthropic-native-ledger refs/remotes/origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger
+2026-10-02T01:45:21.8504546Z Switched to a new branch 'codex/usage-sprint-2026-10-01-anthropic-native-ledger'
+2026-10-02T01:45:21.8510595Z branch 'codex/usage-sprint-2026-10-01-anthropic-native-ledger' set up to track 'origin/codex/usage-sprint-2026-10-01-anthropic-native-ledger'.
+2026-10-02T01:45:21.8520492Z ##[endgroup]
+2026-10-02T01:45:21.8564267Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T01:45:21.8591570Z 1350d3e3d773c95d60303669e8464aa1539479ec
+2026-10-02T01:45:21.8601617Z ##[group]Removing auth
+2026-10-02T01:45:21.8605461Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T01:45:21.8643872Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T01:45:21.8868016Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T01:45:21.8895877Z http.https://github.com/.extraheader
+2026-10-02T01:45:21.8904580Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T01:45:21.8940785Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T01:45:21.9160882Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T01:45:21.9193377Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T01:45:21.9416472Z ##[endgroup]
+2026-10-02T01:45:21.9765679Z ##[group]Run actions/setup-node@v4
+2026-10-02T01:45:21.9766352Z with:
+2026-10-02T01:45:21.9766820Z   node-version: 22
+2026-10-02T01:45:21.9767306Z   always-auth: false
+2026-10-02T01:45:21.9767808Z   check-latest: false
+2026-10-02T01:45:21.9771857Z   token: ***
+2026-10-02T01:45:21.9772354Z env:
+2026-10-02T01:45:21.9772819Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:21.9773359Z ##[endgroup]
+2026-10-02T01:45:22.1299371Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-02T01:45:22.1304749Z (node:2318) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T01:45:22.1306629Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T01:45:22.1308636Z ##[group]Environment details
+2026-10-02T01:45:22.5548469Z node: v22.23.3
+2026-10-02T01:45:22.5549913Z npm: 10.9.9
+2026-10-02T01:45:22.5550548Z yarn: 1.22.22
+2026-10-02T01:45:22.5552731Z ##[endgroup]
+2026-10-02T01:45:22.5828194Z ##[group]Run actions/setup-python@v5
+2026-10-02T01:45:22.5829467Z with:
+2026-10-02T01:45:22.5830415Z   python-version: 3.11
+2026-10-02T01:45:22.5831656Z   check-latest: false
+2026-10-02T01:45:22.5841767Z   token: ***
+2026-10-02T01:45:22.5842763Z   update-environment: true
+2026-10-02T01:45:22.5843923Z   allow-prereleases: false
+2026-10-02T01:45:22.5845057Z   freethreaded: false
+2026-10-02T01:45:22.5846057Z env:
+2026-10-02T01:45:22.5846993Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:22.5848107Z ##[endgroup]
+2026-10-02T01:45:22.7213905Z ##[group]Installed versions
+2026-10-02T01:45:22.7323594Z (node:2349) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T01:45:22.7329159Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T01:45:22.7332563Z Successfully set up CPython (3.11.16)
+2026-10-02T01:45:22.7335667Z ##[endgroup]
+2026-10-02T01:45:22.7530521Z ##[group]Run python3 -m pip install pypdf==6.0.0
+2026-10-02T01:45:22.7533130Z [36;1mpython3 -m pip install pypdf==6.0.0[0m
+2026-10-02T01:45:22.7856046Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:22.7857163Z env:
+2026-10-02T01:45:22.7858037Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:22.7859388Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:22.7861437Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:22.7863401Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:22.7865061Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:22.7866775Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:22.7868501Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:22.7870278Z ##[endgroup]
+2026-10-02T01:45:23.6983573Z Collecting pypdf==6.0.0
+2026-10-02T01:45:23.8002633Z   Downloading pypdf-6.0.0-py3-none-any.whl.metadata (7.1 kB)
+2026-10-02T01:45:23.8281450Z Downloading pypdf-6.0.0-py3-none-any.whl (310 kB)
+2026-10-02T01:45:23.9290549Z Installing collected packages: pypdf
+2026-10-02T01:45:24.1373868Z Successfully installed pypdf-6.0.0
+2026-10-02T01:45:24.1797690Z ##[group]Run node --check projects/model-safety-ledger/providers/anthropic-claude4/core.mjs
+2026-10-02T01:45:24.1798446Z [36;1mnode --check projects/model-safety-ledger/providers/anthropic-claude4/core.mjs[0m
+2026-10-02T01:45:24.1799096Z [36;1mnode --check projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs[0m
+2026-10-02T01:45:24.1799718Z [36;1mnode --check projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs[0m
+2026-10-02T01:45:24.1800829Z [36;1mpython3 -c "import ast,pathlib; [ast.parse(pathlib.Path(p).read_text()) for p in ['projects/model-safety-ledger/providers/anthropic-claude4/collect.py','projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py']]"[0m
+2026-10-02T01:45:24.1868309Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.1868579Z env:
+2026-10-02T01:45:24.1868793Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.1869137Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.1869628Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.1870081Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.1870483Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.1870870Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.1871522Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.1871875Z ##[endgroup]
+2026-10-02T01:45:24.2964083Z ##[group]Run node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs validate
+2026-10-02T01:45:24.2964799Z [36;1mnode projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs validate[0m
+2026-10-02T01:45:24.3031595Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.3031857Z env:
+2026-10-02T01:45:24.3032063Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.3032386Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3032826Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.3033265Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3033653Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3034030Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3034406Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.3034729Z ##[endgroup]
+2026-10-02T01:45:24.3474474Z {
+2026-10-02T01:45:24.3475285Z   "valid": true,
+2026-10-02T01:45:24.3475749Z   "errors": [],
+2026-10-02T01:45:24.3476379Z   "counts": {
+2026-10-02T01:45:24.3476973Z     "models": 2,
+2026-10-02T01:45:24.3477625Z     "observed_system_cards": 1,
+2026-10-02T01:45:24.3478354Z     "reported_deployment_decisions": 2,
+2026-10-02T01:45:24.3478864Z     "reported_capability_assessments": 3,
+2026-10-02T01:45:24.3479323Z     "unknown_capability_assessments": 1,
+2026-10-02T01:45:24.3479713Z     "unknown_release_dates": 2,
+2026-10-02T01:45:24.3480049Z     "unknown_launch_editions": 2,
+2026-10-02T01:45:24.3480792Z     "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T01:45:24.3482141Z   }
+2026-10-02T01:45:24.3482631Z }
+2026-10-02T01:45:24.3557140Z ##[group]Run node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs test
+2026-10-02T01:45:24.3557810Z [36;1mnode projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs test[0m
+2026-10-02T01:45:24.3621435Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.3621696Z env:
+2026-10-02T01:45:24.3621903Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.3622410Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3622845Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.3623292Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3623718Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3624105Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.3624489Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.3624811Z ##[endgroup]
+2026-10-02T01:45:24.4298093Z {
+2026-10-02T01:45:24.4298967Z   "checks": 70,
+2026-10-02T01:45:24.4299611Z   "invalid_cases": 66,
+2026-10-02T01:45:24.4300243Z   "actual_seed_summary": {
+2026-10-02T01:45:24.4300868Z     "models": 2,
+2026-10-02T01:45:24.4301852Z     "observed_system_cards": 1,
+2026-10-02T01:45:24.4302763Z     "reported_deployment_decisions": 2,
+2026-10-02T01:45:24.4303609Z     "reported_capability_assessments": 3,
+2026-10-02T01:45:24.4304291Z     "unknown_capability_assessments": 1,
+2026-10-02T01:45:24.4304961Z     "unknown_release_dates": 2,
+2026-10-02T01:45:24.4305723Z     "unknown_launch_editions": 2,
+2026-10-02T01:45:24.4306790Z     "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T01:45:24.4307709Z   }
+2026-10-02T01:45:24.4308178Z }
+2026-10-02T01:45:24.4387953Z ##[group]Run python3 projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py
+2026-10-02T01:45:24.4388652Z [36;1mpython3 projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py[0m
+2026-10-02T01:45:24.4452007Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.4452265Z env:
+2026-10-02T01:45:24.4452477Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.4452809Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.4453257Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.4453723Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.4454130Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.4454519Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.4454903Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.4455225Z ##[endgroup]
+2026-10-02T01:45:24.8080424Z test_ambiguous_official_links_stop_without_pdf_fetch (__main__.CollectorTests.test_ambiguous_official_links_stop_without_pdf_fetch) ... ok
+2026-10-02T01:45:24.8082850Z test_credentials_rejected (__main__.CollectorTests.test_credentials_rejected) ... ok
+2026-10-02T01:45:24.8085846Z test_denied_robots_prevents_get (__main__.CollectorTests.test_denied_robots_prevents_get) ... ok
+2026-10-02T01:45:24.8174616Z test_direct_pdf_uses_planned_pdf_limit_and_received_once (__main__.CollectorTests.test_direct_pdf_uses_planned_pdf_limit_and_received_once) ... ok
+2026-10-02T01:45:24.8175977Z test_external_url_rejected (__main__.CollectorTests.test_external_url_rejected) ... ok
+2026-10-02T01:45:24.8188646Z test_hard_stop_baseexception_not_swallowed_and_receipt_preserved (__main__.CollectorTests.test_hard_stop_baseexception_not_swallowed_and_receipt_preserved) ... ok
+2026-10-02T01:45:24.8205030Z test_html_page_retains_small_bound (__main__.CollectorTests.test_html_page_retains_small_bound) ... ok
+2026-10-02T01:45:24.8207176Z test_html_scripts_do_not_create_evidence_text (__main__.CollectorTests.test_html_scripts_do_not_create_evidence_text) ... ok
+2026-10-02T01:45:24.8208351Z test_non_https_rejected (__main__.CollectorTests.test_non_https_rejected) ... ok
+2026-10-02T01:45:24.8209325Z test_nonstandard_port_rejected (__main__.CollectorTests.test_nonstandard_port_rejected) ... ok
+2026-10-02T01:45:24.8222439Z test_page_size_bound_enforced_by_actual_reader (__main__.CollectorTests.test_page_size_bound_enforced_by_actual_reader) ... ok
+2026-10-02T01:45:24.8227459Z test_redirect_checks_new_host_robots_before_get (__main__.CollectorTests.test_redirect_checks_new_host_robots_before_get) ... ok
+2026-10-02T01:45:24.8231687Z test_redirect_to_external_host_refused (__main__.CollectorTests.test_redirect_to_external_host_refused) ... ok
+2026-10-02T01:45:24.8254681Z test_same_large_response_with_pdf_limit (__main__.CollectorTests.test_same_large_response_with_pdf_limit) ... ok
+2026-10-02T01:45:24.8286435Z test_unique_explicit_provider_link_only (__main__.CollectorTests.test_unique_explicit_provider_link_only) ... ok
+2026-10-02T01:45:24.8287688Z 
+2026-10-02T01:45:24.8288549Z ----------------------------------------------------------------------
+2026-10-02T01:45:24.8289393Z Ran 15 tests in 0.023s
+2026-10-02T01:45:24.8289708Z 
+2026-10-02T01:45:24.8289888Z OK
+2026-10-02T01:45:24.8520861Z ##[group]Run node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs summary
+2026-10-02T01:45:24.8521739Z [36;1mnode projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs summary[0m
+2026-10-02T01:45:24.8583059Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.8583318Z env:
+2026-10-02T01:45:24.8583523Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.8583839Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.8584283Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.8584734Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.8585123Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.8585510Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.8585898Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.8586216Z ##[endgroup]
+2026-10-02T01:45:24.8990172Z {
+2026-10-02T01:45:24.8990555Z   "models": 2,
+2026-10-02T01:45:24.8990835Z   "observed_system_cards": 1,
+2026-10-02T01:45:24.8991185Z   "reported_deployment_decisions": 2,
+2026-10-02T01:45:24.8991825Z   "reported_capability_assessments": 3,
+2026-10-02T01:45:24.8992187Z   "unknown_capability_assessments": 1,
+2026-10-02T01:45:24.8992530Z   "unknown_release_dates": 2,
+2026-10-02T01:45:24.8992836Z   "unknown_launch_editions": 2,
+2026-10-02T01:45:24.8993491Z   "scope": "Provider-native statements only; no independent capability assessment, model inference or human review"
+2026-10-02T01:45:24.8994083Z }
+2026-10-02T01:45:24.9052173Z ##[group]Run git diff --exit-code
+2026-10-02T01:45:24.9052522Z [36;1mgit diff --exit-code[0m
+2026-10-02T01:45:24.9052809Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-02T01:45:24.9114355Z shell: /usr/bin/bash -e {0}
+2026-10-02T01:45:24.9114603Z env:
+2026-10-02T01:45:24.9114822Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T01:45:24.9115155Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.9115611Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T01:45:24.9116061Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.9116444Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.9116836Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T01:45:24.9117221Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T01:45:24.9117541Z ##[endgroup]
+2026-10-02T01:45:24.9407793Z Post job cleanup.
+2026-10-02T01:45:25.0645821Z (node:2438) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T01:45:25.0647609Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T01:45:25.0854730Z Post job cleanup.
+2026-10-02T01:45:25.2109170Z (node:2446) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T01:45:25.2110560Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T01:45:25.2257691Z Post job cleanup.
+2026-10-02T01:45:25.3143133Z [command]/usr/bin/git version
+2026-10-02T01:45:25.3188940Z git version 2.55.0
+2026-10-02T01:45:25.3233462Z Temporarily overriding HOME='/home/runner/work/_temp/18a8d28b-7a33-4d5a-8347-7cb78377e6fb' before making global git config changes
+2026-10-02T01:45:25.3234593Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T01:45:25.3240929Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T01:45:25.3281149Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T01:45:25.3316184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T01:45:25.3575128Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T01:45:25.3621804Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T01:45:25.3884101Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T01:45:25.3923929Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T01:45:25.4306861Z Cleaning up orphan processes
+2026-10-02T01:45:25.4599233Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
