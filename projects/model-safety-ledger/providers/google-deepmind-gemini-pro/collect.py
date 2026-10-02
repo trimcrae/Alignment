@@ -32,20 +32,20 @@ def safe_url(u,robots=False):
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self,*args,**kwargs):return None
 OPENER=urllib.request.build_opener(NoRedirect())
-def get_raw(u,robots=False):
+def get_raw(u,robots=False,limit_override=None):
     safe_url(u,robots);start=time.monotonic()
     req=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"*/*"})
     with OPENER.open(req,timeout=12) as response:
         mime=response.headers.get("Content-Type")
-        limit=ROBOTS_LIMIT if robots else(PDF_LIMIT if (mime or "").split(";")[0].strip().lower()=="application/pdf" else HTML_LIMIT)
+        limit=limit_override if limit_override is not None else(ROBOTS_LIMIT if robots else(PDF_LIMIT if (mime or "").split(";")[0].strip().lower()=="application/pdf" else HTML_LIMIT))
         chunks=[];count=0
         while True:
             if time.monotonic()-start>25:raise TimeoutError("25 second response-read bound")
             part=response.read(min(65536,limit+1-count))
             if not part:break
-            if count==0 and not robots:
+            if count==0 and not robots and limit_override is None:
                 if part.startswith(b"%PDF-"):limit=PDF_LIMIT
-                elif limit==PDF_LIMIT:raise ValueError("PDF MIME response lacks PDF magic")
+                elif limit==PDF_LIMIT and not part.startswith(bytes((31,139))):raise ValueError("PDF MIME response lacks PDF or supported gzip received magic")
             count+=len(part)
             if count>limit:raise ValueError("Response exceeds MIME/magic-selected byte bound")
             chunks.append(part)

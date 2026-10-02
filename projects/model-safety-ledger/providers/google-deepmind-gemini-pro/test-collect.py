@@ -65,6 +65,24 @@ class Boundary(unittest.TestCase):
     def test_pdf_limit_exceeded(self):
         with patch.object(c,"PDF_LIMIT",128):
             with self.assertRaises(ValueError):c.decode_entity(gzip.compress(b"%PDF-"+b"x"*124),{"content_type":"application/pdf"})
+    def test_gzip_pdf_through_actual_encoded_reader(self):
+        entity=b"%PDF-"+b"x"*(2*1024*1024+1);raw=gzip.compress(entity)
+        class Response(io.BytesIO):
+            headers={"Content-Type":"application/pdf","Content-Encoding":"gzip"};status=200;url=CARD
+        class Opener:
+            def open(self,*a,**k):return Response(raw)
+        with patch.object(c,"OPENER",Opener()):
+            received,meta=c.get_raw(CARD)
+            self.assertEqual(received,raw);self.assertEqual(meta["applied_byte_limit"],c.PDF_LIMIT)
+            decoded,interp=c.decode_entity(received,meta)
+            self.assertEqual(decoded,entity);self.assertEqual(interp["content_encoding_header"],"gzip")
+    def test_forced_html_received_cap(self):
+        class Response(io.BytesIO):
+            headers={"Content-Type":"application/pdf"};status=200;url=BASE
+        class Opener:
+            def open(self,*a,**k):return Response(b"%PDF-"+b"x"*124)
+        with patch.object(c,"OPENER",Opener()):
+            with self.assertRaises(ValueError):c.get_raw(BASE,limit_override=128)
     def test_deadline_bypasses_exception(self):self.assertFalse(issubclass(c.CycleDeadline,Exception))
     def test_received_pdf_saved_before_parse_failure(self):
         html=('<a href="'+CARD+'">Model Card</a>').encode();pdf=b"%PDF-retained-but-parser-fails"
