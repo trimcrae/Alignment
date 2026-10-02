@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "repository": "trimcrae/Alignment",
+  "branch": "codex/usage-sprint-2026-10-01-google-native-ledger",
+  "draft_pr": "https://github.com/trimcrae/Alignment/pull/8",
+  "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+  "tested_commit": "2d76f0c279c7f850cd9a9caac01d1348e7064786",
+  "final_commit_kind": "docs_logs_receipt_only",
+  "actual_validation": {
+    "run_id": "36962976498",
+    "job_id": "110700496986",
+    "source_commit": "2d76f0c279c7f850cd9a9caac01d1348e7064786",
+    "status": "completed",
+    "conclusion": "success",
+    "job_started_at": "2026-10-02T04:05:05Z",
+    "job_completed_at": "2026-10-02T04:05:21Z",
+    "runtimes": {
+      "node": "22.23.3",
+      "python": "3.11.16",
+      "pypdf": "6.0.0"
+    },
+    "checks": {
+      "node_checks": 60,
+      "node_invalid_cases": 58,
+      "python_collector_cases": 27,
+      "python_exact_stage_cases": 5,
+      "syntax": "passed",
+      "retained_source_bindings": "passed",
+      "summary": "passed",
+      "tracked_tree": "clean"
+    },
+    "original_job_log_sha256": "c4af8e77cfe3862ffefa8422b5749b8d28cc7be17ecc8a492bc57ef7175febb6",
+    "original_job_log_bytes": 27872,
+    "committed_log": "logs/offline-ci-110700496986.log"
+  },
+  "source_receipts": {
+    "landing": {
+      "source_commit": "b4fa5e647ee78c96272553d8ae66b4b01032d14c",
+      "run_id": "36960889488",
+      "job_id": "110694095517",
+      "received_status": 200,
+      "received_bytes": 32724,
+      "received_body_sha256": "7ff785937e09f35781e18f6a429b5603674e434abb48ad43e9ce0a4016bafe39",
+      "original_receipt_sha256": "e47459cefe171ac1ee7af3217fd8100aba92333b63ccc882e838b5f91febb9ef",
+      "original_job_log_sha256": "e8e895d1734a4fc4957213b0ed211addb74c208e1aed2969d24af65f72b4272d",
+      "original_job_log_bytes": 23841,
+      "committed_log": "logs/landing-acquisition-110694095517.log",
+      "received_body_committed": "evidence/landing.html",
+      "decoded_bytes": 194458,
+      "decoded_sha256": "12ef024243b34f792eab25c6aaf7a3aceca450685f8487cc866c9885271ab310",
+      "original_interpretation_defect": "gzip_bytes_decoded_directly_as_utf8",
+      "content_encoding_header_status": "not_recorded",
+      "repair": "bounded_offline_decode_of_original_retained_bytes"
+    },
+    "card": {
+      "source_commit": "074565c5ad6409e4ce9dad281bdc4d92ac26699d",
+      "run_id": "36962354293",
+      "job_id": "110698571380",
+      "request_attempts": 1,
+      "observed_result": "HTTP302_refused_without_following",
+      "state": "not_fetched",
+      "body_retained": false,
+      "location_header_retained": false,
+      "original_receipt_sha256": "d0ce5a74bd26487261df721757f8060c2cea96d1394f0fa0488c6bca3eb35923",
+      "original_job_log_sha256": "f32a09e368ecb01d18c295a8ef09733e37126f6eca99ad7951c56cdd2614cac0",
+      "original_job_log_bytes": 27200,
+      "committed_log": "logs/card-acquisition-110698571380.log",
+      "source_retry": false
+    }
+  },
+  "artifacts": [
+    {
+      "id": 11207519173,
+      "name": "google-primary-source",
+      "archive_sha256": "5659aecb666ab2e8d35687eeaec05161808367ac3d059ecfe9fd6d1462bcabb8",
+      "archive_bytes": 34293,
+      "expires_at": "2026-12-31T03:36:07Z",
+      "run_id": "36960889488",
+      "source_commit": "b4fa5e647ee78c96272553d8ae66b4b01032d14c"
+    },
+    {
+      "id": 11207963948,
+      "name": "google-html-card-original",
+      "archive_sha256": "85b8515b1eb33359d91eb50c5d8b602ce1d9f674603ad286071033a4fde5a17d",
+      "archive_bytes": 1039,
+      "expires_at": "2026-12-31T03:56:28Z",
+      "run_id": "36962354293",
+      "source_commit": "074565c5ad6409e4ce9dad281bdc4d92ac26699d"
+    }
+  ],
+  "independent_agent_review": {
+    "reviewer": "OpenAI Codex/GPT-6 alignment_provider_review",
+    "human_review": "not_performed",
+    "tested_commit": "2d76f0c279c7f850cd9a9caac01d1348e7064786",
+    "status": "cleared",
+    "scope": [
+      "source",
+      "method",
+      "code",
+      "exact_CI"
+    ],
+    "independent_V8_reproduction": {
+      "checks": 60,
+      "invalid": 58,
+      "node_execution": false
+    },
+    "findings_closed": [
+      "bounded_received_gzip_interpretation",
+      "received_PDF_retention_before_parse",
+      "encoded_gzip_PDF_production_reader_fixture"
+    ]
+  },
+  "tested_blob_sha1": {
+    ".github/workflows/google-html-card-acquire.yml": "d7010b4b0cd802a3dd7fa66b68e760fbdbe185f5",
+    ".github/workflows/google-native-acquire.yml": "3bfa98c7df075fa240f0b6ecacc1cd8a3df3ae15",
+    ".github/workflows/google-native-validate.yml": "4a1e13527776667bd5fe6bf4e16d15e48a473013",
+    ".github/workflows/google-retained-inspect.yml": "298ceaa108ee095159868f128e5179c99d634dd9",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/acquisition-plan.json": "5b03797de0035ea7f99e221cb1aa4592c5e54436",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/card-amendment-plan.json": "25f1b1d1519a94618fd6204ac08c4797ca3982c7",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect-card-html.py": "f0754df79959addd6d2088388e6f032febf3205c",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/collect.py": "d4859b98a426620410d7dae9f8a79546212a94e3",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/core.mjs": "ae1ab67e0042f54f730e17a1a6444cd10b84a52c",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/acquisition.json": "36b87a0122042e311fe056e41156935628078703",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/card-acquisition.json": "b996b3fd7844abe1cc45c28270ca42849b68c455",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/landing-selected.json": "17c476653eb457c9fd34e6beaf43449169dfc72c",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/landing.html": "385960d294558b25346e531e147b35b85b6456e7",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/evidence/robots-deepmind.google.txt": "dbfd7d980b674e13637b647c1e1c216126fbcd1f",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/inspect-retained.py": "342e6f68c29c39f11744f80428c200d83448db61",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/result.json": "ad7dfe0953012ac5dbb05fb89fc3b09f20a118c8",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-card-html.py": "7d45351027677d565b93868a4d116cdc9b9a650e",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test-collect.py": "1212aa148b29544b325e690a627dcdfa85d40045",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/test.mjs": "006050e06d95293ba7bcd856bb2d28be482de0b6",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs": "baf8c5798bb7bea02ea517c3f40400467ed0118c",
+    "projects/model-safety-ledger/providers/google-deepmind-gemini-pro/verify-source.py": "8856e14b1f64379d3a81adb9b98b9228469f9a8f"
+  },
+  "result_sha256": "ad7e6660652ff1c33f750b755e3a7ead34be66071e54036537ddc40c573026ce",
+  "result": {
+    "acquired_cards": 0,
+    "native_domain_records": 0,
+    "unknown_determination_fields": 8,
+    "source_stop": "met",
+    "landing_label_scope": "received_landing_page_only",
+    "unknown_means_absent": false
+  },
+  "implementation_failures": [
+    {
+      "run_id": "36961422484",
+      "job_id": "110695741443",
+      "source_commit": "7e0e16811d0f0f29b99b5c7c35a221cb0fc6a204",
+      "kind": "offline_decoder_escaped_byte_literal",
+      "provider_GETs": 0,
+      "resolved_at": "7d0ce5aa4406836c984360211709325cbe9d1849"
+    }
+  ],
+  "remaining_gaps": [
+    "card_body_and_redirect_target_not_retained",
+    "actual_card_model_identity_unknown",
+    "evaluated_configuration_unknown",
+    "native_framework_name_version_and_outcomes_unknown",
+    "deployment_safeguards_unknown",
+    "actual_release_timing_unknown",
+    "launch_edition_bytes_unknown"
+  ],
+  "next_bounded_task": "Under a future task, select one different provider's accessible official primary model card (Meta is a candidate), vet its exact source plan before one finite acquisition and preserve that provider's native framework/unknowns. Keep this Google gap unchanged until distinct authoritative input or a new explicit bounded route plan; no automatic unchanged card-route retry."
+}
