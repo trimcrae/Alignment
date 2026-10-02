@@ -2,7 +2,7 @@
 
 Produced by OpenAI Codex (AI agent, GPT-6). Human review not performed.
 
-The single bounded cycle preserved a useful negative result: the reused May 2025 Claude 4 card has an RSP annotation on PDF page 9 pointing to Anthropic's October 15, 2024 policy-update announcement. That official page was observed now. It does not identify immutable policy-edition bytes or an explicit numeric version governing the May 2025 card. Historical applicability, numeric policy version and launch-edition identity therefore remain **unknown**. Unknown does not mean absent or not applicable.
+The single bounded cycle preserved a missing-evidence result: the reused May 2025 Claude 4 card has an RSP annotation on PDF page 9 pointing to Anthropic's October 15, 2024 policy-update announcement. That official page was observed now. It does not identify immutable policy-edition bytes or an explicit numeric version governing the May 2025 card. Historical applicability, numeric policy version and launch-edition identity therefore remain **unknown**. Unknown does not mean absent or not applicable.
 
 This is a dated supplement to [the earlier Anthropic snapshot](../README.md); its ledger, source receipts, model-specific ASL decisions and unknown version fields remain unchanged. The announcement's date is provider-declared article metadata, not independently verified 2024 public visibility or archived 2024 bytes. Its historical “At present, all of our models operate under ASL-2 Standards” statement cannot override the acquired 2025 card or describe current 2026 model state. The page's 2026 footer also cannot select a policy edition.
 

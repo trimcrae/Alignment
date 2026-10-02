@@ -1,0 +1,404 @@
+﻿2026-10-02T02:35:52.3115373Z Current runner version: '2.337.0'
+2026-10-02T02:35:52.3140651Z ##[group]Runner Image Provisioner
+2026-10-02T02:35:52.3141557Z Hosted Compute Agent
+2026-10-02T02:35:52.3142182Z Version: 20260901.588
+2026-10-02T02:35:52.3142962Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-02T02:35:52.3143743Z Build Date: 2026-09-01T19:56:44Z
+2026-10-02T02:35:52.3144490Z Worker ID: {3687210f-b076-4d4f-b5ef-2623b93cc239}
+2026-10-02T02:35:52.3145217Z Azure Region: westus
+2026-10-02T02:35:52.3145781Z ##[endgroup]
+2026-10-02T02:35:52.3147877Z ##[group]Operating System
+2026-10-02T02:35:52.3148539Z Ubuntu
+2026-10-02T02:35:52.3149131Z 24.04.5
+2026-10-02T02:35:52.3149666Z LTS
+2026-10-02T02:35:52.3150699Z ##[endgroup]
+2026-10-02T02:35:52.3151369Z ##[group]Runner Image
+2026-10-02T02:35:52.3152029Z Image: ubuntu-24.04
+2026-10-02T02:35:52.3152637Z Version: 20260927.320.1
+2026-10-02T02:35:52.3153937Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-02T02:35:52.3155631Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-02T02:35:52.3156632Z ##[endgroup]
+2026-10-02T02:35:52.3157855Z ##[group]GITHUB_TOKEN Permissions
+2026-10-02T02:35:52.3160381Z Actions: read
+2026-10-02T02:35:52.3161090Z Contents: read
+2026-10-02T02:35:52.3161685Z Metadata: read
+2026-10-02T02:35:52.3162251Z ##[endgroup]
+2026-10-02T02:35:52.3164377Z Secret source: Actions
+2026-10-02T02:35:52.3165384Z Cache mode: write
+2026-10-02T02:35:52.3166169Z Prepare workflow directory
+2026-10-02T02:35:52.3625962Z Prepare all required actions
+2026-10-02T02:35:52.3674607Z Getting action download info
+2026-10-02T02:35:52.7174772Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-02T02:35:52.8184181Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-02T02:35:52.9033510Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-10-02T02:35:53.3667269Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-02T02:35:53.5851401Z Complete job name: acquire
+2026-10-02T02:35:53.6651880Z ##[group]Run actions/checkout@v4
+2026-10-02T02:35:53.6652846Z with:
+2026-10-02T02:35:53.6653348Z   persist-credentials: false
+2026-10-02T02:35:53.6653940Z   repository: trimcrae/Alignment
+2026-10-02T02:35:53.6658155Z   token: ***
+2026-10-02T02:35:53.6658640Z   ssh-strict: true
+2026-10-02T02:35:53.6659127Z   ssh-user: git
+2026-10-02T02:35:53.6659602Z   clean: true
+2026-10-02T02:35:53.6660387Z   sparse-checkout-cone-mode: true
+2026-10-02T02:35:53.6660972Z   fetch-depth: 1
+2026-10-02T02:35:53.6661452Z   fetch-tags: false
+2026-10-02T02:35:53.6661947Z   show-progress: true
+2026-10-02T02:35:53.6662457Z   lfs: false
+2026-10-02T02:35:53.6662919Z   submodules: false
+2026-10-02T02:35:53.6663421Z   set-safe-directory: true
+2026-10-02T02:35:53.6663980Z   allow-unsafe-pr-checkout: false
+2026-10-02T02:35:53.6664863Z env:
+2026-10-02T02:35:53.6665351Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:35:53.6665901Z ##[endgroup]
+2026-10-02T02:35:53.7675529Z Syncing repository: trimcrae/Alignment
+2026-10-02T02:35:53.7677706Z ##[group]Getting Git version info
+2026-10-02T02:35:53.7678885Z Working directory is '/home/runner/work/Alignment/Alignment'
+2026-10-02T02:35:53.7680610Z [command]/usr/bin/git version
+2026-10-02T02:35:53.7883985Z git version 2.55.0
+2026-10-02T02:35:53.7905258Z ##[endgroup]
+2026-10-02T02:35:53.7927544Z Temporarily overriding HOME='/home/runner/work/_temp/80d888f0-4eea-4c9d-9a92-c3d0307fa622' before making global git config changes
+2026-10-02T02:35:53.7930490Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T02:35:53.7933245Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T02:35:53.7995394Z Deleting the contents of '/home/runner/work/Alignment/Alignment'
+2026-10-02T02:35:53.7999373Z ##[group]Initializing the repository
+2026-10-02T02:35:53.8003589Z [command]/usr/bin/git init /home/runner/work/Alignment/Alignment
+2026-10-02T02:35:53.8148925Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-02T02:35:53.8151324Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-02T02:35:53.8153227Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-02T02:35:53.8154705Z hint: call:
+2026-10-02T02:35:53.8155647Z hint:
+2026-10-02T02:35:53.8156738Z hint: 	git config --global init.defaultBranch <name>
+2026-10-02T02:35:53.8158439Z hint:
+2026-10-02T02:35:53.8159556Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-02T02:35:53.8161587Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-02T02:35:53.8163005Z hint:
+2026-10-02T02:35:53.8163741Z hint: 	git branch -m <name>
+2026-10-02T02:35:53.8164575Z hint:
+2026-10-02T02:35:53.8165784Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-02T02:35:53.8166966Z Initialized empty Git repository in /home/runner/work/Alignment/Alignment/.git/
+2026-10-02T02:35:53.8169675Z [command]/usr/bin/git remote add origin https://github.com/trimcrae/Alignment
+2026-10-02T02:35:53.8216990Z ##[endgroup]
+2026-10-02T02:35:53.8218640Z ##[group]Disabling automatic garbage collection
+2026-10-02T02:35:53.8220390Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-02T02:35:53.8256177Z ##[endgroup]
+2026-10-02T02:35:53.8257552Z ##[group]Setting up auth
+2026-10-02T02:35:53.8263994Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T02:35:53.8298561Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T02:35:53.8690816Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T02:35:53.8727652Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T02:35:53.8954693Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T02:35:53.8991903Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T02:35:53.9228405Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-02T02:35:53.9270731Z ##[endgroup]
+2026-10-02T02:35:53.9271734Z ##[group]Fetching the repository
+2026-10-02T02:35:53.9282865Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ffcc6faa08df990f303add33a518843faa831f4f:refs/remotes/origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version
+2026-10-02T02:35:54.4328015Z From https://github.com/trimcrae/Alignment
+2026-10-02T02:35:54.4330585Z  * [new ref]         ffcc6faa08df990f303add33a518843faa831f4f -> origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version
+2026-10-02T02:35:54.4335266Z ##[endgroup]
+2026-10-02T02:35:54.4337217Z ##[group]Determining the checkout info
+2026-10-02T02:35:54.4338974Z ##[endgroup]
+2026-10-02T02:35:54.4344152Z [command]/usr/bin/git sparse-checkout disable
+2026-10-02T02:35:54.4433963Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-02T02:35:54.4467386Z ##[group]Checking out the ref
+2026-10-02T02:35:54.4473820Z [command]/usr/bin/git checkout --progress --force -B codex/usage-sprint-2026-10-01-anthropic-rsp-version refs/remotes/origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version
+2026-10-02T02:35:54.4651967Z Switched to a new branch 'codex/usage-sprint-2026-10-01-anthropic-rsp-version'
+2026-10-02T02:35:54.4660916Z branch 'codex/usage-sprint-2026-10-01-anthropic-rsp-version' set up to track 'origin/codex/usage-sprint-2026-10-01-anthropic-rsp-version'.
+2026-10-02T02:35:54.4666475Z ##[endgroup]
+2026-10-02T02:35:54.4707881Z [command]/usr/bin/git log -1 --format=%H
+2026-10-02T02:35:54.4735167Z ffcc6faa08df990f303add33a518843faa831f4f
+2026-10-02T02:35:54.4744703Z ##[group]Removing auth
+2026-10-02T02:35:54.4748766Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T02:35:54.4782820Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T02:35:54.5008401Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T02:35:54.5037161Z http.https://github.com/.extraheader
+2026-10-02T02:35:54.5044733Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-02T02:35:54.5082108Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T02:35:54.5306238Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T02:35:54.5339024Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T02:35:54.5558651Z ##[endgroup]
+2026-10-02T02:35:54.5988581Z ##[group]Run actions/setup-python@v5
+2026-10-02T02:35:54.5990088Z with:
+2026-10-02T02:35:54.5991008Z   python-version: 3.11
+2026-10-02T02:35:54.5992048Z   check-latest: false
+2026-10-02T02:35:54.6002631Z   token: ***
+2026-10-02T02:35:54.6003600Z   update-environment: true
+2026-10-02T02:35:54.6004722Z   allow-prereleases: false
+2026-10-02T02:35:54.6005810Z   freethreaded: false
+2026-10-02T02:35:54.6006785Z env:
+2026-10-02T02:35:54.6007689Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:35:54.6008816Z ##[endgroup]
+2026-10-02T02:35:54.7434635Z ##[group]Installed versions
+2026-10-02T02:35:54.7545709Z (node:2360) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T02:35:54.7561383Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T02:35:54.7563467Z Successfully set up CPython (3.11.16)
+2026-10-02T02:35:54.7565580Z ##[endgroup]
+2026-10-02T02:35:54.7792853Z ##[group]Run python3 -m pip install pypdf==6.0.0
+2026-10-02T02:35:54.7795265Z [36;1mpython3 -m pip install pypdf==6.0.0[0m
+2026-10-02T02:35:54.8206790Z shell: /usr/bin/bash -e {0}
+2026-10-02T02:35:54.8207985Z env:
+2026-10-02T02:35:54.8208925Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:35:54.8210541Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:54.8212482Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T02:35:54.8214408Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:54.8216194Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:54.8217979Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:54.8219688Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T02:35:54.8221261Z ##[endgroup]
+2026-10-02T02:35:58.0267106Z Collecting pypdf==6.0.0
+2026-10-02T02:35:58.1004702Z   Downloading pypdf-6.0.0-py3-none-any.whl.metadata (7.1 kB)
+2026-10-02T02:35:58.1191339Z Downloading pypdf-6.0.0-py3-none-any.whl (310 kB)
+2026-10-02T02:35:58.3044042Z Installing collected packages: pypdf
+2026-10-02T02:35:58.5362361Z Successfully installed pypdf-6.0.0
+2026-10-02T02:35:58.6064487Z ##[group]Run actions/download-artifact@v4
+2026-10-02T02:35:58.6064835Z with:
+2026-10-02T02:35:58.6065052Z   artifact-ids: 11204066868
+2026-10-02T02:35:58.6065339Z   path: /home/runner/work/_temp/received-card
+2026-10-02T02:35:58.6065646Z   merge-multiple: true
+2026-10-02T02:35:58.6068342Z   github-token: ***
+2026-10-02T02:35:58.6068602Z   repository: trimcrae/Alignment
+2026-10-02T02:35:58.6069107Z   run-id: 36951404278
+2026-10-02T02:35:58.6069320Z env:
+2026-10-02T02:35:58.6069667Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:35:58.6070202Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:58.6070675Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T02:35:58.6071138Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:58.6071529Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:58.6071930Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:35:58.6072359Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T02:35:58.6072702Z ##[endgroup]
+2026-10-02T02:35:58.7633715Z Downloading artifacts by ID
+2026-10-02T02:35:58.7638788Z Fetching artifact list for workflow run 36951404278 in repository trimcrae/Alignment
+2026-10-02T02:35:58.7745955Z (node:2394) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T02:35:58.7746992Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T02:35:58.8004799Z (node:2394) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-02T02:35:59.0132787Z Found 1 artifact(s)
+2026-10-02T02:35:59.0134143Z Preparing to download the following artifacts:
+2026-10-02T02:35:59.0135888Z - anthropic-primary-source (ID: 11204066868, Size: 4132838, Expected Digest: sha256:6f21c23b86833cdde2ba9752737060336f9b8d8a3a6112e2a3ae51a99cc87727)
+2026-10-02T02:35:59.0177984Z Downloading artifact '11204066868' from 'trimcrae/Alignment'
+2026-10-02T02:35:59.2909170Z Redirecting to blob download url: https://productionresultssa1.blob.core.windows.net/actions-results/9e2a7439-3be0-8e0a-9cc9-8ea300c0e2fc/workflow-job-run-a908ea77-02b1-5d0b-824a-4fdaf720cdb6/artifacts/6b5513bab6680f1f8fd539ed236b2c8c94fcf3247c6233fcb852ca0273d7737d.zip
+2026-10-02T02:35:59.2912054Z Starting download of artifact to: /home/runner/work/_temp/received-card
+2026-10-02T02:35:59.6375319Z (node:2394) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-02T02:36:00.6659611Z SHA256 digest of downloaded artifact is 6f21c23b86833cdde2ba9752737060336f9b8d8a3a6112e2a3ae51a99cc87727
+2026-10-02T02:36:00.6660848Z Artifact download completed successfully.
+2026-10-02T02:36:00.6661416Z Total of 1 artifact(s) downloaded
+2026-10-02T02:36:00.6667233Z Download artifact has finished successfully
+2026-10-02T02:36:00.7414989Z ##[group]Run python3 projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
+2026-10-02T02:36:00.7415953Z [36;1mpython3 projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py[0m
+2026-10-02T02:36:00.7481616Z shell: /usr/bin/bash -e {0}
+2026-10-02T02:36:00.7481887Z env:
+2026-10-02T02:36:00.7482103Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:36:00.7482455Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:00.7482908Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T02:36:00.7483360Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:00.7483771Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:00.7484161Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:00.7484552Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T02:36:00.7484988Z   REUSED_CARD_DIR: /home/runner/work/_temp/received-card
+2026-10-02T02:36:00.7485308Z ##[endgroup]
+2026-10-02T02:36:01.8106408Z RSP_VERSION_RECEIPT_BEGIN
+2026-10-02T02:36:01.8107012Z {
+2026-10-02T02:36:01.8107332Z   "schema_version": 1,
+2026-10-02T02:36:01.8107771Z   "authorship": {
+2026-10-02T02:36:01.8108148Z     "agent": "OpenAI Codex",
+2026-10-02T02:36:01.8108975Z     "model_family": "GPT-6",
+2026-10-02T02:36:01.8109462Z     "session": "usage-sprint-2026-10-01",
+2026-10-02T02:36:01.8110278Z     "human_review": "not_performed"
+2026-10-02T02:36:01.8110734Z   },
+2026-10-02T02:36:01.8111069Z   "execution": {
+2026-10-02T02:36:01.8111572Z     "source_commit": "ffcc6faa08df990f303add33a518843faa831f4f",
+2026-10-02T02:36:01.8112196Z     "run_id": "36956360948",
+2026-10-02T02:36:01.8112636Z     "job_name": "acquire",
+2026-10-02T02:36:01.8113099Z     "collected_at": "2026-10-02T02:36:01Z"
+2026-10-02T02:36:01.8113589Z   },
+2026-10-02T02:36:01.8113926Z   "method": {
+2026-10-02T02:36:01.8114320Z     "python": "3.11.16",
+2026-10-02T02:36:01.8114755Z     "pypdf": "6.0.0",
+2026-10-02T02:36:01.8115169Z     "cycle_seconds": 180,
+2026-10-02T02:36:01.8115585Z     "socket_seconds": 12,
+2026-10-02T02:36:01.8116027Z     "response_read_seconds": 25,
+2026-10-02T02:36:01.8116450Z     "max_html_bytes": 2097152,
+2026-10-02T02:36:01.8116913Z     "max_policy_pdf_bytes": 8388608,
+2026-10-02T02:36:01.8117406Z     "max_redirects": 3,
+2026-10-02T02:36:01.8118579Z     "scope": "Reused card RSP annotations on pages9/10; one official policy route and at most one explicitly bound dated policy PDF; no current-to-historical inference"
+2026-10-02T02:36:01.8119768Z   },
+2026-10-02T02:36:01.8120390Z   "reused_card": {
+2026-10-02T02:36:01.8120887Z     "source_commit": "bda723fb2678787fc0ec6e52ad742d63b618ab5a",
+2026-10-02T02:36:01.8121480Z     "run_id": "36951404278",
+2026-10-02T02:36:01.8121891Z     "artifact_id": "11204066868",
+2026-10-02T02:36:01.8122603Z     "expected_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+2026-10-02T02:36:01.8123383Z     "state": "verified",
+2026-10-02T02:36:01.8123786Z     "annotation_pages": [
+2026-10-02T02:36:01.8124154Z       9,
+2026-10-02T02:36:01.8124451Z       10
+2026-10-02T02:36:01.8124728Z     ],
+2026-10-02T02:36:01.8125029Z     "pointers": [
+2026-10-02T02:36:01.8125360Z       {
+2026-10-02T02:36:01.8125672Z         "pdf_page": 9,
+2026-10-02T02:36:01.8126374Z         "uri": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+2026-10-02T02:36:01.8127265Z         "annotation_rectangle": [
+2026-10-02T02:36:01.8127699Z           352.1366,
+2026-10-02T02:36:01.8128072Z           623.1524,
+2026-10-02T02:36:01.8128436Z           486.19763,
+2026-10-02T02:36:01.8128815Z           637.23242
+2026-10-02T02:36:01.8129164Z         ],
+2026-10-02T02:36:01.8129827Z         "relation": "URI annotation in the received card, not launch-edition availability proof"
+2026-10-02T02:36:01.8130907Z       }
+2026-10-02T02:36:01.8131234Z     ],
+2026-10-02T02:36:01.8132156Z     "sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+2026-10-02T02:36:01.8132912Z     "bytes": 4976826,
+2026-10-02T02:36:01.8133294Z     "pdf_pages": 124
+2026-10-02T02:36:01.8133655Z   },
+2026-10-02T02:36:01.8133973Z   "sources": [
+2026-10-02T02:36:01.8134314Z     {
+2026-10-02T02:36:01.8134688Z       "id": "official-rsp-route",
+2026-10-02T02:36:01.8135653Z       "requested_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+2026-10-02T02:36:01.8136634Z       "observed_at": "2026-10-02T02:36:01Z",
+2026-10-02T02:36:01.8137151Z       "state": "observed",
+2026-10-02T02:36:01.8137575Z       "response": {
+2026-10-02T02:36:01.8137947Z         "status": 200,
+2026-10-02T02:36:01.8138746Z         "final_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+2026-10-02T02:36:01.8139754Z         "content_type": "text/html; charset=utf-8",
+2026-10-02T02:36:01.8140614Z         "last_modified": null,
+2026-10-02T02:36:01.8141073Z         "etag": null,
+2026-10-02T02:36:01.8141610Z         "applied_byte_limit": 2097152,
+2026-10-02T02:36:01.8142147Z         "redirect_chain": [
+2026-10-02T02:36:01.8142560Z           {
+2026-10-02T02:36:01.8143285Z             "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+2026-10-02T02:36:01.8144459Z             "robots": {
+2026-10-02T02:36:01.8144968Z               "url": "https://www.anthropic.com/robots.txt",
+2026-10-02T02:36:01.8145877Z               "user_agent": "AlignmentRSPVersion/0.1 (+https://github.com/trimcrae/Alignment)",
+2026-10-02T02:36:01.8146702Z               "status": 200,
+2026-10-02T02:36:01.8147416Z               "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+2026-10-02T02:36:01.8148220Z               "allowed": true
+2026-10-02T02:36:01.8148656Z             }
+2026-10-02T02:36:01.8149020Z           }
+2026-10-02T02:36:01.8149367Z         ]
+2026-10-02T02:36:01.8149707Z       },
+2026-10-02T02:36:01.8150316Z       "robots": {
+2026-10-02T02:36:01.8150842Z         "url": "https://www.anthropic.com/robots.txt",
+2026-10-02T02:36:01.8151716Z         "user_agent": "AlignmentRSPVersion/0.1 (+https://github.com/trimcrae/Alignment)",
+2026-10-02T02:36:01.8152512Z         "status": 200,
+2026-10-02T02:36:01.8153164Z         "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+2026-10-02T02:36:01.8153939Z         "allowed": true
+2026-10-02T02:36:01.8154341Z       },
+2026-10-02T02:36:01.8154701Z       "bytes": 171813,
+2026-10-02T02:36:01.8155355Z       "sha256": "8c454b6a7c24806d4ee8795eb76ea63bfaad67cfafe8350aaf2f922c8fb802ac",
+2026-10-02T02:36:01.8156131Z       "kind": "html",
+2026-10-02T02:36:01.8156883Z       "normalized_text_sha256": "40a4c7295d624fa9ca2be16f4ddb17bd09ee748521bc5189b784fb80625be192",
+2026-10-02T02:36:01.8157763Z       "spans": [
+2026-10-02T02:36:01.8158130Z         {
+2026-10-02T02:36:01.8158487Z           "start_char": 0,
+2026-10-02T02:36:01.8158928Z           "end_char": 564,
+2026-10-02T02:36:01.8162941Z           "text": "Announcing our updated Responsible Scaling Policy \\ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Announcements Announcing our updated Responsible Scaling Policy Oct 15, 2024 Read the Responsible Scaling Policy Today we are publishing a significant update to our Responsible Scaling Policy (RSP), the risk governance framework we use to mitigate potential catastrophic risks from frontier AI systems. This update introduces a more flexible and nuanced approach to assessing and managing AI risks while maintaining "
+2026-10-02T02:36:01.8166970Z         },
+2026-10-02T02:36:01.8167306Z         {
+2026-10-02T02:36:01.8167660Z           "start_char": 1193,
+2026-10-02T02:36:01.8168108Z           "end_char": 2202,
+2026-10-02T02:36:01.8175459Z           "text": "r AI models advance, they have the potential to bring about transformative benefits for our society and economy. AI could accelerate scientific discoveries, revolutionize healthcare, enhance our education system, and create entirely new domains for human creativity and innovation. However, frontier AI systems also present new challenges and risks that warrant careful study and effective safeguards. In September 2023, we released our Responsible Scaling Policy, a framework for managing risks from increasingly capable AI systems. After a year of implementation and learning, we are now sharing a significantly updated version that reflects practical insights and accounts for advancing technological capabilities. Although this policy focuses on catastrophic risks like the categories listed below, they are not the only risks that we monitor and prepare for. Our Usage Policy sets forth our standards for the use of our products, including rules that prohibit using our models to spread misinformation, i"
+2026-10-02T02:36:01.8182790Z         },
+2026-10-02T02:36:01.8183137Z         {
+2026-10-02T02:36:01.8183488Z           "start_char": 2899,
+2026-10-02T02:36:01.8183920Z           "end_char": 4240,
+2026-10-02T02:36:01.8194324Z           "text": "scale with potential risks. To do this, we use AI Safety Level Standards (ASL Standards) , graduated sets of safety and security measures that become more stringent as model capabilities increase. Inspired by Biosafety Levels, these begin at ASL-1 for models that have very basic capabilities (for example, chess-playing bots) and progress through ASL-2, ASL-3, and so on. In our updated policy, we have refined our methodology for assessing specific capabilities (and their associated risks) and implementing proportional safety and security measures. Our updated framework has two key components: Capability Thresholds: Specific AI abilities that, if reached, would require stronger safeguards than our current baseline. Required Safeguards: The specific ASL Standards needed to mitigate risks once a Capability Threshold has been reached. At present, all of our models operate under ASL-2 Standards, which reflect current industry best practices. Our updated policy defines two key Capability Thresholds that would require upgraded safeguards: Autonomous AI Research and Development: If a model can independently conduct complex AI research tasks typically requiring human expertise—potentially significantly accelerating AI development in an unpredictable way—we require elevated security standards (potentially ASL-4 or higher standards"
+2026-10-02T02:36:01.8199513Z         },
+2026-10-02T02:36:01.8199707Z         {
+2026-10-02T02:36:01.8200180Z           "start_char": 4672,
+2026-10-02T02:36:01.8200455Z           "end_char": 5441,
+2026-10-02T02:36:01.8203256Z           "text": "deployment controls. On the security side, this will include internal access controls and more robust protection of model weights. For deployment risks, we plan to implement a multi-layered approach to prevent misuse, including real-time and asynchronous monitoring, rapid response protocols, and thorough pre-deployment red teaming. Implementation and oversight To contribute to effective implementation of the policy, we have established: Capability assessments : Routine model evaluations based on our Capability Thresholds to determine whether our current safeguards are still appropriate. (Summaries of past assessments are available here .) Safeguard assessments: Routine evaluation of the effectiveness of our security and deployment safety measures to assess wh"
+2026-10-02T02:36:01.8206057Z         },
+2026-10-02T02:36:01.8206241Z         {
+2026-10-02T02:36:01.8206435Z           "start_char": 5711,
+2026-10-02T02:36:01.8206676Z           "end_char": 6479,
+2026-10-02T02:36:01.8209491Z           "text": "on in high-reliability industries. Measures for internal governance and external input: Our assessment methodology will be backed up by internal stress-testing in addition to our existing internal reporting process for safety issues. We are also soliciting external expert feedback on our methodologies. 1 Learning from experience We have learned a lot in our first year with the previous RSP in effect, and are using this update as an opportunity to reflect on what has worked well and what makes sense to update in the policy. As part of this, we conducted our first review of how well we adhered to the framework and identified a small number of instances where we fell short of meeting the full letter of its requirements. These included procedural issues such as "
+2026-10-02T02:36:01.8212357Z         },
+2026-10-02T02:36:01.8212536Z         {
+2026-10-02T02:36:01.8212724Z           "start_char": 6875,
+2026-10-02T02:36:01.8212958Z           "end_char": 7642,
+2026-10-02T02:36:01.8215614Z           "text": "imal risk to the safety of our models. We used the additional three days to refine and improve our evaluations; the different set of evaluations we used provided a more accurate assessment than the placeholder evaluations; and our evaluation methodology still showed we were sufficiently far from the thresholds. From this, we learned two valuable lessons to incorporate into our updated framework: we needed to incorporate more flexibility into our policies, and we needed to improve our process for tracking compliance with the RSP. You can read more here . Since we first released the RSP a year ago, our goal has been to offer an example of a framework that others might draw inspiration from when crafting their own AI risk governance policies. We hope that proa"
+2026-10-02T02:36:01.8218423Z         },
+2026-10-02T02:36:01.8218600Z         {
+2026-10-02T02:36:01.8218784Z           "start_char": 9054,
+2026-10-02T02:36:01.8219015Z           "end_char": 9821,
+2026-10-02T02:36:01.8221915Z           "text": "safeguards) Security and Compliance (responsible for security safeguards and risk management) Alignment Science (including sub-teams responsible for developing ASL-3+ safety measures, for misalignment-focused capability evaluations, and for our internal alignment stress-testing program) RSP Team (responsible for policy drafting, assurance, and cross-company execution) Read the updated policy at anthropic.com/rsp , and supplementary information at anthropic.com/rsp-updates . We extend our sincere gratitude to the many external groups that provided invaluable feedback on the development and refinement of our Responsible Scaling Policy. Footnotes 1 We have also shared our assessment methodology with both AI Safety Institutes, as well as a selection of independ"
+2026-10-02T02:36:01.8224700Z         },
+2026-10-02T02:36:01.8224876Z         {
+2026-10-02T02:36:01.8225069Z           "start_char": 11641,
+2026-10-02T02:36:01.8225310Z           "end_char": 12039,
+2026-10-02T02:36:01.8227163Z           "text": " News Claude’s Constitution Claude Corps Keep thinking Policy on the AI Exponential Responsible Scaling Policy Security and compliance Transparency Terms and policies Privacy policy Consumer health data privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Terms of Service: US K-12 Data Processing Agreement: US K-12 Usage policy © 2026 Anthropic PBC"
+2026-10-02T02:36:01.8228697Z         }
+2026-10-02T02:36:01.8228879Z       ],
+2026-10-02T02:36:01.8229085Z       "policy_links": []
+2026-10-02T02:36:01.8229306Z     }
+2026-10-02T02:36:01.8229485Z   ],
+2026-10-02T02:36:01.8229665Z   "selection": {
+2026-10-02T02:36:01.8229998Z     "status": "unknown",
+2026-10-02T02:36:01.8230251Z     "policy_pdf_candidates": [],
+2026-10-02T02:36:01.8230522Z     "explicitly_bound_candidates": [],
+2026-10-02T02:36:01.8231025Z     "reason": "Current official policy pointer is mutable; version dates alone do not bind the May2025 card"
+2026-10-02T02:36:01.8231502Z   }
+2026-10-02T02:36:01.8231675Z }
+2026-10-02T02:36:01.8231864Z RSP_VERSION_RECEIPT_END
+2026-10-02T02:36:01.9017747Z ##[group]Run actions/upload-artifact@v4
+2026-10-02T02:36:01.9018111Z with:
+2026-10-02T02:36:01.9018348Z   name: rsp-edition-receipt
+2026-10-02T02:36:01.9018726Z   path: /home/runner/work/_temp/rsp-version-acquisition.json
+2026-10-02T02:36:01.9019144Z   if-no-files-found: error
+2026-10-02T02:36:01.9019423Z   retention-days: 90
+2026-10-02T02:36:01.9019687Z   compression-level: 6
+2026-10-02T02:36:01.9020122Z   overwrite: false
+2026-10-02T02:36:01.9020384Z   include-hidden-files: false
+2026-10-02T02:36:01.9020663Z env:
+2026-10-02T02:36:01.9020898Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:36:01.9021273Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:01.9021795Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T02:36:01.9022331Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:01.9022794Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:01.9023306Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:01.9023779Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T02:36:01.9024175Z ##[endgroup]
+2026-10-02T02:36:02.0931701Z (node:2410) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T02:36:02.0933926Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T02:36:02.0985506Z With the provided path, there will be 1 file uploaded
+2026-10-02T02:36:02.0993739Z Artifact name is valid!
+2026-10-02T02:36:02.1007274Z Root directory input is valid!
+2026-10-02T02:36:02.4720465Z Beginning upload of artifact content to blob storage
+2026-10-02T02:36:02.4911474Z (node:2410) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-02T02:36:02.7708408Z Uploaded bytes 4356
+2026-10-02T02:36:02.8523923Z Finished uploading artifact content to blob storage!
+2026-10-02T02:36:02.8531242Z SHA256 digest of uploaded artifact zip is 15d40e3152a6299f36f07e0903a1b549ea589a38cdb0d8d44421529944e040e5
+2026-10-02T02:36:02.8532319Z Finalizing artifact upload
+2026-10-02T02:36:03.0975751Z Artifact rsp-edition-receipt.zip successfully finalized. Artifact ID 11205553533
+2026-10-02T02:36:03.0976670Z Artifact rsp-edition-receipt has been successfully uploaded! Final size is 4356 bytes. Artifact ID is 11205553533
+2026-10-02T02:36:03.0982314Z Artifact download URL: https://github.com/trimcrae/Alignment/actions/runs/36956360948/artifacts/11205553533
+2026-10-02T02:36:03.1101426Z ##[group]Run git diff --exit-code
+2026-10-02T02:36:03.1101800Z [36;1mgit diff --exit-code[0m
+2026-10-02T02:36:03.1102100Z [36;1mtest -z "$(git status --porcelain)"[0m
+2026-10-02T02:36:03.1166293Z shell: /usr/bin/bash -e {0}
+2026-10-02T02:36:03.1166554Z env:
+2026-10-02T02:36:03.1166768Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-02T02:36:03.1167109Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:03.1167564Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-10-02T02:36:03.1168004Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:03.1168402Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:03.1168797Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-10-02T02:36:03.1169198Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-10-02T02:36:03.1169568Z ##[endgroup]
+2026-10-02T02:36:03.1476775Z Post job cleanup.
+2026-10-02T02:36:03.2706742Z (node:2425) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-02T02:36:03.2708229Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-02T02:36:03.2884527Z Post job cleanup.
+2026-10-02T02:36:03.3795978Z [command]/usr/bin/git version
+2026-10-02T02:36:03.3877819Z git version 2.55.0
+2026-10-02T02:36:03.3923609Z Temporarily overriding HOME='/home/runner/work/_temp/c4aa882e-d058-4e9a-b8a3-6efd6852540b' before making global git config changes
+2026-10-02T02:36:03.3925110Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-02T02:36:03.3930224Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Alignment/Alignment
+2026-10-02T02:36:03.3973398Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-02T02:36:03.4011757Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-02T02:36:03.4309263Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-02T02:36:03.4351163Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-02T02:36:03.4618090Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-02T02:36:03.4665353Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-02T02:36:03.5159141Z Cleaning up orphan processes
+2026-10-02T02:36:03.5422850Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
