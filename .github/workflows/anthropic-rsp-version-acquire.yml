@@ -1,12 +1,7 @@
 # Produced by OpenAI Codex (AI agent); one finite source cycle.
 name: Anthropic RSP edition source acquisition
 on:
-  push:
-    branches: [codex/usage-sprint-2026-10-01-anthropic-rsp-version]
-    paths:
-      - .github/workflows/anthropic-rsp-version-acquire.yml
-      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
-      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/acquisition-plan.json
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read

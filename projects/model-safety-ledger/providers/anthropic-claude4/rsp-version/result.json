@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed",
+    "base_commit": "4bff2e760c6e3297b96bf130b756dc43d36ce1d3"
+  },
+  "snapshot_at": "2026-10-02T02:36:01Z",
+  "prior_snapshot": {
+    "path": "../ledger.json",
+    "sha256": "8ac146cdd706421dc84d5ca5fafef70439030be48278665ac3cb454c108a3151",
+    "framework_version_status": "unknown"
+  },
+  "evidence_receipt": {
+    "path": "evidence/acquisition.json",
+    "sha256": "4b3363dcd44fe0469ff3415874d0f493beafd6f2eb9e1770022e786460767ca9",
+    "source_commit": "ffcc6faa08df990f303add33a518843faa831f4f",
+    "run_id": "36956360948",
+    "job_id": "110680066600",
+    "run_url": "https://github.com/trimcrae/Alignment/actions/runs/36956360948"
+  },
+  "received_card_reference": {
+    "status": "observed",
+    "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "source_run_id": "36951404278",
+    "artifact_id": "11204066868",
+    "pdf_page": 9,
+    "uri": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+    "annotation_rectangle": [
+      352.1366,
+      623.1524,
+      486.19763,
+      637.23242
+    ],
+    "relation": "received_card_uri_only",
+    "limitation": "This annotation is in the already received card bytes; it does not establish launch-time availability or the policy edition that governed May 2025."
+  },
+  "official_route_observation": {
+    "status": "observed",
+    "source_id": "official-rsp-route",
+    "kind": "dated_policy_update_announcement",
+    "source_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+    "content_sha256": "8c454b6a7c24806d4ee8795eb76ea63bfaad67cfafe8350aaf2f922c8fb802ac",
+    "bytes": 171813,
+    "observed_at": "2026-10-02T02:36:01Z",
+    "verification": "primary_page_observed",
+    "declared_update_date": {
+      "status": "reported",
+      "value": "2024-10-15",
+      "date_phrase": "Oct 15, 2024",
+      "citation": {
+        "source_id": "official-rsp-route",
+        "content_sha256": "8c454b6a7c24806d4ee8795eb76ea63bfaad67cfafe8350aaf2f922c8fb802ac",
+        "normalized_text_sha256": "40a4c7295d624fa9ca2be16f4ddb17bd09ee748521bc5189b784fb80625be192",
+        "quote": "Announcing our updated Responsible Scaling Policy Oct 15, 2024 Read the Responsible Scaling Policy Today we are publishing a significant update to our Responsible Scaling Policy (RSP), the risk governance framework we use to mitigate potential catastrophic risks from frontier AI systems."
+      }
+    },
+    "numeric_policy_version": {
+      "status": "unknown",
+      "value": null,
+      "reason": "The acquired dated update announcement does not supply an explicit numeric RSP version in the selected primary evidence."
+    },
+    "hash_verification": "collector_computed_received_bytes_not_independently_recomputed",
+    "extraction_verification": "verbatim_spans_matched_to_original_collector_receipt"
+  },
+  "historical_applicability": {
+    "status": "unknown",
+    "version": null,
+    "policy_document_sha256": null,
+    "claim_id": null,
+    "reason": "The received May 2025 card points to an October 2024 update announcement. A dated update announcement, mutable policy pointer or publication chronology does not identify an immutable policy edition applicable to that card."
+  },
+  "launch_edition": {
+    "status": "unknown",
+    "policy_document_sha256": null,
+    "claim_id": null,
+    "reason": "No evidence binds policy bytes or their public availability to actual model-release time; received card annotations and current page access do not establish launch-edition identity."
+  },
+  "completion": {
+    "status": "version_gap",
+    "stop_condition": "met",
+    "official_route_requests": 1,
+    "optional_policy_pdf_requests": 0,
+    "policy_pdf_candidates": 0,
+    "new_card_source_requests": 0,
+    "reason": "One finite route exhausted: exact current receipt/card pointer and dated update evidence preserved, while historical RSP edition remains unknown. Unknown does not mean absent or not applicable."
+  }
+}

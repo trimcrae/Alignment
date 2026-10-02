@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "execution": {
+    "source_commit": "ffcc6faa08df990f303add33a518843faa831f4f",
+    "run_id": "36956360948",
+    "job_name": "acquire",
+    "collected_at": "2026-10-02T02:36:01Z"
+  },
+  "method": {
+    "python": "3.11.16",
+    "pypdf": "6.0.0",
+    "cycle_seconds": 180,
+    "socket_seconds": 12,
+    "response_read_seconds": 25,
+    "max_html_bytes": 2097152,
+    "max_policy_pdf_bytes": 8388608,
+    "max_redirects": 3,
+    "scope": "Reused card RSP annotations on pages9/10; one official policy route and at most one explicitly bound dated policy PDF; no current-to-historical inference"
+  },
+  "reused_card": {
+    "source_commit": "bda723fb2678787fc0ec6e52ad742d63b618ab5a",
+    "run_id": "36951404278",
+    "artifact_id": "11204066868",
+    "expected_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "state": "verified",
+    "annotation_pages": [
+      9,
+      10
+    ],
+    "pointers": [
+      {
+        "pdf_page": 9,
+        "uri": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+        "annotation_rectangle": [
+          352.1366,
+          623.1524,
+          486.19763,
+          637.23242
+        ],
+        "relation": "URI annotation in the received card, not launch-edition availability proof"
+      }
+    ],
+    "sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "bytes": 4976826,
+    "pdf_pages": 124
+  },
+  "sources": [
+    {
+      "id": "official-rsp-route",
+      "requested_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+      "observed_at": "2026-10-02T02:36:01Z",
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+        "content_type": "text/html; charset=utf-8",
+        "last_modified": null,
+        "etag": null,
+        "applied_byte_limit": 2097152,
+        "redirect_chain": [
+          {
+            "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentRSPVersion/0.1 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "allowed": true
+            }
+          }
+        ]
+      },
+      "robots": {
+        "url": "https://www.anthropic.com/robots.txt",
+        "user_agent": "AlignmentRSPVersion/0.1 (+https://github.com/trimcrae/Alignment)",
+        "status": 200,
+        "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+        "allowed": true
+      },
+      "bytes": 171813,
+      "sha256": "8c454b6a7c24806d4ee8795eb76ea63bfaad67cfafe8350aaf2f922c8fb802ac",
+      "kind": "html",
+      "normalized_text_sha256": "40a4c7295d624fa9ca2be16f4ddb17bd09ee748521bc5189b784fb80625be192",
+      "spans": [
+        {
+          "start_char": 0,
+          "end_char": 564,
+          "text": "Announcing our updated Responsible Scaling Policy \\ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Announcements Announcing our updated Responsible Scaling Policy Oct 15, 2024 Read the Responsible Scaling Policy Today we are publishing a significant update to our Responsible Scaling Policy (RSP), the risk governance framework we use to mitigate potential catastrophic risks from frontier AI systems. This update introduces a more flexible and nuanced approach to assessing and managing AI risks while maintaining "
+        },
+        {
+          "start_char": 1193,
+          "end_char": 2202,
+          "text": "r AI models advance, they have the potential to bring about transformative benefits for our society and economy. AI could accelerate scientific discoveries, revolutionize healthcare, enhance our education system, and create entirely new domains for human creativity and innovation. However, frontier AI systems also present new challenges and risks that warrant careful study and effective safeguards. In September 2023, we released our Responsible Scaling Policy, a framework for managing risks from increasingly capable AI systems. After a year of implementation and learning, we are now sharing a significantly updated version that reflects practical insights and accounts for advancing technological capabilities. Although this policy focuses on catastrophic risks like the categories listed below, they are not the only risks that we monitor and prepare for. Our Usage Policy sets forth our standards for the use of our products, including rules that prohibit using our models to spread misinformation, i"
+        },
+        {
+          "start_char": 2899,
+          "end_char": 4240,
+          "text": "scale with potential risks. To do this, we use AI Safety Level Standards (ASL Standards) , graduated sets of safety and security measures that become more stringent as model capabilities increase. Inspired by Biosafety Levels, these begin at ASL-1 for models that have very basic capabilities (for example, chess-playing bots) and progress through ASL-2, ASL-3, and so on. In our updated policy, we have refined our methodology for assessing specific capabilities (and their associated risks) and implementing proportional safety and security measures. Our updated framework has two key components: Capability Thresholds: Specific AI abilities that, if reached, would require stronger safeguards than our current baseline. Required Safeguards: The specific ASL Standards needed to mitigate risks once a Capability Threshold has been reached. At present, all of our models operate under ASL-2 Standards, which reflect current industry best practices. Our updated policy defines two key Capability Thresholds that would require upgraded safeguards: Autonomous AI Research and Development: If a model can independently conduct complex AI research tasks typically requiring human expertise—potentially significantly accelerating AI development in an unpredictable way—we require elevated security standards (potentially ASL-4 or higher standards"
+        },
+        {
+          "start_char": 4672,
+          "end_char": 5441,
+          "text": "deployment controls. On the security side, this will include internal access controls and more robust protection of model weights. For deployment risks, we plan to implement a multi-layered approach to prevent misuse, including real-time and asynchronous monitoring, rapid response protocols, and thorough pre-deployment red teaming. Implementation and oversight To contribute to effective implementation of the policy, we have established: Capability assessments : Routine model evaluations based on our Capability Thresholds to determine whether our current safeguards are still appropriate. (Summaries of past assessments are available here .) Safeguard assessments: Routine evaluation of the effectiveness of our security and deployment safety measures to assess wh"
+        },
+        {
+          "start_char": 5711,
+          "end_char": 6479,
+          "text": "on in high-reliability industries. Measures for internal governance and external input: Our assessment methodology will be backed up by internal stress-testing in addition to our existing internal reporting process for safety issues. We are also soliciting external expert feedback on our methodologies. 1 Learning from experience We have learned a lot in our first year with the previous RSP in effect, and are using this update as an opportunity to reflect on what has worked well and what makes sense to update in the policy. As part of this, we conducted our first review of how well we adhered to the framework and identified a small number of instances where we fell short of meeting the full letter of its requirements. These included procedural issues such as "
+        },
+        {
+          "start_char": 6875,
+          "end_char": 7642,
+          "text": "imal risk to the safety of our models. We used the additional three days to refine and improve our evaluations; the different set of evaluations we used provided a more accurate assessment than the placeholder evaluations; and our evaluation methodology still showed we were sufficiently far from the thresholds. From this, we learned two valuable lessons to incorporate into our updated framework: we needed to incorporate more flexibility into our policies, and we needed to improve our process for tracking compliance with the RSP. You can read more here . Since we first released the RSP a year ago, our goal has been to offer an example of a framework that others might draw inspiration from when crafting their own AI risk governance policies. We hope that proa"
+        },
+        {
+          "start_char": 9054,
+          "end_char": 9821,
+          "text": "safeguards) Security and Compliance (responsible for security safeguards and risk management) Alignment Science (including sub-teams responsible for developing ASL-3+ safety measures, for misalignment-focused capability evaluations, and for our internal alignment stress-testing program) RSP Team (responsible for policy drafting, assurance, and cross-company execution) Read the updated policy at anthropic.com/rsp , and supplementary information at anthropic.com/rsp-updates . We extend our sincere gratitude to the many external groups that provided invaluable feedback on the development and refinement of our Responsible Scaling Policy. Footnotes 1 We have also shared our assessment methodology with both AI Safety Institutes, as well as a selection of independ"
+        },
+        {
+          "start_char": 11641,
+          "end_char": 12039,
+          "text": " News Claude’s Constitution Claude Corps Keep thinking Policy on the AI Exponential Responsible Scaling Policy Security and compliance Transparency Terms and policies Privacy policy Consumer health data privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Terms of Service: US K-12 Data Processing Agreement: US K-12 Usage policy © 2026 Anthropic PBC"
+        }
+      ],
+      "policy_links": []
+    }
+  ],
+  "selection": {
+    "status": "unknown",
+    "policy_pdf_candidates": [],
+    "explicitly_bound_candidates": [],
+    "reason": "Current official policy pointer is mutable; version dates alone do not bind the May2025 card"
+  }
+}

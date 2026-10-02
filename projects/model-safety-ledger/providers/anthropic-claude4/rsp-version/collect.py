@@ -127,11 +127,13 @@ def select_policy_links(parser,base):
         u=urllib.parse.urljoin(base,html.unescape(a["href"]));label=normal(a["text"])
         try:p=safe_url(u)
         except ValueError:continue
-        if p.path.lower().endswith(".pdf") and re.search(r"\b(?:RSP|Responsible Scaling|policy|version|v\d|\d{4})\b",label,re.I):
+        if p.path.lower().endswith(".pdf") and re.search(r"\bRSP\b|Responsible Scaling Policy",label,re.I):
             entry={"url":u,"anchor":label};candidates.append(entry)
             # Only explicit card/model applicability in the anchor can authorize a dated PDF.
             # A date/version near May2025 alone is not a historical applicability relation.
-            if re.search(r"Claude (?:Opus |Sonnet )?4",label,re.I) and re.search(r"\b(?:version|v\d|\d{4})\b",label,re.I):
+            if (re.search(r"\bClaude (?:Opus |Sonnet )?4(?![\w.])",label,re.I)
+                and re.search(r"\b(?:version\s+\d|v\d|\d{4})\b",label,re.I)
+                and re.search(r"\b(?:applicable|governing|applies to|in effect for)\b",label,re.I)):
                 explicit.append(entry)
     return candidates,explicit
 def main():
