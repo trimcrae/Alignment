@@ -19,7 +19,7 @@ The related safety report explicitly says on PDF page 4 that it does not aim to 
 
 The model card's August 5, 2025 cover date is a **declared document date**. It does not establish model-release timing or that these bytes were available at launch. Both models' release dates and model-card availability at release remain unknown. A historical official README link is a lead, not launch-byte evidence; a failed fetch cannot establish absence. Response headers and ETags are opaque metadata, and the receipt uses a digest computed over received PDF bytes.
 
-The model-card URL was confirmed in the official [openai/gpt-oss README](https://github.com/openai/gpt-oss/blob/7b583341fe16729127f6d5b94a7b09ccae97e1a1/README.md). A mirror provided only a discovery lead for the safety-report URL; the accepted evidence was retrieved directly from the OpenAI CDN.
+The arXiv model-card record was confirmed in the official [openai/gpt-oss README](https://github.com/openai/gpt-oss/blob/7b583341fe16729127f6d5b94a7b09ccae97e1a1/README.md). The model-card PDF was acquired directly from arXiv. A mirror provided only a discovery lead for the safety-report URL; the accepted evidence was retrieved directly from the OpenAI CDN.
 
 Actual acquisition: [run 36941633243](https://github.com/trimcrae/Alignment/actions/runs/36941633243), job 110634241560, acquisition source commit `5c4b06403ca34b565f10e4e8fd7737e84c9d4ff3`. Both PDFs were retrieved successfully after robots checks. The collector fixes source URLs, permits only same-host HTTPS redirects, caps bytes/pages, and has a 25-second request/socket timeout within a six-minute workflow-job limit. The socket timeout is not a total-document time budget.
 
