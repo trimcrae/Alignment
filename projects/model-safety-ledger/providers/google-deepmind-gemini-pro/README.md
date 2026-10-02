@@ -22,4 +22,4 @@ python3 projects/model-safety-ledger/providers/google-deepmind-gemini-pro/verify
 node projects/model-safety-ledger/providers/google-deepmind-gemini-pro/validate.mjs
 ```
 
-The source stop condition is met. Both acquisition workflows are manual-only; no further GET, child/PDF following, provider expansion or model inference is part of this task. A later distinct task may vet a bounded official redirect policy for the recorded HTML card route, preserving the present snapshot and unknowns.
+The source stop condition is met. Both acquisition workflows are manual-only; no further GET, child/PDF following, provider expansion or model inference is part of this task. Preserve this completed Google gap until distinct authoritative input or a new explicit bounded route plan exists; do not automatically retry the unchanged card route or guess its redirect destination. The next priority under a future separate task is a different provider’s accessible official primary model card (Meta is a candidate), with its exact source plan vetted first. No future task is started here.
