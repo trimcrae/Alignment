@@ -29,7 +29,7 @@ jobs:
         run: python3 -m pip install pypdf==6.0.0
       - name: Run combined checks in a network namespace as the original runner user
         run: |
-          sudo unshare --net -- /usr/bin/setpriv --reuid "$(id -u)" --regid "$(id -g)" --init-groups /usr/bin/env PATH="$PATH" PYTHONDONTWRITEBYTECODE=1 GITHUB_SHA="$GITHUB_SHA" GITHUB_RUN_ID="$GITHUB_RUN_ID" GITHUB_RUN_ATTEMPT="$GITHUB_RUN_ATTEMPT" GITHUB_EVENT_NAME="$GITHUB_EVENT_NAME" python3 projects/usage-sprint-2026-10-01-integration/run-offline.py --receipt "$RUNNER_TEMP/completed-sprint-integration.json"
+          sudo unshare --net -- /usr/bin/setpriv --reuid "$(id -u)" --regid "$(id -g)" --init-groups /usr/bin/env PATH="$PATH" LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}" HOME="$HOME" PYTHONDONTWRITEBYTECODE=1 GITHUB_SHA="$GITHUB_SHA" GITHUB_RUN_ID="$GITHUB_RUN_ID" GITHUB_RUN_ATTEMPT="$GITHUB_RUN_ATTEMPT" GITHUB_EVENT_NAME="$GITHUB_EVENT_NAME" python3 projects/usage-sprint-2026-10-01-integration/run-offline.py --receipt "$RUNNER_TEMP/completed-sprint-integration.json"
       - name: Preserve exact machine execution receipt
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
