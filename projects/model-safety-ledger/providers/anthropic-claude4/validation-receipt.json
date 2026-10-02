@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "observed_at": "2026-10-02T01:48:53Z",
+  "repository": "trimcrae/Alignment",
+  "branch": "codex/usage-sprint-2026-10-01-anthropic-native-ledger",
+  "draft_pr": "https://github.com/trimcrae/Alignment/pull/6",
+  "base_commit": "c79d38e9e49d9c2fd133b6c4faf6412760089afe",
+  "tested_source": "1350d3e3d773c95d60303669e8464aa1539479ec",
+  "source_blob_shas": {
+    "projects/model-safety-ledger/providers/anthropic-claude4/core.mjs": "58b645faad8210a6739b2ad4ca9730ba3785d707",
+    "projects/model-safety-ledger/providers/anthropic-claude4/tests.mjs": "f6eb24e8dae9f3db6394ea09433d1ebf7eec9270",
+    "projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs": "95891a5dfc7413e7b1dcba4675a399ca2b8c0bde",
+    "projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py": "f40b6d9d2d9573edc88786e8899ef0073f64443e",
+    "projects/model-safety-ledger/providers/anthropic-claude4/ledger.json": "3ad0ddaa529a79ce6cbd7424b32b525d4f25011c",
+    "projects/model-safety-ledger/providers/anthropic-claude4/evidence/primary-acquisition.json": "761837018669d10c67a646443086487da84748ae",
+    "projects/model-safety-ledger/providers/anthropic-claude4/README.md": "c8cf9efbb9b4fa64f55028c5f15090084af22244",
+    ".github/workflows/anthropic-native-ledger.yml": "c9624c8df133fd041925172aa7269ef9f0f4727d",
+    ".github/workflows/anthropic-native-acquire.yml": "eff91fc86d0a7bafbd87e10ae675ec9a6dc6bc7a",
+    "projects/model-safety-ledger/providers/anthropic-claude4/acquisition-plan.json": "7f97fab350956baa8703c07b496fc23a86bb7fbd",
+    "projects/model-safety-ledger/providers/anthropic-claude4/collect.py": "0310554d3176a71a06a48f9943acaa6b1ff33013",
+    "projects/model-safety-ledger/providers/anthropic-claude4/evidence/initial-acquisition.json": "bf18c99ba671049ce06473e9217bfc2572db91da"
+  },
+  "evidence": {
+    "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "received_pdf_bytes": 4976826,
+    "pdf_pages": 124,
+    "selected_receipt_sha256": "434c2852efd69dcf1d3cfc562d9e46123745bbaa6307e50bcac1b6cb770ce953",
+    "selected_receipt_utf8_bytes": 19495,
+    "ledger_sha256": "8ac146cdd706421dc84d5ca5fafef70439030be48278665ac3cb454c108a3151",
+    "original_corrected_receipt_sha256": "d4ba9e969ac16bf45287f09bbd3287434cf8c97d584a163b4737c5d5af964189",
+    "original_corrected_receipt_utf8_bytes": 49995,
+    "artifact_id": "11204066868",
+    "artifact_url": "https://github.com/trimcrae/Alignment/actions/runs/36951404278/artifacts/11204066868",
+    "artifact_archive_digest": "6f21c23b86833cdde2ba9752737060336f9b8d8a3a6112e2a3ae51a99cc87727",
+    "artifact_expires_at": "2026-12-31T01:32:17Z"
+  },
+  "acquisition": [
+    {
+      "source_commit": "1b62c11847ec1cb05eddd2f2962bc306ad2c4008",
+      "run_id": "36951198584",
+      "job_id": "110664323460",
+      "conclusion": "success",
+      "receipt_sha256": "10ef3828d4b21fa0ac41fa48a28360e5843dcc0a5e4258d36a501268cf8aa7a3",
+      "result": "Official announcement observed; direct card PDF exceeded incorrectly selected2MiB page limit. Implementation-induced acquisition gap; not evidence of absent card.",
+      "cycle_deadline": "Planned180s soft alarm could be swallowed by broad exception catches; actualjob16s and five-minute workflow hard stop."
+    },
+    {
+      "source_commit": "bda723fb2678787fc0ec6e52ad742d63b618ab5a",
+      "run_id": "36951404278",
+      "job_id": "110664941297",
+      "conclusion": "success",
+      "receipt_sha256": "d4ba9e969ac16bf45287f09bbd3287434cf8c97d584a163b4737c5d5af964189",
+      "result": "Single corrected direct-card-pointer-only cycle at planned20MiBPDFbound; PDF received once via explicit official redirects, then reused for extraction. Announcement notrefetched.",
+      "cycle_deadline": "DedicatedBaseException180s alarm and five-minute workflow hard stop."
+    }
+  ],
+  "executed_checks": [
+    {
+      "source_commit": "c9c087d718dafacaf9eba609257d36813e71c52b",
+      "run_id": "36952235809",
+      "job_id": "110667476306",
+      "conclusion": "success",
+      "node": "22.23.3",
+      "python": "3.11.16",
+      "node_checks": 68,
+      "invalid_cases": 64,
+      "python_collector_tests": 15,
+      "log_path": "offline-ci-job-110667476306.log",
+      "log_sha256": "1249a1e2dd77bcd72a57dfcc4e9f889d716d6e4c8bf29940559b98a70bb63bcd"
+    },
+    {
+      "source_commit": "1350d3e3d773c95d60303669e8464aa1539479ec",
+      "run_id": "36952438631",
+      "job_id": "110668089646",
+      "conclusion": "success",
+      "node": "22.23.3",
+      "python": "3.11.16",
+      "node_checks": 70,
+      "invalid_cases": 66,
+      "python_collector_tests": 15,
+      "syntax_passed": true,
+      "evidence_validation_passed": true,
+      "summary_passed": true,
+      "tracked_tree_clean": true,
+      "job_started_at": "2026-10-02T01:45:19Z",
+      "job_completed_at": "2026-10-02T01:45:30Z",
+      "log_path": "offline-ci-job-110668089646.log",
+      "log_sha256": "b194789005fcabf959af80ecc420e1eb780189e3d3f5941001faa2a78abeb79c"
+    }
+  ],
+  "review": {
+    "human_review": "not_performed",
+    "independent_agent": "alignment_provider_review",
+    "source_method": "Originalreceived-byte metadata/receiptSHA independentlymatched;7selectedpages/spancoordinates and11ledgercitationoccurrences checked againstoriginalacquisition.",
+    "code": "Demonstrated forgedpagehash/shiftedcoordinates afterreceipt rebinding repaired withimmutableauditedselectedreceiptSHA pin and2newcases. IndependentV8 reproduced70checks66invalid; exactactualCI andfocusedcode/tree comparison cleared.",
+    "additional_root_evidence_review": "Root independentlymatched original49995UTF8bytes/SHA,selected19495bytes/SHA andallselectedsource/citationbindings.",
+    "status": "no_remaining_scoped_blocker"
+  },
+  "result_counts": {
+    "models": 2,
+    "reported_deployment_decisions": 2,
+    "reported_capability_assessments": 3,
+    "unknown_capability_assessments": 1,
+    "unknown_release_dates": 2,
+    "unknown_launch_editions": 2,
+    "framework_version": "unknown",
+    "source_described_cyber_formal_threshold": "not_stipulated"
+  },
+  "limitations": [
+    "Providerstatements, not independentlymeasuredcapabilities or safetyverdicts.",
+    "May2025systemcard observed2026-10-02; no latest2026frameworkclaim.",
+    "OpusASL3 precautionary/provisional andnotdetermineddefinitivelypassed; no promotionto confirmedpass.",
+    "SonnetASL4unknown retained; goalof rulingout bothmodels not outcomeproof.",
+    "Frameworkversion, artifactedition, exactmodelreleasedates andlaunchbytes unknown; unknownnotabsent.",
+    "No modelinference/API, externaloutreach, privateexploitpublication ormainmerge.",
+    "Acquisition artifact retention90days; originalActionsrun/receipt hashes retained. Finalreceipt-only commit changes no testedcode, evidence orcollector."
+  ],
+  "next_bounded_task": "Acquire one accessible official dated/versioned RSP framework artifact only if it can establish the policy edition applicable to this May2025systemcard. Keepcurrentpolicyobservation separatefrom historicalapplicability; stop with explicitversiongap ifunavailable. ReuseexistingPDFreceipt; do notreacquire unchangedPDF/pages or priorgpt-oss/ControlArena audits."
+}

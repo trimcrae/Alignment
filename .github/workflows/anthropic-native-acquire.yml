@@ -1,0 +1,44 @@
+# Produced by OpenAI Codex (AI agent); bounded public-source CPU acquisition.
+name: Anthropic primary artifact acquisition
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-anthropic-native-ledger]
+    paths:
+      - .github/workflows/anthropic-native-acquire.yml
+      - projects/model-safety-ledger/providers/anthropic-claude4/collect.py
+      - projects/model-safety-ledger/providers/anthropic-claude4/acquisition-plan.json
+permissions:
+  contents: read
+concurrency:
+  group: anthropic-native-acquire-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install bounded PDF extraction dependency
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Acquire one official provider artifact cycle
+        run: python3 projects/model-safety-ledger/providers/anthropic-claude4/collect.py
+      - name: Preserve original receipt and received PDF if available
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: anthropic-primary-source
+          path: |
+            ${{ runner.temp }}/anthropic-acquisition.json
+            ${{ runner.temp }}/anthropic-card.pdf
+          if-no-files-found: error
+          retention-days: 90
+      - name: Confirm read-only tracked inputs
+        if: ${{ !cancelled() }}
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

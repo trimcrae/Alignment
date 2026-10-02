@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "execution": {
+    "source_commit": "bda723fb2678787fc0ec6e52ad742d63b618ab5a",
+    "run_id": "36951404278",
+    "job_name": "acquire",
+    "collected_at": "2026-10-02T01:32:32Z"
+  },
+  "method": {
+    "python": "3.11.16",
+    "pypdf": "6.0.0",
+    "socket_timeout_seconds": 12,
+    "response_read_seconds": 25,
+    "cycle_seconds": 180,
+    "max_page_bytes": 2097152,
+    "max_pdf_bytes": 20971520,
+    "max_redirects": 3,
+    "scope": "Official page pointers and selected governance PDF spans only; no inference or launch-edition inference"
+  },
+  "sources": [
+    {
+      "id": "claude-4-card-pointer",
+      "requested_url": "https://www.anthropic.com/claude-4-system-card",
+      "observed_at": "2026-10-02T01:32:25Z",
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+        "content_type": "application/pdf",
+        "last_modified": "Tue, 02 Sep 2025 14:50:27 GMT",
+        "etag": "\"7b0161b1a8dbe2d70c5b6392c5d7c130\"",
+        "redirect_chain": [
+          {
+            "url": "https://www.anthropic.com/claude-4-system-card",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+              "allowed": true
+            },
+            "status": 307,
+            "location": "https://www.anthropic.com/document/claude-4-system-card"
+          },
+          {
+            "url": "https://www.anthropic.com/document/claude-4-system-card",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+              "allowed": true
+            },
+            "status": 307,
+            "location": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf"
+          },
+          {
+            "url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+            "robots": {
+              "url": "https://www-cdn.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 404,
+              "error": "HTTPError",
+              "allowed": true
+            }
+          }
+        ]
+      },
+      "robots": {
+        "url": "https://www-cdn.anthropic.com/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+        "status": 404,
+        "error": "HTTPError",
+        "allowed": true
+      },
+      "bytes": 4976826,
+      "sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+      "kind": "pdf_pointer_response"
+    },
+    {
+      "id": "claude-4-system-card",
+      "requested_url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+      "observed_at": "2026-10-02T01:32:26Z",
+      "kind": "system_card",
+      "state": "observed",
+      "response": {
+        "status": 200,
+        "final_url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+        "content_type": "application/pdf",
+        "last_modified": "Tue, 02 Sep 2025 14:50:27 GMT",
+        "etag": "\"7b0161b1a8dbe2d70c5b6392c5d7c130\"",
+        "redirect_chain": [
+          {
+            "url": "https://www.anthropic.com/claude-4-system-card",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+              "allowed": true
+            },
+            "status": 307,
+            "location": "https://www.anthropic.com/document/claude-4-system-card"
+          },
+          {
+            "url": "https://www.anthropic.com/document/claude-4-system-card",
+            "robots": {
+              "url": "https://www.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 200,
+              "sha256": "b8bb03567cf862a9024bd464bd4bd7afaf054b1029de79727b2ba94711480ec7",
+              "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.anthropic.com/sitemap.xml\n",
+              "allowed": true
+            },
+            "status": 307,
+            "location": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf"
+          },
+          {
+            "url": "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf",
+            "robots": {
+              "url": "https://www-cdn.anthropic.com/robots.txt",
+              "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+              "status": 404,
+              "error": "HTTPError",
+              "allowed": true
+            }
+          }
+        ]
+      },
+      "robots": {
+        "url": "https://www-cdn.anthropic.com/robots.txt",
+        "user_agent": "AlignmentArtifactLedger/0.2 (+https://github.com/trimcrae/Alignment)",
+        "status": 404,
+        "error": "HTTPError",
+        "allowed": true
+      },
+      "bytes": 4976826,
+      "sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+      "pdf_pages": 124,
+      "excerpts": [
+        {
+          "pdf_page": 1,
+          "normalized_page_text_sha256": "815bf3855cbf0377f32a10ff5a319a161a6b210b411f67c37cd943b58f060a42",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 67,
+              "text": "System Card: Claude Opus 4 & Claude Sonnet 4 May 2025 anthropic.com"
+            }
+          ]
+        },
+        {
+          "pdf_page": 3,
+          "normalized_page_text_sha256": "73644785db0d0c8704823cacb9904c5bba2015cc6c1d4ef4f48a54a4b877fac5",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 850,
+              "text": "Abstract This system card introduces Claude Opus 4 and Claude Sonnet 4, two new hybrid reasoning large language models from Anthropic. In the system card, we describe: a wide range of pre-deployment safety tests conducted in line with the commitments in our Responsible Scaling Policy; tests of the model’s behavior around violations of our Usage Policy; evaluations of speciﬁc risks such as “reward hacking” behavior; and agentic safety evaluations for computer use and coding capabilities. In addition, and for the ﬁrst time, we include a detailed alignment assessment covering a wide range of misalignment risks identiﬁed in our research, and a model welfare assessment. Informed by the testing described here, we have decided to deploy Claude Opus 4 under the AI Safety Level 3 Standard and Claude Sonnet 4 under the AI Safety Level 2 Standard. 3"
+            }
+          ]
+        },
+        {
+          "pdf_page": 9,
+          "normalized_page_text_sha256": "7df236b547fd3d0fa6a2715b64890e5588a3fa1ec48b4574417ef5163234378a",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 1340,
+              "text": "1.2 Release decision process 1.2.1 Overview In this section, we detail the process by which we made the decision to deploy Claude Opus 4 and Claude Sonnet 4. The process was guided by our Responsible Scaling Policy (RSP), which provides a framework for evaluating and managing potential risks associated with increasingly capable AI systems. The RSP requires comprehensive safety evaluations prior to releasing frontier models in key areas of potential catastrophic risk: Chemical, Biological, Radiological, and Nuclear (CBRN) weapons; cybersecurity; and autonomous capabilities. For each of these domains, the RSP requires that we conduct extensive testing to determine the AI Safety Level (ASL) Standard of the required safeguards and security measures. RSP evaluations include automated testing of domain-speciﬁc knowledge, capability assessments through standardized benchmarks, and expert red-teaming. The ASL determination process involves safety testing by internal teams and external partners to identify potential vulnerabilities or misuse scenarios. It is overseen by the Responsible Scaling Ofﬁcer, the CEO, the Board of Directors, and the Long-Term Beneﬁt Trust. We also maintain ongoing monitoring systems after release to track safety metrics and model behavior, allowing us to respond to emergent concerns. The ﬁnal release d"
+            }
+          ]
+        },
+        {
+          "pdf_page": 10,
+          "normalized_page_text_sha256": "a6d6755717a742d6e737309e0567f2daa74fdbf4bb5a1e5153ffb7a11d9bc172",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 2688,
+              "text": "Also similarly to Claude Sonnet 3.7, we observed that different snapshots showed varying strengths across domains, with some performing better in CBRN evaluations, and others in cyber or autonomy evaluations. Taking a conservative approach for ASL determination, we compiled all scores achieved by any model snapshot into a ﬁnal capabilities report, which we shared with the Responsible Scaling Ofﬁcer, the CEO, the Board of Directors, and the Long-Term Beneﬁt Trust. In this document, we present results from the ﬁnal, deployed model unless otherwise speciﬁed. 1.2.3 AI Safety Level determination process As outlined in our RSP framework, our standard capability assessment involves multiple distinct stages: our Frontier Red Team evaluates the model for speciﬁc capabilities and summarizes their ﬁndings in a report, which is then independently reviewed and critiqued by our Alignment Stress Testing team. Both the Frontier Red Team’s report and the Alignment Stress Testing team’s feedback are submitted to the Responsible Scaling Ofﬁcer and CEO for the ASL determination. For this assessment, we evaluated multiple model snapshots and made our ﬁnal determination based both on the capabilities of the production release candidates as well as the trends observed during training. Throughout this process, we continued to gather evidence from multiple sources, including automated evaluations, uplift trials, third-party expert red teaming, and third-party assessments. Finally, we consulted on the ﬁnal evaluation results with external experts. At the end of the process, FRT issued a ﬁnal version of its Capability Report and AST provided its feedback on that report. Consistent with our RSP, the Responsible Scaling Ofﬁcer and CEO made the ultimate determination on the required ASL Standards. Based on these assessments, we have decided to release Claude Opus 4 under the ASL-3 Standard and Claude Sonnet 4 under the ASL-2 Standard. For context, Claude Sonnet 3.7 was released under the ASL-2 Standard. For more information on the requirements for these ASL Standards, please see the Responsible Scaling Policy; for more information on our new implementation of the ASL-3 Standard for Claude Opus 4, please see our report on activating ASL-3 protections. This determination reﬂects our overall assessment that, whereas both models are generally more capable than Claude Sonnet 3.7, Claude Opus 4 showed signiﬁcantly improved capabilities in the RSP domains of concern. Although we have not yet determined that Claude Opus 4 passes the capability threshold for CBRN weapons development that necessitates the ASL-3 Standard, we cannot rule out that further testing will show it has 10"
+            }
+          ]
+        },
+        {
+          "pdf_page": 11,
+          "normalized_page_text_sha256": "a803adaf55f1b03438f7f40aa40eee1e2ecf389ed50b33f3affad145870218eb",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 2134,
+              "text": "done so. In contrast, we determined that Claude Sonnet 4 has not improved enough in the relevant capabilities to require the ASL-3 Standard. 1.2.4 Conclusions In the Claude Sonnet 3.7 system card, we observed several trends that warranted attention: the model showed improved performance in all domains, and we observed some uplift in human participant trials on proxy CBRN tasks. Our evaluations of Claude Opus 4 and Claude Sonnet 4 conﬁrmed these trends, while showing a capability gap between the two models. Whereas both models demonstrated improvements over Claude Sonnet 3.7, Claude Opus 4 showed substantially greater capabilities in CBRN-related evaluations, including stronger performance on virus acquisition tasks, more concerning behavior in expert red-teaming sessions, and enhanced tool use and agentic workﬂows. Several of our external red-teaming partners reported that Claude Opus 4 performed qualitatively differently from any model they had previously tested. In contrast, Claude Sonnet 4 showed more modest improvements that—while noteworthy—remained below the ASL-3 thresholds of concern. To be clear, we have not yet determined whether Claude Opus 4 has deﬁnitively passed the capabilities threshold that requires ASL-3 protections. Rather, we cannot clearly rule out ASL-3 risks for Claude Opus 4 (although we have ruled out that it needs the ASL-4 Standard). Thus, we are deploying Claude Opus 4 with ASL-3 measures as a precautionary, provisional action, while maintaining Claude Sonnet 4 at the ASL-2 Standard. The ASL-3 safeguards we have now activated for Claude Opus 4 represent signiﬁcant investments in both deployment protections and security controls, with a particular focus on biological risk mitigation. We'll continue to monitor the models closely, both through automated systems and human oversight. Our new bug bounty program will provide additional insights into potential vulnerabilities, while our ongoing collaboration with external experts and government partners will help validate our security measures. More details on our RSP evaluation process and results can be found in Section 7. 11"
+            }
+          ]
+        },
+        {
+          "pdf_page": 88,
+          "normalized_page_text_sha256": "a6205aff4e6c53944ef5fb34a6783fbc10678c444d00edf0e1d4daecca031488",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 0,
+              "end_char": 2287,
+              "text": "7 Responsible Scaling Policy (RSP) evaluations RSP safeguards required for Claude Opus 4: ASL-3 Standard RSP safeguards required for Claude Sonnet 4: ASL-2 Standard 7.1 Process The Responsible Scaling Policy (RSP) evaluation process is designed to systematically assess our models’ capabilities in domains of potential catastrophic risk. This section details our evaluation approach and describes key ﬁndings for Claude Opus 4 and Claude Sonnet 4 across the CBRN, autonomy, and cyber domains. Evaluations generally fall into two categories: rule-out or rule-in . ● Rule-out evaluations: These are designed to establish that a model falls below a speciﬁc capability threshold. When a model fails to meet certain performance targets on these evaluations, we can conﬁdently determine that it does not yet possess capabilities of concern at that level. The majority of our evaluations fall into this category. ● Rule-in evaluations: These are designed to positively identify when a model has crossed a capability threshold. These evaluations typically have higher bars for success and require the model to demonstrate consistent, reliable performance on tasks that would indicate concerning capabilities. They are also much harder and more complex to execute, as they typically involve human uplift trials. For each domain, we have developed speciﬁc threat models at different AI Safety Levels (ASL). The ASL-3 threat models focus on capabilities that could signiﬁcantly uplift individuals or groups with basic technical backgrounds, while ASL-4 threat models address more advanced capabilities that could uplift sophisticated state-level actors or teams with similar resources. These threat models are described in detail within each domain section below. In our evaluation of Claude Opus 4 and Claude Sonnet 4, we prioritized rule-out evaluations aimed at conﬁdently determining whether the models fall below the ASL-3 and ASL-4 thresholds. Speciﬁcally, we focused on ruling out ASL-4 for both models, as well as ruling out ASL-3 for Claude Sonnet 4. For Claude Opus 4, our evaluations showed that, whereas we could conﬁdently rule out ASL-4 capabilities, we could not conclusively rule out ASL-3 capabilities—which led to our precautionary decision to deploy it with ASL-3 protections. 88"
+            }
+          ]
+        },
+        {
+          "pdf_page": 117,
+          "normalized_page_text_sha256": "52e271c8c995a570579e6370898b88d290552b31799a6184292cb75bfedc0ee1",
+          "normalization": "Unicode whitespace collapsed to one ASCII space; stripped",
+          "spans": [
+            {
+              "start_char": 959,
+              "end_char": 1100,
+              "text": "The RSP does not stipulate a formal threshold for cyber capabilities at any ASL level. Instead, we believe cyber requires ongoing assessment."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "status": "observed",
+    "candidate_urls": [
+      "https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285/Claude%204%20System%20Card.pdf"
+    ],
+    "reason": "Exactly one explicit official provider PDF pointer"
+  },
+  "subset_provenance": {
+    "original_receipt_sha256": "d4ba9e969ac16bf45287f09bbd3287434cf8c97d584a163b4737c5d5af964189",
+    "original_receipt_utf8_bytes": 49995,
+    "original_run_id": "36951404278",
+    "original_job_id": "110664941297",
+    "selection": "Complete original governance spans for PDF pages1,3,9,10,11,88 plus exact formal cyber-threshold sentence on page117; other PDF pages not reproduced. Acquisition metadata and original character coordinates retained."
+  }
+}

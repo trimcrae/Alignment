@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "sources": [
+    {
+      "id": "claude-4-card-pointer",
+      "url": "https://www.anthropic.com/claude-4-system-card"
+    }
+  ],
+  "stop_condition": "Single pointer-only correction cycle at originally planned 20MiB PDF bound; no announcement refetch, mirror, guessed URL or further retries. Original two-page attempt retained."
+}
