@@ -1,0 +1,60 @@
+# AI-authored OpenAI Codex/GPT-6: offline-only source/native-scope checks.
+name: Meta native-category ledger validation
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-meta-native-ledger]
+    paths:
+      - .github/workflows/meta-native-validate.yml
+      - projects/model-safety-ledger/providers/meta-llama4/core.mjs
+      - projects/model-safety-ledger/providers/meta-llama4/validate.mjs
+      - projects/model-safety-ledger/providers/meta-llama4/test.mjs
+      - projects/model-safety-ledger/providers/meta-llama4/verify-source.py
+      - projects/model-safety-ledger/providers/meta-llama4/test-source.py
+      - projects/model-safety-ledger/providers/meta-llama4/result.json
+      - projects/model-safety-ledger/providers/meta-llama4/acquisition-plan.json
+      - projects/model-safety-ledger/providers/meta-llama4/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Record actual runtimes
+        run: |
+          node --version
+          python3 --version
+      - name: Check syntax without generated files
+        run: |
+          node --check projects/model-safety-ledger/providers/meta-llama4/core.mjs
+          node --check projects/model-safety-ledger/providers/meta-llama4/validate.mjs
+          node --check projects/model-safety-ledger/providers/meta-llama4/test.mjs
+          python3 - <<'PY'
+          from pathlib import Path
+          for p in Path("projects/model-safety-ledger/providers/meta-llama4").glob("*.py"):
+              compile(p.read_text(), str(p), "exec")
+          print("Python syntax passed")
+          PY
+      - name: Run strict native-scope and source mutation regressions
+        run: node projects/model-safety-ledger/providers/meta-llama4/test.mjs
+      - name: Run independent UTF8 byte-coordinate regressions
+        run: python3 projects/model-safety-ledger/providers/meta-llama4/test-source.py
+      - name: Recompute source Git SHA1 SHA256 base64 and fourteen quotes offline
+        run: python3 projects/model-safety-ledger/providers/meta-llama4/verify-source.py
+      - name: Validate partial native result and truthful summary
+        run: node projects/model-safety-ledger/providers/meta-llama4/validate.mjs
+      - name: Confirm tracked tree stayed clean
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
