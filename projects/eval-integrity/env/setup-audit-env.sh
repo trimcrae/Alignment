@@ -11,7 +11,7 @@ DIR="${1:-audit}"
 mkdir -p "$DIR"; cd "$DIR"
 
 clone() { # repo commit dir
-  local repo="$1" pin="$2" target="$3" expected actual origin dirty
+  local repo="$1" pin="$2" target="$3" expected actual origin dirty index_flags entry
   local url="https://github.com/$repo"
   if [[ ! "$pin" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
     echo "ERROR: invalid commit pin for $target" >&2; return 1
@@ -28,6 +28,13 @@ clone() { # repo commit dir
     if [ "$origin" != "$url" ]; then
       echo "ERROR: wrong origin in $target; checkout left unchanged" >&2; return 1
     fi
+    index_flags=$(GIT_OPTIONAL_LOCKS=0 git -C "$target" ls-files -v) || return 1
+    while IFS= read -r entry; do
+      case "$entry" in
+        [a-zS]" "*)
+          echo "ERROR: source-masking index flags in $target; checkout left unchanged" >&2; return 1 ;;
+      esac
+    done <<< "$index_flags"
     dirty=$(GIT_OPTIONAL_LOCKS=0 git -C "$target" status --porcelain --untracked-files=all) || return 1
     if [ -n "$dirty" ]; then
       echo "ERROR: dirty checkout $target; checkout left unchanged" >&2; return 1

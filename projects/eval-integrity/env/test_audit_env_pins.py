@@ -25,6 +25,11 @@ ORIGINAL = subprocess.run(
     check=True, text=True, capture_output=True,
 ).stdout
 CURRENT = SETUP.read_text()
+PRIOR_REPAIR = subprocess.run(
+    ["git", "-C", str(ROOT), "show",
+     "61ddfd3722a1fd163a3f33e0146155f5bb7110ca:" + NATIVE_PATH],
+    check=True, text=True, capture_output=True,
+).stdout
 REPO = "fixture/audit"
 URL = f"https://github.com/{REPO}"
 REAL_GIT = shutil.which("git")
@@ -134,6 +139,26 @@ class OriginalWitness(Fixture):
         print("BASELINE WITNESS: original helper returned success after pin checkout failure")
 
 
+class PriorRepairWitness(Fixture):
+    source = PRIOR_REPAIR
+
+    def test_prior_status_only_repair_admits_assume_unchanged_edit(self):
+        raw = PRIOR_REPAIR.encode()
+        self.assertEqual(hashlib.sha1(f"blob {len(raw)}".encode() + bytes([0]) + raw).hexdigest(),
+                         "3806fd7421f1234e889c67d999b1c3e7ae90738d")
+        self.existing(self.first)
+        self.git("-C", str(self.target), "update-index", "--assume-unchanged", "tracked")
+        (self.target / "tracked").write_text("hidden edited source\n")
+        self.assertEqual(self.git("-C", str(self.target), "status", "--porcelain").stdout, "")
+        before = snapshot(self.target)
+        result = self.run_helper()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("verified ", result.stdout)
+        self.assertNotEqual((self.target / "tracked").read_text(), "first\n")
+        self.check_unchanged(before)
+        print("PRIOR REPAIR WITNESS: status-only helper admitted edited source under assume-unchanged")
+
+
 class RepairedChecks(Fixture):
     def test_original_and_repaired_tail_and_all_fifteen_pins_unchanged(self):
         self.assertEqual(CURRENT[CURRENT.index("\n# Audit targets"):],
@@ -205,6 +230,31 @@ class RepairedChecks(Fixture):
         self.existing(self.first)
         self.git("-C", str(self.target), "remote", "remove", "origin")
         self.assertIn("no origin", self.refuse_existing().stderr)
+
+    def test_assume_unchanged_index_flag_and_hidden_edit_refused(self):
+        self.existing(self.first)
+        self.git("-C", str(self.target), "update-index", "--assume-unchanged", "tracked")
+        (self.target / "tracked").write_text("keep hidden assume-unchanged edit\n")
+        self.assertEqual(self.git("-C", str(self.target), "status", "--porcelain").stdout, "")
+        self.assertIn("source-masking index flags", self.refuse_existing().stderr)
+
+    def test_skip_worktree_index_flag_and_hidden_edit_refused(self):
+        self.existing(self.first)
+        self.git("-C", str(self.target), "update-index", "--skip-worktree", "tracked")
+        (self.target / "tracked").write_text("keep hidden skip-worktree edit\n")
+        self.assertEqual(self.git("-C", str(self.target), "status", "--porcelain").stdout, "")
+        self.assertIn("source-masking index flags", self.refuse_existing().stderr)
+
+    def test_ignored_environment_outputs_are_preserved_and_not_source_checked(self):
+        self.existing(self.first)
+        (self.target / ".git/info/exclude").write_text(".venv/\n")
+        ignored = self.target / ".venv"
+        ignored.mkdir()
+        (ignored / "private-local-output").write_text("keep ignored output\n")
+        before = snapshot(self.target)
+        result = self.run_helper()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.check_unchanged(before)
 
     def test_unstaged_changes_refused(self):
         self.existing(self.first)
