@@ -1,0 +1,58 @@
+# Produced by OpenAI Codex (AI agent); offline evidence checks only.
+name: Anthropic RSP version supplement
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-anthropic-rsp-version]
+    paths:
+      - .github/workflows/anthropic-rsp-version.yml
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/test_collect.py
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/core.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tests.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/result.json
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/evidence/**
+permissions:
+  contents: read
+jobs:
+  offline-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PDF parser for synthetic offline annotations
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Syntax
+        run: |
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/core.mjs
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tests.mjs
+          node --check projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs
+          python3 -c "import ast,pathlib;[ast.parse(pathlib.Path(p).read_text()) for p in ['projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py','projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/test_collect.py']]"
+      - name: Validate immutable supplement and inherited source
+        run: |
+          node projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs validate
+          node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs validate
+      - name: New native version and temporal inference regressions
+        run: node projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs test
+      - name: Offline RSP selector MIME source and reuse regressions
+        run: python3 projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/test_collect.py
+      - name: Inherited provider regression checks
+        run: |
+          node projects/model-safety-ledger/providers/anthropic-claude4/tool.mjs test
+          python3 projects/model-safety-ledger/providers/anthropic-claude4/test_collect.py
+      - name: Summarize exact finite-cycle gap
+        run: node projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/tool.mjs summary
+      - name: Confirm tracked inputs stayed read-only
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

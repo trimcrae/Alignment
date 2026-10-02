@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "reuse": {
+    "run_id": "36951404278",
+    "artifact_id": "11204066868",
+    "document_sha256": "5e3e63370473db1f1e499642ef8400250e19aba8cbb5f84f2b919cf2b27898cb",
+    "annotation_pages": [
+      9,
+      10
+    ]
+  },
+  "official_policy_route": "https://www.anthropic.com/responsible-scaling-policy",
+  "stop_condition": "One cycle. Reuse existing received card; one exact official policy route; optional one explicit dated/card-applicable official PDF. No historical edition chosen by cover chronology, guessed URL, mirror or repeated source cycle."
+}
