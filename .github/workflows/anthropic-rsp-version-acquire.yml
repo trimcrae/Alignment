@@ -1,0 +1,54 @@
+# Produced by OpenAI Codex (AI agent); one finite source cycle.
+name: Anthropic RSP edition source acquisition
+on:
+  push:
+    branches: [codex/usage-sprint-2026-10-01-anthropic-rsp-version]
+    paths:
+      - .github/workflows/anthropic-rsp-version-acquire.yml
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
+      - projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/acquisition-plan.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      REUSED_CARD_DIR: ${{ runner.temp }}/received-card
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PDF annotation dependency
+        run: python3 -m pip install pypdf==6.0.0
+      - name: Reuse the previously received owned artifact
+        id: reuse
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: "11204066868"
+          path: ${{ env.REUSED_CARD_DIR }}
+          merge-multiple: true
+          github-token: ${{ github.token }}
+          repository: trimcrae/Alignment
+          run-id: "36951404278"
+      - name: Inspect exact reused annotations and one official policy route
+        run: python3 projects/model-safety-ledger/providers/anthropic-claude4/rsp-version/collect.py
+      - name: Preserve original narrow receipt
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsp-edition-receipt
+          path: ${{ runner.temp }}/rsp-version-acquisition.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Confirm tracked inputs stayed read-only
+        if: ${{ !cancelled() }}
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
