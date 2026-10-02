@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "authorship": {
+    "agent": "OpenAI Codex",
+    "model_family": "GPT-6",
+    "session": "usage-sprint-2026-10-01",
+    "human_review": "not_performed"
+  },
+  "provider_candidate": "Meta",
+  "source": {
+    "repository": "meta-llama/llama-models",
+    "commit": "0e0b8c519242d5833d8c11bffc1232b77ad7f301",
+    "path": "models/llama4/MODEL_CARD.md",
+    "expected_git_blob_sha1": "80e624a8f7415bd533070277cc6b9f3c5215625b",
+    "metadata_reported_bytes": 23764,
+    "canonical_blob_url": "https://github.com/meta-llama/llama-models/blob/0e0b8c519242d5833d8c11bffc1232b77ad7f301/models/llama4/MODEL_CARD.md"
+  },
+  "method": {
+    "mechanism": "One exact approved GitHub connector fetch_file read, requested in base64 to preserve source file bytes",
+    "artifact_reads": 1,
+    "max_expected_file_bytes": 2097152,
+    "known_pinned_file_bytes": 23764,
+    "verification": "Actual Node CI recomputes Git object SHA1 and file SHA256; reject size/hash mismatch",
+    "transport_limitations": "Connector owns HTTP transport and exposes decoded file bytes/metadata, not raw HTTP bodies, status, headers or robots receipts; no website crawler or independent transport verification is claimed"
+  },
+  "scope": {
+    "models": "Only actual received card identities/configurations",
+    "framework": "Only explicitly bound native provider framework/thresholds; no guessed framework edition/domain slots or cross-provider scale mapping",
+    "statements": "Provider-reported determinations separated from supporting assessments and deployment safeguards; no independent model evaluation",
+    "temporal": "Current pinned Git bytes do not establish release date, historical availability or launch-edition identity"
+  },
+  "stop_condition": "One exact artifact read; stop with explicit primary/framework evidence gap if unavailable or unsupported. No retries, alternate artifacts, website/PDF fetching, inference/model API, other provider, external outreach, upstream change or main merge."
+}
