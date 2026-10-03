@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/meridianlabs-ai/inspect_petri/issues/161",
+  "number": 161,
+  "title": "Custom judge dimension named value is accepted but fails after scoring",
+  "created_at": "2026-09-18T14:37:19Z",
+  "author": "trimcrae",
+  "state": "open",
+  "body_verified": true,
+  "source_sha": "e199ec1abcd10267c60cd7eb03035a76567d9e52"
+}

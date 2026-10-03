@@ -1,5 +1,7 @@
 # Draft upstream issues (not yet filed; owner review required)
 
+**Triage update 2026-09-14:** do not submit issue A's empty-target paragraph as an unambiguous bug. Upstream tests explicitly preserve empty-target/no-selection scoring, including `test_correct_multiple_answers_all_incorrect`. The original text below is retained as historical evidence. See [the follow-up assessment](2026-09-14-upstream-triage.md). Human review of these drafts has not been established; the original footer must not be treated as a review receipt.
+
 ## Issue A. Repository: UKGovernmentBEIS/inspect_ai
 Title: `choice()` scores CORRECT when the target is empty and the model did not answer
 

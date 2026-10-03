@@ -1,6 +1,6 @@
 # Eval-integrity audit program
 
-Status: sprint 1 complete (2026-09-13). All eleven targets audited; see `CHANGELOG.md` for the index and its calibration note, `findings/` for the write-ups, `METHODS.md` for how it was done, and `NEXT-STEPS.md` for what to do next. Of the findings labelled high severity, 7 look solid, live and novel; none has been confirmed by a maintainer, and nothing has been filed upstream. Three targets have findings held privately.
+Status: sprint 1 complete (2026-09-13). See `CHANGELOG.md` for historical counts and calibration. Three focused reports are now filed: [AgentHarm #2439](https://github.com/UKGovernmentBEIS/inspect_evals/issues/2439), [ControlArena #878](https://github.com/UKGovernmentBEIS/control-arena/issues/878), and [Petri #159](https://github.com/meridianlabs-ai/inspect_petri/issues/159). The owner authorized the two additional filings on September 15 while awaiting the first response. Maintainer confirmation remains pending; see [current evidence](findings/2026-09-15-additional-upstream-triage.md). Private exploit findings remain withheld.
 
 ## Purpose
 

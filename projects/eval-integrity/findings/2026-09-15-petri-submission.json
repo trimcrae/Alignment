@@ -1,0 +1,9 @@
+{
+  "number": 159,
+  "url": "https://github.com/meridianlabs-ai/inspect_petri/issues/159",
+  "state": "open",
+  "author": "trimcrae",
+  "created_at": "2026-09-16T00:04:44Z",
+  "title": "Documented inspect score command cannot resolve audit_judge (registered as scanner)",
+  "body_matches_draft": true
+}
